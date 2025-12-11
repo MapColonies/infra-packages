@@ -1,0 +1,84 @@
+{
+  "name": "@map-colonies/eslint-config",
+  "version": "5.0.0",
+  "description": "eslint configs for map colonies organization",
+  "type": "module",
+  "main": "./dist/configs/ts-base.mjs",
+  "types": "./dist/configs/ts-base.d.ts",
+  "exports": {
+    "./ts-base": {
+      "types": "./dist/configs/ts-base.d.ts",
+      "import": "./dist/configs/ts-base.mjs"
+    },
+    "./react": {
+      "types": "./dist/configs/react.d.ts",
+      "import": "./dist/configs/react.mjs"
+    },
+    "./jest": {
+      "types": "./dist/configs/jest.d.ts",
+      "import": "./dist/configs/jest.mjs"
+    },
+    "./helpers": {
+      "types": "./dist/helpers.d.ts",
+      "import": "./dist/helpers.mjs"
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "pretest": "turbo run build",
+    "test": "vitest run",
+    "prepack": "turbo run build",
+    "prebuild": "pnpm run clean",
+    "clean": "rimraf dist",
+    "build": "tsc --project tsconfig.build.json",
+    "docs": "typedoc"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "repository": "github:MapColonies/infra-packages",
+  "peerDependencies": {
+    "eslint": "^9.19.0",
+    "eslint-plugin-jest": "^28.11.0",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "globals": "^15.14.0"
+  },
+  "peerDependenciesMeta": {
+    "eslint-plugin-jest": {
+      "optional": true
+    },
+    "eslint-plugin-react": {
+      "optional": true
+    },
+    "eslint-plugin-react-hooks": {
+      "optional": true
+    },
+    "globals": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@eslint/js": "^9.19.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-import-resolver-typescript": "^3.7.0",
+    "eslint-plugin-import-x": "^4.16.1",
+    "typescript-eslint": "^8.23.0"
+  },
+  "devDependencies": {
+    "@map-colonies/tsconfig": "workspace:^",
+    "@types/eslint": "^9.6.1",
+    "@types/eslint-config-prettier": "^6.11.3",
+    "@types/node": "25.0.0",
+    "eslint": "catalog:",
+    "rimraf": "^6.1.2",
+    "typescript": "catalog:",
+    "globals": "^15.15.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-jest": "^28.11.0",
+    "eslint-plugin-react": "^7.37.4",
+    "vitest-config": "workspace:^",
+    "vitest": "catalog:"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "@map-colonies/prettier-config",
+  "version": "0.0.1",
+  "description": "Common prettier configuration for the MapColonies project",
+  "license": "MIT",
+  "repository": "github:MapColonies/infra-packages",
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./index.js"
+}

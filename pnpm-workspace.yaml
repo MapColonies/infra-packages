@@ -1,0 +1,11 @@
+packages:
+  - 'packages/*'
+  - 'internal/*'
+
+catalog:
+  typescript: '^5.9.3'
+  vitest: '^4.0.15'
+  eslint: '^9.39.1'
+  rimraf: '^6.1.2'
+  "@vitest/coverage-c8": '^4.0.15'
+  "@vitest/ui": '^4.0.15'

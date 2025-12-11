@@ -1,0 +1,18 @@
+{
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "npm.packageManager": "pnpm",
+  "npm.scriptRunner": "pnpm",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "files.eol": "\n",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.insertFinalNewline": true,
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "file": "node_modules/@map-colonies/infra-copilot-instructions/instructions/commit.md"
+    }
+  ]
+}

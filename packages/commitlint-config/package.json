@@ -1,0 +1,43 @@
+{
+  "name": "@map-colonies/commitlint-config",
+  "version": "1.1.0",
+  "description": "Commitlint configuration for MapColonies projects",
+  "repository": "github:MapColonies/infra-packages",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "test": "vitest run",
+    "build": "tsc --project tsconfig.build.json",
+    "lint": "eslint .",
+    "prepack": "turbo run build",
+    "prebuild": "pnpm run clean",
+    "clean": "rimraf dist"
+
+  },
+
+  "files": [
+    "index.js"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@commitlint/config-conventional": "^20.2.0"
+  },
+  "devDependencies": {
+    "vitest": "catalog:",
+    "vitest-config": "workspace:^",
+    "@commitlint/types": "^20.2.0",
+    "zx": "^8.3.0",
+    "typescript": "catalog:",
+    "@map-colonies/tsconfig": "workspace:^",
+    "@map-colonies/eslint-config": "workspace:^",
+    "rimraf": "catalog:"
+  }
+}
