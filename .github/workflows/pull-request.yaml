@@ -1,0 +1,62 @@
+name: pull_request
+
+on: [pull_request, workflow_dispatch]
+
+jobs:
+  eslint:
+    name: Run TS Project eslint
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node: [24.x]
+
+    steps:
+      - name: Check out TS Project Git repository
+        uses: actions/checkout@v6
+
+      - name: Init nodejs
+        uses: ./.github/actions/init-pnpm
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Run TS Project linters
+        env:
+          TURBO_SCM_BASE: master
+        run: pnpm exec turbo run lint --affected
+
+  prettier:
+    name: Run TS Project prettier
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out TS Project Git repository
+        uses: actions/checkout@v6
+
+      - name: Init nodejs
+        uses: ./.github/actions/init-pnpm
+
+      - name: Run TS Project prettier check
+        run: pnpm run format
+
+  tests:
+    name: Run Tests
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node: [24.x]
+
+    steps:
+      - name: Check out TS Project Git repository
+        uses: actions/checkout@v6
+
+      - name: Init nodejs
+        uses: ./.github/actions/init-pnpm
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Run tests
+        env:
+          TURBO_SCM_BASE: master
+        run: pnpm exec turbo run test --affected
