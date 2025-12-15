@@ -93,6 +93,9 @@ importers:
       '@map-colonies/tsconfig':
         specifier: workspace:^
         version: link:../typescript-config
+      eslint:
+        specifier: 'catalog:'
+        version: 9.39.1(jiti@2.6.1)
       rimraf:
         specifier: 'catalog:'
         version: 6.1.2
@@ -114,6 +117,9 @@ importers:
       '@eslint/js':
         specifier: ^9.19.0
         version: 9.39.1
+      '@typescript-eslint/parser':
+        specifier: ^8.23.0
+        version: 8.49.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
       eslint-config-prettier:
         specifier: ^10.0.1
         version: 10.1.8(eslint@9.39.1(jiti@2.6.1))

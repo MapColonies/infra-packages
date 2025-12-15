@@ -18,9 +18,7 @@
     "prepack": "turbo run build",
     "prebuild": "pnpm run clean",
     "clean": "rimraf dist"
-
   },
-
   "files": [
     "index.js"
   ],
@@ -34,6 +32,7 @@
     "vitest": "catalog:",
     "vitest-config": "workspace:^",
     "@commitlint/types": "^20.2.0",
+    "eslint": "catalog:",
     "zx": "^8.3.0",
     "typescript": "catalog:",
     "@map-colonies/tsconfig": "workspace:^",

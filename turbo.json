@@ -1,20 +1,17 @@
 {
   "$schema": "https://turborepo.com/schema.json",
-  "ui": "tui",
+  "ui": "stream",
+  "globalDependencies": ["turbo.json", "pnpm-workspace.yaml", "vitest.config.ts"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": ["./dist/**"]
     },
     "lint": {
-      "dependsOn": ["^lint"]
-    },
-    "check-types": {
-      "dependsOn": ["^check-types"]
+      "dependsOn": []
     },
     "test": {
-      "dependsOn": ["^test"]
+      "dependsOn": []
     }
   }
 }
