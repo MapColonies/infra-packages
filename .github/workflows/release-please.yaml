@@ -1,0 +1,45 @@
+name: Release actions
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    # REQUIRED: Mapping step outputs to job outputs so 'release-packages' can see them
+    outputs:
+      releases_created: ${{ steps.release.outputs.releases_created }}
+      paths_released: ${{ steps.release.outputs.paths_released }}
+    steps:
+      - uses: googleapis/release-please-action@a02a34c4d625f9be7cb89156071d8567266a2445 # v4.2.0
+        id: release
+        with:
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+          target-branch: ${{ github.ref_name }}
+
+  release-packages:
+    needs: release-please
+    runs-on: ubuntu-latest
+    # 1. Check if ANY release happened before starting the job
+    if: ${{ needs.release-please.outputs.releases_created == 'true' }}
+    strategy:
+      matrix:
+        # 2. Parse the JSON string (e.g. '["packages/a"]') into a real array for the matrix
+        path: ${{ fromJson(needs.release-please.outputs.paths_released) }}
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Init nodejs
+        uses: ./.github/actions/init-pnpm
+
+      - name: Publish to NPM
+        # 3. Go to the specific folder determined by the matrix
+        working-directory: ${{ matrix.path }}
+        run: pnpm publish --no-git-checks
