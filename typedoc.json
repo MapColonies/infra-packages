@@ -1,0 +1,13 @@
+{
+  "entryPointStrategy": "packages",
+  // "entryPoints": ["packages/!(typescript|prettier)*"],
+  "entryPoints": ["packages/*"],
+  "packageOptions": {
+    "validation": {
+      "notExported": true,
+      "invalidLink": true,
+      "notDocumented": true
+    }
+  },
+  "plugin": ["typedoc-plugin-mermaid"]
+}
