@@ -1,0 +1,49 @@
+{
+  "name": "@map-colonies/error-express-handler",
+  "version": "3.0.0",
+  "description": "Express error handler for the MapColonies project",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "test": "vitest run",
+    "prebuild": "npm run clean",
+    "build": "tsc --project tsconfig.build.json",
+    "clean": "rimraf dist",
+    "prepack": "turbo run build"
+  },
+  "repository": "github:MapColonies/infra-packages",
+  "files": [
+    "dist/**/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@map-colonies/eslint-config": "^6.0.0",
+    "@map-colonies/tsconfig": "^1.0.0",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.5.5",
+    "@types/supertest": "^6.0.2",
+    "eslint": "catalog:",
+    "express": "^4.21.0",
+    "rimraf": "catalog:",
+    "supertest": "^7.0.0",
+    "typescript": "catalog:",
+    "vitest-config": "workspace:^",
+    "vitest": "catalog:"
+  },
+  "dependencies": {
+    "http-status-codes": "^2.3.0"
+  }
+}
