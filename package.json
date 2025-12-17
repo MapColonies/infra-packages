@@ -31,7 +31,9 @@
     "vitest": "catalog:",
     "rimraf": "catalog:",
     "publint": "catalog:",
-    "@arethetypeswrong/cli": "catalog:"
+    "@arethetypeswrong/cli": "catalog:",
+    "typedoc": "catalog:",
+    "typedoc-plugin-mermaid": "^1.12.0"
   },
   "engines": {
     "node": ">=24",
