@@ -1,0 +1,8 @@
+dist
+CHANGELOG.md
+pnpm-lock.yaml
+README.md
+coverage
+.pnpm-store
+.pnpm
+.turbo

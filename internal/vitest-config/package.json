@@ -1,0 +1,26 @@
+{
+  "name": "vitest-config",
+  "version": "0.0.0",
+  "exports": {
+    ".": {
+      "default": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepack": "turbo run build",
+    "prebuild": "pnpm run clean",
+    "clean": "rimraf dist"
+  },
+  "private": true,
+  "devDependencies": {
+    "vitest": "catalog:",
+    "typescript": "catalog:",
+    "@map-colonies/tsconfig": "workspace:^",
+    "rimraf": "catalog:"
+  }
+}
