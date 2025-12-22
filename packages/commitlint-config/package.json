@@ -6,8 +6,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "type": "commonjs",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "require": "./dist/index.js"
     }
   },
@@ -17,10 +19,12 @@
     "lint": "eslint .",
     "prepack": "turbo run build",
     "prebuild": "pnpm run clean",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "check-dist": "publint && attw --profile=node16 --pack .",
+    "knip": "knip --directory ../.. --workspace packages/commitlint-config"
   },
   "files": [
-    "dist/index.js"
+    "dist/**"
   ],
   "engines": {
     "node": ">=20"
@@ -37,6 +41,8 @@
     "typescript": "catalog:",
     "@map-colonies/tsconfig": "workspace:^",
     "@map-colonies/eslint-config": "workspace:^",
-    "rimraf": "catalog:"
+    "rimraf": "catalog:",
+    "publint": "catalog:",
+    "@arethetypeswrong/cli": "catalog:"
   }
 }

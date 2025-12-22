@@ -8,9 +8,8 @@ if (process.env.GITHUB_ACTIONS) {
 
 export default defineConfig({
   test: {
-    projects: ['packages/*/vitest.config.ts'],
+    projects: ['packages/*/vitest.config.{cts,ts,mts}'],
     reporters,
-    watch: false,
     coverage: {
       enabled: true,
       reporter: ['text', 'html', 'json', 'json-summary'],

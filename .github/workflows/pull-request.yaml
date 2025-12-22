@@ -1,7 +1,9 @@
 name: pull_request
 
-on: [pull_request, workflow_dispatch]
+on: [pull_request]
 
+env:
+  TURBO_SCM_BASE: ${{ github.base_ref}}
 jobs:
   eslint:
     name: Run TS Project eslint
@@ -15,14 +17,15 @@ jobs:
       - name: Check out TS Project Git repository
         uses: actions/checkout@v6
 
+      - name: Fetch base branch for turbo
+        run: git fetch origin ${{ github.base_ref }} --depth=1
+
       - name: Init nodejs
         uses: ./.github/actions/init-pnpm
         with:
           node-version: ${{ matrix.node }}
 
       - name: Run TS Project linters
-        env:
-          TURBO_SCM_BASE: master
         run: pnpm exec turbo run lint --affected
 
   prettier:
@@ -51,12 +54,42 @@ jobs:
       - name: Check out TS Project Git repository
         uses: actions/checkout@v6
 
+      - name: Fetch base branch for turbo
+        run: git fetch origin ${{ github.base_ref }} --depth=1
+
       - name: Init nodejs
         uses: ./.github/actions/init-pnpm
         with:
           node-version: ${{ matrix.node }}
 
       - name: Run tests
-        env:
-          TURBO_SCM_BASE: master
         run: pnpm exec turbo run test --affected
+
+  check-dist:
+    name: Check package distributions
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out TS Project Git repository
+        uses: actions/checkout@v6
+
+      - name: Fetch base branch for turbo
+        run: git fetch origin ${{ github.base_ref }} --depth=1
+
+      - name: Init nodejs
+        uses: ./.github/actions/init-pnpm
+
+      - name: Run tests
+        run: pnpm exec turbo run --affected check-dist
+  knip:
+    name: Run knip to detect unused dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out TS Project Git repository
+        uses: actions/checkout@v6
+
+      - name: Init nodejs
+        uses: ./.github/actions/init-pnpm
+
+      - name: Run knip
+        run: pnpm exec turbo run --affected knip
