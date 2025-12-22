@@ -70,14 +70,11 @@
     "@map-colonies/tsconfig": "workspace:^",
     "@types/node": "25.0.0",
     "eslint": "catalog:",
-    "rimraf": "^6.1.2",
     "typescript": "catalog:",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-jest": "^28.11.0",
     "eslint-plugin-react": "^7.37.4",
     "vitest-config": "workspace:^",
-    "vitest": "catalog:",
-    "publint": "catalog:",
-    "@arethetypeswrong/cli": "catalog:"
+    "vitest": "catalog:"
   }
 }

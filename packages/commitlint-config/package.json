@@ -36,13 +36,10 @@
     "vitest": "catalog:",
     "vitest-config": "workspace:^",
     "@commitlint/types": "^20.2.0",
-    "eslint": "catalog:",
     "zx": "^8.3.0",
     "typescript": "catalog:",
     "@map-colonies/tsconfig": "workspace:^",
     "@map-colonies/eslint-config": "workspace:^",
-    "rimraf": "catalog:",
-    "publint": "catalog:",
-    "@arethetypeswrong/cli": "catalog:"
+    "eslint": "catalog:"
   }
 }

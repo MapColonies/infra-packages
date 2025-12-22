@@ -10,7 +10,7 @@ type packageConfig = Exclude<UnwrapConfig<KnipConfig>['workspaces'], undefined>[
 
 const basePackageConfig: packageConfig = {
   entry: ['src/index.ts'],
-  vitest: true,
+  vitest: { config: 'vitest.config.cts', entry: ['tests/**/*.spec.ts'] },
   typescript: {
     config: ['tsconfig.json', 'tsconfig.build.json'],
   },

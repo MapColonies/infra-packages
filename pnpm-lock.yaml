@@ -35,6 +35,9 @@ importers:
 
   .:
     devDependencies:
+      '@arethetypeswrong/cli':
+        specifier: 'catalog:'
+        version: 0.18.1
       '@commitlint/cli':
         specifier: ^20.2.0
         version: 20.2.0(@types/node@25.0.0)(typescript@5.9.3)
@@ -71,6 +74,12 @@ importers:
       pretty-quick:
         specifier: ^4.2.2
         version: 4.2.2(prettier@3.7.4)
+      publint:
+        specifier: 'catalog:'
+        version: 0.3.16
+      rimraf:
+        specifier: 'catalog:'
+        version: 6.1.2
       turbo:
         specifier: ^2.6.3
         version: 2.6.3
@@ -102,9 +111,6 @@ importers:
         specifier: ^20.2.0
         version: 20.2.0
     devDependencies:
-      '@arethetypeswrong/cli':
-        specifier: 'catalog:'
-        version: 0.18.1
       '@commitlint/types':
         specifier: ^20.2.0
         version: 20.2.0
@@ -117,12 +123,6 @@ importers:
       eslint:
         specifier: 'catalog:'
         version: 9.39.1(jiti@2.6.1)
-      publint:
-        specifier: 'catalog:'
-        version: 0.3.16
-      rimraf:
-        specifier: 'catalog:'
-        version: 6.1.2
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -160,9 +160,6 @@ importers:
         specifier: ^8.23.0
         version: 8.49.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
     devDependencies:
-      '@arethetypeswrong/cli':
-        specifier: 'catalog:'
-        version: 0.18.1
       '@map-colonies/tsconfig':
         specifier: workspace:^
         version: link:../typescript-config
@@ -181,12 +178,6 @@ importers:
       eslint-plugin-react-hooks:
         specifier: ^5.1.0
         version: 5.2.0(eslint@9.39.1(jiti@2.6.1))
-      publint:
-        specifier: 'catalog:'
-        version: 0.3.16
-      rimraf:
-        specifier: ^6.1.2
-        version: 6.1.2
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
