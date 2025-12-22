@@ -3,7 +3,7 @@ name: pull_request
 on: [pull_request]
 
 env:
-  TURBO_SCM_BASE: ${{ github.base_ref}}
+  TURBO_SCM_BASE: origin/${{ github.base_ref}}
 jobs:
   eslint:
     name: Run TS Project eslint
@@ -87,6 +87,9 @@ jobs:
     steps:
       - name: Check out TS Project Git repository
         uses: actions/checkout@v6
+
+      - name: Fetch base branch for turbo
+        run: git fetch origin ${{ github.base_ref }} --depth=1
 
       - name: Init nodejs
         uses: ./.github/actions/init-pnpm
