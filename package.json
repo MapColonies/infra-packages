@@ -10,7 +10,6 @@
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
     "prepare": "husky",
-    "postinstall": "turbo run build",
     "check-dist": "turbo run check-dist",
     "knip": "knip"
   },
