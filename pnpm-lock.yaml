@@ -172,9 +172,6 @@ importers:
       express:
         specifier: ^4.21.0
         version: 4.22.1
-      rimraf:
-        specifier: 'catalog:'
-        version: 6.1.2
       supertest:
         specifier: ^7.0.0
         version: 7.1.4
