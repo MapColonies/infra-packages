@@ -3,6 +3,7 @@
   "version": "3.0.1",
   "description": "An access and error logger for express based on pino-http",
   "main": "./dist/index.js",
+  "type": "commonjs",
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -16,7 +17,9 @@
     "prebuild": "npm run clean",
     "build": "tsc --project tsconfig.build.json",
     "clean": "rimraf dist",
-    "prepack": "turbo run build"
+    "prepack": "turbo run build",
+    "check-dist": "publint && attw --pack .",
+    "knip": "knip --directory ../.. --workspace packages/error-express-handler"
   },
   "repository": "github:MapColonies/infra-packages",
   "files": [
