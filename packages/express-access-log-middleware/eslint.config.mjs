@@ -1,4 +1,4 @@
-import baseConfig from './dist/configs/ts-base.mjs';
+import baseConfig from '@map-colonies/eslint-config/ts-base';
 import { defineConfig } from 'eslint/config';
 
 export default defineConfig(baseConfig, { ignores: ['vitest.config.ts'] });

@@ -119,7 +119,7 @@ const basePinoHttpOptions: PinoHttpOptions = {
  * }));
  * ```
  */
-function httpLogger(options?: Options): HttpLogger {
+export function httpLogger(options?: Options): HttpLogger {
   const { ignorePaths, ...httpOptions } = { ...basePinoHttpOptions, ...options, customAttributeKeys: { responseTime: 'http.response.duration' } };
   let ignore: AutoLoggingOptions['ignore'] | undefined = undefined;
 
@@ -161,4 +161,3 @@ function httpLogger(options?: Options): HttpLogger {
 }
 
 export type { Options };
-export default httpLogger;
