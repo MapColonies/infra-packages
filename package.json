@@ -34,8 +34,7 @@
     "publint": "catalog:",
     "@arethetypeswrong/cli": "catalog:",
     "typedoc": "catalog:",
-    "typedoc-plugin-mermaid": "^1.12.0",
-    "@microsoft/api-extractor": "catalog:"
+    "typedoc-plugin-mermaid": "^1.12.0"
   },
   "engines": {
     "node": ">=24",

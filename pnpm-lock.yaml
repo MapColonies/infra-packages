@@ -56,9 +56,6 @@ importers:
       '@map-colonies/prettier-config':
         specifier: workspace:^
         version: link:packages/prettier-config
-      '@microsoft/api-extractor':
-        specifier: 'catalog:'
-        version: 7.55.2(@types/node@25.0.0)
       '@types/node':
         specifier: 25.0.0
         version: 25.0.0
