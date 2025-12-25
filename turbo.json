@@ -5,7 +5,7 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["./dist/**"],
+      "outputs": ["dist/**"],
       "outputLogs": "errors-only"
     },
     "lint": {
@@ -15,11 +15,19 @@
       "dependsOn": []
     },
     "check-dist": {
-      "dependsOn": ["build", "^check-dist"],
+      "dependsOn": ["build"],
       "outputs": []
     },
     "knip": {
       "dependsOn": []
+    },
+    "api": {
+      "dependsOn": ["build"],
+      "outputs": ["etc/**"]
+    },
+    "api:check": {
+      "dependsOn": ["api"],
+      "outputs": []
     }
   }
 }
