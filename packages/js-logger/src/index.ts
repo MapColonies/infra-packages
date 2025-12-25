@@ -5,6 +5,7 @@ import { readPackageJsonSync } from '@map-colonies/read-pkg';
 
 /**
  * Options for configuring the logger.
+ * @public
  */
 interface LoggerOptions {
   /**
@@ -73,8 +74,9 @@ const baseOptions: PinoOptions = {
  * @param options - Optional configuration for the logger.
  * @param destination - The destination for the log output. Can be a file path or a file descriptor number. Default is 1.
  * @returns The configured logger instance.
+ * @public
  */
-function jsLogger(options?: LoggerOptions, destination: string | number = 1): Logger {
+export function jsLogger(options?: LoggerOptions, destination: string | number = 1): Logger {
   let transport: TransportSingleOptions = { target: 'pino/file', options: { destination } };
 
   /* istanbul ignore next */
@@ -117,4 +119,3 @@ function jsLogger(options?: LoggerOptions, destination: string | number = 1): Lo
 
 export type { Logger } from 'pino';
 export type { LoggerOptions };
-export default jsLogger;
