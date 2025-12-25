@@ -3,7 +3,7 @@ import { vi, describe, beforeAll, beforeEach, it, expect, Mock } from 'vitest';
 import express, { Application, NextFunction, Request, Response } from 'express';
 import supertest from 'supertest';
 import { Logger, pino } from 'pino';
-import httpLogger from '../src';
+import { httpLogger } from '../src';
 
 describe('#httpLogger', function () {
   let writableStream: Writable;
