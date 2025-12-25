@@ -8,9 +8,7 @@ import { StatusCodes } from 'http-status-codes';
 
 // @public
 export interface ErrorResponse {
-  // (undocumented)
   message: string;
-  // (undocumented)
   stacktrace?: string;
 }
 
@@ -19,9 +17,7 @@ export function getErrorHandlerMiddleware(): ErrorRequestHandler;
 
 // @public
 export interface HttpError extends Error {
-  // (undocumented)
   status?: StatusCodes;
-  // (undocumented)
   statusCode?: StatusCodes;
 }
 

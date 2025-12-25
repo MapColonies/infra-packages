@@ -4,23 +4,24 @@ import { StatusCodes, getReasonPhrase } from 'http-status-codes';
 /**
  * Represents an HTTP error that extends the standard Error object.
  * Includes optional status code properties for HTTP response handling.
- *
- * @interface HttpError
- * @extends {Error}
- * @property {StatusCodes} [statusCode] - The HTTP status code for the error response
- * @property {StatusCodes} [status] - Alternative property for HTTP status code
+ * @public
  */
 export interface HttpError extends Error {
+  /** The HTTP status code for the error response */
   statusCode?: StatusCodes;
+  /** Alternative property for HTTP status code */
   status?: StatusCodes;
 }
 
 /**
  * Represents the structure of the error returned by the middleware.
- * stacktrace is only included in the response in development mode.
+ * The stacktrace is only included in the response in development mode.
+ * @public
  */
 export interface ErrorResponse {
+  /** The error message */
   message: string;
+  /** The error stack trace (only included in development mode) */
   stacktrace?: string;
 }
 
@@ -30,7 +31,7 @@ export interface ErrorResponse {
  * This middleware function handles errors that occur during the processing of requests.
  * It formats the error response and sets the appropriate HTTP status code.
  *
- * @returns {ErrorRequestHandler} An Express error-handling middleware function.
+ * @returns An Express error-handling middleware function
  *
  * @example
  * ```typescript
@@ -48,6 +49,7 @@ export interface ErrorResponse {
  *   console.log('Server is running on port 3000');
  * });
  * ```
+ * @public
  */
 export function getErrorHandlerMiddleware(): ErrorRequestHandler {
   const mapColoniesErrorExpressHandler: ErrorRequestHandler = (
