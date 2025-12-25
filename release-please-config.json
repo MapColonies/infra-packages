@@ -75,6 +75,10 @@
     "packages/typescript-config": {
       "package-name": "@map-colonies/tsconfig",
       "release-type": "node"
+    },
+    "packages/js-logger": {
+      "package-name": "@map-colonies/js-logger",
+      "release-type": "node"
     }
   }
 }

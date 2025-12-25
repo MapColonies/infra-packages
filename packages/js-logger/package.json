@@ -1,0 +1,54 @@
+{
+  "name": "@map-colonies/js-logger",
+  "version": "3.0.2",
+  "description": "Javascript and typescript logger for MapColonies based on pino",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "test": "vitest run",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "prebuild": "npm run clean",
+    "build": "tsc --project tsconfig.build.json",
+    "clean": "rimraf dist",
+    "prepack": "turbo run build",
+    "check-dist": "publint && attw --pack .",
+    "knip": "knip --directory ../.. --workspace packages/error-express-handler",
+    "api": "api-extractor run --local --verbose",
+    "api:check": "api-extractor run --verbose"
+  },
+  "repository": "github:MapColonies/infra-packages",
+  "files": [
+    "dist/**/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@map-colonies/eslint-config": "workspace:^",
+    "@map-colonies/tsconfig": "workspace:^",
+    "@types/node": "^24.1.0",
+    "eslint": "catalog:",
+    "glob": "^11.0.3",
+    "rimraf": "catalog:",
+    "typescript": "catalog:",
+    "vitest-config": "workspace:^",
+    "vitest": "catalog:",
+    "@microsoft/api-extractor": "catalog:"
+  },
+  "dependencies": {
+    "@map-colonies/read-pkg": "^1.0.0",
+    "pino": "^10.1.0",
+    "pino-caller": "^4.0.0",
+    "pino-opentelemetry-transport": "^2.0.0",
+    "pino-pretty": "^13.1.2"
+  }
+}
