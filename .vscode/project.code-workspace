@@ -1,0 +1,40 @@
+{
+  "folders": [
+    {
+      "name": "Root",
+      "path": "../",
+    },
+    {
+      "name": "vitest-config",
+      "path": "../internal/vitest-config",
+    },
+    {
+      "name": "eslint-config",
+      "path": "../packages/eslint-config",
+    },
+    {
+      "name": "commitlint-config",
+      "path": "../packages/commitlint-config",
+    },
+    {
+      "name": "error-express-handler",
+      "path": "../packages/error-express-handler",
+    },
+    {
+      "name": "typescript-config",
+      "path": "../packages/typescript-config",
+    },
+    {
+      "name": "prettier-config",
+      "path": "../packages/prettier-config",
+    },
+    {
+      "name": "express-access-log-middleware",
+      "path": "../packages/express-access-log-middleware",
+    },
+    {
+      "name": "js-logger",
+      "path": "../packages/js-logger",
+    },
+  ],
+}
