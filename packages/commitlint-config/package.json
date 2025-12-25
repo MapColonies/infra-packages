@@ -40,7 +40,6 @@
     "typescript": "catalog:",
     "@map-colonies/tsconfig": "workspace:^",
     "@map-colonies/eslint-config": "workspace:^",
-    "eslint": "catalog:",
-    "@microsoft/api-extractor": "catalog:"
+    "eslint": "catalog:"
   }
 }
