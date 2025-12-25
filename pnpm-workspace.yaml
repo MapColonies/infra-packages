@@ -12,3 +12,4 @@ catalog:
   typescript: 5.9.3
   vitest: ^4.0.15
   'typedoc': '^0.28.15'
+  '@microsoft/api-extractor': ^7.55.2

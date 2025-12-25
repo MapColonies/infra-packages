@@ -1,8 +1,5 @@
 {
   "extends": "@map-colonies/tsconfig/tsconfig-library",
-  "compilerOptions": {
-    "declarationMap": true
-  },
   "include": ["src"],
   "exclude": ["dist", "node_modules"]
 }

@@ -18,6 +18,7 @@ coverage
 # Turbo
 .turbo
 
+temp
 
 # Vercel
 .vercel

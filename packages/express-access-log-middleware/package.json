@@ -19,7 +19,9 @@
     "clean": "rimraf dist",
     "prepack": "turbo run build",
     "check-dist": "publint && attw --pack .",
-    "knip": "knip --directory ../.. --workspace packages/error-express-handler"
+    "knip": "knip --directory ../.. --workspace packages/error-express-handler",
+    "api": "api-extractor run --local --verbose",
+    "api:check": "api-extractor run --verbose"
   },
   "repository": "github:MapColonies/infra-packages",
   "files": [
@@ -41,7 +43,8 @@
     "typescript": "catalog:",
     "pino": "^10.1.0",
     "vitest-config": "workspace:^",
-    "vitest": "catalog:"
+    "vitest": "catalog:",
+    "@microsoft/api-extractor": "catalog:"
   },
   "engines": {
     "node": ">=20"

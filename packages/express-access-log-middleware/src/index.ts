@@ -13,6 +13,7 @@ import {
 
 /**
  * Options for configuring the access log middleware.
+ * @public
  */
 interface Options {
   /**
@@ -118,6 +119,7 @@ const basePinoHttpOptions: PinoHttpOptions = {
  *   // other pino-http options
  * }));
  * ```
+ * @public
  */
 export function httpLogger(options?: Options): HttpLogger {
   const { ignorePaths, ...httpOptions } = { ...basePinoHttpOptions, ...options, customAttributeKeys: { responseTime: 'http.response.duration' } };
