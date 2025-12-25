@@ -42,6 +42,10 @@ const config: KnipConfig = {
     'packages/prettier-config': {
       entry: [],
     },
+    'packages/js-logger': {
+      ...basePackageConfig,
+      ignoreDependencies: ['pino-pretty'],
+    },
   },
   tags: ['-lintignore'],
 };

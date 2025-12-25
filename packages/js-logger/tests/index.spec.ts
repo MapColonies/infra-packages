@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { describe, it, expect } from 'vitest';
-import jsLogger from '../src';
+import { jsLogger } from '../src';
 import { waitForFileCreation } from './helpers';
 
 describe('jsLogger', function () {

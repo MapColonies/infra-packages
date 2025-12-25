@@ -3,6 +3,7 @@
   "version": "3.0.2",
   "description": "Javascript and typescript logger for MapColonies based on pino",
   "main": "./dist/index.js",
+  "type": "commonjs",
   "exports": {
     ".": {
       "import": "./dist/index.js",
