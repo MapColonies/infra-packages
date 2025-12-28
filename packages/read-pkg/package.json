@@ -9,6 +9,7 @@
       "require": "./dist/index.js"
     }
   },
+  "type": "commonjs",
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
