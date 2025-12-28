@@ -1,0 +1,11 @@
+{
+  "tsconfig": "tsconfig.build.json",
+  "entryPoints": ["src/requestSender/requestSender.ts", "src/typedRequestHandler/typedRequestHandler.ts"],
+  "out": "docs",
+  "excludeInternal": true,
+  "includeVersion": true,
+  "categorizeByGroup": true,
+  "navigation": {
+    "includeGroups": true
+  }
+}

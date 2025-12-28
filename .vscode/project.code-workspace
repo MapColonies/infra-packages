@@ -44,5 +44,9 @@
       "name": "openapi-express-viewer",
       "path": "../packages/openapi-express-viewer",
     },
+    {
+      "name": "openapi-helpers",
+      "path": "../packages/openapi-helpers",
+    },
   ],
 }

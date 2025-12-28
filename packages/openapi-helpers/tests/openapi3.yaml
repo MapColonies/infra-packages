@@ -1,0 +1,317 @@
+openapi: 3.0.1
+info:
+  title: config-server
+  description: This is a config server that provides the means to manage all the configurations
+  version: 1.0.0
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+servers:
+  - url: /
+  - url: /api
+paths:
+  /simple-request:
+    get:
+      operationId: simpleRequest
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Hello, World!
+  /request-with-required-query-parameters:
+    get:
+      operationId: requestWithRequiredQueryParameters
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Hello, World!
+  /request-with-optional-query-parameters:
+    post:
+      operationId: requestWithOptionalQueryParameters
+      parameters:
+        - name: name
+          in: query
+          required: false
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                propertyName:
+                  type: string
+      responses:
+        '201':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Hello, World!
+  /request-with-mixed-query-parameters:
+    get:
+      operationId: requestWithMixedQueryParameters
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: age
+          in: query
+          required: false
+          schema:
+            type: number
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Hello, World!
+  /request-with-path-parameters/{name}:
+    get:
+      operationId: requestWithPathParameters
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Hello, World!
+  /request-with-empty-response:
+    get:
+      operationId: requestWithEmptyResponse
+      responses:
+        '204':
+          description: No Content
+  /request-with-headers:
+    get:
+      operationId: requestWithHeaders
+      parameters:
+        - name: name
+          in: header
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Hello, World!
+  /request-with-all/{name}:
+    post:
+      operationId: requestWithAll
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: first
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: second
+          in: header
+          required: true
+          schema:
+            type: number
+      responses:
+        '201':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Hello, World!
+  /post-request:
+    post:
+      operationId: postRequest
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+      responses:
+        '201':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Hello, World!
+  /endpoint-with-multiple-methods:
+    parameters:
+      - name: test
+        in: query
+        schema:
+          type: string
+    get:
+      operationId: endpointWithMultipleMethodsGet
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Hello, World!
+    post:
+      operationId: endpointWithMultipleMethodsPost
+      responses:
+        '201':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Hello, World!
+  /multiple-status-codes:
+    get:
+      operationId: multipleStatusCodes
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Hello, World!
+                  number:
+                    type: number
+                    example: 42
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Hello, World!
+                  type:
+                    type: string
+                    example: test
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Hello, World!
+  /with-5xx-response:
+    get:
+      operationId: with5xxResponse
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Hello, World!
+        '5xx':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Hello, World!
+  /optional-request-body:
+    post:
+      operationId: optionalRequestBody
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+      responses:
+        '201':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Hello, World!
