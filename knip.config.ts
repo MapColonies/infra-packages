@@ -6,9 +6,9 @@ type UnwrapConfig<T> = T extends (...args: any[]) => infer R // 1. Is it a funct
     ? UnwrapConfig<P> // 4. Recurse
     : T;
 
-type packageConfig = Exclude<UnwrapConfig<KnipConfig>['workspaces'], undefined>[string];
+type PackageConfig = Exclude<UnwrapConfig<KnipConfig>['workspaces'], undefined>[string];
 
-const basePackageConfig: packageConfig = {
+const basePackageConfig: PackageConfig = {
   entry: ['src/index.ts'],
   vitest: { config: 'vitest.config.cts', entry: ['tests/**/*.spec.ts'] },
   typescript: {

@@ -15,13 +15,13 @@ runs:
         key: ${{ runner.os }}-turbo-${{ github.sha }}
         restore-keys: |
           ${{ runner.os }}-turbo-
-    - uses: pnpm/action-setup@v4
-      with:
-        cache: true
+    - name: Set up pnpm
+      uses: pnpm/action-setup@v4
     - name: Set up Node.js
       uses: actions/setup-node@v6
       with:
         node-version: ${{ inputs.node-version }}
+        cache: 'pnpm'
     - name: Install TS Project dependencies
       shell: bash
       run: pnpm install
