@@ -301,8 +301,8 @@ importers:
   packages/js-logger:
     dependencies:
       '@map-colonies/read-pkg':
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: workspace:^
+        version: link:../read-pkg
       pino:
         specifier: ^10.1.0
         version: 10.1.0
@@ -352,6 +352,40 @@ importers:
       publint:
         specifier: 'catalog:'
         version: 0.3.16
+
+  packages/read-pkg:
+    dependencies:
+      type-fest:
+        specifier: ^4.33.0
+        version: 4.41.0
+    devDependencies:
+      '@map-colonies/eslint-config':
+        specifier: workspace:^
+        version: link:../eslint-config
+      '@map-colonies/tsconfig':
+        specifier: workspace:^
+        version: link:../typescript-config
+      '@microsoft/api-extractor':
+        specifier: 'catalog:'
+        version: 7.55.2(@types/node@22.19.3)
+      '@types/node':
+        specifier: ^22.7.4
+        version: 22.19.3
+      eslint:
+        specifier: 'catalog:'
+        version: 9.39.1(jiti@2.6.1)
+      rimraf:
+        specifier: 'catalog:'
+        version: 6.1.2
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
+      vitest:
+        specifier: 'catalog:'
+        version: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@22.19.3)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2)
+      vitest-config:
+        specifier: workspace:^
+        version: link:../../internal/vitest-config
 
   packages/typescript-config:
     devDependencies:
@@ -740,10 +774,6 @@ packages:
 
   '@loaderkit/resolve@1.0.4':
     resolution: {integrity: sha512-rJzYKVcV4dxJv+vW6jlvagF8zvGxHJ2+HTr1e2qOejfmGhAApgJHl8Aog4mMszxceTRiKTTbnpgmTO1bEZHV/A==}
-
-  '@map-colonies/read-pkg@1.0.0':
-    resolution: {integrity: sha512-powpYwGoy1x+uYa9wvBIwTQBufv2Rzm35IiYlsyZbh8yIq3e2PIxwonAmZ6hleaDAuu35BS5STAnWCUTcMKBiQ==}
-    engines: {node: '>=20'}
 
   '@microsoft/api-extractor-model@7.32.2':
     resolution: {integrity: sha512-Ussc25rAalc+4JJs9HNQE7TuO9y6jpYQX9nWD1DhqUzYPBr3Lr7O9intf+ZY8kD5HnIqeIRJX7ccCT0QyBy2Ww==}
@@ -4046,10 +4076,6 @@ snapshots:
     dependencies:
       '@braidai/lang': 1.1.2
 
-  '@map-colonies/read-pkg@1.0.0':
-    dependencies:
-      type-fest: 4.41.0
-
   '@microsoft/api-extractor-model@7.32.2(@types/node@22.19.3)':
     dependencies:
       '@microsoft/tsdoc': 0.16.0
@@ -6576,7 +6602,7 @@ snapshots:
       '@protobufjs/path': 1.1.2
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
-      '@types/node': 24.10.4
+      '@types/node': 22.19.3
       long: 5.3.2
 
   proxy-addr@2.0.7:
