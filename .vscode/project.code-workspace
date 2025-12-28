@@ -40,5 +40,9 @@
       "name": "read-pkg",
       "path": "../packages/read-pkg",
     },
+    {
+      "name": "openapi-express-viewer",
+      "path": "../packages/openapi-express-viewer",
+    },
   ],
 }
