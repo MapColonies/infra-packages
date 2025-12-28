@@ -36,5 +36,9 @@
       "name": "js-logger",
       "path": "../packages/js-logger",
     },
+    {
+      "name": "read-pkg",
+      "path": "../packages/read-pkg",
+    },
   ],
 }

@@ -3,5 +3,6 @@
   "packages/eslint-config": "5.0.0",
   "packages/prettier-config": "0.0.1",
   "packages/typescript-config": "1.0.0",
-  "packages/js-logger": "3.0.2"
+  "packages/js-logger": "3.0.2",
+  "packages/read-pkg": "1.0.0"
 }

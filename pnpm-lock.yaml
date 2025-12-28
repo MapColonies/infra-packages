@@ -301,8 +301,8 @@ importers:
   packages/js-logger:
     dependencies:
       '@map-colonies/read-pkg':
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: workspace:^
+        version: link:../read-pkg
       pino:
         specifier: ^10.1.0
         version: 10.1.0
@@ -352,6 +352,40 @@ importers:
       publint:
         specifier: 'catalog:'
         version: 0.3.16
+
+  packages/read-pkg:
+    dependencies:
+      type-fest:
+        specifier: ^4.33.0
+        version: 4.41.0
+    devDependencies:
+      '@map-colonies/eslint-config':
+        specifier: workspace:^
+        version: link:../eslint-config
+      '@map-colonies/tsconfig':
+        specifier: workspace:^
+        version: link:../typescript-config
+      '@microsoft/api-extractor':
+        specifier: 'catalog:'
+        version: 7.55.2(@types/node@22.19.3)
+      '@types/node':
+        specifier: ^22.7.4
+        version: 22.19.3
+      eslint:
+        specifier: 'catalog:'
+        version: 9.39.1(jiti@2.6.1)
+      rimraf:
+        specifier: 'catalog:'
+        version: 6.1.2
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
+      vitest:
+        specifier: 'catalog:'
+        version: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@22.19.3)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2)
+      vitest-config:
+        specifier: workspace:^
+        version: link:../../internal/vitest-config
 
   packages/typescript-config:
     devDependencies:
@@ -759,10 +793,6 @@ packages:
         optional: true
       globals:
         optional: true
-
-  '@map-colonies/read-pkg@1.0.0':
-    resolution: {integrity: sha512-powpYwGoy1x+uYa9wvBIwTQBufv2Rzm35IiYlsyZbh8yIq3e2PIxwonAmZ6hleaDAuu35BS5STAnWCUTcMKBiQ==}
-    engines: {node: '>=20'}
 
   '@map-colonies/tsconfig@1.0.1':
     resolution: {integrity: sha512-IEWIV0bx3XG07aVmNrSn5gr/39T37dImLTFsUtxeslU5o2S4cgvCMdl/0K2moMJh6Cfr8uRiX6UTop4jLVE8eA==}
@@ -4091,10 +4121,6 @@ snapshots:
       - supports-color
       - typescript
 
-  '@map-colonies/read-pkg@1.0.0':
-    dependencies:
-      type-fest: 4.41.0
-
   '@map-colonies/tsconfig@1.0.1(typescript@5.9.3)':
     dependencies:
       typescript: 5.9.3
@@ -6625,7 +6651,7 @@ snapshots:
       '@protobufjs/path': 1.1.2
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
-      '@types/node': 24.10.4
+      '@types/node': 22.19.3
       long: 5.3.2
 
   proxy-addr@2.0.7:
