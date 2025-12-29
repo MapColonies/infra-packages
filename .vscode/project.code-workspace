@@ -48,5 +48,9 @@
       "name": "openapi-helpers",
       "path": "../packages/openapi-helpers",
     },
+    {
+      "name": "semantic-conventions",
+      "path": "../packages/semantic-conventions",
+    },
   ],
 }

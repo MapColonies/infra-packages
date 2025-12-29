@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "title": "convention schema",
+  "required": ["domain", "content"],
+  "properties": {
+    "domain": {
+      "type": "string",
+      "pattern": "^[A-Za-z]"
+    },
+    "content": {
+      "$ref": "#/definitions/recursive"
+    }
+  },
+  "definitions": {
+    "recursive": {
+      "type": "object",
+      "additionalProperties": false,
+      "title": "attribute description",
+      "required": ["propertyName", "description"],
+      "properties": {
+        "propertyName": {
+          "type": "string",
+          "pattern": "^mapcolonies\\.(?:[a-z0-9]+[\\._])*(?:[a-z0-9]+)$"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "deprecated": {
+          "type": "boolean"
+        },
+        "subAttributes": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/recursive"
+          }
+        }
+      }
+    }
+  }
+}

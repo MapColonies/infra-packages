@@ -1,0 +1,24 @@
+{
+  "domain": "three_d",
+  "content": {
+    "propertyName": "mapcolonies.3d",
+    "kind": "domain",
+    "description": "Name of the domain in use",
+    "deprecated": false,
+    "subAttributes": {
+      "catalogManager": {
+        "propertyName": "mapcolonies.3d.catalog_manager",
+        "kind": "catalogManagerAttributes",
+        "description": "attributes related to 3D catalog manager API service",
+        "deprecated": false,
+        "subAttributes": {
+          "catalogId": {
+            "propertyName": "mapcolonies.3d.catalog_manager.catalog_id",
+            "deprecated": false,
+            "description": "Model ID as stored on 3D catalog DB"
+          }
+        }
+      }
+    }
+  }
+}

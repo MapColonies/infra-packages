@@ -1,0 +1,51 @@
+{
+  "name": "@map-colonies/semantic-conventions",
+  "version": "0.0.1",
+  "description": "Telemetry Semantic conventions for MapColonies services",
+  "main": "./dist/index.js",
+  "type": "commonjs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "prebuild": "npm run clean && pnpm run validate:attributes && pnpm run generate:attributes",
+    "build": "tsc --project tsconfig.build.json",
+    "clean": "rimraf dist",
+    "prepack": "turbo run build",
+    "check-dist": "publint && attw --pack .",
+    "knip": "knip --directory ../.. --workspace packages/semantic-conventions",
+    "api": "api-extractor run --local --verbose",
+    "api:check": "api-extractor run --verbose",
+    "validate:attributes": "node scripts/validate-semantic-conventions.mts",
+    "generate:attributes": "node scripts/build-semantic-conventions.mts"
+  },
+  "repository": "github:MapColonies/infra-packages",
+  "files": [
+    "dist/**/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@map-colonies/eslint-config": "workspace:^",
+    "@map-colonies/tsconfig": "workspace:^",
+    "@types/node": "^24.1.0",
+    "eslint": "catalog:",
+    "rimraf": "catalog:",
+    "typescript": "catalog:",
+    "@microsoft/api-extractor": "catalog:",
+    "change-case-all": "^2.1.0",
+    "comment-json": "^4.2.3",
+    "just-safe-set": "^4.2.1",
+    "ajv": "^8.17.1"
+  }
+}
