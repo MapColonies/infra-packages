@@ -65,6 +65,7 @@ type PathHandlers<Paths extends PathsTemplate> = {
  * app.get('/example', handlers['GET /example']);
  * app.post('/exampleOperation', handlers.exampleOperation);
  * ```
+ * @public
  */
 export type TypedRequestHandlers<Paths extends PathsTemplate, Operations extends OperationsTemplate> = OperationHandlers<Operations> &
   PathHandlers<Paths>;

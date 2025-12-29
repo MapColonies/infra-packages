@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { expectTypeOf } from 'expect-type';
+import { expectTypeOf, it, describe } from 'vitest';
 import type { TypedRequestHandlers } from '../../src/typedRequestHandler/typedRequestHandler';
 import type { paths, operations } from '../types';
 

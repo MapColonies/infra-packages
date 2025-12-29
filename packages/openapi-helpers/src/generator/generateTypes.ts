@@ -12,6 +12,10 @@ const typedRequestHandlerImport =
   "import type { TypedRequestHandlers as ImportedTypedRequestHandlers } from '@map-colonies/openapi-helpers/typedRequestHandler';\n";
 const exportTypedRequestHandlers = 'export type TypedRequestHandlers = ImportedTypedRequestHandlers<paths, operations>;\n';
 
+/**
+ * Generates TypeScript types from an OpenAPI specification file and writes them to the specified destination path.
+ * @public
+ */
 export async function generateTypes(
   openapiPath: string,
   destinationPath: string,
