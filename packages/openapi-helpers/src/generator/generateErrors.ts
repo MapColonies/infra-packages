@@ -36,6 +36,10 @@ function buildErrorMapping(errorCodes: Set<string>): string {
     .join(', ');
 }
 
+/**
+ * Generates TypeScript error classes and an optional error mapping from an OpenAPI specification file and writes them to the specified destination path.
+ * @public
+ */
 export async function generateErrors(
   openapiPath: string,
   destinationPath: string,

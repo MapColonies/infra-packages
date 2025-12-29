@@ -80,6 +80,10 @@ type SendRequest<Paths extends PathsTemplate> = <
   options: PathRequestOptions<Paths, Path, Method>
 ) => RequestReturn<Paths[Path][Method]>;
 
+/**
+ * Represents a request sender that can send requests to an Express application
+ * @public
+ */
 export type RequestSender<Paths extends PathsTemplate, Operations extends OperationsTemplate> = Prettify<
   {
     sendRequest: SendRequest<Paths>;

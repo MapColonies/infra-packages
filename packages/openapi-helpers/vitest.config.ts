@@ -6,7 +6,9 @@ export default mergeConfig(
   defineProject({
     test: {
       root: __dirname,
-      globalSetup: './tests/configurations/vitest.teardown.ts',
+      typecheck: {
+        enabled: true,
+      },
     },
   })
 );

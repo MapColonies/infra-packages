@@ -1,5 +1,5 @@
+import { describe, beforeEach, it, expect, expectTypeOf } from 'vitest';
 import express from 'express';
-import { expectTypeOf } from 'expect-type';
 import bodyParser from 'body-parser';
 import { RequestSender } from '../../src/requestSender/types';
 import { createRequestSender } from '../../src/requestSender/requestSender';

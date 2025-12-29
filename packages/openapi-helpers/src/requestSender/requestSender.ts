@@ -102,10 +102,10 @@ export { RequestSender };
  *
  * @template Paths - The type representing the paths defined in the OpenAPI specification.
  * @template Operations - The type representing the operations defined in the OpenAPI specification.
- * @param {string} openapiFilePath - The file path to the OpenAPI specification file.
- * @param {express.Application} app - The Express application instance.
- * @param {RequestSenderOptions} [options] - Optional configuration options for the request sender.
- * @returns {Promise<RequestSender<Paths, Operations>>} A promise that resolves to a RequestSender object.
+ * @param  openapiFilePath - The file path to the OpenAPI specification file.
+ * @param  app - The Express application instance.
+ * @param  options - Optional configuration options for the request sender.
+ * @returns  A promise that resolves to a RequestSender object.
  *
  * @example
  * ```typescript
@@ -127,6 +127,7 @@ export { RequestSender };
  *   path: '/simple-request'
  * });
  * ```
+ * @public
  */
 export async function createRequestSender<Paths extends PathsTemplate = never, Operations extends OperationsTemplate = never>(
   openapiFilePath: Operations extends never ? never : string,

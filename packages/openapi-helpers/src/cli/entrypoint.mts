@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 import { setTimeout as sleep } from 'node:timers/promises';
 import { program } from '@commander-js/extra-typings';
-import { generateTypes } from '../generator/generateTypes.mjs';
-import { generateErrors } from '../generator/generateErrors.mjs';
+import { generateTypes } from '../generator/generateTypes.js';
+import { generateErrors } from '../generator/generateErrors.js';
 import ora from 'ora';
 import { PACKAGE_VERSION } from '../common/constants.js';
 
