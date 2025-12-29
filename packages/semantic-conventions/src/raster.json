@@ -1,0 +1,70 @@
+{
+  "domain": "raster",
+  "content": {
+    "propertyName": "mapcolonies.raster",
+    "kind": "domain",
+    "description": "name of the domain in use",
+    "deprecated": false,
+    "subAttributes": {
+      "catalogManager": {
+        "propertyName": "mapcolonies.raster.catalog_manager",
+        "kind": "catalogManagerAttributes",
+        "description": "attributes related to raster catalog manager API service",
+        "deprecated": false,
+        "subAttributes": {
+          "catalogId": {
+            "propertyName": "mapcolonies.raster.catalog_manager.catalog_id",
+            "deprecated": false,
+            "description": "layer Id as stored on raster catalog db"
+          }
+        }
+      },
+      "cacheSeeder": {
+        "propertyName": "mapcolonies.raster.cache_seeder",
+        "kind": "cacheSeederAttributes",
+        "description": "attributes related to raster cacheSeeder worker service",
+        "deprecated": false,
+        "subAttributes": {
+          "seedMode": {
+            "propertyName": "mapcolonies.raster.cache_seeder.seed_mode",
+            "deprecated": false,
+            "description": "Mapproxy seed mode - seed or clean tiles"
+          },
+          "grids": {
+            "propertyName": "mapcolonies.raster.cache_seeder.grids",
+            "deprecated": false,
+            "description": "Grids for seeding process"
+          },
+          "refreshBefore": {
+            "propertyName": "mapcolonies.raster.cache_seeder.refresh_before",
+            "deprecated": false,
+            "description": "Time factor to running mapproxy-seed"
+          },
+          "seedYamlPath": {
+            "propertyName": "mapcolonies.raster.cache_seeder.seed_yaml_path",
+            "deprecated": false,
+            "description": "Path of seed.yaml"
+          }
+        }
+      },
+      "mapproxyApi": {
+        "propertyName": "mapcolonies.raster.mapproxy_api",
+        "kind": "mapproxyApiAttributes",
+        "description": "attributes related to mapproxy API service",
+        "deprecated": false,
+        "subAttributes": {
+          "cacheName": {
+            "propertyName": "mapcolonies.raster.mapproxy_api.cache_name",
+            "deprecated": false,
+            "description": "This represent the layer cache name stored in mapproxy config"
+          },
+          "mapproxyYamlPath": {
+            "propertyName": "mapcolonies.raster.mapproxy_api.mapproxy_yaml_path",
+            "deprecated": false,
+            "description": "This represent the location of mapproxy yaml configuration file"
+          }
+        }
+      }
+    }
+  }
+}

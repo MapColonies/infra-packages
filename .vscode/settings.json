@@ -17,5 +17,14 @@
     {
       "file": "node_modules/@map-colonies/infra-copilot-instructions/instructions/commit.md"
     }
-  ]
+  ],
+  "json.schemas": [
+    {
+      "fileMatch": ["packages/semantic-conventions/src/**/*.json"],
+      "url": "./packages/semantic-conventions/schemas/attribute.schema.json"
+    }
+  ],
+  "files.associations": {
+    "packages/semantic-conventions/src/*.json": "jsonc"
+  }
 }
