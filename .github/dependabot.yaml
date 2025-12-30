@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=https://json.schemastore.org/dependabot-2.0.json
+version: 2
+updates:
+  # 1. Production Dependencies (Runtime)
+  - package-ecosystem: 'npm'
+    target-branch: 'master'
+    schedule:
+      interval: 'weekly'
+    directory: '/'
+    # Explicitly only look at production deps
+    allow:
+      - dependency-type: 'production'
+    commit-message:
+      prefix: 'deps(global)'
+      include: 'scope'
+    groups:
+      minor-patch-upgrades:
+        patterns:
+          - '*' # <--- Added: Explicitly apply to all packages in this 'allow' list
+        update-types:
+          - 'minor'
+          - 'patch'
+
+  # 2. Dev Dependencies (Tooling)
+  - package-ecosystem: 'npm'
+    target-branch: 'master'
+    schedule:
+      interval: 'weekly'
+    directory: '/'
+    # Explicitly only look at dev deps
+    allow:
+      - dependency-type: 'development'
+    commit-message:
+      prefix: 'devdeps(global)'
+      include: 'scope'
+    groups:
+      # Group 1: Types (Very low risk, can often be auto-merged)
+      types:
+        patterns:
+          - '@types/*'
+        update-types:
+          - 'minor'
+          - 'patch'
+
+      # Group 2: All other dev tooling (ESLint, Prettier, Jest, etc.)
+      dev-minor-patch-upgrades:
+        patterns:
+          - '*' # <--- Applies to everything NOT caught by the 'types' group above
+        update-types:
+          - 'minor'
+          - 'patch'
+        # exclude-patterns: # Optional: exclude @types here if strictness is needed, but order usually handles it
+        #   - "@types/*"
+
+  # 3. GitHub Actions
+  - package-ecosystem: 'github-actions'
+    schedule:
+      interval: 'weekly'
+    commit-message:
+      prefix: 'ci(global)'
+    directory: '/'
+    groups:
+      github-actions:
+        patterns:
+          - '*'

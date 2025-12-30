@@ -1,11 +1,13 @@
 packages:
-  - 'packages/*'
-  - 'internal/*'
+  - packages/*
+  - internal/*
 
 catalog:
-  typescript: '^5.9.3'
-  vitest: '^4.0.15'
-  eslint: '^9.39.1'
-  rimraf: '^6.1.2'
-  "@vitest/coverage-c8": '^4.0.15'
-  "@vitest/ui": '^4.0.15'
+  '@arethetypeswrong/cli': 0.18.1
+  '@vitest/coverage-v8': ^4.0.15
+  '@vitest/ui': ^4.0.15
+  eslint: ^9.39.1
+  publint: 0.3.16
+  rimraf: ^6.1.2
+  typescript: 5.9.3
+  vitest: ^4.0.15

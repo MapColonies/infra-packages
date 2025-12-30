@@ -1,0 +1,98 @@
+name: pull_request
+
+on: [pull_request]
+
+env:
+  TURBO_SCM_BASE: origin/${{ github.base_ref}}
+jobs:
+  eslint:
+    name: Run TS Project eslint
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node: [24.x]
+
+    steps:
+      - name: Check out TS Project Git repository
+        uses: actions/checkout@v6
+
+      - name: Fetch base branch for turbo
+        run: git fetch origin ${{ github.base_ref }} --depth=1
+
+      - name: Init nodejs
+        uses: ./.github/actions/init-pnpm
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Run TS Project linters
+        run: pnpm exec turbo run lint --affected
+
+  prettier:
+    name: Run TS Project prettier
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out TS Project Git repository
+        uses: actions/checkout@v6
+
+      - name: Init nodejs
+        uses: ./.github/actions/init-pnpm
+
+      - name: Run TS Project prettier check
+        run: pnpm run format
+
+  tests:
+    name: Run Tests
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node: [24.x]
+
+    steps:
+      - name: Check out TS Project Git repository
+        uses: actions/checkout@v6
+
+      - name: Fetch base branch for turbo
+        run: git fetch origin ${{ github.base_ref }} --depth=1
+
+      - name: Init nodejs
+        uses: ./.github/actions/init-pnpm
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Run tests
+        run: pnpm exec turbo run test --affected
+
+  check-dist:
+    name: Check package distributions
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out TS Project Git repository
+        uses: actions/checkout@v6
+
+      - name: Fetch base branch for turbo
+        run: git fetch origin ${{ github.base_ref }} --depth=1
+
+      - name: Init nodejs
+        uses: ./.github/actions/init-pnpm
+
+      - name: Run check-dist
+        run: pnpm exec turbo run --affected check-dist
+  knip:
+    name: Run knip to detect unused dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out TS Project Git repository
+        uses: actions/checkout@v6
+
+      - name: Fetch base branch for turbo
+        run: git fetch origin ${{ github.base_ref }} --depth=1
+
+      - name: Init nodejs
+        uses: ./.github/actions/init-pnpm
+
+      - name: Run knip
+        run: pnpm exec turbo run --affected knip

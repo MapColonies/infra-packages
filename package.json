@@ -6,26 +6,32 @@
     "lint": "turbo run lint",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
-    "check-types": "turbo run check-types",
     "test": "turbo run test",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
     "prepare": "husky",
-    "postinstall": "turbo run build"
+    "check-dist": "turbo run check-dist",
+    "knip": "knip"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.2.0",
     "@commitlint/config-pnpm-scopes": "^20.1.0",
     "@map-colonies/commitlint-config": "workspace:^",
     "@map-colonies/prettier-config": "workspace:^",
-    "@vitest/coverage-v8": "^4.0.15",
+    "@types/node": "25.0.0",
+    "@vitest/coverage-v8": "catalog:",
     "@vitest/ui": "catalog:",
     "commitlint": "^20.2.0",
     "husky": "^9.1.7",
+    "knip": "^5.75.1",
     "prettier": "^3.7.4",
     "pretty-quick": "^4.2.2",
     "turbo": "^2.6.3",
-    "vitest": "catalog:"
+    "typescript": "catalog:",
+    "vitest": "catalog:",
+    "rimraf": "catalog:",
+    "publint": "catalog:",
+    "@arethetypeswrong/cli": "catalog:"
   },
   "engines": {
     "node": ">=24",

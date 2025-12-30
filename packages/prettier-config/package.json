@@ -4,11 +4,19 @@
   "description": "Common prettier configuration for the MapColonies project",
   "license": "MIT",
   "repository": "github:MapColonies/infra-packages",
+  "type": "commonjs",
   "engines": {
     "node": ">=18"
   },
   "publishConfig": {
     "access": "public"
   },
-  "main": "./index.js"
+  "scripts": {
+    "check-dist": "publint",
+    "knip": "knip --directory ../.. --workspace packages/prettier-config"
+  },
+  "main": "./index.js",
+  "devDependencies": {
+    "publint": "catalog:"
+  }
 }

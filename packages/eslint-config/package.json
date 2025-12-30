@@ -3,23 +3,21 @@
   "version": "5.0.0",
   "description": "eslint configs for map colonies organization",
   "type": "module",
-  "main": "./dist/configs/ts-base.mjs",
-  "types": "./dist/configs/ts-base.d.ts",
   "exports": {
     "./ts-base": {
-      "types": "./dist/configs/ts-base.d.ts",
+      "types": "./dist/configs/ts-base.d.mts",
       "import": "./dist/configs/ts-base.mjs"
     },
     "./react": {
-      "types": "./dist/configs/react.d.ts",
+      "types": "./dist/configs/react.d.mts",
       "import": "./dist/configs/react.mjs"
     },
     "./jest": {
-      "types": "./dist/configs/jest.d.ts",
+      "types": "./dist/configs/jest.d.mts",
       "import": "./dist/configs/jest.mjs"
     },
     "./helpers": {
-      "types": "./dist/helpers.d.ts",
+      "types": "./dist/helpers.d.mts",
       "import": "./dist/helpers.mjs"
     }
   },
@@ -32,7 +30,8 @@
     "prebuild": "pnpm run clean",
     "clean": "rimraf dist",
     "build": "tsc --project tsconfig.build.json",
-    "docs": "typedoc"
+    "check-dist": "publint && attw --profile esm-only --pack .",
+    "knip": "knip --directory ../.. --workspace packages/eslint-config"
   },
   "files": [
     "dist/**/*"
@@ -69,13 +68,9 @@
   },
   "devDependencies": {
     "@map-colonies/tsconfig": "workspace:^",
-    "@types/eslint": "^9.6.1",
-    "@types/eslint-config-prettier": "^6.11.3",
     "@types/node": "25.0.0",
     "eslint": "catalog:",
-    "rimraf": "^6.1.2",
     "typescript": "catalog:",
-    "globals": "^15.15.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-jest": "^28.11.0",
     "eslint-plugin-react": "^7.37.4",

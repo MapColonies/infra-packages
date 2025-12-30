@@ -12,6 +12,13 @@
     },
     "test": {
       "dependsOn": []
+    },
+    "check-dist": {
+      "dependsOn": ["build", "^check-dist"],
+      "outputs": []
+    },
+    "knip": {
+      "dependsOn": []
     }
   }
 }

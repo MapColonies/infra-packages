@@ -4,6 +4,11 @@
   "description": "Shared TypeScript config for MapColonies",
   "license": "MIT",
   "repository": "github:MapColonies/infra-packages",
+  "type": "commonjs",
+  "scripts": {
+    "check-dist": "publint",
+    "knip": "knip --directory ../.. --workspace packages/typescript-config"
+  },
   "engines": {
     "node": ">=18"
   },
@@ -14,5 +19,8 @@
     "tsconfig-base.json",
     "tsconfig-app.json",
     "tsconfig-library.json"
-  ]
+  ],
+  "devDependencies": {
+    "publint": "catalog:"
+  }
 }

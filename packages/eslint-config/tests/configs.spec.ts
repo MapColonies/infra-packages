@@ -1,8 +1,8 @@
 import { Linter } from 'eslint';
 import { describe, expect, it } from 'vitest';
-import jestConfig from '../dist/configs/jest.mjs';
-import reactConfig from '../dist/configs/react.mjs';
-import tsBaseConfig from '../dist/configs/ts-base.mjs';
+import jestConfig from '../src/configs/jest.mjs';
+import reactConfig from '../src/configs/react.mjs';
+import tsBaseConfig from '../src/configs/ts-base.mjs';
 
 const configs = [
   { name: 'jest', config: { ...jestConfig, settings: { jest: { version: 28 } } }, filename: 'avi.spec.ts' },
