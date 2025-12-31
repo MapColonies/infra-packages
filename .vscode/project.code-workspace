@@ -52,5 +52,9 @@
       "name": "semantic-conventions",
       "path": "../packages/semantic-conventions",
     },
+    {
+      "name": "tracing",
+      "path": "../packages/tracing",
+    },
   ],
 }
