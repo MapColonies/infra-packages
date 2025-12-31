@@ -51,6 +51,11 @@ const config: KnipConfig = {
       entry: ['src/generator/index.ts', 'src/typedRequestHandler/typedRequestHandler.ts', 'src/requestSender/requestSender.ts'],
       ignoreDependencies: ['yaml'],
     },
+    'packages/tracing': {
+      ...basePackageConfig,
+      ignoreDependencies: ['@protobuf-ts/plugin'],
+      ignore: ['tests/generated/**'],
+    },
   },
   tags: ['-lintignore'],
 };

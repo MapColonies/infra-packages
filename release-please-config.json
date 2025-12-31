@@ -103,6 +103,10 @@
     "packages/semantic-conventions": {
       "package-name": "@map-colonies/semantic-conventions",
       "release-type": "node"
+    },
+    "packages/tracing": {
+      "package-name": "@map-colonies/tracing",
+      "release-type": "node"
     }
   }
 }
