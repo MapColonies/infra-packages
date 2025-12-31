@@ -1,6 +1,5 @@
 {
   "entryPointStrategy": "packages",
-  // "entryPoints": ["packages/!(typescript|prettier)*"],
   "entryPoints": ["packages/*"],
   "packageOptions": {
     "validation": {

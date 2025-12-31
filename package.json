@@ -11,7 +11,8 @@
     "test:ui": "vitest --ui",
     "prepare": "husky",
     "check-dist": "turbo run check-dist",
-    "knip": "knip"
+    "knip": "knip",
+    "docs": "typedoc"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.2.0",
