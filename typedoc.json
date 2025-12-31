@@ -1,0 +1,12 @@
+{
+  "entryPointStrategy": "packages",
+  "entryPoints": ["packages/*"],
+  "packageOptions": {
+    "validation": {
+      "notExported": true,
+      "invalidLink": true,
+      "notDocumented": true
+    }
+  },
+  "plugin": ["typedoc-plugin-mermaid"]
+}
