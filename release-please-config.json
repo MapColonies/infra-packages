@@ -75,6 +75,10 @@
     "packages/typescript-config": {
       "package-name": "@map-colonies/tsconfig",
       "release-type": "node"
+    },
+    "packages/error-express-handler": {
+      "package-name": "@map-colonies/error-express-handler",
+      "release-type": "node"
     }
   }
 }
