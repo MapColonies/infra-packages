@@ -648,6 +648,60 @@ importers:
         specifier: workspace:^
         version: link:../../internal/vitest-config
 
+  packages/tracing-utils:
+    devDependencies:
+      '@map-colonies/eslint-config':
+        specifier: workspace:^
+        version: link:../eslint-config
+      '@map-colonies/tsconfig':
+        specifier: workspace:^
+        version: link:../typescript-config
+      '@microsoft/api-extractor':
+        specifier: 'catalog:'
+        version: 7.55.2(@types/node@24.10.4)
+      '@opentelemetry/api':
+        specifier: ^1.9.0
+        version: 1.9.0
+      '@opentelemetry/sdk-trace-base':
+        specifier: ^2.2.0
+        version: 2.2.0(@opentelemetry/api@1.9.0)
+      '@opentelemetry/sdk-trace-node':
+        specifier: ^2.2.0
+        version: 2.2.0(@opentelemetry/api@1.9.0)
+      '@types/express':
+        specifier: ^4.17.21
+        version: 4.17.25
+      '@types/node':
+        specifier: ^24.1.0
+        version: 24.10.4
+      '@types/supertest':
+        specifier: ^6.0.3
+        version: 6.0.3
+      eslint:
+        specifier: 'catalog:'
+        version: 9.39.1(jiti@2.6.1)
+      express:
+        specifier: ^4.22.1
+        version: 4.22.1
+      reflect-metadata:
+        specifier: ^0.2.2
+        version: 0.2.2
+      rimraf:
+        specifier: 'catalog:'
+        version: 6.1.2
+      supertest:
+        specifier: ^7.1.4
+        version: 7.1.4
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
+      vitest:
+        specifier: 'catalog:'
+        version: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.10.4)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2)
+      vitest-config:
+        specifier: workspace:^
+        version: link:../../internal/vitest-config
+
   packages/typescript-config:
     devDependencies:
       publint:
@@ -4319,6 +4373,9 @@ packages:
     resolution: {integrity: sha512-57frrGM/OCTLqLOAh0mhVA9VBMHd+9U7Zb2THMGdBUoZVOtGbJzjxsYGDJ3A9AYYCP4hn6y1TVbaOfzWtm5GFg==}
     engines: {node: '>= 12.13.0'}
 
+  reflect-metadata@0.2.2:
+    resolution: {integrity: sha512-urBwgfrvVP/eAyXx4hluJivBKzuEbSQs9rKWCrCkbSxNv8mxPcUZKeuoF3Uy4mJl3Lwprp6yy5/39VWigZ4K6Q==}
+
   reflect.getprototypeof@1.0.10:
     resolution: {integrity: sha512-00o4I+DVrefhv+nX0ulyi3biSHCPDe+yLv5o/p6d/UVlirijB8E16FtfwSAi4g3tcqrQ4lRAqQSoFEZJehYEcw==}
     engines: {node: '>= 0.4'}
@@ -7162,7 +7219,7 @@ snapshots:
       sirv: 3.0.2
       tinyglobby: 0.2.15
       tinyrainbow: 3.0.3
-      vitest: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@25.0.0)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2)
+      vitest: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.10.4)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2)
 
   '@vitest/utils@4.0.15':
     dependencies:
@@ -9396,6 +9453,8 @@ snapshots:
       strip-bom: 4.0.0
 
   real-require@0.2.0: {}
+
+  reflect-metadata@0.2.2: {}
 
   reflect.getprototypeof@1.0.10:
     dependencies:
