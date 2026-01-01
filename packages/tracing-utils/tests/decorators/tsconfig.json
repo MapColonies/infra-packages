@@ -1,0 +1,8 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["v4.spec.ts"],
+  "exclude": ["v5.spec.ts"],
+  "compilerOptions": {
+    "experimentalDecorators": true
+  }
+}

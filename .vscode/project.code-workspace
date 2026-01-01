@@ -56,5 +56,9 @@
       "name": "tracing",
       "path": "../packages/tracing",
     },
+    {
+      "name": "tracing-utils",
+      "path": "../packages/tracing-utils",
+    },
   ],
 }
