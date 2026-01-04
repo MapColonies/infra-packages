@@ -12,6 +12,7 @@ import { deconstructSemver } from './util';
 
 /**
  * Options for configuring metrics middleware.
+ * @public
  */
 export interface Opts {
   /**
@@ -27,14 +28,8 @@ export interface Opts {
    */
   collectServiceVersion: boolean;
   /**
-   * The prefix for the metrics.
-   * e.g. 'my_prefix_my_metric'
-   */
-  prefix: string;
-  /**
    * Add operation id based on the Openapi operationId to the metrics.
    * Requires the {@link https://www.npmjs.com/package/express-openapi-validator | express-openapi-validator} package to function.
-   * @default true
    */
   includeOperationId: boolean;
   /**
@@ -56,18 +51,17 @@ export interface Opts {
  *
  * @param registry - The metrics registry.
  * @param shouldCollectDefaultMetrics - Indicates whether to collect default metrics. Default is `true`.
- * @param defaultMetricsPrefix - The prefix to be added to default metrics.
  * @param defaultMetricsLabels - The labels to be added to default metrics.
  * @returns The Express request handler function.
+ * @public
  */
 export function metricsMiddleware(
   registry: Registry,
   shouldCollectDefaultMetrics = true,
-  defaultMetricsPrefix?: string,
   defaultMetricsLabels?: Record<string, string>
 ): express.RequestHandler {
   if (shouldCollectDefaultMetrics) {
-    collectDefaultMetrics({ prefix: defaultMetricsPrefix, register: registry, labels: defaultMetricsLabels });
+    collectDefaultMetrics({ register: registry, labels: defaultMetricsLabels });
   }
   return (req: express.Request, res: express.Response, next: express.NextFunction): void => {
     registry
@@ -88,11 +82,11 @@ export function metricsMiddleware(
  *
  * @param options - Optional configuration options for the middleware.
  * @returns The Express middleware function that collects metrics.
+ * @public
  */
 export function collectMetricsExpressMiddleware(options: Partial<Opts>): promBundle.Middleware {
   const packageInfo = readPackageJsonSync();
   const defaultOpts = {
-    prefix: '',
     labels: {},
     includeOperationId: true,
     collectNodeMetrics: true,
@@ -100,7 +94,6 @@ export function collectMetricsExpressMiddleware(options: Partial<Opts>): promBun
     registry: new Registry(),
     customLabels: {} as Opts['customLabels'],
   } satisfies Opts;
-
   const mergedOptions = { ...defaultOpts, ...options };
 
   /* eslint-disable @typescript-eslint/naming-convention */
@@ -113,7 +106,7 @@ export function collectMetricsExpressMiddleware(options: Partial<Opts>): promBun
   mergedOptions.registry.setDefaultLabels(mergedLabels);
 
   if (mergedOptions.collectNodeMetrics) {
-    collectDefaultMetrics({ prefix: mergedOptions.prefix, register: mergedOptions.registry });
+    collectDefaultMetrics({ register: mergedOptions.registry });
   }
 
   if (mergedOptions.collectServiceVersion) {
@@ -124,7 +117,7 @@ export function collectMetricsExpressMiddleware(options: Partial<Opts>): promBun
     }
     const { major, minor, patch, prerelease } = semver;
     const serviceVersionGauge = new Gauge({
-      name: `${mergedOptions.prefix ? `${mergedOptions.prefix}_` : ''}service_version`,
+      name: 'service_version',
       help: 'Service Version Specified in package.json file',
       labelNames: gaugeLabels,
       registers: [mergedOptions.registry],

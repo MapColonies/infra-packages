@@ -60,5 +60,9 @@
       "name": "tracing-utils",
       "path": "../packages/tracing-utils",
     },
+    {
+      "name": "prometheus",
+      "path": "../packages/prometheus",
+    },
   ],
 }

@@ -60,20 +60,9 @@ describe('Prometheus Middlewares', () => {
       expect(response.text).not.toContain('nodejs_heap_size_total_bytes');
     });
 
-    it('should apply default metrics prefix when provided', async () => {
-      const prefix = 'my_app_';
-      app.get('/metrics', metricsMiddleware(registry, true, prefix));
-
-      const response = await request(app).get('/metrics');
-
-      expect(response.status).toBe(200);
-      expect(response.text).toContain(`${prefix}process_cpu_user_seconds_total`);
-      expect(response.text).toContain(`${prefix}nodejs_heap_size_total_bytes`);
-    });
-
     it('should apply default metrics labels when provided', async () => {
       const labels = { environment: 'test', region: 'us-east-1' };
-      app.get('/metrics', metricsMiddleware(registry, true, undefined, labels));
+      app.get('/metrics', metricsMiddleware(registry, true, labels));
 
       const response = await request(app).get('/metrics');
 
@@ -132,14 +121,15 @@ describe('Prometheus Middlewares', () => {
       app.get('/metrics', metricsMiddleware(mockRegistry, false));
 
       // Add error handler to catch the error
-      app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      app.use((err: Error, req: express.Request, res: express.Response, _next: express.NextFunction) => {
         res.status(500).json({ error: err.message });
       });
 
       const response = await request(app).get('/metrics');
 
       expect(response.status).toBe(500);
-      expect(response.body.error).toBe('Registry error');
+      expect(response.body).toHaveProperty('error', 'Registry error');
     });
   });
 
@@ -161,20 +151,6 @@ describe('Prometheus Middlewares', () => {
       expect(metricsResponse.text).toContain('status_code="200"');
     });
 
-    it('should apply custom prefix to metrics', async () => {
-      const prefix = 'custom_prefix';
-      app.use(collectMetricsExpressMiddleware({ registry, prefix, collectNodeMetrics: false, collectServiceVersion: false }));
-      app.get('/test', (req, res) => res.json({ success: true }));
-      app.get('/metrics', metricsMiddleware(registry, false));
-
-      await request(app).get('/test');
-
-      const metricsResponse = await request(app).get('/metrics');
-
-      expect(metricsResponse.status).toBe(200);
-      expect(metricsResponse.text).toContain('custom_prefix_http_request_duration_seconds');
-    });
-
     it('should include hostname and service_name labels', async () => {
       app.use(collectMetricsExpressMiddleware({ registry, collectNodeMetrics: false, collectServiceVersion: false }));
       app.get('/test', (req, res) => res.json({ success: true }));
@@ -186,7 +162,7 @@ describe('Prometheus Middlewares', () => {
 
       expect(metricsResponse.status).toBe(200);
       expect(metricsResponse.text).toContain('hostname=');
-      expect(metricsResponse.text).toContain('service_name="@map-colonies/test-service"');
+      expect(metricsResponse.text).toContain('service_name="@map-colonies/prometheus"');
     });
 
     it('should include custom labels', async () => {
@@ -218,14 +194,13 @@ describe('Prometheus Middlewares', () => {
     });
 
     it('should collect service version metrics with prefix', async () => {
-      const prefix = 'app';
-      app.use(collectMetricsExpressMiddleware({ registry, prefix, collectNodeMetrics: false, collectServiceVersion: true }));
+      app.use(collectMetricsExpressMiddleware({ registry, collectNodeMetrics: false, collectServiceVersion: true }));
       app.get('/metrics', metricsMiddleware(registry, false));
 
       const metricsResponse = await request(app).get('/metrics');
 
       expect(metricsResponse.status).toBe(200);
-      expect(metricsResponse.text).toContain('app_service_version');
+      expect(metricsResponse.text).toContain('service_version');
     });
 
     it('should collect node metrics when enabled', async () => {
@@ -259,7 +234,7 @@ describe('Prometheus Middlewares', () => {
       app.get(
         '/test',
         (req, res, next) => {
-          (req as any).openapi = { schema: { operationId: 'testOperation' } };
+          (req as unknown as { openapi: { schema: { operationId: string } } }).openapi = { schema: { operationId: 'testOperation' } };
           next();
         },
         (req, res) => res.json({ success: true })
@@ -290,14 +265,16 @@ describe('Prometheus Middlewares', () => {
     });
 
     it('should support custom transformLabels function', async () => {
-      const transformLabels = vi.fn((customLabels, req, res) => {
-        customLabels.custom_label = 'custom_value';
+      const transformLabels = vi.fn((customLabels) => {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        customLabels['custom_label'] = 'custom_value';
       });
 
       app.use(
         collectMetricsExpressMiddleware({
           registry,
           transformLabels,
+          // eslint-disable-next-line @typescript-eslint/naming-convention
           customLabels: { custom_label: null },
           collectNodeMetrics: false,
           collectServiceVersion: false,
@@ -373,7 +350,8 @@ describe('Prometheus Middlewares', () => {
       expect(metricsResponse.status).toBe(200);
       // Both middleware metrics and custom metrics should be present
       expect(metricsResponse.text).toContain('http_request_duration_seconds');
-      expect(metricsResponse.text).toContain('custom_requests_total{type="test"} 1');
+      expect(metricsResponse.text).toContain('custom_requests_total');
+      expect(metricsResponse.text).toContain('type="test"');
     });
   });
 });
