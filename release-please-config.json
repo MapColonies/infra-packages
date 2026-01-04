@@ -111,6 +111,10 @@
     "packages/tracing-utils": {
       "package-name": "@map-colonies/tracing-utils",
       "release-type": "node"
+    },
+    "packages/prometheus": {
+      "package-name": "@map-colonies/prometheus",
+      "release-type": "node"
     }
   }
 }
