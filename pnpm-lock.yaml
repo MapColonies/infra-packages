@@ -152,11 +152,11 @@ importers:
         version: 2.3.0
     devDependencies:
       '@map-colonies/eslint-config':
-        specifier: ^6.0.0
-        version: 6.0.0(@typescript-eslint/utils@8.49.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint-plugin-jest@28.14.0(@typescript-eslint/eslint-plugin@8.49.0(@typescript-eslint/parser@8.49.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint-plugin-react-hooks@5.2.0(eslint@9.39.1(jiti@2.6.1)))(eslint-plugin-react@7.37.5(eslint@9.39.1(jiti@2.6.1)))(eslint@9.39.1(jiti@2.6.1))(globals@15.15.0)(typescript@5.9.3)
+        specifier: workspace:^
+        version: link:../eslint-config
       '@map-colonies/tsconfig':
-        specifier: ^1.0.0
-        version: 1.0.1(typescript@5.9.3)
+        specifier: workspace:^
+        version: link:../typescript-config
       '@types/express':
         specifier: ^4.17.21
         version: 4.17.25
@@ -614,31 +614,6 @@ packages:
 
   '@loaderkit/resolve@1.0.4':
     resolution: {integrity: sha512-rJzYKVcV4dxJv+vW6jlvagF8zvGxHJ2+HTr1e2qOejfmGhAApgJHl8Aog4mMszxceTRiKTTbnpgmTO1bEZHV/A==}
-
-  '@map-colonies/eslint-config@6.0.0':
-    resolution: {integrity: sha512-yXh/bMsDnDa1pbMBpBqIe+iySAygiXdSgFMvCDZwr/+y7JUgODikDCMD2LfdP7n+2DDNTNmCc+qu70361wVzfg==}
-    engines: {node: '>=20'}
-    peerDependencies:
-      eslint: ^9.19.0
-      eslint-plugin-jest: ^28.11.0
-      eslint-plugin-react: ^7.37.4
-      eslint-plugin-react-hooks: ^5.1.0
-      globals: ^15.14.0
-    peerDependenciesMeta:
-      eslint-plugin-jest:
-        optional: true
-      eslint-plugin-react:
-        optional: true
-      eslint-plugin-react-hooks:
-        optional: true
-      globals:
-        optional: true
-
-  '@map-colonies/tsconfig@1.0.1':
-    resolution: {integrity: sha512-IEWIV0bx3XG07aVmNrSn5gr/39T37dImLTFsUtxeslU5o2S4cgvCMdl/0K2moMJh6Cfr8uRiX6UTop4jLVE8eA==}
-    engines: {node: '>=18'}
-    peerDependencies:
-      typescript: '>= 5.5.2'
 
   '@napi-rs/wasm-runtime@0.2.12':
     resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
@@ -3517,30 +3492,6 @@ snapshots:
   '@loaderkit/resolve@1.0.4':
     dependencies:
       '@braidai/lang': 1.1.2
-
-  '@map-colonies/eslint-config@6.0.0(@typescript-eslint/utils@8.49.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint-plugin-jest@28.14.0(@typescript-eslint/eslint-plugin@8.49.0(@typescript-eslint/parser@8.49.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint-plugin-react-hooks@5.2.0(eslint@9.39.1(jiti@2.6.1)))(eslint-plugin-react@7.37.5(eslint@9.39.1(jiti@2.6.1)))(eslint@9.39.1(jiti@2.6.1))(globals@15.15.0)(typescript@5.9.3)':
-    dependencies:
-      '@eslint/js': 9.39.1
-      eslint: 9.39.1(jiti@2.6.1)
-      eslint-config-prettier: 10.1.8(eslint@9.39.1(jiti@2.6.1))
-      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import-x@4.16.1(@typescript-eslint/utils@8.49.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1)))(eslint@9.39.1(jiti@2.6.1))
-      eslint-plugin-import-x: 4.16.1(@typescript-eslint/utils@8.49.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))
-      typescript-eslint: 8.49.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
-    optionalDependencies:
-      eslint-plugin-jest: 28.14.0(@typescript-eslint/eslint-plugin@8.49.0(@typescript-eslint/parser@8.49.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
-      eslint-plugin-react: 7.37.5(eslint@9.39.1(jiti@2.6.1))
-      eslint-plugin-react-hooks: 5.2.0(eslint@9.39.1(jiti@2.6.1))
-      globals: 15.15.0
-    transitivePeerDependencies:
-      - '@typescript-eslint/utils'
-      - eslint-import-resolver-node
-      - eslint-plugin-import
-      - supports-color
-      - typescript
-
-  '@map-colonies/tsconfig@1.0.1(typescript@5.9.3)':
-    dependencies:
-      typescript: 5.9.3
 
   '@napi-rs/wasm-runtime@0.2.12':
     dependencies:
