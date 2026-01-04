@@ -1,0 +1,54 @@
+{
+  "name": "@map-colonies/express-access-log-middleware",
+  "version": "3.0.1",
+  "description": "An access and error logger for express based on pino-http",
+  "main": "./dist/index.js",
+  "type": "commonjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "test": "vitest run",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "prebuild": "npm run clean",
+    "build": "tsc --project tsconfig.build.json",
+    "clean": "rimraf dist",
+    "prepack": "turbo run build",
+    "check-dist": "publint && attw --pack .",
+    "knip": "knip --directory ../.. --workspace packages/error-express-handler"
+  },
+  "repository": "github:MapColonies/infra-packages",
+  "files": [
+    "dist/**/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@map-colonies/eslint-config": "workspace:^",
+    "@map-colonies/tsconfig": "workspace:^",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.5.5",
+    "@types/supertest": "^6.0.2",
+    "eslint": "catalog:",
+    "express": "^4.21.0",
+    "rimraf": "catalog:",
+    "supertest": "^7.0.0",
+    "typescript": "catalog:",
+    "pino": "^10.1.0",
+    "vitest-config": "workspace:^",
+    "vitest": "catalog:"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "http-status-codes": "^2.3.0",
+    "pino-http": "^11.0.0",
+    "@opentelemetry/semantic-conventions": "^1.38.0"
+  }
+}
