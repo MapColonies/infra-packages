@@ -79,6 +79,10 @@
     "packages/error-express-handler": {
       "package-name": "@map-colonies/error-express-handler",
       "release-type": "node"
+    },
+    "packages/express-access-log-middleware": {
+      "package-name": "@map-colonies/express-access-log-middleware",
+      "release-type": "node"
     }
   }
 }
