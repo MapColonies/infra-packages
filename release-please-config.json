@@ -83,6 +83,10 @@
     "packages/express-access-log-middleware": {
       "package-name": "@map-colonies/express-access-log-middleware",
       "release-type": "node"
+    },
+    "packages/js-logger": {
+      "package-name": "@map-colonies/js-logger",
+      "release-type": "node"
     }
   }
 }
