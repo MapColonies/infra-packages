@@ -19,7 +19,7 @@
     "clean": "rimraf dist",
     "prepack": "turbo run build",
     "check-dist": "publint && attw --pack .",
-    "knip": "knip --directory ../.. --workspace packages/js-logger"
+    "knip": "knip --directory ../.. --workspace packages/js-logger",
     "api": "api-extractor run --local --verbose",
     "api:check": "api-extractor run --verbose"
   },
