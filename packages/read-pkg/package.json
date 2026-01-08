@@ -1,25 +1,25 @@
 {
-  "name": "@map-colonies/js-logger",
-  "version": "3.0.2",
-  "description": "Javascript and typescript logger for MapColonies based on pino",
+  "name": "@map-colonies/read-pkg",
+  "version": "1.0.0",
+  "description": "This is a helper for reading and parsing package json files",
   "main": "./dist/index.js",
-  "type": "commonjs",
   "exports": {
     ".": {
       "import": "./dist/index.js",
       "require": "./dist/index.js"
     }
   },
+  "type": "commonjs",
   "scripts": {
-    "test": "vitest run",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
+    "test": "vitest run",
     "prebuild": "npm run clean",
     "build": "tsc --project tsconfig.build.json",
     "clean": "rimraf dist",
     "prepack": "turbo run build",
     "check-dist": "publint && attw --pack .",
-    "knip": "knip --directory ../.. --workspace packages/js-logger",
+    "knip": "knip --directory ../.. --workspace packages/read-pkg",
     "api": "api-extractor run --local --verbose",
     "api:check": "api-extractor run --verbose"
   },
@@ -31,14 +31,14 @@
     "access": "public"
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=20"
   },
+  "homepage": "https://github.com/MapColonies/read-pkg#readme",
   "devDependencies": {
     "@map-colonies/eslint-config": "workspace:^",
     "@map-colonies/tsconfig": "workspace:^",
-    "@types/node": "^24.1.0",
+    "@types/node": "^22.7.4",
     "eslint": "catalog:",
-    "glob": "^11.0.3",
     "rimraf": "catalog:",
     "typescript": "catalog:",
     "vitest-config": "workspace:^",
@@ -46,10 +46,6 @@
     "@microsoft/api-extractor": "catalog:"
   },
   "dependencies": {
-    "@map-colonies/read-pkg": "workspace:^",
-    "pino": "^10.1.0",
-    "pino-caller": "^4.0.0",
-    "pino-opentelemetry-transport": "^2.0.0",
-    "pino-pretty": "^13.1.2"
+    "type-fest": "^4.33.0"
   }
 }

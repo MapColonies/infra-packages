@@ -87,6 +87,10 @@
     "packages/js-logger": {
       "package-name": "@map-colonies/js-logger",
       "release-type": "node"
+    },
+    "packages/read-pkg": {
+      "package-name": "@map-colonies/read-pkg",
+      "release-type": "node"
     }
   }
 }
