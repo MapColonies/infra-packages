@@ -7,6 +7,9 @@
   "npm.packageManager": "pnpm",
   "npm.scriptRunner": "pnpm",
   "typescript.tsdk": "node_modules/typescript/lib",
+  "files.associations": {
+    "api-extractor.json": "jsonc"
+  },
   "files.eol": "\n",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "files.insertFinalNewline": true,
