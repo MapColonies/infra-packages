@@ -6,3 +6,4 @@ coverage
 .pnpm-store
 .pnpm
 .turbo
+etc/
