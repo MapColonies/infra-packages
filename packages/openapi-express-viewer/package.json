@@ -19,7 +19,7 @@
     "clean": "rimraf dist",
     "prepack": "turbo run build",
     "check-dist": "publint && attw --pack .",
-    "knip": "knip --directory ../.. --workspace packages/error-express-handler",
+    "knip": "knip --directory ../.. --workspace packages/openapi-express-viewer",
     "api": "api-extractor run --local --verbose",
     "api:check": "api-extractor run --verbose"
   },
