@@ -148,7 +148,7 @@ The schema files have autocomplete support in VsCode. To change the schema and f
 > [!IMPORTANT]
 > After making any changes to a schema, you MUST re-generate its types using the following command:
 > ```bash
-> npm run generate:types
+> pnpm run generate:types
 > ```
 
 All the semantic convention scripts run before the build process of the package, as their only output is TypeScript files that are transpiled as part of the larger build process into javascript.

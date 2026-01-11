@@ -14,7 +14,7 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "prebuild": "npm run clean && pnpm run validate:attributes && pnpm run generate:attributes",
+    "prebuild": "pnpm run clean && pnpm run validate:attributes && pnpm run generate:attributes",
     "build": "tsc --project tsconfig.build.json",
     "clean": "rimraf dist",
     "prepack": "turbo run build",
@@ -23,7 +23,8 @@
     "api": "api-extractor run --local --verbose",
     "api:check": "api-extractor run --verbose",
     "validate:attributes": "node scripts/validate-semantic-conventions.mts",
-    "generate:attributes": "node scripts/build-semantic-conventions.mts"
+    "generate:attributes": "node scripts/build-semantic-conventions.mts",
+    "generate:types": "json2ts schemas/attribute.schema.json > scripts/autogen.mts"
   },
   "repository": "github:MapColonies/infra-packages",
   "files": [
@@ -46,6 +47,7 @@
     "change-case-all": "^2.1.0",
     "comment-json": "^4.2.3",
     "just-safe-set": "^4.2.1",
-    "ajv": "^8.17.1"
+    "ajv": "^8.17.1",
+    "json-schema-to-typescript": "^13.1.2"
   }
 }
