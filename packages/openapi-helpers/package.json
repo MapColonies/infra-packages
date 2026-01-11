@@ -27,7 +27,7 @@
     "clean": "rimraf dist",
     "prepack": "turbo run build",
     "check-dist": "publint && attw --profile node16 --pack .",
-    "knip": "knip --directory ../.. --workspace packages/error-express-handler",
+    "knip": "knip --directory ../.. --workspace packages/openapi-helpers",
     "api:check": "pnpm run handler:api:check && pnpm run sender:api:check && pnpm run generators:api:check",
     "handler:api": "api-extractor run --local --verbose --config ./api-extractor.handler.json",
     "handler:api:check": "api-extractor run --verbose --config ./api-extractor.handler.json",
