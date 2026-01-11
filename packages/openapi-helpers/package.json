@@ -33,7 +33,7 @@
     "handler:api:check": "api-extractor run --verbose --config ./api-extractor.handler.json",
     "sender:api": "api-extractor run --local --verbose --config ./api-extractor.sender.json",
     "sender:api:check": "api-extractor run --verbose --config ./api-extractor.sender.json",
-    "generator:api": "api-extractor run --local --verbose --config ./api-extractor.generators.json",
+    "generators:api": "api-extractor run --local --verbose --config ./api-extractor.generators.json",
     "generators:api:check": "api-extractor run --verbose --config ./api-extractor.generators.json",
     "generate:test:types": "pnpm run build && node dist/generator/generateTypes.mjs tests/openapi3.yaml tests/types.d.ts"
   },
