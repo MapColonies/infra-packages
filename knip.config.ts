@@ -10,7 +10,7 @@ type PackageConfig = Exclude<UnwrapConfig<KnipConfig>['workspaces'], undefined>[
 
 const basePackageConfig: PackageConfig = {
   entry: ['src/index.ts'],
-  vitest: { config: 'vitest.config.cts', entry: ['tests/**/*.spec.ts'] },
+  vitest: { config: 'vitest.config.cts', entry: ['tests/**/*.spec.ts', 'tests/**/*.test-d.ts'] },
   typescript: {
     config: ['tsconfig.json', 'tsconfig.build.json'],
   },
@@ -45,6 +45,11 @@ const config: KnipConfig = {
     'packages/js-logger': {
       ...basePackageConfig,
       ignoreDependencies: ['pino-pretty'],
+    },
+    'packages/openapi-helpers': {
+      ...basePackageConfig,
+      entry: ['src/generator/index.ts', 'src/typedRequestHandler/typedRequestHandler.ts', 'src/requestSender/requestSender.ts'],
+      ignoreDependencies: ['yaml'],
     },
   },
   tags: ['-lintignore'],
