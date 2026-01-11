@@ -22,7 +22,7 @@
     "test": "vitest run",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "prebuild": "npm run clean",
+    "prebuild": "pnpm run clean",
     "build": "tsc --project tsconfig.build.json",
     "clean": "rimraf dist",
     "prepack": "turbo run build",
