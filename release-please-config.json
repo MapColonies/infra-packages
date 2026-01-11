@@ -91,6 +91,10 @@
     "packages/read-pkg": {
       "package-name": "@map-colonies/read-pkg",
       "release-type": "node"
+    },
+    "packages/openapi-express-viewer": {
+      "package-name": "@map-colonies/openapi-express-viewer",
+      "release-type": "node"
     }
   }
 }
