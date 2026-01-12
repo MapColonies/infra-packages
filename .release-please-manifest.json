@@ -8,5 +8,6 @@
   "packages/js-logger": "3.0.2",
   "packages/read-pkg": "1.0.0",
   "packages/openapi-express-viewer": "4.1.0",
-  "packages/openapi-helpers": "4.0.0"
+  "packages/openapi-helpers": "4.0.0",
+  "packages/semantic-conventions": "0.0.1"
 }

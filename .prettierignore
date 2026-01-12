@@ -7,3 +7,4 @@ coverage
 .pnpm
 .turbo
 etc/
+packages/semantic-conventions/src/**/*.ts

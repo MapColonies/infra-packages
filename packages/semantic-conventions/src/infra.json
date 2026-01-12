@@ -1,0 +1,112 @@
+{
+  "domain": "infra",
+  "content": {
+    // TODO - ADD ALL RELEVANT INFRA-CROSSING SERVICES
+    "propertyName": "mapcolonies.infra",
+    "kind": "domain",
+    "description": "name of the domain in use",
+    "deprecated": false,
+    "subAttributes": {
+      "jobManagement": {
+        "propertyName": "mapcolonies.infra.job_management",
+        "kind": "jobManagerAttributes",
+        "description": "attributes related to job management services",
+        "deprecated": false,
+        "subAttributes": {
+          "jobId": {
+            "propertyName": "mapcolonies.infra.job_management.job_id",
+            "deprecated": false,
+            "description": "Type of task as stored on db (uuid)"
+          },
+          "taskId": {
+            "propertyName": "mapcolonies.infra.job_management.task_id",
+            "deprecated": false,
+            "description": "Type of task as stored on db (uuid)"
+          },
+          "jobType": {
+            "propertyName": "mapcolonies.infra.job_management.job_type",
+            "deprecated": false,
+            "description": "Type of job as stored on db (uuid)"
+          },
+          "taskType": {
+            "propertyName": "mapcolonies.infra.job_management.task_type",
+            "deprecated": false,
+            "description": "Type of task as stored on db (uuid)"
+          },
+          "serviceUrl": {
+            "propertyName": "mapcolonies.infra.job_management.service_url",
+            "deprecated": false,
+            "description": "API url of job management service"
+          }
+        }
+      },
+      "jobnik": {
+        "propertyName": "mapcolonies.infra.jobnik",
+        "kind": "jobnikAttributes",
+        "description": "attributes related to job management services",
+        "deprecated": false,
+        "subAttributes": {
+          "job": {
+            "propertyName": "mapcolonies.infra.jobnik.job",
+            "deprecated": false,
+            "description": "Attributes related to a job in job management services",
+            "kind": "jobAttributes",
+            "subAttributes": {
+              "name": {
+                "propertyName": "mapcolonies.infra.jobnik.job.name",
+                "deprecated": false,
+                "description": "The human-readable name of the job"
+              },
+              "priority": {
+                "propertyName": "mapcolonies.infra.jobnik.job.priority",
+                "deprecated": false,
+                "description": "The priority of the job (e.g., HIGH)"
+              },
+              "status": {
+                "propertyName": "mapcolonies.infra.jobnik.job.status",
+                "deprecated": false,
+                "description": "The status being set (e.g., COMPLETED). For update_status spans"
+              }
+            }
+          },
+          "stage": {
+            "propertyName": "mapcolonies.infra.jobnik.stage",
+            "deprecated": false,
+            "description": "Attributes related to a stage in job management services",
+            "kind": "stageAttributes",
+            "subAttributes": {
+              "id": {
+                "propertyName": "mapcolonies.infra.jobnik.stage.id",
+                "deprecated": false,
+                "description": "The UUID of the stage."
+              },
+              "status": {
+                "propertyName": "mapcolonies.infra.jobnik.stage.status",
+                "deprecated": false,
+                "description": "The status being set (e.g., COMPLETED). For update_status spans"
+              }
+            }
+          },
+          "task": {
+            "propertyName": "mapcolonies.infra.jobnik.task",
+            "deprecated": false,
+            "description": "Attributes related to a task in job management services",
+            "kind": "taskAttributes",
+            "subAttributes": {
+              "status": {
+                "propertyName": "mapcolonies.infra.jobnik.task.status",
+                "deprecated": false,
+                "description": "The status being set (e.g., COMPLETED). For update_status spans"
+              },
+              "attempts": {
+                "propertyName": "mapcolonies.infra.jobnik.task.attempts",
+                "deprecated": false,
+                "description": "The number of times this task has been attempted. This is used to track retries in the job management system."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

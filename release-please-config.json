@@ -99,6 +99,10 @@
     "packages/openapi-helpers": {
       "package-name": "@map-colonies/openapi-helpers",
       "release-type": "node"
+    },
+    "packages/semantic-conventions": {
+      "package-name": "@map-colonies/semantic-conventions",
+      "release-type": "node"
     }
   }
 }

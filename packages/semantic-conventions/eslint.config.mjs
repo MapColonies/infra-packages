@@ -1,0 +1,4 @@
+import baseConfig from '@map-colonies/eslint-config/ts-base';
+import { defineConfig } from 'eslint/config';
+
+export default defineConfig(baseConfig, { ignores: ['src/'] });
