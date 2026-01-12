@@ -1,0 +1,69 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:best-practices", ":disableRateLimiting"],
+
+  "enabledManagers": ["npm", "github-actions"],
+
+  "timezone": "UTC",
+  "stabilityDays": 3,
+  "prCreation": "not-pending",
+  "dependencyDashboard": true,
+
+  "ignoreDeps": [],
+  "ignorePaths": ["**/node_modules/**"],
+
+  "packageRules": [
+    // --- PNPM / MONOREPO RULES ---
+    {
+      "description": "Disable updates for pnpm workspace protocol (internal links)",
+      "matchStrings": ["^workspace:"],
+      "enabled": false
+    },
+    {
+      "description": "Group non-major dependencies per package",
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "groupName": "{{parentDir}} dependencies"
+    },
+    {
+      "description": "Group non-major devDependencies per package",
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "groupName": "{{parentDir}} dev dependencies"
+    },
+
+    // --- GITHUB ACTIONS RULES ---
+    {
+      "description": "Group all GitHub Actions updates together",
+      "matchManagers": ["github-actions"],
+      "groupName": "github-actions",
+      "semanticCommitType": "ci",
+      "semanticCommitScope": "global"
+    },
+
+    // --- GLOBAL RULES ---
+    {
+      "description": "Separate PRs for Major updates (Safety)",
+      "matchUpdateTypes": ["major"],
+      "groupName": null
+    },
+    // Custom Commit Types for NPM packages
+    {
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["dependencies"],
+      "semanticCommitType": "deps"
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["devDependencies"],
+      "semanticCommitType": "devdeps"
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchPackagePatterns": ["*"],
+      "semanticCommitScope": "{{parentDir}}"
+    }
+  ]
+}
