@@ -17,7 +17,7 @@ npm install @map-colonies/tracing-utils
 
 ## API Documentation
 
-Full API documentation is available [here](https://mapcolonies.github.io/infra-packages/).
+Full API documentation is available [here](https://mapcolonies.github.io/infra-packages/modules/_map-colonies_tracing-utils.html).
 
 ## Usage
 
