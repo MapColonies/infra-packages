@@ -26,6 +26,9 @@ interface BaseTracingConfig {
   debug: boolean;
 }
 
+/**
+ * @public
+ */
 type TracingConfig = BaseTracingConfig & CommonConfig;
 
 const tracingConfigSchema: JSONSchemaType<BaseTracingConfig> = {

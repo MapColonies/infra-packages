@@ -11,6 +11,8 @@ import { Prettify } from './common/types';
 import { TelemetryBase } from './common/interfaces';
 import { getTracingConfig, TracingConfig } from './config';
 
+export type { TracingConfig, TelemetryBase };
+
 /**
  * The options to configure the tracing functionality.
  * @public

@@ -21,7 +21,7 @@ const tracer = trace.getTracer('tracing-name')
 
 const span = tracer.startSpan('some-action');
 
-span.setAttribute('some-attribute');
+span.setAttribute('some-attribute', 'ITS VALUE');
 
 // DO STUFF
 
