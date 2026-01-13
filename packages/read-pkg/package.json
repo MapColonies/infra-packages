@@ -37,7 +37,7 @@
   "devDependencies": {
     "@map-colonies/eslint-config": "workspace:^",
     "@map-colonies/tsconfig": "workspace:^",
-    "@types/node": "^22.7.4",
+    "@types/node": "catalog:",
     "eslint": "catalog:",
     "rimraf": "catalog:",
     "typescript": "catalog:",

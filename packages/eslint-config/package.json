@@ -68,7 +68,7 @@
   },
   "devDependencies": {
     "@map-colonies/tsconfig": "workspace:^",
-    "@types/node": "25.0.0",
+    "@types/node": "catalog:",
     "eslint": "catalog:",
     "typescript": "catalog:",
     "eslint-plugin-react-hooks": "^5.1.0",
