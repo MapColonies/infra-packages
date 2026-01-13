@@ -1,8 +1,8 @@
 name: Renovate
 on:
   schedule:
-    # Runs at 08:00 UTC every Monday
-    - cron: '0 8 * * 1'
+    # Runs at 08:00 UTC every day
+    - cron: '0 8 * * *'
   workflow_dispatch:
 
 jobs:

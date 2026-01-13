@@ -1,22 +1,17 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:best-practices", ":disableRateLimiting"],
-
   "enabledManagers": ["npm", "github-actions"],
-
   "timezone": "UTC",
-  "stabilityDays": 3,
-  "prCreation": "not-pending",
+  "minimumReleaseAge": "3 days",
+  "prCreation": "immediate",
   "dependencyDashboard": true,
-
   "ignoreDeps": [],
   "ignorePaths": ["**/node_modules/**"],
-
   "packageRules": [
-    // --- PNPM / MONOREPO RULES ---
     {
       "description": "Disable updates for pnpm workspace protocol (internal links)",
-      "matchStrings": ["^workspace:"],
+      "matchCurrentVersion": "/^workspace:/",
       "enabled": false
     },
     {
@@ -33,8 +28,6 @@
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "groupName": "{{parentDir}} dev dependencies"
     },
-
-    // --- GITHUB ACTIONS RULES ---
     {
       "description": "Group all GitHub Actions updates together",
       "matchManagers": ["github-actions"],
@@ -42,14 +35,11 @@
       "semanticCommitType": "ci",
       "semanticCommitScope": "global"
     },
-
-    // --- GLOBAL RULES ---
     {
-      "description": "Separate PRs for Major updates (Safety)",
+      "description": "Separate PRs for Major updates",
       "matchUpdateTypes": ["major"],
       "groupName": null
     },
-    // Custom Commit Types for NPM packages
     {
       "matchManagers": ["npm"],
       "matchDepTypes": ["dependencies"],
@@ -62,8 +52,25 @@
     },
     {
       "matchManagers": ["npm"],
-      "matchPackagePatterns": ["*"],
-      "semanticCommitScope": "{{parentDir}}"
+      "semanticCommitScope": "{{parentDir}}",
+      "matchPackageNames": ["*"]
+    },
+    {
+      "description": "Force 'global' scope for dependencies in the root package.json",
+      "matchFileNames": ["package.json"],
+      "semanticCommitScope": "global"
+    },
+    {
+      "description": "Use chore(global) for packageManager updates",
+      "matchDepTypes": ["packageManager"],
+
+      "semanticCommitType": "chore",
+      "semanticCommitScope": "global"
+    },
+    {
+      "matchPackageNames": ["@types/node"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
     }
   ]
 }
