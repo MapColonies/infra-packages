@@ -10,7 +10,7 @@
     "knip": "knip --directory ../.. --workspace packages/typescript-config"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=24"
   },
   "publishConfig": {
     "access": "public"
