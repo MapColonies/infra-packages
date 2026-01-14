@@ -1,26 +1,25 @@
 {
-  "name": "@map-colonies/error-express-handler",
-  "version": "3.0.0",
-  "description": "Express error handler for the MapColonies project",
+  "name": "@map-colonies/tracing-utils",
+  "version": "0.0.1",
+  "description": "Utilities for tracing integration in MapColonies services",
   "main": "./dist/index.js",
   "type": "commonjs",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.js"
     }
   },
   "scripts": {
+    "test": "vitest run",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "test": "vitest run",
     "prebuild": "pnpm run clean",
     "build": "tsc --project tsconfig.build.json",
     "clean": "rimraf dist",
     "prepack": "turbo run build",
     "check-dist": "publint && attw --pack .",
-    "knip": "knip --directory ../.. --workspace packages/error-express-handler",
+    "knip": "knip --directory ../.. --workspace packages/tracing-utils",
     "api": "api-extractor run --local --verbose",
     "api:check": "api-extractor run --verbose"
   },
@@ -32,23 +31,28 @@
     "access": "public"
   },
   "engines": {
-    "node": ">=20"
-  },
-  "dependencies": {
-    "http-status-codes": "^2.3.0"
+    "node": ">=22"
   },
   "devDependencies": {
     "@map-colonies/eslint-config": "workspace:^",
     "@map-colonies/tsconfig": "workspace:^",
+    "@microsoft/api-extractor": "catalog:",
+    "@opentelemetry/api": "catalog:",
+    "@opentelemetry/sdk-trace-base": "catalog:",
+    "@opentelemetry/sdk-trace-node": "catalog:",
     "@types/express": "^4.17.21",
-    "@types/node": "^22.5.5",
+    "@types/node": "^24.1.0",
     "@types/supertest": "catalog:",
-    "express": "^4.21.0",
+    "eslint": "catalog:",
+    "express": "^4.22.1",
+    "reflect-metadata": "^0.2.2",
+    "rimraf": "catalog:",
     "supertest": "catalog:",
     "typescript": "catalog:",
-    "vitest-config": "workspace:^",
     "vitest": "catalog:",
-    "eslint": "catalog:",
-    "@microsoft/api-extractor": "catalog:"
+    "vitest-config": "workspace:^"
+  },
+  "peerDependencies": {
+    "@opentelemetry/api": "catalog:peers"
   }
 }

@@ -47,12 +47,13 @@
     "protoc": "^33.2.0",
     "@protobuf-ts/runtime": "^2.11.1",
     "nock": "^14.0.10",
-    "@microsoft/api-extractor": "catalog:"
+    "@microsoft/api-extractor": "catalog:",
+    "@opentelemetry/api": "catalog:"
   },
   "dependencies": {
-    "@opentelemetry/sdk-trace-node": "^2.2.0",
+    "@opentelemetry/sdk-trace-node": "catalog:",
     "@opentelemetry/exporter-trace-otlp-proto": "^0.208.0",
-    "@opentelemetry/sdk-trace-base": "^2.2.0",
+    "@opentelemetry/sdk-trace-base": "catalog:",
     "@opentelemetry/auto-instrumentations-node": "^0.67.3",
     "@opentelemetry/instrumentation": "^0.208.0",
     "@opentelemetry/resources": "^2.2.0",
@@ -63,6 +64,6 @@
     "@map-colonies/read-pkg": "workspace:^"
   },
   "peerDependencies": {
-    "@opentelemetry/api": "^1.9.0"
+    "@opentelemetry/api": "catalog:peers"
   }
 }

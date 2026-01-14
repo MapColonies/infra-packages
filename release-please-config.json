@@ -107,6 +107,10 @@
     "packages/tracing": {
       "package-name": "@map-colonies/tracing",
       "release-type": "node"
+    },
+    "packages/tracing-utils": {
+      "package-name": "@map-colonies/tracing-utils",
+      "release-type": "node"
     }
   }
 }
