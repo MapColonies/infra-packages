@@ -34,7 +34,7 @@
     "access": "public"
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "devDependencies": {
     "@map-colonies/eslint-config": "workspace:^",
