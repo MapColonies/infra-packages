@@ -37,22 +37,22 @@
     "@map-colonies/eslint-config": "workspace:^",
     "@map-colonies/tsconfig": "workspace:^",
     "@microsoft/api-extractor": "catalog:",
-    "@opentelemetry/api": "^1.9.0",
-    "@opentelemetry/sdk-trace-base": "^2.2.0",
-    "@opentelemetry/sdk-trace-node": "^2.2.0",
+    "@opentelemetry/api": "catalog:",
+    "@opentelemetry/sdk-trace-base": "catalog:",
+    "@opentelemetry/sdk-trace-node": "catalog:",
     "@types/express": "^4.17.21",
     "@types/node": "^24.1.0",
-    "@types/supertest": "^6.0.3",
+    "@types/supertest": "catalog:",
     "eslint": "catalog:",
     "express": "^4.22.1",
     "reflect-metadata": "^0.2.2",
     "rimraf": "catalog:",
-    "supertest": "^7.1.4",
+    "supertest": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:",
     "vitest-config": "workspace:^"
   },
   "peerDependencies": {
-    "@opentelemetry/api": "^1.9.0"
+    "@opentelemetry/api": "catalog:peers"
   }
 }
