@@ -45,7 +45,7 @@
     "access": "public"
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "dependencies": {
     "@apidevtools/json-schema-ref-parser": "^14.1.1",
