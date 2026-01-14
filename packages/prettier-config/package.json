@@ -6,7 +6,7 @@
   "repository": "github:MapColonies/infra-packages",
   "type": "commonjs",
   "engines": {
-    "node": ">=18"
+    "node": ">=24"
   },
   "publishConfig": {
     "access": "public"
