@@ -1,0 +1,76 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:best-practices", ":disableRateLimiting"],
+  "enabledManagers": ["npm", "github-actions"],
+  "timezone": "UTC",
+  "minimumReleaseAge": "3 days",
+  "prCreation": "immediate",
+  "dependencyDashboard": true,
+  "ignoreDeps": [],
+  "ignorePaths": ["**/node_modules/**"],
+  "packageRules": [
+    {
+      "description": "Disable updates for pnpm workspace protocol (internal links)",
+      "matchCurrentVersion": "/^workspace:/",
+      "enabled": false
+    },
+    {
+      "description": "Group non-major dependencies per package",
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "groupName": "{{parentDir}} dependencies"
+    },
+    {
+      "description": "Group non-major devDependencies per package",
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "groupName": "{{parentDir}} dev dependencies"
+    },
+    {
+      "description": "Group all GitHub Actions updates together",
+      "matchManagers": ["github-actions"],
+      "groupName": "github-actions",
+      "semanticCommitType": "ci",
+      "semanticCommitScope": "global"
+    },
+    {
+      "description": "Separate PRs for Major updates",
+      "matchUpdateTypes": ["major"],
+      "groupName": null
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["dependencies"],
+      "semanticCommitType": "deps"
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["devDependencies"],
+      "semanticCommitType": "devdeps"
+    },
+    {
+      "matchManagers": ["npm"],
+      "semanticCommitScope": "{{parentDir}}",
+      "matchPackageNames": ["*"]
+    },
+    {
+      "description": "Force 'global' scope for dependencies in the root package.json",
+      "matchFileNames": ["package.json"],
+      "semanticCommitScope": "global"
+    },
+    {
+      "description": "Use chore(global) for packageManager updates",
+      "matchDepTypes": ["packageManager"],
+
+      "semanticCommitType": "chore",
+      "semanticCommitScope": "global"
+    },
+    {
+      "matchPackageNames": ["@types/node"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    }
+  ]
+}
