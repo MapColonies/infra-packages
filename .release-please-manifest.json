@@ -1,5 +1,5 @@
 {
-  "packages/commitlint-config": "1.1.0",
+  "packages/commitlint-config": "2.0.0",
   "packages/eslint-config": "5.0.0",
   "packages/prettier-config": "0.0.1",
   "packages/typescript-config": "1.0.0",
