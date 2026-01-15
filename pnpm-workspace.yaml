@@ -19,8 +19,3 @@ catalog:
   '@opentelemetry/sdk-trace-node': 2.3.0
   '@opentelemetry/sdk-trace-base': 2.3.0
   '@types/node': 24.0.0
-
-catalogs:
-  peers:
-    '@opentelemetry/api': '^1.9.0'
-    supertest: '^7.0.0'

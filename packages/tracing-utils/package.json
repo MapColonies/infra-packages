@@ -53,6 +53,6 @@
     "vitest-config": "workspace:^"
   },
   "peerDependencies": {
-    "@opentelemetry/api": "catalog:peers"
+    "@opentelemetry/api": "^1.9.0"
   }
 }
