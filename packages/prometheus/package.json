@@ -1,6 +1,6 @@
 {
   "name": "@map-colonies/prometheus",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Prometheus middlewares and utilities for MapColonies services",
   "main": "./dist/index.js",
   "type": "commonjs",
