@@ -17,7 +17,7 @@ jobs:
       releases_created: ${{ steps.release.outputs.releases_created }}
       paths_released: ${{ steps.release.outputs.paths_released }}
     steps:
-      - uses: googleapis/release-please-action@a02a34c4d625f9be7cb89156071d8567266a2445 # v4.2.0
+      - uses: googleapis/release-please-action@16a9c90856f42705d54a6fda1823352bdc62cf38 # v4.4.0
         id: release
         with:
           config-file: release-please-config.json
@@ -34,7 +34,7 @@ jobs:
         # 2. Parse the JSON string (e.g. '["packages/a"]') into a real array for the matrix
         path: ${{ fromJson(needs.release-please.outputs.paths_released) }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
 
       - name: Init nodejs
         uses: ./.github/actions/init-pnpm
