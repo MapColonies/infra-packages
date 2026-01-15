@@ -51,7 +51,7 @@
     "@opentelemetry/api": "catalog:"
   },
   "dependencies": {
-    "@opentelemetry/sdk-trace-node": "catalog:",
+    "@opentelemetry/sdk-trace-node": "2.3.0",
     "@opentelemetry/exporter-trace-otlp-proto": "^0.208.0",
     "@opentelemetry/sdk-trace-base": "2.3.0",
     "@opentelemetry/auto-instrumentations-node": "^0.67.3",
