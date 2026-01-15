@@ -61,9 +61,15 @@
       "semanticCommitScope": "global"
     },
     {
+      "description": "Use devdeps(global) for pnpm catalog dependencies",
+      "matchFileNames": ["pnpm-workspace.yaml"],
+      "matchDepTypes": ["pnpm.catalog.default"],
+      "semanticCommitType": "devdeps",
+      "semanticCommitScope": "global"
+    },
+    {
       "description": "Use chore(global) for packageManager updates",
       "matchDepTypes": ["packageManager"],
-
       "semanticCommitType": "chore",
       "semanticCommitScope": "global"
     },
