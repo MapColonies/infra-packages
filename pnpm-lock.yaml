@@ -488,7 +488,7 @@ importers:
         specifier: 'catalog:'
         version: 6.0.2
       body-parser:
-        specifier: ^2.2.0
+        specifier: ^2.2.1
         version: 2.2.1
       eslint:
         specifier: 'catalog:'
@@ -7527,7 +7527,7 @@ snapshots:
       http-errors: 2.0.1
       iconv-lite: 0.7.1
       on-finished: 2.4.1
-      qs: 6.14.0
+      qs: 6.14.1
       raw-body: 3.0.2
       type-is: 2.0.1
     transitivePeerDependencies:
