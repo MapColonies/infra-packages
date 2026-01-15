@@ -2,6 +2,7 @@ import express from 'express';
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import request from 'supertest';
 import { Registry, Counter, Histogram } from 'prom-client';
+import { readPackageJsonSync } from '@map-colonies/read-pkg';
 import { metricsMiddleware, collectMetricsExpressMiddleware } from '../src';
 
 describe('Prometheus Middlewares', () => {
@@ -183,24 +184,16 @@ describe('Prometheus Middlewares', () => {
     it('should collect service version metrics', async () => {
       app.use(collectMetricsExpressMiddleware({ registry, collectNodeMetrics: false, collectServiceVersion: true }));
       app.get('/metrics', metricsMiddleware(registry, false));
+      const version = readPackageJsonSync().version ?? '0.0.1';
+      const [major, minor, patch] = version.split('.');
 
       const metricsResponse = await request(app).get('/metrics');
 
       expect(metricsResponse.status).toBe(200);
       expect(metricsResponse.text).toContain('service_version');
-      expect(metricsResponse.text).toContain('service_version_major="0"');
-      expect(metricsResponse.text).toContain('service_version_minor="0"');
-      expect(metricsResponse.text).toContain('service_version_patch="1"');
-    });
-
-    it('should collect service version metrics with prefix', async () => {
-      app.use(collectMetricsExpressMiddleware({ registry, collectNodeMetrics: false, collectServiceVersion: true }));
-      app.get('/metrics', metricsMiddleware(registry, false));
-
-      const metricsResponse = await request(app).get('/metrics');
-
-      expect(metricsResponse.status).toBe(200);
-      expect(metricsResponse.text).toContain('service_version');
+      expect(metricsResponse.text).toContain(`service_version_major="${major}"`);
+      expect(metricsResponse.text).toContain(`service_version_minor="${minor}"`);
+      expect(metricsResponse.text).toContain(`service_version_patch="${patch}"`);
     });
 
     it('should collect node metrics when enabled', async () => {
