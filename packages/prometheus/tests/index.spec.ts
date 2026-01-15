@@ -2,8 +2,8 @@ import express from 'express';
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import request from 'supertest';
 import { Registry, Counter, Histogram } from 'prom-client';
-import { metricsMiddleware, collectMetricsExpressMiddleware } from '../src';
 import { readPackageJsonSync } from '@map-colonies/read-pkg';
+import { metricsMiddleware, collectMetricsExpressMiddleware } from '../src';
 
 describe('Prometheus Middlewares', () => {
   let app: express.Application;
