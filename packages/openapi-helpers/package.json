@@ -62,7 +62,7 @@
     "@types/express": "^4.17.21",
     "openapi-typescript": "^7.4.1",
     "prettier": "^3.3.3",
-    "supertest": "catalog:peers"
+    "supertest": "^7.0.0"
   },
   "devDependencies": {
     "@map-colonies/eslint-config": "workspace:^",

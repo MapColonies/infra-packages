@@ -1,0 +1,41 @@
+name: Enforce No Catalog in Prod
+
+on:
+  pull_request:
+    paths:
+      - '**/package.json'
+
+jobs:
+  check-catalog-usage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Scan ALL package.json files
+        shell: bash
+        run: |
+          EXIT_CODE=0
+
+          while IFS= read -r -d '' file; do
+            CATALOG_DEPS=$(jq -r '
+              [
+                (.dependencies // {} | to_entries[] | select(.value | startswith("catalog:")) | "dependencies: \(.key)"),
+                (.peerDependencies // {} | to_entries[] | select(.value | startswith("catalog:")) | "peerDependencies: \(.key)")
+              ] | .[]
+            ' "$file")
+            
+            if [ -n "$CATALOG_DEPS" ]; then
+              echo "❌ $file:"
+              echo "$CATALOG_DEPS"
+              EXIT_CODE=1
+            fi
+          done < <(find . -name "package.json" -not -path "*/node_modules/*" -print0)
+
+          if [ $EXIT_CODE -eq 1 ]; then
+            echo ""
+            echo "❌ Forbidden 'catalog:' usage found in Production/Peer dependencies"
+            exit 1
+          fi
+
+          echo "✅ All checks passed."
