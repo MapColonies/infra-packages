@@ -3,7 +3,7 @@ packages:
   - internal/*
 
 catalog:
-  '@arethetypeswrong/cli': 0.18.1
+  '@arethetypeswrong/cli': 0.18.2
   '@vitest/coverage-v8': ^4.0.15
   '@vitest/ui': ^4.0.15
   eslint: ^9.39.1
