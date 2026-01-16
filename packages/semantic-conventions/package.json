@@ -44,10 +44,10 @@
     "rimraf": "catalog:",
     "typescript": "catalog:",
     "@microsoft/api-extractor": "catalog:",
-    "change-case-all": "^2.1.0",
-    "comment-json": "^4.2.3",
-    "just-safe-set": "^4.2.1",
-    "ajv": "^8.17.1",
-    "json-schema-to-typescript": "^13.1.2"
+    "change-case-all": "2.1.0",
+    "comment-json": "4.5.1",
+    "just-safe-set": "4.2.1",
+    "ajv": "8.17.1",
+    "json-schema-to-typescript": "13.1.2"
   }
 }
