@@ -48,7 +48,7 @@
     "node": ">=24"
   },
   "dependencies": {
-    "@apidevtools/json-schema-ref-parser": "^14.1.1",
+    "@apidevtools/json-schema-ref-parser": "^15.0.0",
     "@commander-js/extra-typings": "^14.0.0",
     "@map-colonies/read-pkg": "workspace:^",
     "change-case": "^5.4.4",
