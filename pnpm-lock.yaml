@@ -7264,14 +7264,6 @@ snapshots:
     optionalDependencies:
       vite: 7.2.7(@types/node@24.0.0)(jiti@2.6.1)(yaml@2.8.2)
 
-  '@vitest/mocker@4.0.15(vite@7.2.7(@types/node@25.0.0)(jiti@2.6.1)(yaml@2.8.2))':
-    dependencies:
-      '@vitest/spy': 4.0.15
-      estree-walker: 3.0.3
-      magic-string: 0.30.21
-    optionalDependencies:
-      vite: 7.2.7(@types/node@25.0.0)(jiti@2.6.1)(yaml@2.8.2)
-
   '@vitest/pretty-format@4.0.15':
     dependencies:
       tinyrainbow: 3.0.3
@@ -7298,7 +7290,7 @@ snapshots:
       sirv: 3.0.2
       tinyglobby: 0.2.15
       tinyrainbow: 3.0.3
-      vitest: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@25.0.0)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2)
+      vitest: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.0.0)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2)
 
   '@vitest/utils@4.0.15':
     dependencies:
@@ -10341,7 +10333,7 @@ snapshots:
   vitest@4.0.15(@opentelemetry/api@1.9.0)(@types/node@25.0.0)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2):
     dependencies:
       '@vitest/expect': 4.0.15
-      '@vitest/mocker': 4.0.15(vite@7.2.7(@types/node@25.0.0)(jiti@2.6.1)(yaml@2.8.2))
+      '@vitest/mocker': 4.0.15(vite@7.2.7(@types/node@24.0.0)(jiti@2.6.1)(yaml@2.8.2))
       '@vitest/pretty-format': 4.0.15
       '@vitest/runner': 4.0.15
       '@vitest/snapshot': 4.0.15
