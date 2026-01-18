@@ -5,7 +5,7 @@
   "packages/typescript-config": "2.0.0",
   "packages/error-express-handler": "3.0.0",
   "packages/express-access-log-middleware": "4.0.0",
-  "packages/js-logger": "4.0.0",
+  "packages/js-logger": "5.0.0",
   "packages/read-pkg": "1.0.0",
   "packages/openapi-express-viewer": "4.1.0",
   "packages/openapi-helpers": "4.0.0",

@@ -1,5 +1,16 @@
 # Changelog
 
+## [5.0.0](https://github.com/MapColonies/infra-packages/compare/js-logger-v4.0.0...js-logger-v5.0.0) (2026-01-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* **eslint-config:** forced release
+
+### 🐛 Bug Fixes
+
+* **eslint-config:** forced release ([3e58088](https://github.com/MapColonies/infra-packages/commit/3e58088f7f8883a39d591aad6b287b3b94a1f89c))
+
 ## [4.0.0](https://github.com/MapColonies/infra-packages/compare/js-logger-v3.0.2...js-logger-v4.0.0) (2026-01-18)
 
 
