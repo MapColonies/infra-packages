@@ -1,5 +1,16 @@
 # Changelog
 
+## [7.0.0](https://github.com/MapColonies/infra-packages/compare/eslint-config-v6.0.0...eslint-config-v7.0.0) (2026-01-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* **eslint-config:** forced release
+
+### 🐛 Bug Fixes
+
+* **eslint-config:** forced release ([3e58088](https://github.com/MapColonies/infra-packages/commit/3e58088f7f8883a39d591aad6b287b3b94a1f89c))
+
 ## [6.0.0](https://github.com/MapColonies/infra-packages/compare/eslint-config-v5.0.0...eslint-config-v6.0.0) (2026-01-18)
 
 
