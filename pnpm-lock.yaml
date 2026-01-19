@@ -22,8 +22,8 @@ catalogs:
       specifier: 2.3.0
       version: 2.3.0
     '@types/node':
-      specifier: 24.0.0
-      version: 24.0.0
+      specifier: 24.10.9
+      version: 24.10.9
     '@types/supertest':
       specifier: 6.0.3
       version: 6.0.3
@@ -45,6 +45,9 @@ catalogs:
     supertest:
       specifier: 7.2.2
       version: 7.2.2
+    typedoc:
+      specifier: ^0.28.15
+      version: 0.28.16
     typescript:
       specifier: 5.9.3
       version: 5.9.3
@@ -61,7 +64,7 @@ importers:
         version: 0.18.2
       '@commitlint/cli':
         specifier: 20.3.1
-        version: 20.3.1(@types/node@24.0.0)(typescript@5.9.3)
+        version: 20.3.1(@types/node@24.10.9)(typescript@5.9.3)
       '@commitlint/config-pnpm-scopes':
         specifier: 20.1.0
         version: 20.1.0
@@ -73,7 +76,7 @@ importers:
         version: link:packages/prettier-config
       '@types/node':
         specifier: 'catalog:'
-        version: 24.0.0
+        version: 24.10.9
       '@vitest/coverage-v8':
         specifier: 'catalog:'
         version: 4.0.17(vitest@4.0.15)
@@ -82,13 +85,13 @@ importers:
         version: 4.0.17(vitest@4.0.15)
       commitlint:
         specifier: 20.3.1
-        version: 20.3.1(@types/node@24.0.0)(typescript@5.9.3)
+        version: 20.3.1(@types/node@24.10.9)(typescript@5.9.3)
       husky:
         specifier: 9.1.7
         version: 9.1.7
       knip:
         specifier: 5.81.0
-        version: 5.81.0(@types/node@24.0.0)(typescript@5.9.3)
+        version: 5.81.0(@types/node@24.10.9)(typescript@5.9.3)
       prettier:
         specifier: 3.8.0
         version: 3.8.0
@@ -115,7 +118,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.0.0)(@vitest/ui@4.0.17)(jiti@2.6.1)(yaml@2.8.2)
+        version: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.17)(jiti@2.6.1)(yaml@2.8.2)
 
   internal/vitest-config:
     devDependencies:
@@ -177,13 +180,13 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.55.2(@types/node@24.0.0)
+        version: 7.55.2(@types/node@24.10.9)
       '@types/express':
         specifier: 4.17.25
         version: 4.17.25
       '@types/node':
         specifier: 'catalog:'
-        version: 24.0.0
+        version: 24.10.9
       '@types/supertest':
         specifier: 'catalog:'
         version: 6.0.3
@@ -201,7 +204,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.0.0)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2)
+        version: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2)
       vitest-config:
         specifier: workspace:^
         version: link:../../internal/vitest-config
@@ -235,7 +238,7 @@ importers:
         version: link:../typescript-config
       '@types/node':
         specifier: 'catalog:'
-        version: 24.0.0
+        version: 24.10.9
       eslint:
         specifier: 'catalog:'
         version: 9.39.1(jiti@2.6.1)
@@ -253,7 +256,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.0.0)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2)
+        version: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2)
       vitest-config:
         specifier: workspace:^
         version: link:../../internal/vitest-config
@@ -278,13 +281,13 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.55.2(@types/node@24.0.0)
+        version: 7.55.2(@types/node@24.10.9)
       '@types/express':
         specifier: 4.17.25
         version: 4.17.25
       '@types/node':
         specifier: 'catalog:'
-        version: 24.0.0
+        version: 24.10.9
       '@types/supertest':
         specifier: 'catalog:'
         version: 6.0.3
@@ -308,7 +311,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.0.0)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2)
+        version: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2)
       vitest-config:
         specifier: workspace:^
         version: link:../../internal/vitest-config
@@ -339,10 +342,10 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.55.2(@types/node@24.0.0)
+        version: 7.55.2(@types/node@24.10.9)
       '@types/node':
         specifier: 'catalog:'
-        version: 24.0.0
+        version: 24.10.9
       eslint:
         specifier: 'catalog:'
         version: 9.39.1(jiti@2.6.1)
@@ -357,7 +360,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.0.0)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2)
+        version: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2)
       vitest-config:
         specifier: workspace:^
         version: link:../../internal/vitest-config
@@ -382,7 +385,7 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.55.2(@types/node@24.0.0)
+        version: 7.55.2(@types/node@24.10.9)
       '@types/express':
         specifier: 4.17.25
         version: 4.17.25
@@ -391,7 +394,7 @@ importers:
         version: 4.0.9
       '@types/node':
         specifier: 'catalog:'
-        version: 24.0.0
+        version: 24.10.9
       '@types/supertest':
         specifier: 'catalog:'
         version: 6.0.3
@@ -415,7 +418,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.0.0)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2)
+        version: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2)
       vitest-config:
         specifier: workspace:^
         version: link:../../internal/vitest-config
@@ -470,13 +473,13 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.55.2(@types/node@24.0.0)
+        version: 7.55.2(@types/node@24.10.9)
       '@types/body-parser':
         specifier: 1.19.6
         version: 1.19.6
       '@types/node':
         specifier: 'catalog:'
-        version: 24.0.0
+        version: 24.10.9
       '@types/supertest':
         specifier: 'catalog:'
         version: 6.0.3
@@ -500,7 +503,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.0.0)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2)
+        version: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2)
       vitest-config:
         specifier: workspace:^
         version: link:../../internal/vitest-config
@@ -534,7 +537,7 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.55.2(@types/node@24.0.0)
+        version: 7.55.2(@types/node@24.10.9)
       '@types/express':
         specifier: 4.17.25
         version: 4.17.25
@@ -543,7 +546,7 @@ importers:
         version: 4.17.23
       '@types/node':
         specifier: 'catalog:'
-        version: 24.0.0
+        version: 24.10.9
       '@types/supertest':
         specifier: 'catalog:'
         version: 6.0.3
@@ -564,7 +567,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.0.0)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2)
+        version: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2)
       vitest-config:
         specifier: workspace:^
         version: link:../../internal/vitest-config
@@ -583,10 +586,10 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.55.2(@types/node@24.0.0)
+        version: 7.55.2(@types/node@24.10.9)
       '@types/node':
         specifier: 'catalog:'
-        version: 24.0.0
+        version: 24.10.9
       eslint:
         specifier: 'catalog:'
         version: 9.39.1(jiti@2.6.1)
@@ -598,7 +601,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.0.0)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2)
+        version: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2)
       vitest-config:
         specifier: workspace:^
         version: link:../../internal/vitest-config
@@ -613,10 +616,10 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.55.2(@types/node@24.0.0)
+        version: 7.55.2(@types/node@24.10.9)
       '@types/node':
         specifier: 'catalog:'
-        version: 24.0.0
+        version: 24.10.9
       ajv:
         specifier: 8.17.1
         version: 8.17.1
@@ -686,7 +689,7 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.55.2(@types/node@24.0.0)
+        version: 7.55.2(@types/node@24.10.9)
       '@opentelemetry/api':
         specifier: 'catalog:'
         version: 1.9.0
@@ -698,7 +701,7 @@ importers:
         version: 2.11.1
       '@types/node':
         specifier: 'catalog:'
-        version: 24.0.0
+        version: 24.10.9
       eslint:
         specifier: 'catalog:'
         version: 9.39.1(jiti@2.6.1)
@@ -716,7 +719,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.0.0)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2)
+        version: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2)
       vitest-config:
         specifier: workspace:^
         version: link:../../internal/vitest-config
@@ -731,7 +734,7 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.55.2(@types/node@24.0.0)
+        version: 7.55.2(@types/node@24.10.9)
       '@opentelemetry/api':
         specifier: 'catalog:'
         version: 1.9.0
@@ -746,7 +749,7 @@ importers:
         version: 4.17.25
       '@types/node':
         specifier: 'catalog:'
-        version: 24.0.0
+        version: 24.10.9
       '@types/supertest':
         specifier: 'catalog:'
         version: 6.0.3
@@ -770,7 +773,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.0.0)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2)
+        version: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2)
       vitest-config:
         specifier: workspace:^
         version: link:../../internal/vitest-config
@@ -2290,8 +2293,8 @@ packages:
   '@types/mysql@2.15.27':
     resolution: {integrity: sha512-YfWiV16IY0OeBfBCk8+hXKmdTKrKlwKN1MNKAPBu5JYxLwBEZl7QzeEpGnlZb3VMGJrrGmB84gXiH+ofs/TezA==}
 
-  '@types/node@24.0.0':
-    resolution: {integrity: sha512-yZQa2zm87aRVcqDyH5+4Hv9KYgSdgwX1rFnGvpbzMaC7YAljmhBET93TPiTd3ObwTL+gSpIzPKg5BqVxdCvxKg==}
+  '@types/node@24.10.9':
+    resolution: {integrity: sha512-ne4A0IpG3+2ETuREInjPNhUGis1SFjv1d5asp8MzEAGtOZeTeHVDOYqOgqfhvseqg/iXty2hjBf1zAOb7RNiNw==}
 
   '@types/node@25.0.0':
     resolution: {integrity: sha512-rl78HwuZlaDIUSeUKkmogkhebA+8K1Hy7tddZuJ3D0xV8pZSfsYGTsliGUol1JPzu9EKnTxPC4L1fiWouStRew==}
@@ -5086,9 +5089,6 @@ packages:
   undici-types@7.16.0:
     resolution: {integrity: sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==}
 
-  undici-types@7.8.0:
-    resolution: {integrity: sha512-9UJ2xGDvQ43tYyVMpuHlsgApydB8ZKfVYTsLDhXkFL/6gfkp+U8xTGdh8pMJv1SpZna0zxG1DwsKZsreLbXBxw==}
-
   unicode-emoji-modifier-base@1.0.0:
     resolution: {integrity: sha512-yLSH4py7oFH3oG/9K+XWrz1pSi3dfUrWEnInbxMfArOfc1+33BlGPQtLsOYwvdMy11AwUBetYuaRxSPqgkq+8g==}
     engines: {node: '>=4'}
@@ -5405,11 +5405,11 @@ snapshots:
     dependencies:
       commander: 14.0.2
 
-  '@commitlint/cli@20.3.1(@types/node@24.0.0)(typescript@5.9.3)':
+  '@commitlint/cli@20.3.1(@types/node@24.10.9)(typescript@5.9.3)':
     dependencies:
       '@commitlint/format': 20.3.1
       '@commitlint/lint': 20.3.1
-      '@commitlint/load': 20.3.1(@types/node@24.0.0)(typescript@5.9.3)
+      '@commitlint/load': 20.3.1(@types/node@24.10.9)(typescript@5.9.3)
       '@commitlint/read': 20.3.1
       '@commitlint/types': 20.3.1
       tinyexec: 1.0.2
@@ -5462,7 +5462,7 @@ snapshots:
       '@commitlint/rules': 20.3.1
       '@commitlint/types': 20.3.1
 
-  '@commitlint/load@20.3.1(@types/node@24.0.0)(typescript@5.9.3)':
+  '@commitlint/load@20.3.1(@types/node@24.10.9)(typescript@5.9.3)':
     dependencies:
       '@commitlint/config-validator': 20.3.1
       '@commitlint/execute-rule': 20.0.0
@@ -5470,7 +5470,7 @@ snapshots:
       '@commitlint/types': 20.3.1
       chalk: 5.6.2
       cosmiconfig: 9.0.0(typescript@5.9.3)
-      cosmiconfig-typescript-loader: 6.2.0(@types/node@24.0.0)(cosmiconfig@9.0.0(typescript@5.9.3))(typescript@5.9.3)
+      cosmiconfig-typescript-loader: 6.2.0(@types/node@24.10.9)(cosmiconfig@9.0.0(typescript@5.9.3))(typescript@5.9.3)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -5735,23 +5735,23 @@ snapshots:
     dependencies:
       '@braidai/lang': 1.1.2
 
-  '@microsoft/api-extractor-model@7.32.2(@types/node@24.0.0)':
+  '@microsoft/api-extractor-model@7.32.2(@types/node@24.10.9)':
     dependencies:
       '@microsoft/tsdoc': 0.16.0
       '@microsoft/tsdoc-config': 0.18.0
-      '@rushstack/node-core-library': 5.19.1(@types/node@24.0.0)
+      '@rushstack/node-core-library': 5.19.1(@types/node@24.10.9)
     transitivePeerDependencies:
       - '@types/node'
 
-  '@microsoft/api-extractor@7.55.2(@types/node@24.0.0)':
+  '@microsoft/api-extractor@7.55.2(@types/node@24.10.9)':
     dependencies:
-      '@microsoft/api-extractor-model': 7.32.2(@types/node@24.0.0)
+      '@microsoft/api-extractor-model': 7.32.2(@types/node@24.10.9)
       '@microsoft/tsdoc': 0.16.0
       '@microsoft/tsdoc-config': 0.18.0
-      '@rushstack/node-core-library': 5.19.1(@types/node@24.0.0)
+      '@rushstack/node-core-library': 5.19.1(@types/node@24.10.9)
       '@rushstack/rig-package': 0.6.0
-      '@rushstack/terminal': 0.19.5(@types/node@24.0.0)
-      '@rushstack/ts-command-line': 5.1.5(@types/node@24.0.0)
+      '@rushstack/terminal': 0.19.5(@types/node@24.10.9)
+      '@rushstack/ts-command-line': 5.1.5(@types/node@24.10.9)
       diff: 8.0.2
       lodash: 4.17.21
       minimatch: 10.0.3
@@ -6899,7 +6899,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.55.1':
     optional: true
 
-  '@rushstack/node-core-library@5.19.1(@types/node@24.0.0)':
+  '@rushstack/node-core-library@5.19.1(@types/node@24.10.9)':
     dependencies:
       ajv: 8.13.0
       ajv-draft-04: 1.0.0(ajv@8.13.0)
@@ -6910,28 +6910,28 @@ snapshots:
       resolve: 1.22.11
       semver: 7.5.4
     optionalDependencies:
-      '@types/node': 24.0.0
+      '@types/node': 24.10.9
 
-  '@rushstack/problem-matcher@0.1.1(@types/node@24.0.0)':
+  '@rushstack/problem-matcher@0.1.1(@types/node@24.10.9)':
     optionalDependencies:
-      '@types/node': 24.0.0
+      '@types/node': 24.10.9
 
   '@rushstack/rig-package@0.6.0':
     dependencies:
       resolve: 1.22.11
       strip-json-comments: 3.1.1
 
-  '@rushstack/terminal@0.19.5(@types/node@24.0.0)':
+  '@rushstack/terminal@0.19.5(@types/node@24.10.9)':
     dependencies:
-      '@rushstack/node-core-library': 5.19.1(@types/node@24.0.0)
-      '@rushstack/problem-matcher': 0.1.1(@types/node@24.0.0)
+      '@rushstack/node-core-library': 5.19.1(@types/node@24.10.9)
+      '@rushstack/problem-matcher': 0.1.1(@types/node@24.10.9)
       supports-color: 8.1.1
     optionalDependencies:
-      '@types/node': 24.0.0
+      '@types/node': 24.10.9
 
-  '@rushstack/ts-command-line@5.1.5(@types/node@24.0.0)':
+  '@rushstack/ts-command-line@5.1.5(@types/node@24.10.9)':
     dependencies:
-      '@rushstack/terminal': 0.19.5(@types/node@24.0.0)
+      '@rushstack/terminal': 0.19.5(@types/node@24.10.9)
       '@types/argparse': 1.0.38
       argparse: 1.0.10
       string-argv: 0.3.2
@@ -6976,11 +6976,11 @@ snapshots:
   '@types/body-parser@1.19.6':
     dependencies:
       '@types/connect': 3.4.38
-      '@types/node': 25.0.0
+      '@types/node': 24.10.9
 
   '@types/bunyan@1.8.11':
     dependencies:
-      '@types/node': 25.0.0
+      '@types/node': 24.10.9
 
   '@types/chai@5.2.3':
     dependencies:
@@ -6989,7 +6989,7 @@ snapshots:
 
   '@types/connect@3.4.38':
     dependencies:
-      '@types/node': 25.0.0
+      '@types/node': 24.10.9
 
   '@types/conventional-commits-parser@5.0.2':
     dependencies:
@@ -7003,7 +7003,7 @@ snapshots:
 
   '@types/express-serve-static-core@4.19.7':
     dependencies:
-      '@types/node': 25.0.0
+      '@types/node': 24.10.9
       '@types/qs': 6.14.0
       '@types/range-parser': 1.2.7
       '@types/send': 1.2.1
@@ -7018,7 +7018,7 @@ snapshots:
   '@types/glob@7.2.0':
     dependencies:
       '@types/minimatch': 6.0.0
-      '@types/node': 25.0.0
+      '@types/node': 24.10.9
 
   '@types/hast@3.0.4':
     dependencies:
@@ -7034,7 +7034,7 @@ snapshots:
 
   '@types/memcached@2.2.10':
     dependencies:
-      '@types/node': 25.0.0
+      '@types/node': 24.10.9
 
   '@types/methods@1.1.4': {}
 
@@ -7046,11 +7046,11 @@ snapshots:
 
   '@types/mysql@2.15.27':
     dependencies:
-      '@types/node': 25.0.0
+      '@types/node': 24.10.9
 
-  '@types/node@24.0.0':
+  '@types/node@24.10.9':
     dependencies:
-      undici-types: 7.8.0
+      undici-types: 7.16.0
 
   '@types/node@25.0.0':
     dependencies:
@@ -7058,7 +7058,7 @@ snapshots:
 
   '@types/oracledb@6.5.2':
     dependencies:
-      '@types/node': 25.0.0
+      '@types/node': 24.10.9
 
   '@types/pg-pool@2.0.6':
     dependencies:
@@ -7066,7 +7066,7 @@ snapshots:
 
   '@types/pg@8.15.6':
     dependencies:
-      '@types/node': 25.0.0
+      '@types/node': 24.10.9
       pg-protocol: 1.10.3
       pg-types: 2.2.0
 
@@ -7079,23 +7079,23 @@ snapshots:
   '@types/send@0.17.6':
     dependencies:
       '@types/mime': 1.3.5
-      '@types/node': 25.0.0
+      '@types/node': 24.10.9
 
   '@types/send@1.2.1':
     dependencies:
-      '@types/node': 25.0.0
+      '@types/node': 24.10.9
 
   '@types/serve-static@1.15.10':
     dependencies:
       '@types/http-errors': 2.0.5
-      '@types/node': 25.0.0
+      '@types/node': 24.10.9
       '@types/send': 0.17.6
 
   '@types/superagent@8.1.9':
     dependencies:
       '@types/cookiejar': 2.1.5
       '@types/methods': 1.1.4
-      '@types/node': 25.0.0
+      '@types/node': 24.10.9
       form-data: 4.0.5
 
   '@types/supertest@6.0.3':
@@ -7110,7 +7110,7 @@ snapshots:
 
   '@types/tedious@4.0.14':
     dependencies:
-      '@types/node': 25.0.0
+      '@types/node': 24.10.9
 
   '@types/unist@3.0.3': {}
 
@@ -7283,7 +7283,7 @@ snapshots:
       obug: 2.1.1
       std-env: 3.10.0
       tinyrainbow: 3.0.3
-      vitest: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.0.0)(@vitest/ui@4.0.17)(jiti@2.6.1)(yaml@2.8.2)
+      vitest: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.17)(jiti@2.6.1)(yaml@2.8.2)
 
   '@vitest/expect@4.0.15':
     dependencies:
@@ -7294,13 +7294,13 @@ snapshots:
       chai: 6.2.2
       tinyrainbow: 3.0.3
 
-  '@vitest/mocker@4.0.15(vite@7.3.1(@types/node@24.0.0)(jiti@2.6.1)(yaml@2.8.2))':
+  '@vitest/mocker@4.0.15(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))':
     dependencies:
       '@vitest/spy': 4.0.15
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 7.3.1(@types/node@24.0.0)(jiti@2.6.1)(yaml@2.8.2)
+      vite: 7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2)
 
   '@vitest/mocker@4.0.15(vite@7.3.1(@types/node@25.0.0)(jiti@2.6.1)(yaml@2.8.2))':
     dependencies:
@@ -7352,7 +7352,7 @@ snapshots:
       sirv: 3.0.2
       tinyglobby: 0.2.15
       tinyrainbow: 3.0.3
-      vitest: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.0.0)(@vitest/ui@4.0.17)(jiti@2.6.1)(yaml@2.8.2)
+      vitest: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.17)(jiti@2.6.1)(yaml@2.8.2)
 
   '@vitest/utils@4.0.15':
     dependencies:
@@ -7706,9 +7706,9 @@ snapshots:
 
   comment-parser@1.4.1: {}
 
-  commitlint@20.3.1(@types/node@24.0.0)(typescript@5.9.3):
+  commitlint@20.3.1(@types/node@24.10.9)(typescript@5.9.3):
     dependencies:
-      '@commitlint/cli': 20.3.1(@types/node@24.0.0)(typescript@5.9.3)
+      '@commitlint/cli': 20.3.1(@types/node@24.10.9)(typescript@5.9.3)
       '@commitlint/types': 20.3.1
     transitivePeerDependencies:
       - '@types/node'
@@ -7756,9 +7756,9 @@ snapshots:
 
   core-util-is@1.0.3: {}
 
-  cosmiconfig-typescript-loader@6.2.0(@types/node@24.0.0)(cosmiconfig@9.0.0(typescript@5.9.3))(typescript@5.9.3):
+  cosmiconfig-typescript-loader@6.2.0(@types/node@24.10.9)(cosmiconfig@9.0.0(typescript@5.9.3))(typescript@5.9.3):
     dependencies:
-      '@types/node': 24.0.0
+      '@types/node': 24.10.9
       cosmiconfig: 9.0.0(typescript@5.9.3)
       jiti: 2.6.1
       typescript: 5.9.3
@@ -8911,10 +8911,10 @@ snapshots:
     dependencies:
       json-buffer: 3.0.1
 
-  knip@5.81.0(@types/node@24.0.0)(typescript@5.9.3):
+  knip@5.81.0(@types/node@24.10.9)(typescript@5.9.3):
     dependencies:
       '@nodelib/fs.walk': 1.2.8
-      '@types/node': 24.0.0
+      '@types/node': 24.10.9
       fast-glob: 3.3.3
       formatly: 0.3.0
       jiti: 2.6.1
@@ -9544,7 +9544,7 @@ snapshots:
       '@protobufjs/path': 1.1.2
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
-      '@types/node': 25.0.0
+      '@types/node': 24.10.9
       long: 5.3.2
 
   protoc@33.2.0: {}
@@ -10285,8 +10285,6 @@ snapshots:
 
   undici-types@7.16.0: {}
 
-  undici-types@7.8.0: {}
-
   unicode-emoji-modifier-base@1.0.0: {}
 
   unicorn-magic@0.1.0: {}
@@ -10333,7 +10331,7 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vite@7.3.1(@types/node@24.0.0)(jiti@2.6.1)(yaml@2.8.2):
+  vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2):
     dependencies:
       esbuild: 0.27.2
       fdir: 6.5.0(picomatch@4.0.3)
@@ -10342,7 +10340,7 @@ snapshots:
       rollup: 4.55.1
       tinyglobby: 0.2.15
     optionalDependencies:
-      '@types/node': 24.0.0
+      '@types/node': 24.10.9
       fsevents: 2.3.3
       jiti: 2.6.1
       yaml: 2.8.2
@@ -10361,10 +10359,10 @@ snapshots:
       jiti: 2.6.1
       yaml: 2.8.2
 
-  vitest@4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.0.0)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2):
+  vitest@4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.15)(jiti@2.6.1)(yaml@2.8.2):
     dependencies:
       '@vitest/expect': 4.0.15
-      '@vitest/mocker': 4.0.15(vite@7.3.1(@types/node@24.0.0)(jiti@2.6.1)(yaml@2.8.2))
+      '@vitest/mocker': 4.0.15(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
       '@vitest/pretty-format': 4.0.15
       '@vitest/runner': 4.0.15
       '@vitest/snapshot': 4.0.15
@@ -10381,11 +10379,11 @@ snapshots:
       tinyexec: 1.0.2
       tinyglobby: 0.2.15
       tinyrainbow: 3.0.3
-      vite: 7.3.1(@types/node@24.0.0)(jiti@2.6.1)(yaml@2.8.2)
+      vite: 7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2)
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@opentelemetry/api': 1.9.0
-      '@types/node': 24.0.0
+      '@types/node': 24.10.9
       '@vitest/ui': 4.0.15(vitest@4.0.15)
     transitivePeerDependencies:
       - jiti
@@ -10400,10 +10398,10 @@ snapshots:
       - tsx
       - yaml
 
-  vitest@4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.0.0)(@vitest/ui@4.0.17)(jiti@2.6.1)(yaml@2.8.2):
+  vitest@4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.17)(jiti@2.6.1)(yaml@2.8.2):
     dependencies:
       '@vitest/expect': 4.0.15
-      '@vitest/mocker': 4.0.15(vite@7.3.1(@types/node@24.0.0)(jiti@2.6.1)(yaml@2.8.2))
+      '@vitest/mocker': 4.0.15(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
       '@vitest/pretty-format': 4.0.15
       '@vitest/runner': 4.0.15
       '@vitest/snapshot': 4.0.15
@@ -10420,11 +10418,11 @@ snapshots:
       tinyexec: 1.0.2
       tinyglobby: 0.2.15
       tinyrainbow: 3.0.3
-      vite: 7.3.1(@types/node@24.0.0)(jiti@2.6.1)(yaml@2.8.2)
+      vite: 7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2)
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@opentelemetry/api': 1.9.0
-      '@types/node': 24.0.0
+      '@types/node': 24.10.9
       '@vitest/ui': 4.0.17(vitest@4.0.15)
     transitivePeerDependencies:
       - jiti
