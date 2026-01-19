@@ -45,6 +45,9 @@ catalogs:
     supertest:
       specifier: 7.2.2
       version: 7.2.2
+    typedoc:
+      specifier: ^0.28.15
+      version: 0.28.16
     typescript:
       specifier: 5.9.3
       version: 5.9.3
@@ -139,8 +142,8 @@ importers:
         version: 20.2.0
     devDependencies:
       '@commitlint/types':
-        specifier: 20.2.0
-        version: 20.2.0
+        specifier: 20.3.1
+        version: 20.3.1
       '@map-colonies/eslint-config':
         specifier: workspace:^
         version: link:../eslint-config
@@ -925,10 +928,6 @@ packages:
 
   '@commitlint/top-level@20.0.0':
     resolution: {integrity: sha512-drXaPSP2EcopukrUXvUXmsQMu3Ey/FuJDc/5oiW4heoCfoE5BdLQyuc7veGeE3aoQaTVqZnh4D5WTWe2vefYKg==}
-    engines: {node: '>=v18'}
-
-  '@commitlint/types@20.2.0':
-    resolution: {integrity: sha512-KTy0OqRDLR5y/zZMnizyx09z/rPlPC/zKhYgH8o/q6PuAjoQAKlRfY4zzv0M64yybQ//6//4H1n14pxaLZfUnA==}
     engines: {node: '>=v18'}
 
   '@commitlint/types@20.3.1':
@@ -5420,7 +5419,7 @@ snapshots:
 
   '@commitlint/config-conventional@20.2.0':
     dependencies:
-      '@commitlint/types': 20.2.0
+      '@commitlint/types': 20.3.1
       conventional-changelog-conventionalcommits: 7.0.2
 
   '@commitlint/config-pnpm-scopes@20.1.0':
@@ -5515,11 +5514,6 @@ snapshots:
   '@commitlint/top-level@20.0.0':
     dependencies:
       find-up: 7.0.0
-
-  '@commitlint/types@20.2.0':
-    dependencies:
-      '@types/conventional-commits-parser': 5.0.2
-      chalk: 5.6.2
 
   '@commitlint/types@20.3.1':
     dependencies:
