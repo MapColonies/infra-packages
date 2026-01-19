@@ -48,6 +48,6 @@
     "comment-json": "4.5.1",
     "just-safe-set": "4.2.1",
     "ajv": "8.17.1",
-    "json-schema-to-typescript": "13.1.2"
+    "json-schema-to-typescript": "15.0.4"
   }
 }
