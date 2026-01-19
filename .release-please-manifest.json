@@ -12,5 +12,5 @@
   "packages/semantic-conventions": "0.0.1",
   "packages/tracing": "1.0.0",
   "packages/tracing-utils": "1.0.0",
-  "packages/prometheus": "0.0.1"
+  "packages/prometheus": "1.0.0"
 }
