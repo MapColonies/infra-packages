@@ -44,7 +44,7 @@
     "vitest-config": "workspace:^",
     "vitest": "catalog:",
     "@protobuf-ts/plugin": "2.11.1",
-    "protoc": "33.2.0",
+    "protoc": "33.4.0",
     "@protobuf-ts/runtime": "2.11.1",
     "nock": "14.0.10",
     "@microsoft/api-extractor": "catalog:",
