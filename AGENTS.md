@@ -49,3 +49,21 @@ internal/      # Private shared configs (not published)
 5. **Test functions**: Use `function()` syntax (not arrow functions)
 6. **Return types**: Required on all functions
 7. **Magic numbers**: Prohibited (except 0, 1)
+8. **Type assertions**: Avoid `as any` and `as Type` - fix actual type issues instead
+9. **Module consistency**: When creating config/plugin packages, match module type (ESM/CommonJS) with consumer
+
+## Creating New Packages
+
+When creating a new package, you MUST update these files:
+
+1. `.release-please-manifest.json` - Add package with version "0.0.1"
+2. `release-please-config.json` - Add to `packages` object
+3. `.vscode/project.code-workspace` - Add folder entry
+
+**Module type selection:**
+
+- CommonJS (default): Library packages
+- ESM: Config packages, ESLint plugins, when consuming ESM-only deps
+- Keep module type consistent between related config/plugin packages
+
+See [Packages Guide](./ai-docs/packages.md) for detailed setup steps.

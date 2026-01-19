@@ -1,5 +1,138 @@
 # Packages Guide
 
+## Creating a New Package
+
+### 1. Create Package Structure
+
+```bash
+mkdir -p packages/package-name/{src,tests}
+cd packages/package-name
+```
+
+### 2. Create package.json
+
+**Choose module type:**
+
+- **CommonJS** (default): Library packages
+- **ESM**: Config packages, ESLint plugins, or when dependencies are ESM-only
+- **Keep consistent**: If package A imports package B and both are configs/plugins, use same type
+
+```json
+{
+  "name": "@map-colonies/package-name",
+  "version": "0.0.1",
+  "type": "commonjs", // or "module" for ESM
+  "main": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "test": "vitest run",
+    "lint": "eslint .",
+    "prebuild": "pnpm run clean",
+    "build": "tsc --project tsconfig.build.json",
+    "clean": "rimraf dist",
+    "prepack": "turbo run build",
+    "check-dist": "publint && attw --pack .",
+    "knip": "knip --directory ../.. --workspace packages/package-name"
+  },
+  "files": ["dist/**/*"],
+  "devDependencies": {
+    "@map-colonies/eslint-config": "workspace:^",
+    "@map-colonies/tsconfig": "workspace:^",
+    "@types/node": "catalog:",
+    "eslint": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:",
+    "vitest-config": "workspace:^",
+    "publint": "catalog:",
+    "@arethetypeswrong/cli": "catalog:",
+    "rimraf": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
+```
+
+### 3. Update Monorepo Files
+
+**`.release-please-manifest.json`:**
+
+```json
+{
+  "packages/package-name": "0.0.1"
+}
+```
+
+**`release-please-config.json`:**
+
+```json
+{
+  "packages": {
+    "packages/package-name": {}
+  }
+}
+```
+
+**`.vscode/project.code-workspace`:**
+
+```json
+{
+  "folders": [{ "name": "package-name", "path": "../packages/package-name" }]
+}
+```
+
+### 4. Create Config Files
+
+**tsconfig.json:**
+
+```json
+{
+  "extends": "@map-colonies/tsconfig/tsconfig-library",
+  "include": ["src", "tests", "vitest.config.cts"],
+  "exclude": ["dist", "node_modules"]
+}
+```
+
+**tsconfig.build.json:**
+
+```json
+{
+  "extends": "./tsconfig.json",
+  "include": ["src"],
+  "exclude": ["**/*.spec.ts"]
+}
+```
+
+**vitest.config.cts:**
+
+```typescript
+import baseConfig from 'vitest-config';
+import { mergeConfig } from 'vitest/config';
+
+export default mergeConfig(baseConfig, {});
+```
+
+**eslint.config.mjs:**
+
+```javascript
+import tsBaseConfig from '@map-colonies/eslint-config/ts-base';
+import { config } from '@map-colonies/eslint-config/helpers';
+
+export default config(tsBaseConfig);
+```
+
+### 5. Verify
+
+```bash
+pnpm install
+pnpm run build && pnpm run test && pnpm run check-dist
+```
+
 ## Publishing & Releasing
 
 **IMPORTANT**: Publishing and releasing is handled automatically by CI.

@@ -110,6 +110,51 @@ array.slice(OFFSET);
 
 ## Documentation
 
+### Type Assertions - Use Sparingly!
+
+**Type assertions (`as`, `!`) hide real problems and should be avoided.**
+
+```typescript
+// ❌ BAD - Hiding incompatibility
+const plugin = mapColoniesPlugin as any;
+
+// ❌ BAD - Masking type mismatch
+plugins: {
+  '@map-colonies': plugin as Plugin
+}
+
+// ✅ GOOD - Fix the actual type
+interface PluginConfigs extends Record<string, Linter.Config> {
+  'pino-safety': Linter.Config;
+}
+
+// ✅ GOOD - Update dependency versions to match
+// If @typescript-eslint/utils v8.49.0 conflicts with
+// @typescript-eslint/rule-tester v8.53.0, update both to same version
+```
+
+**When type assertions are acceptable:**
+
+1. **Type narrowing** - When TypeScript can't infer but you know better:
+   ```typescript
+   const element = document.getElementById('foo') as HTMLInputElement;
+   ```
+2. **Vendor type bugs** - Known library type issues (document why):
+   ```typescript
+   // @ts-expect-error - eslint-plugin-import-x has incomplete types
+   // See: https://github.com/un-ts/eslint-plugin-import-x/issues/421
+   importFlatConfigs.recommended;
+   ```
+3. **Migration** - Temporary during large refactors (add TODO)
+
+**Before using `as any` or `@ts-expect-error`, try:**
+
+1. Fix actual type incompatibility
+2. Update dependency versions to match
+3. Add proper type definitions
+4. Use type guards for runtime checks
+5. Extend/implement missing types
+
 ### JSDoc (Required for Public APIs)
 
 ```typescript
