@@ -426,8 +426,8 @@ importers:
   packages/openapi-helpers:
     dependencies:
       '@apidevtools/json-schema-ref-parser':
-        specifier: ^14.1.1
-        version: 14.2.1(@types/json-schema@7.0.15)
+        specifier: ^15.0.0
+        version: 15.2.1(@types/json-schema@7.0.15)
       '@commander-js/extra-typings':
         specifier: ^14.0.0
         version: 14.0.0(commander@14.0.2)
@@ -798,6 +798,12 @@ packages:
   '@apidevtools/json-schema-ref-parser@14.2.1':
     resolution: {integrity: sha512-HmdFw9CDYqM6B25pqGBpNeLCKvGPlIx1EbLrVL0zPvj50CJQUHyBNBw45Muk0kEIkogo1VZvOKHajdMuAzSxRg==}
     engines: {node: '>= 20'}
+    peerDependencies:
+      '@types/json-schema': ^7.0.15
+
+  '@apidevtools/json-schema-ref-parser@15.2.1':
+    resolution: {integrity: sha512-XaFfxKmYHUlYla8VMG1sOaX+uZwX2Bbk51pC7D4Oy723HVmzTrJuh5oEFAeFfPQX3HkILXabuvlXzs1YcQmvJQ==}
+    engines: {node: '>=20'}
     peerDependencies:
       '@types/json-schema': ^7.0.15
 
@@ -5317,6 +5323,11 @@ snapshots:
       leven: 3.1.0
 
   '@apidevtools/json-schema-ref-parser@14.2.1(@types/json-schema@7.0.15)':
+    dependencies:
+      '@types/json-schema': 7.0.15
+      js-yaml: 4.1.1
+
+  '@apidevtools/json-schema-ref-parser@15.2.1(@types/json-schema@7.0.15)':
     dependencies:
       '@types/json-schema': 7.0.15
       js-yaml: 4.1.1
