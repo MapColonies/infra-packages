@@ -44,7 +44,7 @@
     "eslint": "^9.19.0",
     "eslint-plugin-jest": "^28.11.0 || ^29.0.0",
     "eslint-plugin-react": "^7.37.4",
-    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-hooks": "^5.1.0 || ^7.0.0",
     "globals": "^15.14.0 || ^17.0.0"
   },
   "peerDependenciesMeta": {
@@ -74,7 +74,7 @@
     "@types/node": "catalog:",
     "eslint": "catalog:",
     "typescript": "catalog:",
-    "eslint-plugin-react-hooks": "5.2.0",
+    "eslint-plugin-react-hooks": "7.0.1",
     "eslint-plugin-jest": "29.12.1",
     "eslint-plugin-react": "7.37.5",
     "vitest-config": "workspace:^",
