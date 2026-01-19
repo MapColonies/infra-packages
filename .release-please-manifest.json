@@ -9,7 +9,7 @@
   "packages/read-pkg": "2.0.0",
   "packages/openapi-express-viewer": "5.0.0",
   "packages/openapi-helpers": "5.0.0",
-  "packages/semantic-conventions": "0.0.1",
+  "packages/semantic-conventions": "1.0.0",
   "packages/tracing": "0.0.1",
   "packages/tracing-utils": "1.0.0",
   "packages/prometheus": "0.0.1"
