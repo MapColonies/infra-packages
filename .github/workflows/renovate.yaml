@@ -65,7 +65,7 @@ jobs:
           ls -R $cache_dir
 
       - name: Self-hosted Renovate
-        uses: renovatebot/github-action@8ac70de2fe55752c573155866e30735411e3b61c # v41.0.22
+        uses: renovatebot/github-action@66387ab8c2464d575b933fa44e9e5a86b2822809 # v44.2.4
         with:
           configurationFile: renovate.json
           token: ${{ secrets.GH_PAT }}
