@@ -38,7 +38,7 @@
     "@map-colonies/tsconfig": "workspace:^",
     "@types/node": "catalog:",
     "eslint": "catalog:",
-    "glob": "11.1.0",
+    "glob": "13.0.0",
     "rimraf": "catalog:",
     "typescript": "catalog:",
     "vitest-config": "workspace:^",
