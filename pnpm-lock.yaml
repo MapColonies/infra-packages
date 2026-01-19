@@ -227,7 +227,7 @@ importers:
         specifier: ^4.16.1
         version: 4.16.1(@typescript-eslint/utils@8.49.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))
       globals:
-        specifier: ^15.14.0
+        specifier: ^15.14.0 || ^17.0.0
         version: 15.15.0
       typescript-eslint:
         specifier: ^8.23.0
