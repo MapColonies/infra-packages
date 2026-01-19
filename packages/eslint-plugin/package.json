@@ -19,7 +19,7 @@
     "prebuild": "pnpm run clean",
     "clean": "rimraf dist",
     "build": "tsc --project tsconfig.build.json",
-    "check-dist": "publint && attw --pack .",
+    "check-dist": "publint && attw --profile esm-only --pack .",
     "knip": "knip --directory ../.. --workspace packages/eslint-plugin"
   },
   "files": [
@@ -38,7 +38,6 @@
   "devDependencies": {
     "@arethetypeswrong/cli": "catalog:",
     "@map-colonies/tsconfig": "workspace:^",
-    "@types/eslint": "^9.0.0",
     "@types/node": "catalog:",
     "@typescript-eslint/rule-tester": "^8.53.0",
     "eslint": "catalog:",
