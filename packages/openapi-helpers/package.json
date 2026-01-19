@@ -54,7 +54,7 @@
     "change-case": "^5.4.4",
     "commander": "^14.0.0",
     "oas-normalize": "^15.0.0",
-    "ora": "^8.2.0",
+    "ora": "^9.0.0",
     "ts-essentials": "^10.1.1",
     "yaml": "^2.8.0"
   },
