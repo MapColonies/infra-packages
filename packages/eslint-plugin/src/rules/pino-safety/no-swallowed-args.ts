@@ -25,6 +25,37 @@ export const noSwallowedArgs = createRule<Options, MessageIds>({
   defaultOptions: [],
 
   create(context) {
+    /**
+     * Count printf-style placeholders in a message string
+     */
+    function countPlaceholders(message: string): number {
+      const placeholders = message.match(PRINTF_PLACEHOLDER_REGEX);
+      return placeholders?.length ?? 0;
+    }
+
+    /**
+     * Report swallowed arguments error
+     */
+    function reportSwallowedArgs(node: TSESTree.CallExpression, extraCount: number): void {
+      context.report({
+        node,
+        messageId: 'swallowedArgs',
+        data: {
+          extraCount: extraCount.toString(),
+        },
+      });
+    }
+
+    /**
+     * Validate arguments against message placeholders
+     */
+    function validateMessageArgs(node: TSESTree.CallExpression, message: string, argCountAfterMessage: number): void {
+      const placeholderCount = countPlaceholders(message);
+      if (argCountAfterMessage > placeholderCount) {
+        reportSwallowedArgs(node, argCountAfterMessage - placeholderCount);
+      }
+    }
+
     return {
       CallExpression(node: TSESTree.CallExpression): void {
         // Check if this is a pino method call (logger.info, logger.error, etc.)
@@ -47,30 +78,32 @@ export const noSwallowedArgs = createRule<Options, MessageIds>({
           return;
         }
 
-        // If first argument is NOT a string literal, it's likely a merge object (valid pattern)
-        if (firstArg.type !== TSESTree.AST_NODE_TYPES.Literal || typeof firstArg.value !== 'string') {
+        // Skip validation for template literals - we can't statically analyze them
+        if (firstArg.type === TSESTree.AST_NODE_TYPES.TemplateLiteral) {
           return;
         }
 
-        // Count printf-style placeholders in the message
-        const message = firstArg.value;
-        const placeholders = message.match(PRINTF_PLACEHOLDER_REGEX);
-        const placeholderCount = placeholders?.length ?? 0;
+        // Case 1: First argument is a merge object (or other non-string-literal expression)
+        if (firstArg.type !== TSESTree.AST_NODE_TYPES.Literal || typeof firstArg.value !== 'string') {
+          // Merge objects can have a second string argument for the message, but no additional args
+          // Example: logger.info({ userId: 123 }, "message") - valid
+          // Example: logger.info({ msg: "message" }, extraArg) - INVALID (extraArg is swallowed)
+          const secondArg = args[1];
+          const hasStringMessage = secondArg?.type === TSESTree.AST_NODE_TYPES.Literal && typeof secondArg.value === 'string';
 
-        // Count remaining arguments (excluding the first message argument)
-        const argCount = args.length - 1;
+          if (hasStringMessage) {
+            // Pattern: logger.info({ ... }, "message with %s", arg1, ...)
+            validateMessageArgs(node, secondArg.value, args.length - 2);
+          } else if (args.length > 1) {
+            // Pattern: logger.info({ msg: "..." }, extraArg) - all args after merge object are swallowed
+            reportSwallowedArgs(node, args.length - 1);
+          }
 
-        // Report if there are more arguments than placeholders
-        if (argCount > placeholderCount) {
-          const extraCount = argCount - placeholderCount;
-          context.report({
-            node,
-            messageId: 'swallowedArgs',
-            data: {
-              extraCount: extraCount.toString(),
-            },
-          });
+          return;
         }
+
+        // Case 2: First argument is a string literal message
+        validateMessageArgs(node, firstArg.value, args.length - 1);
       },
     };
   },

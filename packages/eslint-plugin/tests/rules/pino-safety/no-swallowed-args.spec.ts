@@ -63,6 +63,26 @@ ruleTester.run('no-swallowed-args', noSwallowedArgs, {
     {
       code: 'logger.info(`User ${username} logged in`, extraData)',
     },
+    // Message in 'msg' property with extra properties - valid (no additional args)
+    {
+      code: 'logger.info({ msg: "User logged in", userId: 123 })',
+    },
+    // Error as first argument - valid (Pino wraps it as merge object)
+    {
+      code: 'logger.error(new Error("test"))',
+    },
+    // Error as first argument with message - valid
+    {
+      code: 'logger.error(new Error("test"), "Error occurred")',
+    },
+    // Error in merge object - valid
+    {
+      code: 'logger.error({ err: new Error("test"), context: "data" })',
+    },
+    // Error in merge object with message - valid
+    {
+      code: 'logger.error({ err: new Error("test") }, "Error occurred")',
+    },
   ],
 
   invalid: [
@@ -121,6 +141,26 @@ ruleTester.run('no-swallowed-args', noSwallowedArgs, {
     },
     {
       code: 'logger.fatal("Message", extra)',
+      errors: [{ messageId: 'swallowedArgs' as const, data: { extraCount: '1' } }],
+    },
+    // Merge object with 'msg' property but extra arguments - INVALID
+    // Placeholders in 'msg' property don't work, so extra args are swallowed
+    {
+      code: 'logger.info({ msg: "User %s logged in" }, username)',
+      errors: [{ messageId: 'swallowedArgs' as const, data: { extraCount: '1' } }],
+    },
+    {
+      code: 'logger.info({ msg: "Processing %s with %s", userId: 123 }, file, options)',
+      errors: [{ messageId: 'swallowedArgs' as const, data: { extraCount: '2' } }],
+    },
+    // Error with message that has placeholders and extra args - INVALID
+    {
+      code: 'logger.error(new Error("test"), "Error: %s", context, extraData)',
+      errors: [{ messageId: 'swallowedArgs' as const, data: { extraCount: '1' } }],
+    },
+    // Error with message but extra args - INVALID
+    {
+      code: 'logger.error(new Error("test"), "Error occurred", extraContext)',
       errors: [{ messageId: 'swallowedArgs' as const, data: { extraCount: '1' } }],
     },
   ],
