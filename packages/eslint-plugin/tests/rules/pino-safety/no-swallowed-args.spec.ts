@@ -57,7 +57,33 @@ ruleTester.run('no-swallowed-args', noSwallowedArgs, {
       code: 'console.log("Message", extraArg)',
     },
     {
+      code: 'console.error("Message", extraArg)',
+    },
+    {
+      code: 'console.warn("Message", extraArg)',
+    },
+    {
+      code: 'myObj.error("Message", extraArg)',
+    },
+    {
       code: 'logger.custom("Message", extraArg)',
+    },
+    // Member expressions with logger-like names should be validated
+    {
+      code: 'this.logger.info({ userId: 123 }, "User logged in")',
+    },
+    {
+      code: 'req.log.info({ userId: 123 }, "User logged in")',
+    },
+    // Common logger variable names
+    {
+      code: 'log.info({ userId: 123 }, "User logged in")',
+    },
+    {
+      code: 'appLogger.info({ userId: 123 }, "User logged in")',
+    },
+    {
+      code: 'myLogger.info({ userId: 123 }, "User logged in")',
     },
     // Template expression (not string literal) - valid
     {
@@ -161,6 +187,15 @@ ruleTester.run('no-swallowed-args', noSwallowedArgs, {
     // Error with message but extra args - INVALID
     {
       code: 'logger.error(new Error("test"), "Error occurred", extraContext)',
+      errors: [{ messageId: 'swallowedArgs' as const, data: { extraCount: '1' } }],
+    },
+    // Logger-named variables should be validated - INVALID
+    {
+      code: 'log.info("Message", extraArg)',
+      errors: [{ messageId: 'swallowedArgs' as const, data: { extraCount: '1' } }],
+    },
+    {
+      code: 'appLogger.error("Error", context)',
       errors: [{ messageId: 'swallowedArgs' as const, data: { extraCount: '1' } }],
     },
   ],

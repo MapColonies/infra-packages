@@ -4,7 +4,7 @@ import { configs as tsEslintConfigs } from 'typescript-eslint';
 import { flatConfigs as importFlatConfigs } from 'eslint-plugin-import-x';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import tsParser from '@typescript-eslint/parser';
-// import { config } from '../helpers.mjs';
+import mapColoniesPlugin from '@map-colonies/eslint-plugin';
 import { defineConfig } from 'eslint/config';
 
 /**
@@ -205,6 +205,7 @@ const combinedConfig = defineConfig(
   importFlatConfigs.recommended,
   { name: 'import-x/typescript', ...importFlatConfigs.typescript },
   importRulesAndConfig,
+  mapColoniesPlugin.configs['pino-safety'],
   globalIgnoreConfig,
   parserOptions,
   { name: 'eslint-prettier/disabled-rules', ...eslintConfigPrettier }
@@ -219,6 +220,7 @@ const combinedConfig = defineConfig(
  * - Jest-specific rule overrides
  * - React component naming conventions
  * - Import organization rules
+ * - Pino logger safety rules (@map-colonies/eslint-plugin)
  * - Global ignores for build artifacts and dependencies
  * - Parser configuration
  * - Prettier integration

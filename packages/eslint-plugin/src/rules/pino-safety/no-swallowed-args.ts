@@ -63,9 +63,25 @@ export const noSwallowedArgs = createRule<Options, MessageIds>({
           return;
         }
 
-        const { property } = node.callee;
+        const { property, object } = node.callee;
         if (property.type !== TSESTree.AST_NODE_TYPES.Identifier || !PINO_LOG_METHODS.has(property.name)) {
           return;
+        }
+
+        // Skip known non-Pino objects (console, process, etc.)
+        if (object.type === TSESTree.AST_NODE_TYPES.Identifier && object.name === 'console') {
+          return;
+        }
+
+        // Only apply rule to likely logger instances (heuristic):
+        // - Named 'logger', 'log', or ends with 'Logger' (case-insensitive)
+        // - Or member expressions like 'this.logger', 'req.log', etc.
+        if (object.type === TSESTree.AST_NODE_TYPES.Identifier) {
+          const objectName = object.name.toLowerCase();
+          const isLikelyLogger = objectName === 'logger' || objectName === 'log' || objectName.endsWith('logger');
+          if (!isLikelyLogger) {
+            return;
+          }
         }
 
         const args = node.arguments;
