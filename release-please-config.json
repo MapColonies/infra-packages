@@ -117,6 +117,10 @@
     "packages/prometheus": {
       "package-name": "@map-colonies/prometheus",
       "release-type": "node"
+    },
+    "packages/eslint-plugin": {
+      "package-name": "@map-colonies/eslint-plugin",
+      "release-type": "node"
     }
   }
 }

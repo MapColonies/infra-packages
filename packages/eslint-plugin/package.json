@@ -1,0 +1,54 @@
+{
+  "name": "@map-colonies/eslint-plugin",
+  "version": "0.0.1",
+  "description": "Custom ESLint rules for MapColonies projects",
+  "type": "module",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "pretest": "turbo run build",
+    "test": "vitest run",
+    "prepack": "turbo run build",
+    "prebuild": "pnpm run clean",
+    "clean": "rimraf dist",
+    "build": "tsc --project tsconfig.build.json",
+    "check-dist": "publint && attw --profile esm-only --pack .",
+    "knip": "knip --directory ../.. --workspace packages/eslint-plugin"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
+  "repository": "github:MapColonies/infra-packages",
+  "peerDependencies": {
+    "eslint": "^9.39.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/utils": "^8.53.0"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "catalog:",
+    "@map-colonies/tsconfig": "workspace:^",
+    "@types/node": "catalog:",
+    "@typescript-eslint/rule-tester": "^8.53.0",
+    "eslint": "catalog:",
+    "publint": "catalog:",
+    "rimraf": "catalog:",
+    "typescript": "catalog:",
+    "typescript-eslint": "^8.23.0",
+    "vitest": "catalog:",
+    "vitest-config": "workspace:^"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
