@@ -1,5 +1,17 @@
 # Changelog
 
+## [7.1.0](https://github.com/MapColonies/infra-packages/compare/eslint-config-v7.0.0...eslint-config-v7.1.0) (2026-01-20)
+
+
+### 🎉 Features
+
+* **eslint-config:** added pino-rules to config ([#94](https://github.com/MapColonies/infra-packages/issues/94)) ([12f05fb](https://github.com/MapColonies/infra-packages/commit/12f05fb28a1f508f974707fc0665d889f7c57303))
+
+
+### 🔗 Dependencies
+
+* **eslint-config:** update dependency eslint-import-resolver-typescript to v4 ([#36](https://github.com/MapColonies/infra-packages/issues/36)) ([abe6150](https://github.com/MapColonies/infra-packages/commit/abe61506d55a428841066fb0c26ca29c3466cf82))
+
 ## [7.0.0](https://github.com/MapColonies/infra-packages/compare/eslint-config-v6.0.0...eslint-config-v7.0.0) (2026-01-18)
 
 
