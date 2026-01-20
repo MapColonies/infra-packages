@@ -42,7 +42,7 @@
     },
     {
       "matchManagers": ["npm"],
-      "matchDepTypes": ["dependencies"],
+      "matchDepTypes": ["dependencies", "peerDependencies"],
       "semanticCommitType": "deps"
     },
     {
