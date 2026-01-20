@@ -2,7 +2,7 @@
   "packages/commitlint-config": "2.0.0",
   "packages/prettier-config": "1.0.0",
   "packages/eslint-config": "7.1.0",
-  "packages/eslint-plugin": "0.0.1",
+  "packages/eslint-plugin": "0.1.0",
   "packages/typescript-config": "2.0.0",
   "packages/error-express-handler": "4.0.0",
   "packages/express-access-log-middleware": "4.0.0",
