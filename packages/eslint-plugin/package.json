@@ -1,6 +1,6 @@
 {
   "name": "@map-colonies/eslint-plugin",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Custom ESLint rules for MapColonies projects",
   "type": "module",
   "main": "./dist/index.js",
