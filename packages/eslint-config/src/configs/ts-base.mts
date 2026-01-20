@@ -5,7 +5,6 @@ import { flatConfigs as importFlatConfigs } from 'eslint-plugin-import-x';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import tsParser from '@typescript-eslint/parser';
 import mapColoniesPlugin from '@map-colonies/eslint-plugin';
-// import { config } from '../helpers.mjs';
 import { defineConfig } from 'eslint/config';
 
 /**
