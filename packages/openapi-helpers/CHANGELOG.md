@@ -1,5 +1,18 @@
 # Changelog
 
+## [5.1.0](https://github.com/MapColonies/infra-packages/compare/openapi-helpers-v5.0.0...openapi-helpers-v5.1.0) (2026-01-22)
+
+
+### 🎉 Features
+
+* **openapi-helpers:** add expectResponseStatusFactory for type-safe response status assertions ([#102](https://github.com/MapColonies/infra-packages/issues/102)) ([0cd0cfe](https://github.com/MapColonies/infra-packages/commit/0cd0cfe213ea014be1a6019cbdfff27abbbe80f9))
+
+
+### 🔗 Dependencies
+
+* **openapi-helpers:** update dependency @apidevtools/json-schema-ref-parser to v15 ([#37](https://github.com/MapColonies/infra-packages/issues/37)) ([bd36b84](https://github.com/MapColonies/infra-packages/commit/bd36b84c7adf3200fad6aa1578f7114eea94f945))
+* **openapi-helpers:** update dependency ora to v9 ([#39](https://github.com/MapColonies/infra-packages/issues/39)) ([2e95442](https://github.com/MapColonies/infra-packages/commit/2e95442a31a68a30653e44e7e0b69cb96de62441))
+
 ## [5.0.0](https://github.com/MapColonies/infra-packages/compare/openapi-helpers-v4.0.0...openapi-helpers-v5.0.0) (2026-01-18)
 
 
