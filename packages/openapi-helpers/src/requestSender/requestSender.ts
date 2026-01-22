@@ -8,6 +8,8 @@ import oasNormalize from 'oas-normalize';
 import type { OmitProperties } from 'ts-essentials';
 import type { OpenAPIV3 } from 'openapi-types';
 import { PathsTemplate, Methods, OperationsTemplate } from '../common/types';
+import { expectResponseStatusFactory } from './expect';
+import type { ExpectResponseStatus } from './expect';
 import type { PathRequestOptions, RequestOptions, OperationsNames, RequestSender, RequestReturn, RequestSenderOptions } from './types';
 
 function sendRequest<
@@ -94,7 +96,7 @@ function getOperationsPathAndMethod<Paths extends PathsTemplate, Operations exte
   return result as Record<OperationsNames<Operations>, { path: keyof Paths; method: Methods }>;
 }
 
-export { RequestSender };
+export { RequestSender, expectResponseStatusFactory, ExpectResponseStatus };
 
 /**
  * Creates a request sender object that can be used to send fake HTTP requests using supertest based on an OpenAPI specification.

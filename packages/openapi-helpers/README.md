@@ -187,6 +187,87 @@ const response = await requestSender.sendRequest({
 
 The package supports all the operations defined in the OpenAPI schema, either by operation name, or by using the `sendRequest` function with the method, path and parameters.
 
+### Response Status Assertion
+
+The `expectResponseStatusFactory` provides TypeScript type narrowing for response status assertions in tests. This utility creates an assertion function that narrows the response type based on the expected status code, giving you full type safety when working with different response types.
+
+#### Usage
+
+```typescript
+import { expectResponseStatusFactory } from '@map-colonies/openapi-helpers/requestSender';
+import type { ExpectResponseStatus } from '@map-colonies/openapi-helpers/requestSender';
+import { describe, it, expect } from 'vitest';
+
+// Create the assertion function with the exported type
+const expectResponseStatus: ExpectResponseStatus = expectResponseStatusFactory(expect);
+
+it('should return user data on success', async () => {
+  const response = await requestSender.getUser({ pathParams: { id: '123' } });
+  
+  // Assert the status and narrow the type
+  expectResponseStatus(response, 200);
+  
+  // TypeScript now knows response is the 200 response type
+  // You can safely access response.body with full autocomplete
+  console.log(response.body.id);
+  console.log(response.body.name);
+});
+
+it('should handle error responses', async () => {
+  const response = await requestSender.getUser({ pathParams: { id: 'invalid' } });
+  
+  if (response.status === 404) {
+    expectResponseStatus(response, 404);
+    // TypeScript knows this is a 404 response
+    console.log(response.body.error);
+  }
+});
+```
+
+> [!TIP]
+> **Avoiding TS2775 Error**: When using `expectResponseStatusFactory`, you must provide an explicit type annotation using the exported `ExpectResponseStatus` type as shown above. This is required by TypeScript's strict mode for assertion functions.
+
+#### Reusable Setup
+
+To avoid repeating the setup in every test file, create a shared test utility:
+
+```typescript
+// test/utils/assertions.ts
+import { expectResponseStatusFactory } from '@map-colonies/openapi-helpers/requestSender';
+import type { ExpectResponseStatus } from '@map-colonies/openapi-helpers/requestSender';
+import { expect } from 'vitest';
+
+export const expectResponseStatus: ExpectResponseStatus = expectResponseStatusFactory(expect);
+```
+
+Then import and use it in your tests:
+
+```typescript
+// test/api.spec.ts
+import { expectResponseStatus } from './utils/assertions';
+
+it('should work', async () => {
+  const response = await requestSender.getUser({ pathParams: { id: '123' } });
+  expectResponseStatus(response, 200);
+  // TypeScript knows the exact response type
+});
+```
+
+#### How it works
+
+The `expectResponseStatusFactory` takes an expect function (from your test framework) and returns a function that:
+1. Asserts that the response status matches the expected status
+2. Narrows the TypeScript type of the response to only include the matching status code
+
+This is particularly useful when working with OpenAPI-generated types that have multiple possible response types (e.g., 200 success, 404 not found, 500 error). After calling `expectResponseStatus`, TypeScript will know exactly which response type you're working with.
+
+#### Benefits
+
+- **Type Safety**: Full TypeScript support with automatic type narrowing
+- **Autocomplete**: Get accurate autocomplete for response body based on the status code
+- **Test Clarity**: Combine assertion and type narrowing in a single function call
+- **Prevents Errors**: Catch type mismatches at compile time instead of runtime
+
 
 > [!IMPORTANT]
 > For the package to function properly, you need to make sure that the following values are configured in your `tsconfig.json` or `jsconfig.json` files under compilerOptions:
