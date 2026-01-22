@@ -195,9 +195,11 @@ The `expectResponseStatusFactory` provides TypeScript type narrowing for respons
 
 ```typescript
 import { expectResponseStatusFactory } from '@map-colonies/openapi-helpers/requestSender';
+import type { ExpectResponseStatus } from '@map-colonies/openapi-helpers/requestSender';
 import { describe, it, expect } from 'vitest';
 
-const expectResponseStatus = expectResponseStatusFactory(expect);
+// Create the assertion function with the exported type
+const expectResponseStatus: ExpectResponseStatus = expectResponseStatusFactory(expect);
 
 it('should return user data on success', async () => {
   const response = await requestSender.getUser({ pathParams: { id: '123' } });
@@ -219,6 +221,35 @@ it('should handle error responses', async () => {
     // TypeScript knows this is a 404 response
     console.log(response.body.error);
   }
+});
+```
+
+> [!TIP]
+> **Avoiding TS2775 Error**: When using `expectResponseStatusFactory`, you must provide an explicit type annotation using the exported `ExpectResponseStatus` type as shown above. This is required by TypeScript's strict mode for assertion functions.
+
+#### Reusable Setup
+
+To avoid repeating the setup in every test file, create a shared test utility:
+
+```typescript
+// test/utils/assertions.ts
+import { expectResponseStatusFactory } from '@map-colonies/openapi-helpers/requestSender';
+import type { ExpectResponseStatus } from '@map-colonies/openapi-helpers/requestSender';
+import { expect } from 'vitest';
+
+export const expectResponseStatus: ExpectResponseStatus = expectResponseStatusFactory(expect);
+```
+
+Then import and use it in your tests:
+
+```typescript
+// test/api.spec.ts
+import { expectResponseStatus } from './utils/assertions';
+
+it('should work', async () => {
+  const response = await requestSender.getUser({ pathParams: { id: '123' } });
+  expectResponseStatus(response, 200);
+  // TypeScript knows the exact response type
 });
 ```
 

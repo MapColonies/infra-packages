@@ -19,8 +19,14 @@ import { WritableKeys } from 'ts-essentials';
 // @public
 export function createRequestSender<Paths extends PathsTemplate = never, Operations extends OperationsTemplate = never>(openapiFilePath: Operations extends never ? never : string, app: express.Application, options?: RequestSenderOptions): Promise<RequestSender<Paths, Operations>>;
 
+// Warning: (ae-forgotten-export) The symbol "Response_2" needs to be exported by the entry point requestSender.d.ts
+//
+// @public
+export type ExpectResponseStatus = <TResponse extends Response_2, TStatus extends TResponse['status']>(res: TResponse, expectedStatus: TStatus) => asserts res is Extract<TResponse, {
+    status: TStatus;
+}>;
+
 // Warning: (ae-forgotten-export) The symbol "Expect" needs to be exported by the entry point requestSender.d.ts
-// Warning: (ae-forgotten-export) The symbol "ExpectResponseStatus" needs to be exported by the entry point requestSender.d.ts
 //
 // @public
 export function expectResponseStatusFactory(expect: Expect): ExpectResponseStatus;

@@ -1,5 +1,6 @@
 import { describe, it, expect, expectTypeOf, vi } from 'vitest';
 import { expectResponseStatusFactory } from '../../src/requestSender/expect';
+import type { ExpectResponseStatus } from '../../src/requestSender/expect';
 
 describe('expectResponseStatusFactory', () => {
   describe('logic tests', () => {
@@ -10,10 +11,7 @@ describe('expectResponseStatusFactory', () => {
         }),
       }));
 
-      const expectResponseStatus: <TResponse extends { status: number | string }, TStatus extends TResponse['status']>(
-        res: TResponse,
-        expectedStatus: TStatus
-      ) => asserts res is Extract<TResponse, { status: TStatus }> = expectResponseStatusFactory(mockExpect);
+      const expectResponseStatus: ExpectResponseStatus = expectResponseStatusFactory(mockExpect);
       const response = { status: 200 };
 
       expectResponseStatus(response, 200);
@@ -28,10 +26,7 @@ describe('expectResponseStatusFactory', () => {
         toBe: mockToBe,
       }));
 
-      const expectResponseStatus: <TResponse extends { status: number | string }, TStatus extends TResponse['status']>(
-        res: TResponse,
-        expectedStatus: TStatus
-      ) => asserts res is Extract<TResponse, { status: TStatus }> = expectResponseStatusFactory(mockExpect);
+      const expectResponseStatus: ExpectResponseStatus = expectResponseStatusFactory(mockExpect);
       const response = { status: 404 };
 
       expectResponseStatus(response, 404);
@@ -47,10 +42,7 @@ describe('expectResponseStatusFactory', () => {
         }),
       }));
 
-      const expectResponseStatus: <TResponse extends { status: number | string }, TStatus extends TResponse['status']>(
-        res: TResponse,
-        expectedStatus: TStatus
-      ) => asserts res is Extract<TResponse, { status: TStatus }> = expectResponseStatusFactory(mockExpect);
+      const expectResponseStatus: ExpectResponseStatus = expectResponseStatusFactory(mockExpect);
       const response = { status: '200' };
 
       expectResponseStatus(response, '200');
@@ -65,10 +57,7 @@ describe('expectResponseStatusFactory', () => {
         }),
       }));
 
-      const expectResponseStatus: <TResponse extends { status: number | string }, TStatus extends TResponse['status']>(
-        res: TResponse,
-        expectedStatus: TStatus
-      ) => asserts res is Extract<TResponse, { status: TStatus }> = expectResponseStatusFactory(mockExpect);
+      const expectResponseStatus: ExpectResponseStatus = expectResponseStatusFactory(mockExpect);
       const response = { status: 201 };
 
       expectResponseStatus(response, 201);
@@ -83,10 +72,7 @@ describe('expectResponseStatusFactory', () => {
         }),
       }));
 
-      const expectResponseStatus: <TResponse extends { status: number | string }, TStatus extends TResponse['status']>(
-        res: TResponse,
-        expectedStatus: TStatus
-      ) => asserts res is Extract<TResponse, { status: TStatus }> = expectResponseStatusFactory(mockExpect);
+      const expectResponseStatus: ExpectResponseStatus = expectResponseStatusFactory(mockExpect);
 
       expectResponseStatus({ status: 200 }, 200);
       expectResponseStatus({ status: 404 }, 404);
@@ -109,10 +95,7 @@ describe('expectResponseStatusFactory', () => {
         }),
       }));
 
-      const expectResponseStatus: <TResponse extends { status: number | string }, TStatus extends TResponse['status']>(
-        res: TResponse,
-        expectedStatus: TStatus
-      ) => asserts res is Extract<TResponse, { status: TStatus }> = expectResponseStatusFactory(mockExpect);
+      const expectResponseStatus: ExpectResponseStatus = expectResponseStatusFactory(mockExpect);
 
       const response: TestResponse = { status: 200, body: { success: true } };
       expectResponseStatus(response, 200);
@@ -141,10 +124,7 @@ describe('expectResponseStatusFactory', () => {
         toBe: vi.fn(),
       }));
 
-      const expectResponseStatus: <TResponse extends { status: number | string }, TStatus extends TResponse['status']>(
-        res: TResponse,
-        expectedStatus: TStatus
-      ) => asserts res is Extract<TResponse, { status: TStatus }> = expectResponseStatusFactory(mockExpect);
+      const expectResponseStatus: ExpectResponseStatus = expectResponseStatusFactory(mockExpect);
 
       const response: ApiResponse = { status: 201, body: { id: 42 } };
       expectResponseStatus(response, 201);
@@ -160,10 +140,7 @@ describe('expectResponseStatusFactory', () => {
         toBe: vi.fn(),
       }));
 
-      const expectResponseStatus: <TResponse extends { status: number | string }, TStatus extends TResponse['status']>(
-        res: TResponse,
-        expectedStatus: TStatus
-      ) => asserts res is Extract<TResponse, { status: TStatus }> = expectResponseStatusFactory(mockExpect);
+      const expectResponseStatus: ExpectResponseStatus = expectResponseStatusFactory(mockExpect);
 
       const response: ResponseWithStringStatus = { status: '200', body: { message: 'ok' } };
       expectResponseStatus(response, '200');
@@ -189,10 +166,7 @@ describe('expectResponseStatusFactory', () => {
         toBe: vi.fn(),
       }));
 
-      const expectResponseStatus: <TResponse extends { status: number | string }, TStatus extends TResponse['status']>(
-        res: TResponse,
-        expectedStatus: TStatus
-      ) => asserts res is Extract<TResponse, { status: TStatus }> = expectResponseStatusFactory(mockExpect);
+      const expectResponseStatus: ExpectResponseStatus = expectResponseStatusFactory(mockExpect);
 
       const response: ComplexResponse = {
         status: 200,
@@ -212,10 +186,7 @@ describe('expectResponseStatusFactory', () => {
         toBe: vi.fn(),
       }));
 
-      const expectResponseStatus: <TResponse extends { status: number | string }, TStatus extends TResponse['status']>(
-        res: TResponse,
-        expectedStatus: TStatus
-      ) => asserts res is Extract<TResponse, { status: TStatus }> = expectResponseStatusFactory(mockExpect);
+      const expectResponseStatus: ExpectResponseStatus = expectResponseStatusFactory(mockExpect);
 
       // Should work with minimal response object
       const minimalResponse = { status: 200 };
@@ -236,10 +207,7 @@ describe('expectResponseStatusFactory', () => {
         toBe: vi.fn(),
       }));
 
-      const expectResponseStatus: <TResponse extends { status: number | string }, TStatus extends TResponse['status']>(
-        res: TResponse,
-        expectedStatus: TStatus
-      ) => asserts res is Extract<TResponse, { status: TStatus }> = expectResponseStatusFactory(mockExpect);
+      const expectResponseStatus: ExpectResponseStatus = expectResponseStatusFactory(mockExpect);
 
       const response200: StrictResponse = { status: 200, body: {} };
       const response404: StrictResponse = { status: 404, body: {} };
@@ -259,10 +227,7 @@ describe('expectResponseStatusFactory', () => {
         toBe: vi.fn(),
       }));
 
-      const expectResponseStatus: <TResponse extends { status: number | string }, TStatus extends TResponse['status']>(
-        res: TResponse,
-        expectedStatus: TStatus
-      ) => asserts res is Extract<TResponse, { status: TStatus }> = expectResponseStatusFactory(mockExpect);
+      const expectResponseStatus: ExpectResponseStatus = expectResponseStatusFactory(mockExpect);
 
       function handleResponse(response: ApiResponse): string {
         expectResponseStatus(response, 200);
