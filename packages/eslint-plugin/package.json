@@ -44,7 +44,7 @@
     "publint": "catalog:",
     "rimraf": "catalog:",
     "typescript": "catalog:",
-    "typescript-eslint": "^8.23.0",
+    "typescript-eslint": "^8.49.0",
     "vitest": "catalog:",
     "vitest-config": "workspace:^"
   },
