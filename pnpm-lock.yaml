@@ -27,6 +27,12 @@ catalogs:
     '@types/supertest':
       specifier: 6.0.3
       version: 6.0.3
+    '@vitest/coverage-v8':
+      specifier: ^4.0.15
+      version: 4.0.18
+    '@vitest/ui':
+      specifier: ^4.0.15
+      version: 4.0.18
     eslint:
       specifier: ^9.39.1
       version: 9.39.1
@@ -45,6 +51,9 @@ catalogs:
     typescript:
       specifier: 5.9.3
       version: 5.9.3
+    vitest:
+      specifier: ^4.0.15
+      version: 4.0.18
 
 importers:
 
@@ -130,7 +139,7 @@ importers:
     dependencies:
       '@commitlint/config-conventional':
         specifier: ^20.2.0
-        version: 20.2.0
+        version: 20.3.1
     devDependencies:
       '@commitlint/types':
         specifier: 20.3.1
@@ -956,8 +965,8 @@ packages:
     engines: {node: '>=v18'}
     hasBin: true
 
-  '@commitlint/config-conventional@20.2.0':
-    resolution: {integrity: sha512-MsRac+yNIbTB4Q/psstKK4/ciVzACHicSwz+04Sxve+4DW+PiJeTjU0JnS4m/oOnulrXYN+yBPlKaBSGemRfgQ==}
+  '@commitlint/config-conventional@20.3.1':
+    resolution: {integrity: sha512-NCzwvxepstBZbmVXsvg49s+shCxlJDJPWxXqONVcAtJH9wWrOlkMQw/zyl+dJmt8lyVopt5mwQ3mR5M2N2rUWg==}
     engines: {node: '>=v18'}
 
   '@commitlint/config-pnpm-scopes@20.1.0':
@@ -5570,7 +5579,7 @@ snapshots:
       - '@types/node'
       - typescript
 
-  '@commitlint/config-conventional@20.2.0':
+  '@commitlint/config-conventional@20.3.1':
     dependencies:
       '@commitlint/types': 20.3.1
       conventional-changelog-conventionalcommits: 7.0.2
