@@ -9,9 +9,6 @@ catalogs:
     '@arethetypeswrong/cli':
       specifier: 0.18.2
       version: 0.18.2
-    '@microsoft/api-extractor':
-      specifier: ^7.55.2
-      version: 7.55.2
     '@opentelemetry/api':
       specifier: 1.9.0
       version: 1.9.0
@@ -27,6 +24,12 @@ catalogs:
     '@types/supertest':
       specifier: 6.0.3
       version: 6.0.3
+    '@vitest/coverage-v8':
+      specifier: ^4.0.15
+      version: 4.0.18
+    '@vitest/ui':
+      specifier: ^4.0.15
+      version: 4.0.18
     eslint:
       specifier: ^9.39.1
       version: 9.39.1
@@ -45,6 +48,9 @@ catalogs:
     typescript:
       specifier: 5.9.3
       version: 5.9.3
+    vitest:
+      specifier: ^4.0.15
+      version: 4.0.18
 
 importers:
 
@@ -171,7 +177,7 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.55.2(@types/node@24.10.9)
+        version: 7.56.3(@types/node@24.10.9)
       '@types/express':
         specifier: 4.17.25
         version: 4.17.25
@@ -315,7 +321,7 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.55.2(@types/node@24.10.9)
+        version: 7.56.3(@types/node@24.10.9)
       '@types/express':
         specifier: 4.17.25
         version: 4.17.25
@@ -376,7 +382,7 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.55.2(@types/node@24.10.9)
+        version: 7.56.3(@types/node@24.10.9)
       '@types/node':
         specifier: 'catalog:'
         version: 24.10.9
@@ -419,7 +425,7 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.55.2(@types/node@24.10.9)
+        version: 7.56.3(@types/node@24.10.9)
       '@types/express':
         specifier: 4.17.25
         version: 4.17.25
@@ -507,7 +513,7 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.55.2(@types/node@24.10.9)
+        version: 7.56.3(@types/node@24.10.9)
       '@types/body-parser':
         specifier: 1.19.6
         version: 1.19.6
@@ -571,7 +577,7 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.55.2(@types/node@24.10.9)
+        version: 7.56.3(@types/node@24.10.9)
       '@types/express':
         specifier: 4.17.25
         version: 4.17.25
@@ -620,7 +626,7 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.55.2(@types/node@24.10.9)
+        version: 7.56.3(@types/node@24.10.9)
       '@types/node':
         specifier: 'catalog:'
         version: 24.10.9
@@ -650,7 +656,7 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.55.2(@types/node@24.10.9)
+        version: 7.56.3(@types/node@24.10.9)
       '@types/node':
         specifier: 'catalog:'
         version: 24.10.9
@@ -723,7 +729,7 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.55.2(@types/node@24.10.9)
+        version: 7.56.3(@types/node@24.10.9)
       '@opentelemetry/api':
         specifier: 'catalog:'
         version: 1.9.0
@@ -768,7 +774,7 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.55.2(@types/node@24.10.9)
+        version: 7.56.3(@types/node@24.10.9)
       '@opentelemetry/api':
         specifier: 'catalog:'
         version: 1.9.0
@@ -1280,6 +1286,10 @@ packages:
     resolution: {integrity: sha512-ZT55BDLV0yv0RBm2czMiZ+SqCGO7AvmOM3G/w2xhVPH+te0aKgFjmBvGlL1dH+ql2tgGO3MVrbb3jCKyvpgnxA==}
     engines: {node: 20 || >=22}
 
+  '@isaacs/brace-expansion@5.0.1':
+    resolution: {integrity: sha512-WMz71T1JS624nWj2n2fnYAuPovhv7EUhk69R6i9dsVyzxt5eM3bjwvgk9L+APE1TRscGysAVMANkB0jh0LQZrQ==}
+    engines: {node: 20 || >=22}
+
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
 
@@ -1308,8 +1318,8 @@ packages:
   '@microsoft/api-extractor-model@7.32.2':
     resolution: {integrity: sha512-Ussc25rAalc+4JJs9HNQE7TuO9y6jpYQX9nWD1DhqUzYPBr3Lr7O9intf+ZY8kD5HnIqeIRJX7ccCT0QyBy2Ww==}
 
-  '@microsoft/api-extractor@7.55.2':
-    resolution: {integrity: sha512-1jlWO4qmgqYoVUcyh+oXYRztZde/pAi7cSVzBz/rc+S7CoVzDasy8QE13dx6sLG4VRo8SfkkLbFORR6tBw4uGQ==}
+  '@microsoft/api-extractor@7.56.3':
+    resolution: {integrity: sha512-fRqok4aRNq5GpgGBv2fKlSSKbirPKTJ75vQefthB5x9dwt4Zz+AezUzdc1p/AG4wUBIgmhjcEwn/Rj+N4Wh4Mw==}
     hasBin: true
 
   '@microsoft/tsdoc-config@0.18.0':
@@ -2274,16 +2284,16 @@ packages:
   '@rushstack/rig-package@0.6.0':
     resolution: {integrity: sha512-ZQmfzsLE2+Y91GF15c65L/slMRVhF6Hycq04D4TwtdGaUAbIXXg9c5pKA5KFU7M4QMaihoobp9JJYpYcaY3zOw==}
 
-  '@rushstack/terminal@0.19.5':
-    resolution: {integrity: sha512-6k5tpdB88G0K7QrH/3yfKO84HK9ggftfUZ51p7fePyCE7+RLLHkWZbID9OFWbXuna+eeCFE7AkKnRMHMxNbz7Q==}
+  '@rushstack/terminal@0.21.0':
+    resolution: {integrity: sha512-cLaI4HwCNYmknM5ns4G+drqdEB6q3dCPV423+d3TZeBusYSSm09+nR7CnhzJMjJqeRcdMAaLnrA4M/3xDz4R3w==}
     peerDependencies:
       '@types/node': '*'
     peerDependenciesMeta:
       '@types/node':
         optional: true
 
-  '@rushstack/ts-command-line@5.1.5':
-    resolution: {integrity: sha512-YmrFTFUdHXblYSa+Xc9OO9FsL/XFcckZy0ycQ6q7VSBsVs5P0uD9vcges5Q9vctGlVdu27w+Ct6IuJ458V0cTQ==}
+  '@rushstack/ts-command-line@5.2.0':
+    resolution: {integrity: sha512-lYxCX0nDdkDtCkVpvF0m25ymf66SaMWuppbD6b7MdkIzvGXKBXNIVZlwBH/C0YfkanrupnICWf2n4z3AKSfaHw==}
 
   '@scarf/scarf@1.4.0':
     resolution: {integrity: sha512-xxeapPiUXdZAE3che6f3xogoJPeZgig6omHEy1rIY5WVsB3H2BHNnZH+gHG6x91SCWyQCzWGsuL2Hh3ClO5/qQ==}
@@ -3112,8 +3122,8 @@ packages:
   dezalgo@1.0.4:
     resolution: {integrity: sha512-rXSP0bf+5n0Qonsb+SVVfNfIsimO4HEtmnIpPHY8Q1UCzKlQrDMfdobr8nJOOsRgWCyMRqeSBQzmWUMq7zvVig==}
 
-  diff@8.0.2:
-    resolution: {integrity: sha512-sSuxWU5j5SR9QQji/o2qMvqRNYRDOcBTgsJ/DeCf4iSN4gW+gNMXM7wFIP+fdXZxoNiAnHUTGjCr+TSWXdRDKg==}
+  diff@8.0.3:
+    resolution: {integrity: sha512-qejHi7bcSD4hQAZE0tNAawRK1ZtafHDmMTMkrrIGgSLl7hTnQHmKCeB45xAcbfTqK2zowkM3j3bHt/4b/ARbYQ==}
     engines: {node: '>=0.3.1'}
 
   doctrine@2.1.0:
@@ -3993,9 +4003,6 @@ packages:
   lodash.upperfirst@4.3.1:
     resolution: {integrity: sha512-sReKOYJIJf74dhJONhU4e0/shzi1trVbSWDOhKYE5XV2O+H7Sb2Dihwuc7xWxVl+DgFPyTqIN3zMfT9cq5iWDg==}
 
-  lodash@4.17.21:
-    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-
   lodash@4.17.23:
     resolution: {integrity: sha512-LgVTMpQtIopCi79SJeDiP0TfWi5CNEc/L/aRdTh3yIvmZXTnheWpKjSZhnvMl8iXbC1tFg9gdHHDMLoV7CnG+w==}
 
@@ -4122,12 +4129,12 @@ packages:
     resolution: {integrity: sha512-VP79XUPxV2CigYP3jWwAUFSku2aKqBH7uTAapFWCBqutsbmDo96KY5o8uh6U+/YSIn5OxJnXp73beVkpqMIGhA==}
     engines: {node: '>=18'}
 
-  minimatch@10.0.3:
-    resolution: {integrity: sha512-IPZ167aShDZZUMdRk66cyQAW3qr0WzbHkPdMYa8bzZhlHhO3jALbKdxcaak7W9FfT2rZNpQuUu4Od7ILEpXSaw==}
-    engines: {node: 20 || >=22}
-
   minimatch@10.1.1:
     resolution: {integrity: sha512-enIvLvRAFZYXJzkCYG5RKmPfrFArdLv+R+lbQ53BmIMLIry74bjKzX6iHAm8WYamJkhSSEabrWN5D97XnKObjQ==}
+    engines: {node: 20 || >=22}
+
+  minimatch@10.1.2:
+    resolution: {integrity: sha512-fu656aJ0n2kcXwsnwnv9g24tkU5uSmOlTjd6WyyaKm2Z+h1qmY6bAjrcaIxF/BslFqbZ8UBtbJi7KgQOZD2PTw==}
     engines: {node: 20 || >=22}
 
   minimatch@3.1.2:
@@ -4687,6 +4694,11 @@ packages:
 
   semver@7.7.3:
     resolution: {integrity: sha512-SdsKMrI9TdgjdweUSR9MweHA4EJ8YxHn8DFaDisvhVlUOe4BF1tLD7GAj0lIqWVl+dPb/rExr0Btby5loQm20Q==}
+    engines: {node: '>=10'}
+    hasBin: true
+
+  semver@7.7.4:
+    resolution: {integrity: sha512-vFKC2IEtQnVhpT78h1Yp8wzwrf8CM+MzKMHGJZfBtzhZNycRFnXsHk6E5TxIkkMsgNS7mdX3AGB7x2QM2di4lA==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -5605,7 +5617,7 @@ snapshots:
   '@commitlint/is-ignored@20.3.1':
     dependencies:
       '@commitlint/types': 20.3.1
-      semver: 7.7.3
+      semver: 7.7.4
 
   '@commitlint/lint@20.3.1':
     dependencies:
@@ -5861,6 +5873,10 @@ snapshots:
     dependencies:
       '@isaacs/balanced-match': 4.0.1
 
+  '@isaacs/brace-expansion@5.0.1':
+    dependencies:
+      '@isaacs/balanced-match': 4.0.1
+
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
@@ -5896,18 +5912,18 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@microsoft/api-extractor@7.55.2(@types/node@24.10.9)':
+  '@microsoft/api-extractor@7.56.3(@types/node@24.10.9)':
     dependencies:
       '@microsoft/api-extractor-model': 7.32.2(@types/node@24.10.9)
       '@microsoft/tsdoc': 0.16.0
       '@microsoft/tsdoc-config': 0.18.0
       '@rushstack/node-core-library': 5.19.1(@types/node@24.10.9)
       '@rushstack/rig-package': 0.6.0
-      '@rushstack/terminal': 0.19.5(@types/node@24.10.9)
-      '@rushstack/ts-command-line': 5.1.5(@types/node@24.10.9)
-      diff: 8.0.2
-      lodash: 4.17.21
-      minimatch: 10.0.3
+      '@rushstack/terminal': 0.21.0(@types/node@24.10.9)
+      '@rushstack/ts-command-line': 5.2.0(@types/node@24.10.9)
+      diff: 8.0.3
+      lodash: 4.17.23
+      minimatch: 10.1.2
       resolve: 1.22.11
       semver: 7.5.4
       source-map: 0.6.1
@@ -7076,7 +7092,7 @@ snapshots:
       resolve: 1.22.11
       strip-json-comments: 3.1.1
 
-  '@rushstack/terminal@0.19.5(@types/node@24.10.9)':
+  '@rushstack/terminal@0.21.0(@types/node@24.10.9)':
     dependencies:
       '@rushstack/node-core-library': 5.19.1(@types/node@24.10.9)
       '@rushstack/problem-matcher': 0.1.1(@types/node@24.10.9)
@@ -7084,9 +7100,9 @@ snapshots:
     optionalDependencies:
       '@types/node': 24.10.9
 
-  '@rushstack/ts-command-line@5.1.5(@types/node@24.10.9)':
+  '@rushstack/ts-command-line@5.2.0(@types/node@24.10.9)':
     dependencies:
-      '@rushstack/terminal': 0.19.5(@types/node@24.10.9)
+      '@rushstack/terminal': 0.21.0(@types/node@24.10.9)
       '@types/argparse': 1.0.38
       argparse: 1.0.10
       string-argv: 0.3.2
@@ -7372,7 +7388,7 @@ snapshots:
       '@typescript-eslint/visitor-keys': 8.49.0
       debug: 4.4.3
       minimatch: 9.0.5
-      semver: 7.7.3
+      semver: 7.7.4
       tinyglobby: 0.2.15
       ts-api-utils: 2.4.0(typescript@5.9.3)
       typescript: 5.9.3
@@ -8043,7 +8059,7 @@ snapshots:
       asap: 2.0.6
       wrappy: 1.0.2
 
-  diff@8.0.2: {}
+  diff@8.0.3: {}
 
   doctrine@2.1.0:
     dependencies:
@@ -8833,7 +8849,7 @@ snapshots:
 
   is-bun-module@2.0.0:
     dependencies:
-      semver: 7.7.3
+      semver: 7.7.4
 
   is-callable@1.2.7: {}
 
@@ -9101,8 +9117,6 @@ snapshots:
 
   lodash.upperfirst@4.3.1: {}
 
-  lodash@4.17.21: {}
-
   lodash@4.17.23: {}
 
   log-symbols@7.0.1:
@@ -9140,7 +9154,7 @@ snapshots:
 
   make-dir@4.0.0:
     dependencies:
-      semver: 7.7.3
+      semver: 7.7.4
 
   markdown-it@14.1.0:
     dependencies:
@@ -9207,13 +9221,13 @@ snapshots:
 
   mimic-function@5.0.1: {}
 
-  minimatch@10.0.3:
-    dependencies:
-      '@isaacs/brace-expansion': 5.0.0
-
   minimatch@10.1.1:
     dependencies:
       '@isaacs/brace-expansion': 5.0.0
+
+  minimatch@10.1.2:
+    dependencies:
+      '@isaacs/brace-expansion': 5.0.1
 
   minimatch@3.1.2:
     dependencies:
@@ -9884,6 +9898,8 @@ snapshots:
       lru-cache: 6.0.0
 
   semver@7.7.3: {}
+
+  semver@7.7.4: {}
 
   send@0.19.2:
     dependencies:
