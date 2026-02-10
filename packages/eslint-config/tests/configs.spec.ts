@@ -3,11 +3,13 @@ import { describe, expect, it } from 'vitest';
 import jestConfig from '../src/configs/jest.mjs';
 import reactConfig from '../src/configs/react.mjs';
 import tsBaseConfig from '../src/configs/ts-base.mjs';
+import vitestConfig from '../vitest.config.cjs';
 
 const configs = [
   { name: 'jest', config: { ...jestConfig, settings: { jest: { version: 28 } } }, filename: 'avi.spec.ts' },
   { name: 'react', config: reactConfig, filename: 'avi.tsx' },
   { name: 'ts-base', config: tsBaseConfig, filename: 'avi.ts' },
+  { name: 'vitest', config: vitestConfig, filename: 'avi.test.ts' },
 ];
 
 describe('configs', function () {
