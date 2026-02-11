@@ -11,11 +11,14 @@ const vitestConfig = defineConfig({
   rules: {
     ...vitestPlugin.configs.recommended.rules,
     'vitest/expect-expect': ['error', { assertFunctionNames: ['expect', 'expectTypeOf', 'expectResponseStatus'] }],
-    'vitest/padding-around-after-all-blocks': 'warn',
+    'vitest/padding-around-all': 'warn',
     'vitest/prefer-expect-resolves': 'warn',
     'vitest/prefer-hooks-in-order': 'warn',
     'vitest/prefer-to-have-length': 'warn',
     'vitest/prefer-strict-boolean-matchers': 'warn',
+    'vitest/require-top-level-describe': 'warn',
+    'vitest/prefer-equality-matcher': 'warn',
+    'vitest/valid-title': ['warn', { mustMatch: { it: ['^should .+.$'] } }],
   },
 });
 
