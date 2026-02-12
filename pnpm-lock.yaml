@@ -27,6 +27,12 @@ catalogs:
     '@types/supertest':
       specifier: 6.0.3
       version: 6.0.3
+    '@vitest/coverage-v8':
+      specifier: ^4.0.15
+      version: 4.0.18
+    '@vitest/ui':
+      specifier: ^4.0.15
+      version: 4.0.18
     eslint:
       specifier: ^9.39.1
       version: 9.39.1
@@ -45,6 +51,9 @@ catalogs:
     typescript:
       specifier: 5.9.3
       version: 5.9.3
+    vitest:
+      specifier: ^4.0.15
+      version: 4.0.18
 
 importers:
 
@@ -610,7 +619,7 @@ importers:
     dependencies:
       type-fest:
         specifier: ^5.0.0
-        version: 5.4.1
+        version: 5.4.4
     devDependencies:
       '@map-colonies/eslint-config':
         specifier: workspace:^
@@ -5052,8 +5061,8 @@ packages:
     resolution: {integrity: sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==}
     engines: {node: '>=16'}
 
-  type-fest@5.4.1:
-    resolution: {integrity: sha512-xygQcmneDyzsEuKZrFbRMne5HDqMs++aFzefrJTgEIKjQ3rekM+RPfFCVq2Gp1VIDqddoYeppCj4Pcb+RZW0GQ==}
+  type-fest@5.4.4:
+    resolution: {integrity: sha512-JnTrzGu+zPV3aXIUhnyWJj4z/wigMsdYajGLIYakqyOW1nPllzXEJee0QQbHj+CTIQtXGlAjuK0UY+2xTyjVAw==}
     engines: {node: '>=20'}
 
   type-is@1.6.18:
@@ -10308,7 +10317,7 @@ snapshots:
 
   type-fest@4.41.0: {}
 
-  type-fest@5.4.1:
+  type-fest@5.4.4:
     dependencies:
       tagged-tag: 1.0.0
 
