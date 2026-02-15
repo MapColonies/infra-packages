@@ -34,7 +34,7 @@ const config: KnipConfig = {
     'packages/eslint-config': {
       ...basePackageConfig,
       entry: ['src/configs/**'],
-      ignoreDependencies: ['eslint-plugin-react-hooks', 'eslint-plugin-jest', 'eslint-plugin-react'],
+      ignoreDependencies: ['eslint-plugin-react-hooks', 'eslint-plugin-jest', 'eslint-plugin-react', '@vitest/eslint-plugin'],
     },
     'packages/typescript-config': {
       entry: [],
