@@ -1,5 +1,12 @@
 # Changelog
 
+## [7.2.0](https://github.com/MapColonies/infra-packages/compare/eslint-config-v7.1.0...eslint-config-v7.2.0) (2026-02-15)
+
+
+### 🎉 Features
+
+* **eslint-config:** added vitest config ([#128](https://github.com/MapColonies/infra-packages/issues/128)) ([635055d](https://github.com/MapColonies/infra-packages/commit/635055d460ed0b2d370818cff6030da750dd1f1a))
+
 ## [7.1.0](https://github.com/MapColonies/infra-packages/compare/eslint-config-v7.0.0...eslint-config-v7.1.0) (2026-01-20)
 
 
