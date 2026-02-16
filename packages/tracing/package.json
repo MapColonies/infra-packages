@@ -44,9 +44,9 @@
     "vitest-config": "workspace:^",
     "vitest": "catalog:",
     "@protobuf-ts/plugin": "2.11.1",
-    "protoc": "33.4.0",
+    "protoc": "33.5.0",
     "@protobuf-ts/runtime": "2.11.1",
-    "nock": "14.0.10",
+    "nock": "14.0.11",
     "@microsoft/api-extractor": "catalog:",
     "@opentelemetry/api": "catalog:"
   },
