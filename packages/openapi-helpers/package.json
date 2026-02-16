@@ -59,7 +59,7 @@
     "yaml": "^2.8.0"
   },
   "peerDependencies": {
-    "@types/express": "^4.17.21",
+    "@types/express": "^4.17.21 || ^5.0.0",
     "openapi-typescript": "^7.4.1",
     "prettier": "^3.3.3",
     "supertest": "^7.0.0"
