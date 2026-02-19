@@ -84,9 +84,9 @@
     "eslint": "catalog:",
     "typescript": "catalog:",
     "eslint-plugin-react-hooks": "7.0.1",
-    "eslint-plugin-jest": "29.12.1",
+    "eslint-plugin-jest": "29.15.0",
     "eslint-plugin-react": "7.37.5",
-    "@vitest/eslint-plugin": "1.6.7",
+    "@vitest/eslint-plugin": "1.6.9",
     "vitest-config": "workspace:^",
     "vitest": "catalog:"
   }
