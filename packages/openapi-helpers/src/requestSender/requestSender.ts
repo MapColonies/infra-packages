@@ -7,7 +7,7 @@ import type express from 'express';
 import oasNormalize from 'oas-normalize';
 import type { OmitProperties } from 'ts-essentials';
 import type { OpenAPIV3 } from 'openapi-types';
-import { PathsTemplate, Methods, OperationsTemplate } from '../common/types';
+import type { PathsTemplate, Methods, OperationsTemplate } from '../common/types';
 import { expectResponseStatusFactory } from './expect';
 import type { ExpectResponseStatus } from './expect';
 import type { PathRequestOptions, RequestOptions, OperationsNames, RequestSender, RequestReturn, RequestSenderOptions } from './types';

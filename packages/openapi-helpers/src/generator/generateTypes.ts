@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 import fs from 'node:fs/promises';
 import { format, resolveConfig } from 'prettier';
-import openapiTS, { astToString, SchemaObject, TransformNodeOptions, TransformObject } from 'openapi-typescript';
-import { TypeNode } from 'typescript';
+import openapiTS, { astToString, type SchemaObject, type TransformNodeOptions, type TransformObject } from 'openapi-typescript';
+import type { TypeNode } from 'typescript';
 
 const ESLINT_DISABLE = '/* eslint-disable */\n';
 const FILE_HEADER = `${ESLINT_DISABLE}// This file was auto-generated. Do not edit manually.

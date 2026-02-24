@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs';
-import { PackageJson } from 'type-fest';
+import type { PackageJson } from 'type-fest';
 
 /**
  * Synchronously reads and parses a package.json file.

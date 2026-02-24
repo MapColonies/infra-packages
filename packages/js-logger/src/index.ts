@@ -1,4 +1,11 @@
-import { pino, LoggerOptions as PinoOptions, Logger, TransportSingleOptions, transport as pinoTransport, DestinationStream } from 'pino';
+import {
+  pino,
+  type LoggerOptions as PinoOptions,
+  type Logger,
+  type TransportSingleOptions,
+  transport as pinoTransport,
+  type DestinationStream,
+} from 'pino';
 import { pinoCaller } from 'pino-caller';
 import type { Options } from 'pino-opentelemetry-transport';
 import { readPackageJsonSync } from '@map-colonies/read-pkg';

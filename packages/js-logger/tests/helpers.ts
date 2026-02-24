@@ -1,5 +1,5 @@
 import { existsSync, statSync } from 'node:fs';
-import { setInterval } from 'timers/promises';
+import { setInterval } from 'node:timers/promises';
 
 export async function waitForFileCreation(path: string): Promise<void> {
   const abortController = new AbortController();

@@ -1,7 +1,7 @@
-import { IncomingMessage, ServerResponse } from 'node:http';
-import { pinoHttp, Options as PinoHttpOptions, HttpLogger, AutoLoggingOptions, stdSerializers } from 'pino-http';
+import type { IncomingMessage, ServerResponse } from 'node:http';
+import { pinoHttp, type Options as PinoHttpOptions, type HttpLogger, type AutoLoggingOptions, stdSerializers } from 'pino-http';
 import statusCodes from 'http-status-codes';
-import { Logger } from 'pino';
+import type { Logger } from 'pino';
 import {
   ATTR_EXCEPTION_MESSAGE,
   ATTR_EXCEPTION_STACKTRACE,

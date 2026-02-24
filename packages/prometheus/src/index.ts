@@ -4,9 +4,9 @@
  */
 import { hostname as osHostname } from 'node:os';
 import { Registry, collectDefaultMetrics, Gauge } from 'prom-client';
-import promBundle, { Labels } from 'express-prom-bundle';
+import promBundle, { type Labels } from 'express-prom-bundle';
 import { readPackageJsonSync } from '@map-colonies/read-pkg';
-import * as express from 'express';
+import type * as express from 'express';
 import { get } from 'lodash';
 import { deconstructSemver } from './util';
 

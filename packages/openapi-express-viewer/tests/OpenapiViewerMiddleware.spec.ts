@@ -1,11 +1,11 @@
 import fs from 'node:fs';
 import { describe, vi, beforeAll, it, expect } from 'vitest';
 import { load } from 'js-yaml';
-import express, { Application } from 'express';
+import express, { type Application } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import supertest from 'supertest';
-import { JsonObject } from 'swagger-ui-express';
-import { OpenapiRouterConfig, OpenapiViewerRouter } from '../src/index';
+import type { JsonObject } from 'swagger-ui-express';
+import { type OpenapiRouterConfig, OpenapiViewerRouter } from '../src/index';
 
 vi.mock('fs');
 
