@@ -1,9 +1,9 @@
 import { describe, beforeEach, it, expect, expectTypeOf } from 'vitest';
 import express from 'express';
 import bodyParser from 'body-parser';
-import { RequestSender } from '../../src/requestSender/types';
+import type { RequestSender } from '../../src/requestSender/types';
 import { createRequestSender } from '../../src/requestSender/requestSender';
-import { paths, operations } from '../types';
+import type { paths, operations } from '../types';
 
 describe('requestSender', () => {
   let expressApp: express.Application;

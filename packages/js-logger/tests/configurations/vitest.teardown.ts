@@ -1,4 +1,4 @@
-import fs from 'fs/promises';
+import fs from 'node:fs/promises';
 import { glob } from 'glob';
 
 export async function teardown(): Promise<void> {

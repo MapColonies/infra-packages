@@ -1,5 +1,5 @@
-import { IncomingMessage, RequestOptions } from 'node:http';
-import { Span, SpanOptions, SpanStatusCode, Tracer, trace, context } from '@opentelemetry/api';
+import type { IncomingMessage, RequestOptions } from 'node:http';
+import { type Span, type SpanOptions, SpanStatusCode, type Tracer, trace, context } from '@opentelemetry/api';
 
 /**
  * Binds a parent span to a function, ensuring that the function executes within the context of the span.

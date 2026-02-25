@@ -1,5 +1,5 @@
 import type { JSONSchemaType } from 'ajv';
-import { CommonConfig, getCommonConfig, mergeAndValidateConfig } from './common/config';
+import { type CommonConfig, getCommonConfig, mergeAndValidateConfig } from './common/config';
 
 const DEFAULT_URL = 'http://localhost:4318/v1/traces';
 

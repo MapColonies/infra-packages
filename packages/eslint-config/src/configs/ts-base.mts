@@ -6,6 +6,7 @@ import eslintConfigPrettier from 'eslint-config-prettier';
 import tsParser from '@typescript-eslint/parser';
 import mapColoniesPlugin from '@map-colonies/eslint-plugin';
 import { defineConfig } from 'eslint/config';
+import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 
 /**
  * ESLint naming convention rules for TypeScript projects
@@ -118,6 +119,7 @@ const typescriptEslintRules = defineConfig({
     '@typescript-eslint/no-unused-expressions': 'error',
     '@typescript-eslint/no-unused-vars': ['warn', { ignoreRestSiblings: true }],
     '@typescript-eslint/return-await': 'error',
+    '@typescript-eslint/consistent-type-imports': 'error',
   },
 });
 
@@ -180,6 +182,23 @@ const importRulesAndConfig = defineConfig({
   },
 });
 
+const unicornRules = defineConfig({
+  name: 'unicorn',
+  plugins: {
+    unicorn: eslintPluginUnicorn,
+  },
+  rules: {
+    'no-lonely-if': 'error',
+    'unicorn/no-lonely-if': 'error',
+    'unicorn/no-negation-in-equality-check': 'error',
+    'unicorn/no-new-buffer': 'error',
+    'unicorn/no-typeof-undefined': 'error',
+    'unicorn/no-unnecessary-await': 'error',
+    'unicorn/prefer-node-protocol': 'error',
+    'unicorn/prefer-structured-clone': 'error',
+  },
+});
+
 const globalIgnoreConfig = defineConfig({
   name: 'map-colonies/global-ignore',
   ignores: ['.husky', 'coverage', 'reports', 'dist', 'node_modules', '**/*.{js,mjs,cjs}', 'helm'],
@@ -201,6 +220,7 @@ const combinedConfig = defineConfig(
   typescriptEslintRules,
   jestTurnedOffRules,
   reactNamingConventions,
+  unicornRules,
   //@ts-expect-error it works and a known issue https://github.com/un-ts/eslint-plugin-import-x/issues/421
   importFlatConfigs.recommended,
   { name: 'import-x/typescript', ...importFlatConfigs.typescript },

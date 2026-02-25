@@ -1,9 +1,10 @@
-import { describe, beforeAll, vi, afterAll, it, expect, Mock } from 'vitest';
-import express, { type Request, type Response, Application, NextFunction } from 'express';
+import { describe, beforeAll, vi, afterAll, it, expect, type Mock } from 'vitest';
+import express from 'express';
+import type { Application, Request, Response, NextFunction } from 'express';
 import { getReasonPhrase, StatusCodes } from 'http-status-codes';
 import supertest from 'supertest';
 
-import { getErrorHandlerMiddleware, HttpError } from '../src/index';
+import { getErrorHandlerMiddleware, type HttpError } from '../src/index';
 
 describe('#getErrorHandlerMiddleware', function () {
   let expressApp: Application;

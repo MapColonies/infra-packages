@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
-import { Tracer, SpanStatusCode, trace } from '@opentelemetry/api';
+import { type Tracer, SpanStatusCode, trace } from '@opentelemetry/api';
 import { withSpanV4, withSpanAsyncV4 } from '../../src/decorators/v4';
 import { setupTracing, teardownTracing, type TracingTestContext } from '../helpers/testSetup';
 

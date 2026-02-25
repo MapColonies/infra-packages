@@ -1,7 +1,7 @@
-import { readFileSync } from 'fs';
+import { readFileSync } from 'node:fs';
 import { load } from 'js-yaml';
 import { Router } from 'express';
-import { JsonObject, serve, setup } from 'swagger-ui-express';
+import { type JsonObject, serve, setup } from 'swagger-ui-express';
 import { OpenapiController } from './OpenapiController';
 
 /**

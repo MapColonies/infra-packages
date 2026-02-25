@@ -1,15 +1,15 @@
 import { NodeTracerProvider } from '@opentelemetry/sdk-trace-node';
 import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-proto';
 import { ParentBasedSampler, TraceIdRatioBasedSampler } from '@opentelemetry/sdk-trace-base';
-import { getNodeAutoInstrumentations, InstrumentationConfigMap } from '@opentelemetry/auto-instrumentations-node';
+import { getNodeAutoInstrumentations, type InstrumentationConfigMap } from '@opentelemetry/auto-instrumentations-node';
 import { BatchSpanProcessor, ConsoleSpanExporter, SimpleSpanProcessor, type SpanProcessor } from '@opentelemetry/sdk-trace-base';
-import { registerInstrumentations, Instrumentation } from '@opentelemetry/instrumentation';
+import { registerInstrumentations, type Instrumentation } from '@opentelemetry/instrumentation';
 import { resourceFromAttributes } from '@opentelemetry/resources';
 import { ATTR_SERVICE_NAME, ATTR_SERVICE_VERSION } from '@opentelemetry/semantic-conventions';
 import * as api from '@opentelemetry/api';
-import { Prettify } from './common/types';
-import { TelemetryBase } from './common/interfaces';
-import { getTracingConfig, TracingConfig } from './config';
+import type { Prettify } from './common/types';
+import type { TelemetryBase } from './common/interfaces';
+import { getTracingConfig, type TracingConfig } from './config';
 
 export type { TracingConfig, TelemetryBase };
 

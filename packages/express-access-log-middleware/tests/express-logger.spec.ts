@@ -1,8 +1,9 @@
 import { Writable } from 'node:stream';
-import { vi, describe, beforeAll, beforeEach, it, expect, Mock } from 'vitest';
-import express, { Application, NextFunction, Request, Response } from 'express';
+import { vi, describe, beforeAll, beforeEach, it, expect, type Mock } from 'vitest';
+import express from 'express';
+import type { Application, Request, Response, NextFunction } from 'express';
 import supertest from 'supertest';
-import { Logger, pino } from 'pino';
+import { type Logger, pino } from 'pino';
 import { httpLogger } from '../src';
 
 describe('#httpLogger', function () {

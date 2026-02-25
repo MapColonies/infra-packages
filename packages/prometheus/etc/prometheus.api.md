@@ -4,7 +4,7 @@
 
 ```ts
 
-import * as express from 'express';
+import type * as express from 'express';
 import promBundle from 'express-prom-bundle';
 import { Registry } from 'prom-client';
 

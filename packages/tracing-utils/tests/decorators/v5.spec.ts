@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
-import { Tracer, SpanStatusCode, trace } from '@opentelemetry/api';
+import { type Tracer, SpanStatusCode, trace } from '@opentelemetry/api';
 import { withSpan, withSpanAsync } from '../../src/decorators/v5';
 import { setupTracing, teardownTracing, type TracingTestContext } from '../helpers/testSetup';
 

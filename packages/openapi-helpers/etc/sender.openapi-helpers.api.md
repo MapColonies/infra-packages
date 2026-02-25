@@ -10,7 +10,7 @@ import type { OptionalKeys } from 'ts-essentials';
 import type { Prettify } from 'ts-essentials';
 import type { RequiredKeys } from 'ts-essentials';
 import type * as supertest from 'supertest';
-import { WritableKeys } from 'ts-essentials';
+import type { WritableKeys } from 'ts-essentials';
 
 // Warning: (ae-forgotten-export) The symbol "PathsTemplate" needs to be exported by the entry point requestSender.d.ts
 // Warning: (ae-forgotten-export) The symbol "OperationsTemplate" needs to be exported by the entry point requestSender.d.ts

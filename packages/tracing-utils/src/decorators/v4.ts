@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any , @typescript-eslint/no-unsafe-return */
 
-import { Tracer } from '@opentelemetry/api';
+import type { Tracer } from '@opentelemetry/api';
 import { asyncCallWithSpan, callWithSpan } from '../utils';
 
 /**
