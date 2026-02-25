@@ -7,7 +7,7 @@
 import { SchemaObject } from 'openapi-typescript';
 import { TransformNodeOptions } from 'openapi-typescript';
 import { TransformObject } from 'openapi-typescript';
-import { TypeNode } from 'typescript';
+import type { TypeNode } from 'typescript';
 
 // @public
 export function generateErrors(openapiPath: string, destinationPath: string, options: {
