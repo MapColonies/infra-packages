@@ -1,6 +1,6 @@
 {
   "name": "@map-colonies/openapi-express-viewer",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "description": "A package for openapi ui middleware for express",
   "main": "./dist/index.js",
   "type": "commonjs",
