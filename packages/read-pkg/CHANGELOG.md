@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/MapColonies/infra-packages/compare/read-pkg-v2.0.0...read-pkg-v3.0.0) (2026-02-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* **eslint-config:** added unicorn rules ([#130](https://github.com/MapColonies/infra-packages/issues/130))
+
+### 🎉 Features
+
+* **eslint-config:** added unicorn rules ([#130](https://github.com/MapColonies/infra-packages/issues/130)) ([b474787](https://github.com/MapColonies/infra-packages/commit/b474787ebefaddc521c56d2d775632d6c15d275c))
+
 ## [2.0.0](https://github.com/MapColonies/infra-packages/compare/read-pkg-v1.0.0...read-pkg-v2.0.0) (2026-01-19)
 
 
