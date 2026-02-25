@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://github.com/MapColonies/infra-packages/compare/tracing-v1.0.0...tracing-v2.0.0) (2026-02-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* **eslint-config:** added unicorn rules ([#130](https://github.com/MapColonies/infra-packages/issues/130))
+
+### 🎉 Features
+
+* **eslint-config:** added unicorn rules ([#130](https://github.com/MapColonies/infra-packages/issues/130)) ([b474787](https://github.com/MapColonies/infra-packages/commit/b474787ebefaddc521c56d2d775632d6c15d275c))
+
+
+### 🔗 Dependencies
+
+* **tracing:** update tracing dependencies ([#81](https://github.com/MapColonies/infra-packages/issues/81)) ([2e8814f](https://github.com/MapColonies/infra-packages/commit/2e8814f3d4c842f7fb802c218179538e50a7a13d))
+
 ## [1.0.0](https://github.com/MapColonies/infra-packages/compare/tracing-v0.0.1...tracing-v1.0.0) (2026-01-19)
 
 
