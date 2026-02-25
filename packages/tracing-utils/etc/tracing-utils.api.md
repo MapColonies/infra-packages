@@ -5,8 +5,8 @@
 ```ts
 
 import type { Handler } from 'express';
-import { IncomingMessage } from 'node:http';
-import { RequestOptions } from 'node:http';
+import type { IncomingMessage } from 'node:http';
+import type { RequestOptions } from 'node:http';
 import { Span } from '@opentelemetry/api';
 import { SpanOptions } from '@opentelemetry/api';
 import { Tracer } from '@opentelemetry/api';
