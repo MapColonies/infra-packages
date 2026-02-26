@@ -8,7 +8,7 @@
   "packages/express-access-log-middleware": "4.0.0",
   "packages/js-logger": "4.0.0",
   "packages/read-pkg": "2.0.0",
-  "packages/openapi-express-viewer": "5.0.0",
+  "packages/openapi-express-viewer": "6.0.0",
   "packages/openapi-helpers": "5.1.0",
   "packages/semantic-conventions": "1.0.0",
   "packages/tracing": "1.0.0",
