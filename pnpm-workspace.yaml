@@ -6,7 +6,7 @@ catalog:
   '@arethetypeswrong/cli': 0.18.2
   '@vitest/coverage-v8': ^4.0.15
   '@vitest/ui': ^4.0.15
-  eslint: ^9.39.1
+  eslint: ^10.0.0
   publint: 0.3.16
   rimraf: ^6.1.2
   typescript: 5.9.3

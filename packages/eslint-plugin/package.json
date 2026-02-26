@@ -30,7 +30,7 @@
   },
   "repository": "github:MapColonies/infra-packages",
   "peerDependencies": {
-    "eslint": "^9.39.0"
+    "eslint": "^9.39.0 || ^10.0.0"
   },
   "dependencies": {
     "@typescript-eslint/utils": "^8.53.0"
