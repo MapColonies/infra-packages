@@ -1,5 +1,16 @@
 # Changelog
 
+## [5.0.0](https://github.com/MapColonies/infra-packages/compare/js-logger-v4.0.0...js-logger-v5.0.0) (2026-02-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* **eslint-config:** added unicorn rules ([#130](https://github.com/MapColonies/infra-packages/issues/130))
+
+### 🎉 Features
+
+* **eslint-config:** added unicorn rules ([#130](https://github.com/MapColonies/infra-packages/issues/130)) ([b474787](https://github.com/MapColonies/infra-packages/commit/b474787ebefaddc521c56d2d775632d6c15d275c))
+
 ## [4.0.0](https://github.com/MapColonies/infra-packages/compare/js-logger-v3.0.2...js-logger-v4.0.0) (2026-01-18)
 
 
