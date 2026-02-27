@@ -37,8 +37,8 @@ catalogs:
       specifier: ^9.39.1
       version: 9.39.1
     publint:
-      specifier: 0.3.16
-      version: 0.3.16
+      specifier: 0.3.17
+      version: 0.3.17
     rimraf:
       specifier: ^6.1.2
       version: 6.1.2
@@ -100,7 +100,7 @@ importers:
         version: 4.2.2(prettier@3.8.1)
       publint:
         specifier: 'catalog:'
-        version: 0.3.16
+        version: 0.3.17
       rimraf:
         specifier: 'catalog:'
         version: 6.1.2
@@ -293,7 +293,7 @@ importers:
         version: 9.39.1(jiti@2.6.1)
       publint:
         specifier: 'catalog:'
-        version: 0.3.16
+        version: 0.3.17
       rimraf:
         specifier: 'catalog:'
         version: 6.1.2
@@ -561,7 +561,7 @@ importers:
     devDependencies:
       publint:
         specifier: 'catalog:'
-        version: 0.3.16
+        version: 0.3.17
 
   packages/prometheus:
     dependencies:
@@ -831,7 +831,7 @@ importers:
     devDependencies:
       publint:
         specifier: 'catalog:'
-        version: 0.3.16
+        version: 0.3.17
 
 packages:
 
@@ -2108,8 +2108,8 @@ packages:
   '@protobufjs/utf8@1.1.0':
     resolution: {integrity: sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==}
 
-  '@publint/pack@0.1.2':
-    resolution: {integrity: sha512-S+9ANAvUmjutrshV4jZjaiG8XQyuJIZ8a4utWmN/vW1sgQ9IfBnPndwkmQYw53QmouOIytT874u65HEmu6H5jw==}
+  '@publint/pack@0.1.4':
+    resolution: {integrity: sha512-HDVTWq3H0uTXiU0eeSQntcVUTPP3GamzeXI41+x7uU9J65JgWQh3qWZHblR1i0npXfFtF+mxBiU2nJH8znxWnQ==}
     engines: {node: '>=18'}
 
   '@readme/better-ajv-errors@2.4.0':
@@ -4633,8 +4633,8 @@ packages:
     resolution: {integrity: sha512-llQsMLSUDUPT44jdrU/O37qlnifitDP+ZwrmmZcoSKyLKvtZxpyV0n2/bD/N4tBAAZ/gJEdZU7KMraoK1+XYAg==}
     engines: {node: '>= 0.10'}
 
-  publint@0.3.16:
-    resolution: {integrity: sha512-MFqyfRLAExPVZdTQFwkAQELzA8idyXzROVOytg6nEJ/GEypXBUmMGrVaID8cTuzRS1U5L8yTOdOJtMXgFUJAeA==}
+  publint@0.3.17:
+    resolution: {integrity: sha512-Q3NLegA9XM6usW+dYQRG1g9uEHiYUzcCVBJDJ7yMcWRqVU9LYZUWdqbwMZfmTCFC5PZLQpLAmhvRcQRl3exqkw==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -7039,7 +7039,7 @@ snapshots:
 
   '@protobufjs/utf8@1.1.0': {}
 
-  '@publint/pack@0.1.2': {}
+  '@publint/pack@0.1.4': {}
 
   '@readme/better-ajv-errors@2.4.0(ajv@8.17.1)':
     dependencies:
@@ -9900,9 +9900,9 @@ snapshots:
       forwarded: 0.2.0
       ipaddr.js: 1.9.1
 
-  publint@0.3.16:
+  publint@0.3.17:
     dependencies:
-      '@publint/pack': 0.1.2
+      '@publint/pack': 0.1.4
       package-manager-detector: 1.6.0
       picocolors: 1.1.1
       sade: 1.8.1
