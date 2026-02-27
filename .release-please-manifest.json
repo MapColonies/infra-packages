@@ -4,7 +4,7 @@
   "packages/eslint-config": "8.0.0",
   "packages/eslint-plugin": "0.1.0",
   "packages/typescript-config": "2.0.0",
-  "packages/error-express-handler": "4.0.0",
+  "packages/error-express-handler": "5.0.0",
   "packages/express-access-log-middleware": "4.0.0",
   "packages/js-logger": "4.0.0",
   "packages/read-pkg": "2.0.0",
