@@ -9,6 +9,7 @@ import {
 import { pinoCaller } from 'pino-caller';
 import type { Options } from 'pino-opentelemetry-transport';
 import { readPackageJsonSync } from '@map-colonies/read-pkg';
+import { PACKAGE_VERSION } from './version';
 
 /**
  * Options for configuring the logger.
@@ -97,8 +98,8 @@ export function jsLogger(options?: LoggerOptions, destination: string | number =
     const pkg = readPackageJsonSync();
     const otelOptions: Options = {
       loggerName: 'js-logger',
-      serviceVersion: pkg.version ?? '1.0.0',
-      resourceAttributes: options.opentelemetryOptions.resourceAttributes,
+      serviceVersion: PACKAGE_VERSION,
+      resourceAttributes: { 'service.name': pkg.name, 'service.version': pkg.version, ...options.opentelemetryOptions.resourceAttributes },
       logRecordProcessorOptions: [
         {
           recordProcessorType: 'simple',
@@ -113,6 +114,8 @@ export function jsLogger(options?: LoggerOptions, destination: string | number =
       ],
     };
     transport = { target: 'pino-opentelemetry-transport', options: otelOptions };
+
+    delete baseOptions.formatters;
   }
   const pinoOptions: PinoOptions = { ...baseOptions, ...options };
   const logger = pino(pinoOptions, pinoTransport(transport) as DestinationStream);
