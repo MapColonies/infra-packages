@@ -92,7 +92,7 @@ describe('#httpLogger', function () {
       // eslint-disable-next-line
       const loggedObject = JSON.parse(chunk.toString());
 
-      expect(loggedObject).toMatchObject({ msg: 'request completed', ['http.response.status_code']: 200, level: 'info', ['url.full']: '/avi' });
+      expect(loggedObject).toMatchObject({ msg: 'request completed', ['http.response.status_code']: 200, level: 'info', ['url.path']: '/avi' });
       next();
     };
 
