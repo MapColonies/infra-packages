@@ -1,5 +1,11 @@
 # Changelog
 
+## [4.1.0](https://github.com/MapColonies/infra-packages/compare/express-access-log-middleware-v4.0.0...express-access-log-middleware-v4.1.0) (2026-03-08)
+
+### 🐛 Bug Fixes
+
+* **express-access-log-middleware:** update attribute name from ATTR_URL_FULL to ATTR_URL_PATH ([#152](https://github.com/MapColonies/infra-packages/issues/152)) ([3905090](https://github.com/MapColonies/infra-packages/commit/39050901456ad0cff89256de41e601f7856c23dc))
+
 ## [4.0.0](https://github.com/MapColonies/infra-packages/compare/express-access-log-middleware-v3.0.1...express-access-log-middleware-v4.0.0) (2026-01-18)
 
 
