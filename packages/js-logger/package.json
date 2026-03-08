@@ -14,14 +14,15 @@
     "test": "vitest run",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "prebuild": "pnpm run clean",
+    "prebuild": "pnpm run clean && npm run generate:version",
     "build": "tsc --project tsconfig.build.json",
     "clean": "rimraf dist",
     "prepack": "turbo run build",
     "check-dist": "publint && attw --pack .",
     "knip": "knip --directory ../.. --workspace packages/js-logger",
     "api": "api-extractor run --local --verbose",
-    "api:check": "api-extractor run --verbose"
+    "api:check": "api-extractor run --verbose",
+    "generate:version": "node scripts/generateVersionFile.mjs"
   },
   "repository": "github:MapColonies/infra-packages",
   "files": [
