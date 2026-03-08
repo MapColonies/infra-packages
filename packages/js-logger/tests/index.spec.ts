@@ -4,15 +4,15 @@ import { jsLogger } from '../src';
 import { waitForFileCreation } from './helpers';
 
 describe('jsLogger', function () {
-  it('should initialize the logger without errors', function () {
-    const logger = jsLogger();
+  it('should initialize the logger without errors', async function () {
+    const logger = await jsLogger();
 
     expect(logger).toBeDefined();
     expect(() => logger.info('test')).not.toThrow();
   });
 
   it('should support other destinations', async function () {
-    const logger = jsLogger({}, 'avi.log');
+    const logger = await jsLogger({}, 'avi.log');
 
     logger.info('avi');
 
@@ -24,7 +24,7 @@ describe('jsLogger', function () {
   });
 
   it('should support base option', async function () {
-    const logger = jsLogger({ base: { key: 'value' } }, 'avi-base.log');
+    const logger = await jsLogger({ base: { key: 'value' } }, 'avi-base.log');
 
     logger.info('avi');
 
@@ -38,7 +38,7 @@ describe('jsLogger', function () {
   });
 
   it('should include caller information if enabled', async function () {
-    const logger = jsLogger({ pinoCaller: true }, 'avi-caller.log');
+    const logger = await jsLogger({ pinoCaller: true }, 'avi-caller.log');
 
     logger.info('avi');
 
@@ -51,8 +51,8 @@ describe('jsLogger', function () {
     expect(logLine).toHaveProperty('caller');
   });
 
-  it('should still output logs when opentelemetry is enabled', function () {
-    const logger = jsLogger({ opentelemetryOptions: { enabled: true } });
+  it('should still output logs when opentelemetry is enabled', async function () {
+    const logger = await jsLogger({ opentelemetryOptions: { enabled: true } });
 
     expect(logger).toBeDefined();
     expect(() => logger.info('test otel')).not.toThrow();
