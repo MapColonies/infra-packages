@@ -8,7 +8,7 @@ import {
   ATTR_EXCEPTION_TYPE,
   ATTR_HTTP_REQUEST_METHOD,
   ATTR_HTTP_RESPONSE_STATUS_CODE,
-  ATTR_URL_FULL,
+  ATTR_URL_PATH,
 } from '@opentelemetry/semantic-conventions';
 
 /**
@@ -50,16 +50,16 @@ interface Options {
   customErrorObject?: PinoHttpOptions['customErrorObject'];
 }
 
+const bannedHeaders = ['authorization', 'cookie', 'set-cookie', 'x-api-key', 'proxy-authorization', 'www-authenticate'];
+
 function createRequestAttributes(req: IncomingMessage, res: ServerResponse): Record<string, unknown> {
   const serializedReq = stdSerializers.req(req);
   const attributes: Record<string, unknown> = {
     [ATTR_HTTP_REQUEST_METHOD]: serializedReq.method,
     [ATTR_HTTP_RESPONSE_STATUS_CODE]: res.statusCode,
     ['http.request.id']: serializedReq.id,
-    [ATTR_URL_FULL]: serializedReq.url,
+    [ATTR_URL_PATH]: serializedReq.url,
   };
-
-  const bannedHeaders = ['authorization', 'cookie', 'set-cookie', 'x-api-key', 'proxy-authorization', 'www-authenticate'];
 
   Object.keys(req.headers).forEach((header) => {
     if (!bannedHeaders.includes(header.toLowerCase())) {
