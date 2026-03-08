@@ -8,7 +8,7 @@ import { Logger } from 'pino';
 import { LoggerOptions as LoggerOptions_2 } from 'pino';
 
 // @public
-export function jsLogger(options?: LoggerOptions, destination?: string | number): Logger;
+export function jsLogger(options?: LoggerOptions, destination?: string | number): Promise<Logger>;
 
 export { Logger }
 
