@@ -51,6 +51,9 @@
     "pino": "^10.1.0",
     "pino-caller": "^4.0.0",
     "pino-opentelemetry-transport": "^2.0.0",
-    "pino-pretty": "^13.1.2"
+    "pino-pretty": "^13.1.2",
+    "@opentelemetry/resources": "^2.6.0",
+    "@opentelemetry/resource-detector-container": "^0.8.4",
+    "@opentelemetry/semantic-conventions": "^1.40.0"
   }
 }

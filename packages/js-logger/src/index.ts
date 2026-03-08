@@ -6,6 +6,10 @@ import {
   transport as pinoTransport,
   type DestinationStream,
 } from 'pino';
+import { detectResources } from '@opentelemetry/resources';
+import { containerDetector } from '@opentelemetry/resource-detector-container';
+import { ATTR_SERVICE_NAME, ATTR_SERVICE_VERSION } from '@opentelemetry/semantic-conventions';
+import { ATTR_K8S_POD_UID } from '@opentelemetry/semantic-conventions/incubating';
 import { pinoCaller } from 'pino-caller';
 import type { Options } from 'pino-opentelemetry-transport';
 import { readPackageJsonSync } from '@map-colonies/read-pkg';
@@ -84,7 +88,7 @@ const baseOptions: PinoOptions = {
  * @returns The configured logger instance.
  * @public
  */
-export function jsLogger(options?: LoggerOptions, destination: string | number = 1): Logger {
+export async function jsLogger(options?: LoggerOptions, destination: string | number = 1): Promise<Logger> {
   let transport: TransportSingleOptions = { target: 'pino/file', options: { destination } };
 
   /* istanbul ignore next */
@@ -96,10 +100,20 @@ export function jsLogger(options?: LoggerOptions, destination: string | number =
 
   if (options?.opentelemetryOptions?.enabled === true) {
     const pkg = readPackageJsonSync();
+
+    const detectedResources = detectResources({ detectors: [containerDetector] });
+    await detectedResources.waitForAsyncAttributes?.();
+
     const otelOptions: Options = {
       loggerName: 'js-logger',
       serviceVersion: PACKAGE_VERSION,
-      resourceAttributes: { 'service.name': pkg.name, 'service.version': pkg.version, ...options.opentelemetryOptions.resourceAttributes },
+      resourceAttributes: {
+        ...detectedResources.attributes,
+        [ATTR_SERVICE_NAME]: pkg.name,
+        [ATTR_SERVICE_VERSION]: pkg.version,
+        [ATTR_K8S_POD_UID]: process.env.K8S_POD_UID,
+        ...options.opentelemetryOptions.resourceAttributes,
+      },
       logRecordProcessorOptions: [
         {
           recordProcessorType: 'simple',
