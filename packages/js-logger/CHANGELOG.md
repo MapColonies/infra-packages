@@ -1,5 +1,16 @@
 # Changelog
 
+## [5.0.0](https://github.com/MapColonies/infra-packages/compare/js-logger-v4.1.0...js-logger-v5.0.0) (2026-03-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* **js-logger:** added ability to define k8s resource attributes ([#161](https://github.com/MapColonies/infra-packages/issues/161))
+
+### 🎉 Features
+
+* **js-logger:** added ability to define k8s resource attributes ([#161](https://github.com/MapColonies/infra-packages/issues/161)) ([f48aaa4](https://github.com/MapColonies/infra-packages/commit/f48aaa4522b7987675308a1b3a1f5b692979534d))
+
 ## [4.1.0](https://github.com/MapColonies/infra-packages/compare/js-logger-v4.0.0...js-logger-v4.1.0) (2026-03-08)
 
 
