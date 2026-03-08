@@ -1,5 +1,17 @@
 # Changelog
 
+## [4.1.0](https://github.com/MapColonies/infra-packages/compare/js-logger-v4.0.0...js-logger-v4.1.0) (2026-03-08)
+
+
+### 🐛 Bug Fixes
+
+* **js-logger:** removed formatter and added attributes so log parse correctly ([#151](https://github.com/MapColonies/infra-packages/issues/151)) ([482f709](https://github.com/MapColonies/infra-packages/commit/482f709522d604ddbc695e965405a91be05d3bbc))
+
+
+### 🔧 Miscellaneous Chores
+
+* **js-logger:** release 4.1.0 ([2a8a574](https://github.com/MapColonies/infra-packages/commit/2a8a574992a1cbf7f2b76f990ebfe436afb73ff5))
+
 ## [4.0.0](https://github.com/MapColonies/infra-packages/compare/js-logger-v3.0.2...js-logger-v4.0.0) (2026-01-18)
 
 
