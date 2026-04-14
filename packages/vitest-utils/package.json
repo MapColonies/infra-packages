@@ -1,0 +1,67 @@
+{
+  "name": "@map-colonies/vitest-utils",
+  "version": "0.1.0",
+  "description": "Utilities for Vitest testing framework",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./extended": {
+      "import": "./dist/vitest-extended.js"
+    }
+  },
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "test": "vitest run",
+    "prebuild": "pnpm run clean",
+    "build": "tsc --project tsconfig.build.json",
+    "clean": "rimraf dist",
+    "prepack": "turbo run build",
+    "check-dist": "publint && attw --pack --profile esm-only .",
+    "knip": "knip --directory ../.. --workspace packages/vitest-utils",
+    "api": "api-extractor run --local --verbose",
+    "api:check": "api-extractor run --verbose"
+  },
+  "repository": "github:MapColonies/infra-packages",
+  "files": [
+    "dist/**/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "homepage": "https://github.com/MapColonies/vitest-utils#readme",
+  "devDependencies": {
+    "@map-colonies/eslint-config": "workspace:^",
+    "@map-colonies/tsconfig": "workspace:^",
+    "@types/node": "catalog:",
+    "eslint": "catalog:",
+    "rimraf": "catalog:",
+    "typescript": "catalog:",
+    "vitest-config": "workspace:^",
+    "vitest": "catalog:",
+    "@microsoft/api-extractor": "catalog:",
+    "jest-extended": "^7.0.0",
+    "jest-openapi": "^0.14.2"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "vitest": "^4.1.4",
+    "jest-extended": "^7.0.0",
+    "jest-openapi": "^0.14.2"
+  },
+  "peerDependenciesMeta": {
+    "jest-extended": {
+      "optional": true
+    },
+    "jest-openapi": {
+      "optional": true
+    }
+  }
+}
