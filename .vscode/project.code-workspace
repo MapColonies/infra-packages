@@ -68,5 +68,9 @@
       "name": "prometheus",
       "path": "../packages/prometheus",
     },
+    {
+      "name": "vitest-utils",
+      "path": "../packages/vitest-utils",
+    },
   ],
 }
