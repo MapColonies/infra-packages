@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.1.0](https://github.com/MapColonies/infra-packages/compare/commitlint-config-v2.0.0...commitlint-config-v4.1.0) (2026-04-14)
+
+
+### 🔧 Miscellaneous Chores
+
+* **js-logger:** release 4.1.0 ([2a8a574](https://github.com/MapColonies/infra-packages/commit/2a8a574992a1cbf7f2b76f990ebfe436afb73ff5))
+
 ## [2.0.0](https://github.com/MapColonies/infra-packages/compare/commitlint-config-v1.1.0...commitlint-config-v2.0.0) (2026-01-19)
 
 
