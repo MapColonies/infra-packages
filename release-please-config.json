@@ -121,6 +121,10 @@
     "packages/eslint-plugin": {
       "package-name": "@map-colonies/eslint-plugin",
       "release-type": "node"
+    },
+    "packages/vitest-utils": {
+      "package-name": "@map-colonies/vitest-utils",
+      "release-type": "node"
     }
   }
 }

@@ -1,5 +1,5 @@
-import {
-  pino,
+import pino, {
+  type ThreadStream,
   type LoggerOptions as PinoOptions,
   type Logger,
   type TransportSingleOptions,
@@ -89,11 +89,13 @@ const baseOptions: PinoOptions = {
  * @public
  */
 export async function jsLogger(options?: LoggerOptions, destination: string | number = 1): Promise<Logger> {
-  let transport: TransportSingleOptions = { target: 'pino/file', options: { destination } };
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  let transport: ThreadStream = pinoTransport({ target: 'pino/file', options: { destination } });
 
   /* istanbul ignore next */
   if (options?.prettyPrint === true) {
-    transport = { target: 'pino-pretty' };
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    transport = pinoTransport({ target: 'pino-pretty' });
 
     delete options.prettyPrint;
   }
@@ -127,12 +129,18 @@ export async function jsLogger(options?: LoggerOptions, destination: string | nu
         },
       ],
     };
-    transport = { target: 'pino-opentelemetry-transport', options: otelOptions };
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    transport = pinoTransport({ target: 'pino-opentelemetry-transport', options: otelOptions });
+
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+    transport.on('error', (err: unknown) => {
+      console.error('OpenTelemetry transport error:', err);
+    });
 
     delete baseOptions.formatters;
   }
   const pinoOptions: PinoOptions = { ...baseOptions, ...options };
-  const logger = pino(pinoOptions, pinoTransport(transport) as DestinationStream);
+  const logger = pino(pinoOptions, transport as DestinationStream);
 
   if (options?.pinoCaller === true) {
     return pinoCaller(logger);
