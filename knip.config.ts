@@ -56,6 +56,10 @@ const config: KnipConfig = {
       ignoreDependencies: ['@protobuf-ts/plugin'],
       ignore: ['tests/generated/**'],
     },
+    'packages/vitest-utils': {
+      ...basePackageConfig,
+      ignoreDependencies: ['jest-extended', 'jest-openapi'],
+    },
   },
   tags: ['-lintignore'],
 };
