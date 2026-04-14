@@ -10,7 +10,7 @@ import path from 'node:path';
  * @param rootDir - The root directory used to resolve relative path values
  * @returns A record mapping alias names to absolute filesystem paths
  *
- * @throws {Error} If an alias entry has an empty path array
+ * @throws Error If an alias entry has an empty path array
  *
  * @example
  * ```typescript
