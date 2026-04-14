@@ -1,6 +1,6 @@
 {
   "name": "@map-colonies/prettier-config",
-  "version": "1.0.0",
+  "version": "4.1.0",
   "description": "Common prettier configuration for the MapColonies project",
   "license": "MIT",
   "repository": "github:MapColonies/infra-packages",
