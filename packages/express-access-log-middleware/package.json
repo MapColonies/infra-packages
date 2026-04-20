@@ -41,7 +41,7 @@
     "rimraf": "catalog:",
     "supertest": "catalog:",
     "typescript": "catalog:",
-    "pino": "10.1.0",
+    "pino": "10.3.1",
     "vitest-config": "workspace:^",
     "vitest": "catalog:",
     "@microsoft/api-extractor": "catalog:"
