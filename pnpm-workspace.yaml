@@ -9,7 +9,7 @@ catalog:
   eslint: ^9.39.1
   publint: 0.3.16
   rimraf: ^6.1.2
-  typescript: 5.9.3
+  typescript: 6.0.3
   vitest: ^4.0.15
   'typedoc': '^0.28.15'
   '@microsoft/api-extractor': ^7.55.2
