@@ -179,6 +179,7 @@ const importRulesAndConfig = defineConfig({
     'import-x/first': 'error',
     'import-x/exports-last': 'error',
     'import-x/newline-after-import': 'error',
+    'import-x/no-extraneous-dependencies': 'error',
   },
 });
 
