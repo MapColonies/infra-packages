@@ -20,6 +20,7 @@ import eslintPluginUnicorn from 'eslint-plugin-unicorn';
  * - Types (PascalCase)
  * - Quoted properties (any format)
  */
+// eslint-disable-next-line import-x/exports-last
 export const namingConventions = [
   'error',
   {
@@ -126,7 +127,7 @@ const typescriptEslintRules = defineConfig({
 // This is not in the jest config as it only turns rules off, and needs to be applied after the other rules
 const jestTurnedOffRules = defineConfig({
   name: 'map-colonies/jest/disabled-rules',
-  files: ['**/*.spec.ts?(x)', '**/*.test.ts?(x)'],
+  files: ['**/*.spec.{ts,mts,cts,tsx}', '**/*.test.{ts,mts,cts,tsx}'],
   rules: {
     '@typescript-eslint/no-magic-numbers': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
@@ -151,7 +152,7 @@ const reactNamingConventions = defineConfig({
 
 const importRulesAndConfig = defineConfig({
   name: 'map-colonies/import-x/rules',
-  files: ['**/*.ts?(x)'],
+  files: ['**/*.{ts,mts,cts,tsx}'],
   ignores: ['eslint.config.*'],
   languageOptions: {
     parser: tsParser,

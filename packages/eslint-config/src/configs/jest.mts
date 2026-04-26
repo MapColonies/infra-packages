@@ -1,5 +1,5 @@
-import { config } from '../helpers.mjs';
 import type jestPluginType from 'eslint-plugin-jest';
+import { config } from '../helpers.mjs';
 import { importOrThrow } from '../internal/helpers.js';
 
 const jestPlugin = await importOrThrow<typeof jestPluginType>('eslint-plugin-jest');
