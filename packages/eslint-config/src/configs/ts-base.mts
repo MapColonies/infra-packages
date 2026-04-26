@@ -20,6 +20,7 @@ import eslintPluginUnicorn from 'eslint-plugin-unicorn';
  * - Types (PascalCase)
  * - Quoted properties (any format)
  */
+// eslint-disable-next-line import-x/exports-last
 export const namingConventions = [
   'error',
   {
