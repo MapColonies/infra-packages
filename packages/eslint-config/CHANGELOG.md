@@ -1,5 +1,13 @@
 # Changelog
 
+## [8.1.0](https://github.com/MapColonies/infra-packages/compare/eslint-config-v8.0.0...eslint-config-v8.1.0) (2026-04-26)
+
+
+### 🎉 Features
+
+* **eslint-config:** added mts support ([#186](https://github.com/MapColonies/infra-packages/issues/186)) ([2a88dee](https://github.com/MapColonies/infra-packages/commit/2a88dee28928d60ba59d221807edcb9c35b43aa9))
+* **eslint-config:** added no-extraneous-dependencies rule ([#184](https://github.com/MapColonies/infra-packages/issues/184)) ([4ad0fbd](https://github.com/MapColonies/infra-packages/commit/4ad0fbdb91c95773293c93682dfc9c9a8f436b10))
+
 ## [8.0.0](https://github.com/MapColonies/infra-packages/compare/eslint-config-v7.2.0...eslint-config-v8.0.0) (2026-02-25)
 
 
