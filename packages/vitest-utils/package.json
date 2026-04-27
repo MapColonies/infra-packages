@@ -47,8 +47,8 @@
     "vitest-config": "workspace:^",
     "vitest": "catalog:",
     "@microsoft/api-extractor": "catalog:",
-    "jest-extended": "^7.0.0",
-    "jest-openapi": "^0.14.2"
+    "jest-extended": "7.0.0",
+    "jest-openapi": "0.14.2"
   },
   "dependencies": {},
   "peerDependencies": {
