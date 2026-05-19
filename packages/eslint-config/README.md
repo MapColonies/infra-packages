@@ -12,20 +12,22 @@ The package only supports eslint 9 and above using the flat configuration.
 ## Installation
 
 ### base
+
 ```bash
 $ npm install --save-dev eslint @map-colonies/eslint-config
 ```
 
 ### react
+
 ```
 $ npm install --save-dev @map-colonies/eslint-config eslint-plugin-react eslint-plugin-react-hooks
 ```
 
 ### jest
+
 ```
 $ npm install --save-dev @map-colonies/eslint-config eslint-plugin-jest
 ```
-
 
 ## Usage
 
@@ -40,10 +42,10 @@ import tsBaseConfig from '@map-colonies/eslint-config/ts-base';
 import { config } from '@map-colonies/eslint-config/helpers';
 
 export default config(tsBaseConfig);
-
 ```
 
 ## Debug
+
 If you want to check the ESLint configuration, debug problems or just see the final configuration, you can the following command that will open the eslint configuration UI in your browser.
 
 ```bash
@@ -51,7 +53,6 @@ npx eslint --inspect-config .
 ```
 
 For more information check the following link [debug](https://eslint.org/docs/latest/use/configure/debug).
-
 
 ## Adding new Configs
 
@@ -76,4 +77,5 @@ $ npx eslint --print-config index.ts
 Don't forget adding the config to this readme :blush:
 
 ## Issues
+
 If any linting error is appearing twice, or you have any other problem, please open an issue with all the details you have.
