@@ -1,8 +1,9 @@
 # Telemetry Semantic Conventions
-* This package goal is to provide a flexible and easy way to allow semantic conventions to be used for telemetry purposes across all MapColonies services.
-* It's based on OpenTelemetry [semantic-conventions](https://opentelemetry.io/docs/specs/semconv/).
-* Each Domain defines its JSON file that describes the semantic conventions of the domain. The submodule handles the validation of the file and generates `TS` files for use in code.
-* Supports Javascript & Typescript.
+
+- This package goal is to provide a flexible and easy way to allow semantic conventions to be used for telemetry purposes across all MapColonies services.
+- It's based on OpenTelemetry [semantic-conventions](https://opentelemetry.io/docs/specs/semconv/).
+- Each Domain defines its JSON file that describes the semantic conventions of the domain. The submodule handles the validation of the file and generates `TS` files for use in code.
+- Supports Javascript & Typescript.
 
 > [!IMPORTANT]
 > If OpenTelemetry already defines a value as part of their [semantic conventions](https://opentelemetry.io/docs/specs/semconv/), use that and do not define a new one.
@@ -13,61 +14,62 @@
 ## USAGE
 
 1. Install the package using the following command:
-   
-```bash 
+
+```bash
 npm i @map-colonies/semantic-conventions
- ```
-
-2. Import the package and then use the conventions as needed.
- ```typescript
-import { SCOTTISH_CONVENTIONS, SCOTTISH_FOLD } from '@map-colonies/semantic-conventions';
-
-console.log(SCOTTISH_CONVENTIONS.scottish.straight.David)
-console.log(SCOTTISH_FOLD) // This will be marked with strikethrough because it's marked as deprecated
 ```
 
+2. Import the package and then use the conventions as needed.
+
+```typescript
+import { SCOTTISH_CONVENTIONS, SCOTTISH_FOLD } from '@map-colonies/semantic-conventions';
+
+console.log(SCOTTISH_CONVENTIONS.scottish.straight.David);
+console.log(SCOTTISH_FOLD); // This will be marked with strikethrough because it's marked as deprecated
+```
 
 ## Domain creation
+
 Below is a short example creating of a new semantic attribute domain by creating the `domain.json` file and generating its attributes.
 
-
 1. Create a new file in the `semanticConventions` directory (The file must be a `JSON` file).
+
 ```json
 {
-    "domain": "scottish",
-    "content": {
-      "propertyName": "mapcolonies.scottish",
-      "kind": "clan",
-      "description": "name of the clan 😺",
-      "deprecated": false,
-      "subAttributes": {
-        "straight": {
-          "propertyName": "mapcolonies.scottish.straight",
-          "kind": "straightAttributes",
-          "description": "attributes related to straights 🙀",
-          "deprecated": false,
-          "subAttributes": {
-            "Jimmy": {
-              "propertyName": "mapcolonies.scottish.straight.jimmy",
-              "deprecated": false,
-              "description": "Jimmy the scottish straight cat 😾"
-            },
-            "David": {
-              "propertyName": "mapcolonies.scottish.straight.david",
-              "deprecated": false,
-              "description": "David the scottish straight cat 😻"
-            }
+  "domain": "scottish",
+  "content": {
+    "propertyName": "mapcolonies.scottish",
+    "kind": "clan",
+    "description": "name of the clan 😺",
+    "deprecated": false,
+    "subAttributes": {
+      "straight": {
+        "propertyName": "mapcolonies.scottish.straight",
+        "kind": "straightAttributes",
+        "description": "attributes related to straights 🙀",
+        "deprecated": false,
+        "subAttributes": {
+          "Jimmy": {
+            "propertyName": "mapcolonies.scottish.straight.jimmy",
+            "deprecated": false,
+            "description": "Jimmy the scottish straight cat 😾"
+          },
+          "David": {
+            "propertyName": "mapcolonies.scottish.straight.david",
+            "deprecated": false,
+            "description": "David the scottish straight cat 😻"
           }
-        },
-        "fold": {
-          "propertyName": "mapcolonies.scottish.fold",
-          "kind": "straightAttributes",
-          "description": "attributes related to fold 😿",
-          "deprecated": true
         }
+      },
+      "fold": {
+        "propertyName": "mapcolonies.scottish.fold",
+        "kind": "straightAttributes",
+        "description": "attributes related to fold 😿",
+        "deprecated": true
       }
     }
   }
+}
 ```
 
 2. Run the validations to make sure the created file is valid.
@@ -82,8 +84,9 @@ pnpm run validate:attributes
 pnpm run generate:attributes
 ```
 
-4. Check the created TypeScript files to make sure they are as you intended. 
-They should look like this:
+4. Check the created TypeScript files to make sure they are as you intended.
+   They should look like this:
+
 ```typescript
 /* eslint-disable */
 /**
@@ -119,10 +122,10 @@ export const SCOTTISH_STRAIGHT_JIMMY = 'mapcolonies.scottish.straight.jimmy';
 export const SCOTTISH_CONVENTIONS = {
   scottish: {
     /**
-    * attributes related to fold 😿
-    * @constant
-    * @deprecated Change to new attribute if this one was replaced 
-    */
+     * attributes related to fold 😿
+     * @constant
+     * @deprecated Change to new attribute if this one was replaced
+     */
     fold: 'mapcolonies.scottish.fold',
     straight: {
       /**
@@ -145,11 +148,12 @@ export const SCOTTISH_CONVENTIONS = {
 The Schema used to validate the JSON files and to create the TypeScript types for the script usage is defined and managed inside the repo - `schemas/attribute.schema.json`.
 
 The schema files have autocomplete support in VsCode. To change the schema and file associations check the `.vscode/settings.json`.
+
 > [!IMPORTANT]
 > After making any changes to a schema, you MUST re-generate its types using the following command:
+>
 > ```bash
 > pnpm run generate:types
 > ```
 
 All the semantic convention scripts run before the build process of the package, as their only output is TypeScript files that are transpiled as part of the larger build process into javascript.
-

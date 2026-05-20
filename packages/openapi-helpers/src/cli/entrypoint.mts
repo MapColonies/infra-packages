@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 import { setTimeout as sleep } from 'node:timers/promises';
 import { program } from '@commander-js/extra-typings';
+import ora from 'ora';
 import { generateTypes } from '../generator/generateTypes.js';
 import { generateErrors } from '../generator/generateErrors.js';
-import ora from 'ora';
 import { PACKAGE_VERSION } from '../common/constants.js';
 
 const errorOutput = ['all', 'map', 'classes'] as const;

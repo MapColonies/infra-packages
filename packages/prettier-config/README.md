@@ -41,7 +41,7 @@ Add the configuration using one of these methods:
 
 ```javascript
 module.exports = {
-  ...require("@map-colonies/prettier-config"),
+  ...require('@map-colonies/prettier-config'),
   // your overrides here
 };
 ```

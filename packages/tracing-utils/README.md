@@ -170,13 +170,8 @@ import { HttpInstrumentation } from '@opentelemetry/instrumentation-http';
 import { ignoreIncomingRequestUrl, ignoreOutgoingRequestPath } from '@map-colonies/tracing-utils';
 
 const httpInstrumentation = new HttpInstrumentation({
-  ignoreIncomingRequestHook: ignoreIncomingRequestUrl([
-    /\/health/,
-    /\/metrics/,
-  ]),
-  ignoreOutgoingRequestHook: ignoreOutgoingRequestPath([
-    /\/internal/,
-  ]),
+  ignoreIncomingRequestHook: ignoreIncomingRequestUrl([/\/health/, /\/metrics/]),
+  ignoreOutgoingRequestHook: ignoreOutgoingRequestPath([/\/internal/]),
 });
 ```
 
@@ -205,6 +200,3 @@ span.end();
 - Node.js >= 22
 - `@opentelemetry/api` ^1.9.0 (peer dependency)
 - `reflect-metadata` (only for v4 decorators)
-
-
-

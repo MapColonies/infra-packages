@@ -60,11 +60,11 @@ import { Registry } from 'prom-client';
 
 const app = express();
 
-const metricsMiddleware = collectMetricsExpressMiddleware({ 
-  registry: new Registry(), 
+const metricsMiddleware = collectMetricsExpressMiddleware({
+  registry: new Registry(),
   labels: { environment: 'production', team: 'platform' },
   collectNodeMetrics: true,
-  collectServiceVersion: true
+  collectServiceVersion: true,
 });
 
 app.use(metricsMiddleware);
@@ -94,26 +94,26 @@ app.get('/metrics', metricsMiddleware(registry, true, { environment: 'production
 
 ### `collectMetricsExpressMiddleware(options)`
 
-| Option | Type | Required | Default | Description |
-|--------|------|----------|---------|-------------|
-| `registry` | `Registry` | Yes | - | The Prometheus registry to use for metrics |
-| `collectNodeMetrics` | `boolean` | No | `true` | Whether to collect Node.js runtime metrics (CPU, memory, event loop, etc.) |
-| `collectServiceVersion` | `boolean` | No | `true` | Whether to collect service version metrics from package.json |
-| `includeOperationId` | `boolean` | No | `true` | Add operation ID based on OpenAPI operationId to the metrics |
-| `labels` | `Record<string, string>` | No | `{}` | Additional static labels to attach to all metrics |
-| `customLabels` | `object` | No | `undefined` | Object containing extra labels, useful together with `transformLabels` |
-| `transformLabels` | `function` | No | `undefined` | Function to transform labels with request and response objects |
+| Option                  | Type                     | Required | Default     | Description                                                                |
+| ----------------------- | ------------------------ | -------- | ----------- | -------------------------------------------------------------------------- |
+| `registry`              | `Registry`               | Yes      | -           | The Prometheus registry to use for metrics                                 |
+| `collectNodeMetrics`    | `boolean`                | No       | `true`      | Whether to collect Node.js runtime metrics (CPU, memory, event loop, etc.) |
+| `collectServiceVersion` | `boolean`                | No       | `true`      | Whether to collect service version metrics from package.json               |
+| `includeOperationId`    | `boolean`                | No       | `true`      | Add operation ID based on OpenAPI operationId to the metrics               |
+| `labels`                | `Record<string, string>` | No       | `{}`        | Additional static labels to attach to all metrics                          |
+| `customLabels`          | `object`                 | No       | `undefined` | Object containing extra labels, useful together with `transformLabels`     |
+| `transformLabels`       | `function`               | No       | `undefined` | Function to transform labels with request and response objects             |
 
 > [!NOTE]
 > If you are not running the `express-openapi-validator` middleware, it's recommended to turn off the `includeOperationId` option as the operation label will always be null.
 
 ### `metricsMiddleware(registry, shouldCollectDefaultMetrics?, defaultMetricsLabels?)`
 
-| Parameter | Type | Required | Default | Description |
-|-----------|------|----------|---------|-------------|
-| `registry` | `Registry` | Yes | - | The Prometheus registry containing the metrics to expose |
-| `shouldCollectDefaultMetrics` | `boolean` | No | `true` | Whether to collect Node.js default metrics when exposing the endpoint |
-| `defaultMetricsLabels` | `Record<string, string>` | No | `undefined` | Labels to add to the default metrics |
+| Parameter                     | Type                     | Required | Default     | Description                                                           |
+| ----------------------------- | ------------------------ | -------- | ----------- | --------------------------------------------------------------------- |
+| `registry`                    | `Registry`               | Yes      | -           | The Prometheus registry containing the metrics to expose              |
+| `shouldCollectDefaultMetrics` | `boolean`                | No       | `true`      | Whether to collect Node.js default metrics when exposing the endpoint |
+| `defaultMetricsLabels`        | `Record<string, string>` | No       | `undefined` | Labels to add to the default metrics                                  |
 
 ## Default Labels
 
@@ -129,13 +129,16 @@ Additional labels can be provided via the `labels` option.
 The middleware automatically collects the following metrics:
 
 ### Request Metrics
+
 - **`http_request_duration_seconds`** (Histogram): Time taken to process requests, labeled by:
   - `method`: HTTP method (GET, POST, etc.)
   - `status_code`: HTTP response status code
   - `operation`: OpenAPI operation ID (if `includeOperationId` is enabled and express-openapi-validator is used)
 
 ### Node.js Runtime Metrics
+
 When `collectNodeMetrics` is enabled, the following metrics are collected:
+
 - Process CPU usage
 - Process memory usage (heap, external, RSS)
 - Event loop lag
@@ -143,7 +146,9 @@ When `collectNodeMetrics` is enabled, the following metrics are collected:
 - Garbage collection statistics
 
 ### Service Information
+
 When `collectServiceVersion` is enabled:
+
 - **`service_version`** (Gauge): Service version information from package.json, labeled by:
   - `service_version_major`: Major version number
   - `service_version_minor`: Minor version number
@@ -165,8 +170,8 @@ const middleware = collectMetricsExpressMiddleware({
   labels: {
     environment: process.env.NODE_ENV || 'development',
     region: process.env.AWS_REGION || 'us-east-1',
-    version: process.env.APP_VERSION || '1.0.0'
-  }
+    version: process.env.APP_VERSION || '1.0.0',
+  },
 });
 
 app.use(middleware);
@@ -184,14 +189,14 @@ const middleware = collectMetricsExpressMiddleware({
   registry,
   customLabels: {
     tenant: '',
-    user_type: ''
+    user_type: '',
   },
   transformLabels: (labels, req, res) => {
     // Add dynamic labels based on request
     labels.tenant = req.headers['x-tenant-id'] || 'unknown';
     labels.user_type = req.user?.type || 'anonymous';
     return labels;
-  }
+  },
 });
 
 app.use(middleware);
@@ -207,9 +212,9 @@ const registry = new Registry();
 
 const middleware = collectMetricsExpressMiddleware({
   registry,
-  collectNodeMetrics: true, 
+  collectNodeMetrics: true,
   collectServiceVersion: true,
-  includeOperationId: false // No OpenAPI validator
+  includeOperationId: false, // No OpenAPI validator
 });
 
 app.use(middleware);
@@ -222,7 +227,6 @@ app.use(middleware);
 2. **Add meaningful labels**: Use the `labels` option to add context-specific information (environment, region, etc.).
 
 3. **Avoid high-cardinality labels**: Don't use user IDs, timestamps, or other high-cardinality values as labels, as this can cause memory issues.
-
 
 4. **Monitor metric cardinality**: Regularly check the number of unique label combinations to prevent cardinality explosions.
 
@@ -238,4 +242,3 @@ scrape_configs:
       - targets: ['localhost:8080']
     metrics_path: '/metrics'
 ```
-
