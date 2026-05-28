@@ -44,7 +44,6 @@
     "vitest-config": "workspace:^",
     "vitest": "catalog:",
     "@microsoft/api-extractor": "catalog:",
-    "drizzle-kit": "^1.0.0-rc.2",
     "selfsigned": "^5.5.0",
     "@testcontainers/postgresql": "^11.14.0"
   },
