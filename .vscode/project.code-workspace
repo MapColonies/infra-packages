@@ -72,5 +72,9 @@
       "name": "vitest-utils",
       "path": "../packages/vitest-utils",
     },
+    {
+      "name": "drizzle-utils",
+      "path": "../packages/drizzle-utils",
+    },
   ],
 }
