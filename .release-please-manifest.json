@@ -15,5 +15,5 @@
   "packages/tracing-utils": "1.0.0",
   "packages/prometheus": "1.0.0",
   "packages/vitest-utils": "0.2.0",
-  "packages/drizzle-utils": "0.1.0"
+  "packages/drizzle-utils": "0.2.0"
 }
