@@ -1,0 +1,58 @@
+{
+  "name": "@map-colonies/drizzle-utils",
+  "version": "0.1.0",
+  "description": "Utility functions for Drizzle ORM in MapColonies projects",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "type": "commonjs",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "test": "vitest run",
+    "prebuild": "pnpm run clean",
+    "build": "tsc --project tsconfig.build.json",
+    "clean": "rimraf dist",
+    "prepack": "turbo run build",
+    "check-dist": "publint && attw --pack .",
+    "knip": "knip --directory ../.. --workspace packages/drizzle-utils",
+    "api": "api-extractor run --local --verbose",
+    "api:check": "api-extractor run --verbose"
+  },
+  "repository": "github:MapColonies/infra-packages",
+  "files": [
+    "dist/**/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "homepage": "https://github.com/MapColonies/infra-packages#readme",
+  "devDependencies": {
+    "@map-colonies/eslint-config": "workspace:^",
+    "@map-colonies/tsconfig": "workspace:^",
+    "@types/node": "catalog:",
+    "eslint": "catalog:",
+    "rimraf": "catalog:",
+    "typescript": "catalog:",
+    "vitest-config": "workspace:^",
+    "vitest": "catalog:",
+    "@microsoft/api-extractor": "catalog:",
+    "selfsigned": "^5.5.0",
+    "@testcontainers/postgresql": "^11.14.0"
+  },
+  "dependencies": {
+    "@types/pg": "^8.20.0",
+    "@map-colonies/schemas": "^1.20.0"
+  },
+  "peerDependencies": {
+    "drizzle-orm": "^1.0.0-rc.2",
+    "pg": "^8.20.0"
+  }
+}

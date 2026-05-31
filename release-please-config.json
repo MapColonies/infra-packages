@@ -125,6 +125,10 @@
     "packages/vitest-utils": {
       "package-name": "@map-colonies/vitest-utils",
       "release-type": "node"
+    },
+    "packages/drizzle-utils": {
+      "package-name": "@map-colonies/drizzle-utils",
+      "release-type": "node"
     }
   }
 }
