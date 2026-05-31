@@ -21,6 +21,17 @@ export class SortQueryInvalidFieldError extends Error {
 }
 
 /**
+ * Thrown when a sort query contains an order value other than `"asc"` or `"desc"`.
+ * @public
+ */
+export class SortQueryInvalidOrderError extends Error {
+  public constructor(message: string) {
+    super(message);
+    Object.setPrototypeOf(this, SortQueryInvalidOrderError.prototype);
+  }
+}
+
+/**
  * A map of entity keys to their requested sort direction.
  * @public
  */
@@ -39,6 +50,7 @@ export type SortOptions<T extends object> = {
  * @returns A {@link SortOptions} object keyed by entity property.
  * @throws {@link SortQueryRepeatError} When the same field appears more than once.
  * @throws {@link SortQueryInvalidFieldError} When a field is not found in `sortFieldsMap`.
+ * @throws {@link SortQueryInvalidOrderError} When the order value is not `"asc"` or `"desc"`.
  * @public
  */
 export function sortOptionParser<T extends object>(sortArray: string[] | undefined, sortFieldsMap: Map<string, keyof T>): SortOptions<T> {
@@ -50,7 +62,11 @@ export function sortOptionParser<T extends object>(sortArray: string[] | undefin
   const fieldSet = new Set<string>();
 
   for (const option of sortArray) {
-    const [field, order] = option.split(':') as [string, 'asc' | 'desc' | undefined]; // we assume that the options are already validated by the openapi validator;
+    const [field, order] = option.split(':') as [string, string | undefined];
+
+    if (order !== undefined && order !== 'asc' && order !== 'desc') {
+      throw new SortQueryInvalidOrderError(`Invalid order in sort query: ${order}`);
+    }
 
     if (fieldSet.has(field)) {
       throw new SortQueryRepeatError(`Duplicate field in sort query: ${field}`);

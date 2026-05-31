@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { sortOptionParser, SortQueryRepeatError, SortQueryInvalidFieldError } from '../src/sort-parser';
+import { sortOptionParser, SortQueryRepeatError, SortQueryInvalidFieldError, SortQueryInvalidOrderError } from '../src/sort-parser';
 
 interface TestEntity {
   name: string;
@@ -63,5 +63,13 @@ describe('#sortOptionParser', function () {
 
   it('should include the duplicate field name in the error message', function () {
     expect(() => sortOptionParser<TestEntity>(['name:asc', 'name:desc'], fieldsMap)).toThrow('name');
+  });
+
+  it('should throw SortQueryInvalidOrderError for invalid order value', function () {
+    expect(() => sortOptionParser<TestEntity>(['name:invalid'], fieldsMap)).toThrow(SortQueryInvalidOrderError);
+  });
+
+  it('should include the invalid order value in the error message', function () {
+    expect(() => sortOptionParser<TestEntity>(['name:random'], fieldsMap)).toThrow('random');
   });
 });
