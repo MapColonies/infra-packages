@@ -71,6 +71,11 @@ export class SortQueryInvalidFieldError extends Error {
 }
 
 // @public
+export class SortQueryInvalidOrderError extends Error {
+    constructor(message: string);
+}
+
+// @public
 export class SortQueryRepeatError extends Error {
     constructor(message: string);
 }
