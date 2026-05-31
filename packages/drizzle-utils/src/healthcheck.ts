@@ -1,14 +1,12 @@
+import { setTimeout as sleep } from 'node:timers/promises';
 import type { Pool } from 'pg';
 
 class TimeoutError extends Error {}
 
 async function promiseTimeout<T>(ms: number, promise: Promise<T>): Promise<T> {
   // Create a promise that rejects in <ms> milliseconds
-  const timeout = new Promise<T>((_, reject) => {
-    const id = setTimeout(() => {
-      clearTimeout(id);
-      reject(new TimeoutError(`Timed out in + ${ms} + ms.`));
-    }, ms);
+  const timeout = sleep(ms).then(() => {
+    throw new TimeoutError(`Timed out in ${ms} ms.`);
   });
 
   // Returns a race between our timeout and the passed in promise

@@ -21,8 +21,8 @@ function parseCaBundle(caPem: Buffer): X509Certificate[] {
 }
 
 function certMatchesKey(cert: X509Certificate, privateKey: KeyObject): boolean {
-  const certPublicKeyDer = cert.publicKey.export({ type: 'spki', format: 'der' }) as Buffer;
-  const derivedPublicKeyDer = createPublicKey(privateKey).export({ type: 'spki', format: 'der' }) as Buffer;
+  const certPublicKeyDer = cert.publicKey.export({ type: 'spki', format: 'der' });
+  const derivedPublicKeyDer = createPublicKey(privateKey).export({ type: 'spki', format: 'der' });
   return certPublicKeyDer.equals(derivedPublicKeyDer);
 }
 
