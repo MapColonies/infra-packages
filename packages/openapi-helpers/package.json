@@ -52,7 +52,7 @@
     "@commander-js/extra-typings": "^14.0.0",
     "@map-colonies/read-pkg": "workspace:^",
     "change-case": "^5.4.4",
-    "commander": "^14.0.0",
+    "commander": "^15.0.0",
     "oas-normalize": "^15.0.0",
     "ora": "^9.0.0",
     "ts-essentials": "^10.1.1",
