@@ -1,5 +1,22 @@
 # Changelog
 
+## [6.0.0](https://github.com/MapColonies/infra-packages/compare/openapi-helpers-v5.1.0...openapi-helpers-v6.0.0) (2026-06-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* **eslint-config:** added unicorn rules ([#130](https://github.com/MapColonies/infra-packages/issues/130))
+
+### 🎉 Features
+
+* **eslint-config:** added unicorn rules ([#130](https://github.com/MapColonies/infra-packages/issues/130)) ([b474787](https://github.com/MapColonies/infra-packages/commit/b474787ebefaddc521c56d2d775632d6c15d275c))
+
+
+### 🔗 Dependencies
+
+* **openapi-helpers:** update dependency @commander-js/extra-typings to v15 ([#207](https://github.com/MapColonies/infra-packages/issues/207)) ([f2b15a1](https://github.com/MapColonies/infra-packages/commit/f2b15a1027318431055859892fdb08145696d3cd))
+* **openapi-helpers:** update dependency commander to v15 ([#208](https://github.com/MapColonies/infra-packages/issues/208)) ([39da189](https://github.com/MapColonies/infra-packages/commit/39da18979f07a8eaa90cda22c549287ab42f68e9))
+
 ## [5.1.0](https://github.com/MapColonies/infra-packages/compare/openapi-helpers-v5.0.0...openapi-helpers-v5.1.0) (2026-01-22)
 
 
