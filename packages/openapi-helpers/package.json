@@ -8,10 +8,6 @@
       "types": "./dist/requestSender/requestSender.d.ts",
       "default": "./dist/requestSender/requestSender.js"
     },
-    "./typedRequestHandler": {
-      "types": "./dist/typedRequestHandler/typedRequestHandler.d.ts",
-      "default": "./dist/typedRequestHandler/typedRequestHandler.js"
-    },
     "./generators": {
       "types": "./dist/generator/index.d.ts",
       "default": "./dist/generator/index.js"
@@ -28,9 +24,7 @@
     "prepack": "turbo run build",
     "check-dist": "publint && attw --profile node16 --pack .",
     "knip": "knip --directory ../.. --workspace packages/openapi-helpers",
-    "api:check": "pnpm run handler:api:check && pnpm run sender:api:check && pnpm run generators:api:check",
-    "handler:api": "api-extractor run --local --verbose --config ./api-extractor.handler.json",
-    "handler:api:check": "api-extractor run --verbose --config ./api-extractor.handler.json",
+    "api:check": "pnpm run sender:api:check && pnpm run generators:api:check",
     "sender:api": "api-extractor run --local --verbose --config ./api-extractor.sender.json",
     "sender:api:check": "api-extractor run --verbose --config ./api-extractor.sender.json",
     "generators:api": "api-extractor run --local --verbose --config ./api-extractor.generators.json",
