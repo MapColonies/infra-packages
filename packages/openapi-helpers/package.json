@@ -4,10 +4,6 @@
   "description": "A package that provides utilities for working with openapi files",
   "type": "commonjs",
   "exports": {
-    "./requestSender": {
-      "types": "./dist/requestSender/requestSender.d.ts",
-      "default": "./dist/requestSender/requestSender.js"
-    },
     "./generators": {
       "types": "./dist/generator/index.d.ts",
       "default": "./dist/generator/index.js"
@@ -24,9 +20,7 @@
     "prepack": "turbo run build",
     "check-dist": "publint && attw --profile node16 --pack .",
     "knip": "knip --directory ../.. --workspace packages/openapi-helpers",
-    "api:check": "pnpm run sender:api:check && pnpm run generators:api:check",
-    "sender:api": "api-extractor run --local --verbose --config ./api-extractor.sender.json",
-    "sender:api:check": "api-extractor run --verbose --config ./api-extractor.sender.json",
+    "api:check": "pnpm run generators:api:check",
     "generators:api": "api-extractor run --local --verbose --config ./api-extractor.generators.json",
     "generators:api:check": "api-extractor run --verbose --config ./api-extractor.generators.json",
     "generate:test:types": "pnpm run build && node dist/generator/generateTypes.mjs tests/openapi3.yaml tests/types.d.ts"

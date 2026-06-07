@@ -1,8 +1,8 @@
 import { describe, beforeEach, it, expect, expectTypeOf } from 'vitest';
 import express from 'express';
 import bodyParser from 'body-parser';
-import type { RequestSender } from '../../src/requestSender/types';
-import { createRequestSender } from '../../src/requestSender/requestSender';
+import type { RequestSender } from '../../src/types';
+import { createRequestSender } from '../../src/requestSender';
 import type { paths, operations } from '../types';
 
 describe('requestSender', () => {
