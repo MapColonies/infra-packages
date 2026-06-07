@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { WritableKeys } from 'ts-essentials';
 
+type HasContent<T> = [T] extends [{ content: any }] ? T['content']['application/json'] : never;
+
 export type AddIfNotNever<T, U> = [U] extends [never] ? T : T & U;
 export type PickWritable<T extends NonNullable<unknown>> = Pick<T, WritableKeys<T>>;
 
@@ -21,8 +23,6 @@ export type PathsTemplate = Record<
     [key in Methods]?: OperationsTemplate;
   }
 >;
-
-type HasContent<T> = [T] extends [{ content: any }] ? T['content']['application/json'] : never;
 
 export type ResponseObjectToFlat<T> = [T] extends [{ responses: any }]
   ? {
