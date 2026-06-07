@@ -530,7 +530,7 @@ importers:
         specifier: workspace:^
         version: link:../../internal/vitest-config
 
-  packages/openapi-helpers:
+  packages/openapi-generators:
     dependencies:
       '@apidevtools/json-schema-ref-parser':
         specifier: ^15.0.0
@@ -541,9 +541,6 @@ importers:
       '@map-colonies/read-pkg':
         specifier: workspace:^
         version: link:../read-pkg
-      '@types/express':
-        specifier: ^4.17.21
-        version: 4.17.25
       change-case:
         specifier: ^5.4.4
         version: 5.4.4
@@ -553,21 +550,9 @@ importers:
       oas-normalize:
         specifier: ^15.0.0
         version: 15.7.0
-      openapi-typescript:
-        specifier: ^7.4.1
-        version: 7.10.1(typescript@5.9.3)
       ora:
         specifier: ^9.0.0
         version: 9.1.0
-      prettier:
-        specifier: ^3.3.3
-        version: 3.7.4
-      supertest:
-        specifier: ^7.0.0
-        version: 7.2.2
-      ts-essentials:
-        specifier: ^10.1.1
-        version: 10.1.1(typescript@5.9.3)
       yaml:
         specifier: ^2.8.0
         version: 2.8.2
@@ -581,27 +566,18 @@ importers:
       '@microsoft/api-extractor':
         specifier: 'catalog:'
         version: 7.55.2(@types/node@24.10.9)
-      '@types/body-parser':
-        specifier: 1.19.6
-        version: 1.19.6
       '@types/node':
         specifier: 'catalog:'
         version: 24.10.9
-      '@types/supertest':
-        specifier: 'catalog:'
-        version: 6.0.3
-      body-parser:
-        specifier: 2.2.2
-        version: 2.2.2
       eslint:
         specifier: 'catalog:'
         version: 9.39.1(jiti@2.6.1)
-      express:
-        specifier: 5.2.1
-        version: 5.2.1
-      openapi-types:
-        specifier: 12.1.3
-        version: 12.1.3
+      openapi-typescript:
+        specifier: ^7.4.1
+        version: 7.10.1(typescript@5.9.3)
+      prettier:
+        specifier: ^3.3.3
+        version: 3.8.1
       rimraf:
         specifier: 'catalog:'
         version: 6.1.2
@@ -4703,10 +4679,6 @@ packages:
   js-tokens@9.0.1:
     resolution: {integrity: sha512-mxa9E9ITFOt0ban3j6L5MpjwegGz6lBQmM1IJkWeBZGcMxto50+eWdjC/52xDbS2vy0k7vIMK0Fe2wfL9OQSpQ==}
 
-  js-yaml@4.1.1:
-    resolution: {integrity: sha512-qQKT4zQxXl8lLwBtHMWwaTcGfFOZviOJet3Oy/xmGk2gZH677CJM9EvtfdSkgWcATZhj/55JZ0rmy3myCT5lsA==}
-    hasBin: true
-
   js-yaml@4.2.0:
     resolution: {integrity: sha512-ePWsvanv0DWuDRsW8dnt+R4jQ31SCRCQ7hhNcPXZPsoBZiemuZNYGf7adZdqX2D86j6rvKp3RpCxVTSb8WQlOw==}
     hasBin: true
@@ -5389,16 +5361,6 @@ packages:
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
-
-  prettier@3.7.4:
-    resolution: {integrity: sha512-v6UNi1+3hSlVvv8fSaoUbggEM5VErKmmpGA7Pl3HF8V6uKY7rvClBOJlH6yNwQtfTueNkGVpOv/mtWL9L4bgRA==}
-    engines: {node: '>=14'}
-    hasBin: true
-
-  prettier@3.8.0:
-    resolution: {integrity: sha512-yEPsovQfpxYfgWNhCfECjG5AQaO+K3dp6XERmOepyPDVqcJm+bjyCVO3pmU+nAPe0N5dDvekfGezt/EIiRe1TA==}
-    engines: {node: '>=14'}
-    hasBin: true
 
   prettier@3.8.1:
     resolution: {integrity: sha512-UOnG6LftzbdaHZcKoPFtOcCKztrQ57WkHDeRD9t/PTQtmT0NHSeWWepj6pS0z/N7+08BHFDQVUrfmfMRcZwbMg==}
@@ -8211,7 +8173,7 @@ snapshots:
       colorette: 1.4.0
       https-proxy-agent: 7.0.6(supports-color@10.2.2)
       js-levenshtein: 1.1.6
-      js-yaml: 4.1.1
+      js-yaml: 4.2.0
       minimatch: 5.1.6
       pluralize: 8.0.0
       yaml-ast-parser: 0.0.43
@@ -10685,10 +10647,6 @@ snapshots:
 
   js-tokens@9.0.1: {}
 
-  js-yaml@4.1.1:
-    dependencies:
-      argparse: 2.0.1
-
   js-yaml@4.2.0:
     dependencies:
       argparse: 2.0.1
@@ -10712,7 +10670,7 @@ snapshots:
       js-yaml: 4.2.0
       lodash: 4.17.23
       minimist: 1.2.8
-      prettier: 3.8.0
+      prettier: 3.8.1
       tinyglobby: 0.2.15
 
   json-schema-traverse@0.4.1: {}
@@ -11416,10 +11374,6 @@ snapshots:
       xtend: 4.0.2
 
   prelude-ls@1.2.1: {}
-
-  prettier@3.7.4: {}
-
-  prettier@3.8.0: {}
 
   prettier@3.8.1: {}
 

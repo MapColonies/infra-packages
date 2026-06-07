@@ -9,7 +9,7 @@ const FILE_HEADER = `${ESLINT_DISABLE}// This file was auto-generated. Do not ed
 // To update, run the error generation script again.\n\n`;
 
 const typedRequestHandlerImport =
-  "import type { TypedRequestHandlers as ImportedTypedRequestHandlers } from '@map-colonies/openapi-helpers/typedRequestHandler';\n";
+  "import type { TypedRequestHandlers as ImportedTypedRequestHandlers } from '@map-colonies/openapi-typed-request-handler';\n";
 const exportTypedRequestHandlers = 'export type TypedRequestHandlers = ImportedTypedRequestHandlers<paths, operations>;\n';
 
 /**
