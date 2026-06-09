@@ -1,6 +1,6 @@
 {
   "name": "@map-colonies/openapi-typed-request-handler",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Express request handler type utilities for OpenAPI-defined APIs",
   "type": "commonjs",
   "exports": {
