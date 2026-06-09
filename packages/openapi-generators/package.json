@@ -1,6 +1,6 @@
 {
   "name": "@map-colonies/openapi-generators",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "CLI and programmatic API for code generation from OpenAPI specifications",
   "type": "module",
   "exports": {

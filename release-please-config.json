@@ -98,6 +98,10 @@
       "package-name": "@map-colonies/openapi-express-viewer",
       "release-type": "node"
     },
+    "packages/openapi-generators": {
+      "package-name": "@map-colonies/openapi-generators",
+      "release-type": "node"
+    },
     "packages/openapi-helpers": {
       "package-name": "@map-colonies/openapi-helpers",
       "release-type": "node"
