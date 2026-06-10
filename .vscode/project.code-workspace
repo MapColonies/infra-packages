@@ -49,12 +49,16 @@
       "path": "../packages/openapi-express-viewer",
     },
     {
-      "name": "openapi-helpers",
-      "path": "../packages/openapi-helpers",
-    },
-    {
       "name": "openapi-typed-request-handler",
       "path": "../packages/openapi-typed-request-handler",
+    },
+    {
+      "name": "openapi-typed-request-sender",
+      "path": "../packages/openapi-typed-request-sender",
+    },
+    {
+      "name": "openapi-generators",
+      "path": "../packages/openapi-generators",
     },
     {
       "name": "semantic-conventions",

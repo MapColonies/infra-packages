@@ -1,9 +1,9 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/api-extractor/v7/api-extractor.schema.json",
   "extends": "../../api-extractor.json",
-  "mainEntryPointFilePath": "dist/generator/index.d.ts",
+  "mainEntryPointFilePath": "dist/index.d.ts",
   "apiReport": {
     "enabled": true,
-    "reportFileName": "generators.<unscopedPackageName>"
+    "reportFileName": "openapi-generators.api.md"
   }
 }
