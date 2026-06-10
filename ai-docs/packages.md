@@ -220,22 +220,18 @@ See [Build System - pnpm Workspace](./build-system.md#pnpm-workspace) for catalo
 
 ### Multiple Entry Points
 
-Example from `openapi-helpers`:
+Example from `eslint-config`:
 
 ```json
 {
   "exports": {
-    "./requestSender": {
-      "types": "./dist/requestSender/requestSender.d.ts",
-      "default": "./dist/requestSender/requestSender.js"
+    "./ts-base": {
+      "types": "./dist/configs/ts-base.d.mts",
+      "import": "./dist/configs/ts-base.mjs"
     },
-    "./typedRequestHandler": {
-      "types": "./dist/typedRequestHandler/typedRequestHandler.d.ts",
-      "default": "./dist/typedRequestHandler/typedRequestHandler.js"
-    },
-    "./generators": {
-      "types": "./dist/generator/index.d.ts",
-      "default": "./dist/generator/index.js"
+    "./react": {
+      "types": "./dist/configs/react.d.mts",
+      "import": "./dist/configs/react.mjs"
     }
   }
 }
@@ -392,14 +388,13 @@ pnpm run api:check
 - Root config: `api-extractor.json`
 - Package configs: `packages/*/api-extractor.json` (extends root)
 
-**Multi-entry packages** (e.g., openapi-helpers):
+**Multi-entry packages** (e.g., if you have multiple entry points):
 
 ```json
 {
   "scripts": {
-    "handler:api": "api-extractor run --local --config ./api-extractor.handler.json",
-    "sender:api": "api-extractor run --local --config ./api-extractor.sender.json",
-    "generators:api": "api-extractor run --local --config ./api-extractor.generators.json"
+    "core:api": "api-extractor run --local --config ./api-extractor.core.json",
+    "utils:api": "api-extractor run --local --config ./api-extractor.utils.json"
   }
 }
 ```

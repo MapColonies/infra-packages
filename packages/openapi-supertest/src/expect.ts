@@ -25,8 +25,8 @@ export type ExpectResponseStatus = <TResponse extends Response, TStatus extends 
  *
  * @example
  * ```typescript
- * import { expectResponseStatusFactory } from '@map-colonies/openapi-helpers/requestSender';
- * import type { ExpectResponseStatus } from '@map-colonies/openapi-helpers/requestSender';
+ * import { expectResponseStatusFactory } from '@map-colonies/openapi-supertest';
+ * import type { ExpectResponseStatus } from '@map-colonies/openapi-supertest';
  * import { expect } from 'vitest';
  *
  * const expectResponseStatus: ExpectResponseStatus = expectResponseStatusFactory(expect);
