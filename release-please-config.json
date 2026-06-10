@@ -60,7 +60,6 @@
   "include-v-in-tag": true,
   "separate-pull-requests": true,
   "pull-request-title-pattern": "chore(global): release${component} ${version}",
-
   "packages": {
     "packages/commitlint-config": {
       "package-name": "@map-colonies/commitlint-config",
@@ -98,10 +97,6 @@
       "package-name": "@map-colonies/openapi-express-viewer",
       "release-type": "node"
     },
-    "packages/openapi-helpers": {
-      "package-name": "@map-colonies/openapi-helpers",
-      "release-type": "node"
-    },
     "packages/semantic-conventions": {
       "package-name": "@map-colonies/semantic-conventions",
       "release-type": "node"
@@ -128,6 +123,18 @@
     },
     "packages/drizzle-utils": {
       "package-name": "@map-colonies/drizzle-utils",
+      "release-type": "node"
+    },
+    "packages/openapi-generators": {
+      "package-name": "@map-colonies/openapi-generators",
+      "release-type": "node"
+    },
+    "packages/openapi-typed-request-sender": {
+      "package-name": "@map-colonies/openapi-typed-request-sender",
+      "release-type": "node"
+    },
+    "packages/openapi-typed-request-handler": {
+      "package-name": "@map-colonies/openapi-typed-request-handler",
       "release-type": "node"
     }
   }

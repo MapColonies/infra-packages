@@ -49,8 +49,16 @@
       "path": "../packages/openapi-express-viewer",
     },
     {
-      "name": "openapi-helpers",
-      "path": "../packages/openapi-helpers",
+      "name": "openapi-generators",
+      "path": "../packages/openapi-generators",
+    },
+    {
+      "name": "openapi-supertest",
+      "path": "../packages/openapi-supertest",
+    },
+    {
+      "name": "openapi-express-types",
+      "path": "../packages/openapi-express-types",
     },
     {
       "name": "semantic-conventions",
