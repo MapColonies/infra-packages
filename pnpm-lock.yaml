@@ -118,7 +118,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18(vitest@4.1.0))(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
+        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
 
   internal/vitest-config:
     devDependencies:
@@ -133,7 +133,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@25.0.0)(@vitest/ui@4.0.18(vitest@4.1.0))(vite@7.3.1(@types/node@25.0.0)(jiti@2.6.1)(yaml@2.8.2))
+        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@25.0.0)(@vitest/ui@4.0.18)(vite@7.3.1(@types/node@25.0.0)(jiti@2.6.1)(yaml@2.8.2))
 
   packages/commitlint-config:
     dependencies:
@@ -158,7 +158,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@25.0.0)(@vitest/ui@4.0.18(vitest@4.1.0))(vite@7.3.1(@types/node@25.0.0)(jiti@2.6.1)(yaml@2.8.2))
+        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@25.0.0)(@vitest/ui@4.0.18)(vite@7.3.1(@types/node@25.0.0)(jiti@2.6.1)(yaml@2.8.2))
       vitest-config:
         specifier: workspace:^
         version: link:../../internal/vitest-config
@@ -210,7 +210,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18(vitest@4.1.0))(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
+        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
       vitest-config:
         specifier: workspace:^
         version: link:../../internal/vitest-config
@@ -253,7 +253,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18(vitest@4.1.0))(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
+        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
       vitest-config:
         specifier: workspace:^
         version: link:../../internal/vitest-config
@@ -296,7 +296,7 @@ importers:
         version: 24.10.9
       '@vitest/eslint-plugin':
         specifier: 1.6.7
-        version: 1.6.7(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)(vitest@4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18(vitest@4.1.0))(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2)))
+        version: 1.6.7(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)(vitest@4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2)))
       eslint:
         specifier: 'catalog:'
         version: 9.39.1(jiti@2.6.1)
@@ -314,7 +314,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18(vitest@4.1.0))(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
+        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
       vitest-config:
         specifier: workspace:^
         version: link:../../internal/vitest-config
@@ -354,7 +354,7 @@ importers:
         version: 8.49.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
       vitest:
         specifier: 'catalog:'
-        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18(vitest@4.1.0))(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
+        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
       vitest-config:
         specifier: workspace:^
         version: link:../../internal/vitest-config
@@ -409,7 +409,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18(vitest@4.1.0))(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
+        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
       vitest-config:
         specifier: workspace:^
         version: link:../../internal/vitest-config
@@ -467,7 +467,53 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18(vitest@4.1.0))(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
+        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
+      vitest-config:
+        specifier: workspace:^
+        version: link:../../internal/vitest-config
+
+  packages/openapi-express-types:
+    dependencies:
+      '@types/express':
+        specifier: ^4.17.21
+        version: 4.17.25
+      ts-essentials:
+        specifier: ^10.1.1
+        version: 10.1.1(typescript@5.9.3)
+    devDependencies:
+      '@arethetypeswrong/cli':
+        specifier: 'catalog:'
+        version: 0.18.3
+      '@map-colonies/eslint-config':
+        specifier: workspace:^
+        version: link:../eslint-config
+      '@map-colonies/tsconfig':
+        specifier: workspace:^
+        version: link:../typescript-config
+      '@microsoft/api-extractor':
+        specifier: 'catalog:'
+        version: 7.55.2(@types/node@24.10.9)
+      '@types/node':
+        specifier: 'catalog:'
+        version: 24.10.9
+      eslint:
+        specifier: 'catalog:'
+        version: 9.39.1(jiti@2.6.1)
+      express:
+        specifier: 5.2.1
+        version: 5.2.1
+      publint:
+        specifier: 'catalog:'
+        version: 0.3.16
+      rimraf:
+        specifier: 'catalog:'
+        version: 6.1.2
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
+      vitest:
+        specifier: 'catalog:'
+        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
       vitest-config:
         specifier: workspace:^
         version: link:../../internal/vitest-config
@@ -525,7 +571,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18(vitest@4.1.0))(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
+        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
       vitest-config:
         specifier: workspace:^
         version: link:../../internal/vitest-config
@@ -586,58 +632,12 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18(vitest@4.1.0))(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
+        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
       vitest-config:
         specifier: workspace:^
         version: link:../../internal/vitest-config
 
-  packages/openapi-typed-request-handler:
-    dependencies:
-      '@types/express':
-        specifier: ^4.17.21
-        version: 4.17.25
-      ts-essentials:
-        specifier: ^10.1.1
-        version: 10.1.1(typescript@5.9.3)
-    devDependencies:
-      '@arethetypeswrong/cli':
-        specifier: 'catalog:'
-        version: 0.18.3
-      '@map-colonies/eslint-config':
-        specifier: workspace:^
-        version: link:../eslint-config
-      '@map-colonies/tsconfig':
-        specifier: workspace:^
-        version: link:../typescript-config
-      '@microsoft/api-extractor':
-        specifier: 'catalog:'
-        version: 7.55.2(@types/node@24.10.9)
-      '@types/node':
-        specifier: 'catalog:'
-        version: 24.10.9
-      eslint:
-        specifier: 'catalog:'
-        version: 9.39.1(jiti@2.6.1)
-      express:
-        specifier: 5.2.1
-        version: 5.2.1
-      publint:
-        specifier: 'catalog:'
-        version: 0.3.16
-      rimraf:
-        specifier: 'catalog:'
-        version: 6.1.2
-      typescript:
-        specifier: 'catalog:'
-        version: 5.9.3
-      vitest:
-        specifier: 'catalog:'
-        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18(vitest@4.1.0))(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
-      vitest-config:
-        specifier: workspace:^
-        version: link:../../internal/vitest-config
-
-  packages/openapi-typed-request-sender:
+  packages/openapi-supertest:
     dependencies:
       '@types/express':
         specifier: ^4.17.21
@@ -696,7 +696,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18(vitest@4.1.0))(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
+        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
       vitest-config:
         specifier: workspace:^
         version: link:../../internal/vitest-config
@@ -760,7 +760,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18(vitest@4.1.0))(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
+        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
       vitest-config:
         specifier: workspace:^
         version: link:../../internal/vitest-config
@@ -794,7 +794,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18(vitest@4.1.0))(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
+        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
       vitest-config:
         specifier: workspace:^
         version: link:../../internal/vitest-config
@@ -912,7 +912,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18(vitest@4.1.0))(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
+        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
       vitest-config:
         specifier: workspace:^
         version: link:../../internal/vitest-config
@@ -966,7 +966,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18(vitest@4.1.0))(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
+        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
       vitest-config:
         specifier: workspace:^
         version: link:../../internal/vitest-config
@@ -1008,7 +1008,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18(vitest@4.1.0))(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
+        version: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
       vitest-config:
         specifier: workspace:^
         version: link:../../internal/vitest-config
@@ -8838,16 +8838,16 @@ snapshots:
       obug: 2.1.1
       std-env: 3.10.0
       tinyrainbow: 3.0.3
-      vitest: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18(vitest@4.1.0))(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
+      vitest: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
 
-  '@vitest/eslint-plugin@1.6.7(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)(vitest@4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18(vitest@4.1.0))(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2)))':
+  '@vitest/eslint-plugin@1.6.7(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)(vitest@4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2)))':
     dependencies:
       '@typescript-eslint/scope-manager': 8.55.0
       '@typescript-eslint/utils': 8.55.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
       eslint: 9.39.1(jiti@2.6.1)
     optionalDependencies:
       typescript: 5.9.3
-      vitest: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18(vitest@4.1.0))(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
+      vitest: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
     transitivePeerDependencies:
       - supports-color
 
@@ -8907,7 +8907,7 @@ snapshots:
       sirv: 3.0.2
       tinyglobby: 0.2.15
       tinyrainbow: 3.0.3
-      vitest: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18(vitest@4.1.0))(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
+      vitest: 4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
 
   '@vitest/utils@4.0.18':
     dependencies:
@@ -12468,7 +12468,7 @@ snapshots:
       jiti: 2.6.1
       yaml: 2.8.2
 
-  vitest@4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18(vitest@4.1.0))(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2)):
+  vitest@4.1.0(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.18)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2)):
     dependencies:
       '@vitest/expect': 4.1.0
       '@vitest/mocker': 4.1.0(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(yaml@2.8.2))
@@ -12497,7 +12497,7 @@ snapshots:
     transitivePeerDependencies:
       - msw
 
-  vitest@4.1.0(@opentelemetry/api@1.9.0)(@types/node@25.0.0)(@vitest/ui@4.0.18(vitest@4.1.0))(vite@7.3.1(@types/node@25.0.0)(jiti@2.6.1)(yaml@2.8.2)):
+  vitest@4.1.0(@opentelemetry/api@1.9.0)(@types/node@25.0.0)(@vitest/ui@4.0.18)(vite@7.3.1(@types/node@25.0.0)(jiti@2.6.1)(yaml@2.8.2)):
     dependencies:
       '@vitest/expect': 4.1.0
       '@vitest/mocker': 4.1.0(vite@7.3.1(@types/node@25.0.0)(jiti@2.6.1)(yaml@2.8.2))
