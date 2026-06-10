@@ -1,10 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { WritableKeys } from 'ts-essentials';
-
 type HasContent<T> = [T] extends [{ content: any }] ? T['content']['application/json'] : never;
-
-export type AddIfNotNever<T, U> = [U] extends [never] ? T : T & U;
-export type PickWritable<T extends NonNullable<unknown>> = Pick<T, WritableKeys<T>>;
 
 export type Methods = 'get' | 'post' | 'put' | 'delete' | 'patch' | 'head' | 'options' | 'trace';
 
