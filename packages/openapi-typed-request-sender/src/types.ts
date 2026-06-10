@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { OmitProperties, OptionalKeys, Prettify, RequiredKeys } from 'ts-essentials';
 import type * as supertest from 'supertest';
-import type { AddIfNotNever, OperationsTemplate, PathsTemplate, PickWritable } from '../common/types';
+import type { AddIfNotNever, OperationsTemplate, PathsTemplate, PickWritable, ResponseObjectToFlat } from './common/types';
 
 /**
  * Configuration options for the request sender.
@@ -20,14 +20,6 @@ export interface RequestSenderOptions {
 interface Headers {
   headers?: Record<string, string>;
 }
-
-type HasContent<T> = [T] extends [{ content: any }] ? T['content']['application/json'] : never;
-
-export type ResponseObjectToFlat<T> = [T] extends [{ responses: any }]
-  ? {
-      [res in keyof T['responses']]: { status: res; body: HasContent<T['responses'][res]> };
-    }[keyof T['responses']]
-  : never;
 
 type PathParamsObj<T> = [T] extends [{ parameters: { path: NonNullable<any> } }] ? { pathParams: T['parameters']['path'] } : never;
 

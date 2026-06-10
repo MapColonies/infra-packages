@@ -1,0 +1,59 @@
+{
+  "name": "@map-colonies/openapi-typed-request-sender",
+  "version": "0.1.0",
+  "description": "Supertest-based testing utilities for OpenAPI-defined APIs",
+  "type": "commonjs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "test": "vitest run",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "prebuild": "pnpm run clean",
+    "build": "tsc --project tsconfig.build.json",
+    "clean": "rimraf dist",
+    "prepack": "turbo run build",
+    "check-dist": "publint && attw --profile node16 --pack .",
+    "api:check": "api-extractor run --verbose --config ./api-extractor.json",
+    "api": "api-extractor run --local --verbose --config ./api-extractor.json"
+  },
+  "repository": "github:MapColonies/infra-packages",
+  "files": [
+    "dist/**/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "oas-normalize": "^15.0.0",
+    "ts-essentials": "^10.1.1"
+  },
+  "peerDependencies": {
+    "@types/express": "^4.17.21",
+    "openapi-typescript": "^7.4.1",
+    "supertest": "^7.0.0"
+  },
+  "devDependencies": {
+    "@map-colonies/eslint-config": "workspace:^",
+    "@map-colonies/tsconfig": "workspace:^",
+    "@types/node": "catalog:",
+    "@types/supertest": "catalog:",
+    "body-parser": "2.2.2",
+    "@types/body-parser": "1.19.6",
+    "express": "5.2.1",
+    "eslint": "catalog:",
+    "rimraf": "catalog:",
+    "typescript": "catalog:",
+    "vitest-config": "workspace:^",
+    "vitest": "catalog:",
+    "@microsoft/api-extractor": "catalog:",
+    "openapi-types": "12.1.3"
+  }
+}

@@ -1,6 +1,6 @@
 import { describe, it, expect, expectTypeOf, vi } from 'vitest';
-import { expectResponseStatusFactory } from '../../src/requestSender/expect';
-import type { ExpectResponseStatus } from '../../src/requestSender/expect';
+import { expectResponseStatusFactory } from '../../src/expect';
+import type { ExpectResponseStatus } from '../../src/expect';
 
 describe('expectResponseStatusFactory', () => {
   describe('logic tests', () => {

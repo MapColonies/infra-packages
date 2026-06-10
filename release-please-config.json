@@ -106,6 +106,10 @@
       "package-name": "@map-colonies/openapi-typed-request-handler",
       "release-type": "node"
     },
+    "packages/openapi-typed-request-sender": {
+      "package-name": "@map-colonies/openapi-typed-request-sender",
+      "release-type": "node"
+    },
     "packages/semantic-conventions": {
       "package-name": "@map-colonies/semantic-conventions",
       "release-type": "node"
