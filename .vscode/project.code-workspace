@@ -53,6 +53,10 @@
       "path": "../packages/openapi-helpers",
     },
     {
+      "name": "openapi-typed-request-handler",
+      "path": "../packages/openapi-typed-request-handler",
+    },
+    {
       "name": "semantic-conventions",
       "path": "../packages/semantic-conventions",
     },
