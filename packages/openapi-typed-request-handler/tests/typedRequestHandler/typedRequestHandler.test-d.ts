@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { expectTypeOf, it, describe } from 'vitest';
-import type { TypedRequestHandlers } from '../../src/typedRequestHandler/typedRequestHandler';
+import type { TypedRequestHandlers } from '../../src/index';
 import type { paths, operations } from '../types';
 
 describe('typedRequestHandler', () => {
