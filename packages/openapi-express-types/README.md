@@ -1,4 +1,4 @@
-# openapi-express-types
+# @map-colonies/openapi-express-types
 
 TypeScript utilities to create strictly typed express request handlers from an OpenAPI specification.
 

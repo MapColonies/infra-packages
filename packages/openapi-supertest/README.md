@@ -1,4 +1,4 @@
-# openapi-supertest
+# @map-colonies/openapi-supertest
 
 TypeScript typed wrapper over supertest for testing APIs using OpenAPI spec definitions.
 

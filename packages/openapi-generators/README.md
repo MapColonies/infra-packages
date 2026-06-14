@@ -1,4 +1,4 @@
-# openapi-generators
+# @map-colonies/openapi-generators
 
 Type generation tools to generate TypeScript definitions from an OpenAPI specification using `openapi-typescript`.
 
