@@ -9,7 +9,6 @@ type UnwrapConfig<T> = T extends (...args: any[]) => infer R // 1. Is it a funct
 type PackageConfig = Exclude<UnwrapConfig<KnipConfig>['workspaces'], undefined>[string];
 
 const basePackageConfig: PackageConfig = {
-  entry: ['src/index.ts'],
   vitest: { config: 'vitest.config.cts', entry: ['tests/**/*.spec.ts', 'tests/**/*.test-d.ts'] },
   typescript: {
     config: ['tsconfig.json', 'tsconfig.build.json'],
