@@ -1,0 +1,62 @@
+{
+  "name": "@map-colonies/openapi-generators",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": "./dist/cli/entrypoint.mjs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "test": "vitest run --passWithNoTests",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "prebuild": "pnpm run clean",
+    "build": "tsc --project tsconfig.build.json",
+    "clean": "rimraf dist",
+    "prepack": "turbo run build",
+    "check-dist": "publint && attw --profile esm-only --pack .",
+    "knip": "knip --directory ../.. --workspace packages/openapi-generators",
+    "api": "api-extractor run --local --verbose",
+    "api:check": "api-extractor run --verbose"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "repository": "github:MapColonies/infra-packages",
+  "dependencies": {
+    "@apidevtools/json-schema-ref-parser": "^15.0.0",
+    "@commander-js/extra-typings": "^15.0.0",
+    "@map-colonies/read-pkg": "workspace:^",
+    "change-case": "^5.4.4",
+    "commander": "^15.0.0",
+    "ora": "^9.0.0"
+  },
+  "peerDependencies": {
+    "openapi-typescript": "^7.4.1",
+    "prettier": "^3.3.3"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "catalog:",
+    "@map-colonies/eslint-config": "workspace:^",
+    "@map-colonies/tsconfig": "workspace:^",
+    "@microsoft/api-extractor": "catalog:",
+    "@types/node": "catalog:",
+    "eslint": "catalog:",
+    "openapi-typescript": "^7.4.1",
+    "publint": "catalog:",
+    "rimraf": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:",
+    "vitest-config": "workspace:^"
+  }
+}

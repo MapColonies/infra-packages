@@ -130,10 +130,10 @@ When needed, define package-specific utilities:
 // Better type display (tracing package defines this locally)
 export type Prettify<T> = { [K in keyof T]: T[K] } & {};
 
-// Pick writable properties (openapi-helpers)
+// Pick writable properties (openapi-supertest)
 export type PickWritable<T extends NonNullable<unknown>> = Pick<T, WritableKeys<T>>;
 
-// Conditional types for API typing (openapi-helpers)
+// Conditional types for API typing (openapi-supertest)
 type HasRequestBody<T> = T extends { requestBody: any } ? T['requestBody']['content']['application/json'] : undefined;
 ```
 

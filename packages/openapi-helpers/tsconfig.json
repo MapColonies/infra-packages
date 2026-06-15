@@ -1,8 +1,0 @@
-{
-  "extends": "@map-colonies/tsconfig/tsconfig-library",
-  "compilerOptions": {
-    "lib": ["ESNext"]
-  },
-  "include": ["src", "tests"],
-  "exclude": ["dist", "node_modules"]
-}
