@@ -30,21 +30,21 @@
   },
   "repository": "github:MapColonies/infra-packages",
   "peerDependencies": {
-    "eslint": "^9.39.0"
+    "eslint": "^10.0.0"
   },
   "dependencies": {
-    "@typescript-eslint/utils": "^8.53.0"
+    "@typescript-eslint/utils": "^8.60.1"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "catalog:",
     "@map-colonies/tsconfig": "workspace:^",
     "@types/node": "catalog:",
-    "@typescript-eslint/rule-tester": "8.53.0",
+    "@typescript-eslint/rule-tester": "8.60.1",
     "eslint": "catalog:",
     "publint": "catalog:",
     "rimraf": "catalog:",
     "typescript": "catalog:",
-    "typescript-eslint": "8.49.0",
+    "typescript-eslint": "8.60.1",
     "vitest": "catalog:",
     "vitest-config": "workspace:^"
   },
