@@ -14,5 +14,5 @@ import { defineConfig } from 'eslint/config';
  */
 export { defineConfig };
 
-/** @deprecated Use `defineConfig` instead */
+/** @deprecated Use `defineConfig` from 'eslint/config' instead */
 export { defineConfig as config };
