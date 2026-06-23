@@ -94,7 +94,7 @@ describe('getPathAlias', function () {
 
 describe('reporters', function () {
   it('should include "default" and "html" reporters outside CI', async function () {
-    vi.stubEnv('GITHUB_ACTIONS', undefined as unknown as string);
+    vi.stubEnv('GITHUB_ACTIONS', undefined);
     vi.resetModules();
     const { reporters } = await import('../src/reporters.js');
 
@@ -131,8 +131,7 @@ describe('setupOpenapi', function () {
 
   afterEach(function () {
     vi.restoreAllMocks();
-    // @ts-expect-error - reset global expect to avoid conflicts with other test frameworks
-    globalThis.expect = undefined as unknown as typeof expect;
+    globalThis.expect = undefined;
   });
 
   it('should call jestOpenApi with the provided path', async function () {

@@ -18,6 +18,9 @@ coverage
 # Turbo
 .turbo
 
+# claude
+.claude
+
 temp
 
 # Vercel

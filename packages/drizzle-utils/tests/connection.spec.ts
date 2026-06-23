@@ -12,7 +12,7 @@ function buildDbOptions(overrides: Partial<commonDbFullV1Type> = {}): commonDbFu
     schema: 'public',
     ssl: { enabled: false },
     ...overrides,
-  } as commonDbFullV1Type;
+  };
 }
 
 describe('#createConnectionOptions', function () {
