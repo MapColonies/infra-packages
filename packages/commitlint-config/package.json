@@ -30,7 +30,7 @@
     "node": ">=24"
   },
   "dependencies": {
-    "@commitlint/config-conventional": "^20.2.0"
+    "@commitlint/config-conventional": "^21.0.0"
   },
   "devDependencies": {
     "vitest": "catalog:",
