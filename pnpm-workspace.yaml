@@ -11,7 +11,7 @@ catalog:
   '@opentelemetry/sdk-trace-base': 2.4.0
   '@opentelemetry/sdk-trace-node': 2.4.0
   '@types/node': 24.10.9
-  '@types/supertest': 6.0.3
+  '@types/supertest': 7.2.0
   eslint: ^10.4.1
   publint: 0.3.16
   rimraf: ^6.1.2
