@@ -1,5 +1,16 @@
 # Changelog
 
+## [9.0.0](https://github.com/MapColonies/infra-packages/compare/eslint-config-v8.1.0...eslint-config-v9.0.0) (2026-06-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* **eslint-config,eslint-plugin:** upgrade to eslint 10 MAPCO-9990 ([#231](https://github.com/MapColonies/infra-packages/issues/231))
+
+### 🎉 Features
+
+* **eslint-config,eslint-plugin:** upgrade to eslint 10 MAPCO-9990 ([#231](https://github.com/MapColonies/infra-packages/issues/231)) ([a4a04b9](https://github.com/MapColonies/infra-packages/commit/a4a04b95b381813fa39b495c5a7aa37dca3d3c2b))
+
 ## [8.1.0](https://github.com/MapColonies/infra-packages/compare/eslint-config-v8.0.0...eslint-config-v8.1.0) (2026-04-26)
 
 
