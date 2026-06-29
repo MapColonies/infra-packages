@@ -12,7 +12,7 @@ const plugin = {
     'pino-safety-no-swallowed-args': noSwallowedArgs,
     'pino-safety-prefer-standard-error-key': preferStandardErrorKey,
   },
-  configs: {} as Record<string, Linter.Config>,
+  configs: {} as Record<'pino-safety' | 'recommended', Linter.Config>,
 };
 
 // Assign configs after plugin definition so we can reference it

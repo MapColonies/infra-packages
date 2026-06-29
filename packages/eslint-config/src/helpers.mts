@@ -1,4 +1,4 @@
-import { config as importedConfig } from 'typescript-eslint';
+import { defineConfig } from 'eslint/config';
 
 /**
  * Utility function to make it easy to strictly type your "Flat" config file
@@ -6,20 +6,13 @@ import { config as importedConfig } from 'typescript-eslint';
  * ```js
  * // @ts-check
  *
- * import eslint from '@eslint/js';
- * import tseslint from 'typescript-eslint';
+ * import { defineConfig } from '@map-colonies/eslint-config/helpers';
+ * import tsBaseConfig from '@map-colonies/eslint-config/ts-base';
  *
- * export default tseslint.config(
- *   eslint.configs.recommended,
- *   tseslint.configs.recommended,
- *   {
- *     rules: {
- *       '@typescript-eslint/array-type': 'error',
- *     },
- *   },
- * );
+ * export default defineConfig([tsBaseConfig]);
  * ```
  */
-const config = importedConfig;
+export { defineConfig };
 
-export { config };
+/** @deprecated Use `defineConfig` from 'eslint/config' instead */
+export { defineConfig as config };

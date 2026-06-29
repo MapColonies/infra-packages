@@ -14,7 +14,7 @@ const configs = [
 
 describe('configs', function () {
   it.each(configs)('$name should be a valid eslint config', function (testObject) {
-    const linter = new Linter({ configType: 'flat' });
+    const linter = new Linter();
     const action = () => linter.verify('const a = 1', testObject.config as object, { filename: testObject.filename });
 
     expect(action).not.toThrow();

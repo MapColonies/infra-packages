@@ -223,7 +223,6 @@ const combinedConfig = defineConfig(
   jestTurnedOffRules,
   reactNamingConventions,
   unicornRules,
-  //@ts-expect-error it works and a known issue https://github.com/un-ts/eslint-plugin-import-x/issues/421
   importFlatConfigs.recommended,
   { name: 'import-x/typescript', ...importFlatConfigs.typescript },
   importRulesAndConfig,

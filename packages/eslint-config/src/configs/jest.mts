@@ -1,21 +1,23 @@
 import type jestPluginType from 'eslint-plugin-jest';
-import { config } from '../helpers.mjs';
+import { defineConfig } from 'eslint/config';
 import { importOrThrow } from '../internal/helpers.js';
 
 const jestPlugin = await importOrThrow<typeof jestPluginType>('eslint-plugin-jest');
 
-const jestConfig = config({
-  name: 'map-colonies/jest/rules',
-  files: ['**/*.test.ts', '**/*.test.tsx', '**/*.spec.ts', '**/*.spec.tsx'],
-  plugins: { jest: jestPlugin },
-  languageOptions: {
-    globals: jestPlugin.environments.globals.globals,
+const jestConfig = defineConfig([
+  {
+    name: 'map-colonies/jest/rules',
+    files: ['**/*.test.ts', '**/*.test.tsx', '**/*.spec.ts', '**/*.spec.tsx'],
+    plugins: { jest: jestPlugin },
+    languageOptions: {
+      globals: jestPlugin.environments.globals.globals,
+    },
+    rules: {
+      ...jestPlugin.configs.recommended.rules,
+      ...jestPlugin.configs.style.rules,
+    },
   },
-  rules: {
-    ...jestPlugin.configs.recommended.rules,
-    ...jestPlugin.configs.style.rules,
-  },
-});
+]);
 
 /**
  * The default export for the Jest configuration.
