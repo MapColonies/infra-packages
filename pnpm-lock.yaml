@@ -142,8 +142,8 @@ importers:
         version: 21.2.0
     devDependencies:
       '@commitlint/types':
-        specifier: 20.3.1
-        version: 20.3.1
+        specifier: 21.2.0
+        version: 21.2.0
       '@map-colonies/eslint-config':
         specifier: workspace:^
         version: link:../eslint-config
