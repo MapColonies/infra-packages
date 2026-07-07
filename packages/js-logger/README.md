@@ -19,16 +19,6 @@ logger.info('hello world');
 logger.error({ hello: 'world' });
 ```
 
-You can also write to a custom destination.
-
-```typescript
-import { jsLogger } from '@map-colonies/js-logger';
-
-const logger = await jsLogger({ level: 'debug' }, './app.log');
-
-logger.info('written to file');
-```
-
 ### Logging errors
 
 To let the logger serialize an error correctly, put it under the `err` key.
@@ -70,21 +60,3 @@ When `opentelemetryOptions.enabled` is `true`, `js-logger` switches to `pino-ope
 - the current package name and version
 - detected container metadata
 - `process.env.K8S_POD_UID`
-- any `opentelemetryOptions.resourceAttributes` you provide
-
-```typescript
-import { jsLogger } from '@map-colonies/js-logger';
-
-const logger = await jsLogger({
-  opentelemetryOptions: {
-    enabled: true,
-    url: 'http://alloy-logs:4317',
-    resourceAttributes: {
-      'deployment.environment': 'prod',
-      'service.namespace': 'mapcolonies',
-    },
-  },
-});
-```
-
-When OpenTelemetry transport is enabled, the logger emits through that transport rather than the standard file destination. In MapColonies deployments, that endpoint is typically exposed by Alloy.
