@@ -3,7 +3,7 @@ packages:
   - internal/*
 
 catalog:
-  '@arethetypeswrong/cli': 0.18.3
+  '@arethetypeswrong/cli': 0.18.4
   '@vitest/coverage-v8': ^4.0.15
   '@vitest/ui': ^4.0.15
   '@microsoft/api-extractor': ^7.55.2
