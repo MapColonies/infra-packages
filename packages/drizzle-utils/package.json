@@ -45,7 +45,7 @@
     "vitest": "catalog:",
     "@microsoft/api-extractor": "catalog:",
     "selfsigned": "5.5.0",
-    "@testcontainers/postgresql": "12.0.1"
+    "@testcontainers/postgresql": "12.0.4"
   },
   "dependencies": {
     "@types/pg": "^8.20.0",
