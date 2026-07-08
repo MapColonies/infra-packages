@@ -52,7 +52,7 @@
     "@microsoft/api-extractor": "catalog:",
     "@types/node": "catalog:",
     "eslint": "catalog:",
-    "openapi-typescript": "^7.13.0",
+    "openapi-typescript": "7.13.0",
     "publint": "catalog:",
     "rimraf": "catalog:",
     "typescript": "catalog:",
