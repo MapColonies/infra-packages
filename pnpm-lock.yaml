@@ -643,8 +643,8 @@ importers:
         specifier: ^4.17.21
         version: 4.17.25
       oas-normalize:
-        specifier: ^15.7.0
-        version: 15.7.1
+        specifier: ^16.0.0
+        version: 16.1.1
       ts-essentials:
         specifier: ^10.1.1
         version: 10.2.1(typescript@5.9.3)
@@ -2478,15 +2478,15 @@ packages:
   '@readme/http-status-codes@7.2.0':
     resolution: {integrity: sha512-/dBh9qw3QhJYqlGwt2I+KUP/lQ6nytdCx3aq+GpMUhibLHF3O7fwoowNcTwlbnwtyJ+TJYTIIrp3oVUlRNx3fA==}
 
-  '@readme/openapi-parser@5.5.0':
-    resolution: {integrity: sha512-uY9+3ouf6NWd/ck5PzlhcRwvRFLDd9ajRsMzZPp/iqdReGgPR7m8xEXtCYbLTGXJZcrDgYyNsHUL7e87Wsh+ew==}
+  '@readme/openapi-parser@6.2.1':
+    resolution: {integrity: sha512-15kP7exAU30ycF0u5/nW6J64HFzqxKYp06wErb1+cGU2rYz2dDBtf+63RjGLfGEhXND69OXIZ7RvjS7Tu7s1Yg==}
     engines: {node: '>=20'}
     peerDependencies:
       openapi-types: '>=7'
 
-  '@readme/openapi-schemas@3.1.0':
-    resolution: {integrity: sha512-9FC/6ho8uFa8fV50+FPy/ngWN53jaUu4GRXlAjcxIRrzhltJnpKkBG2Tp0IDraFJeWrOpk84RJ9EMEEYzaI1Bw==}
-    engines: {node: '>=18'}
+  '@readme/openapi-schemas@4.0.0':
+    resolution: {integrity: sha512-hrG//9/+RpOZTrUDirU4OzfMqaxCdY5BMpr3YuLf3Rje9rfNsydQJsH9iCPTie9ZRu9xe+0OUD4fHe0JmGwa2w==}
+    engines: {node: '>=20'}
 
   '@readme/postman-to-openapi@4.1.0':
     resolution: {integrity: sha512-VvV2Hzjskz01m8doSn7Ypt6cSZzgjnypVqXy1ipThbyYD6SGiM74VSePXykOODj/43Y2m6zeYedPk/ZLts/HvQ==}
@@ -3272,6 +3272,9 @@ packages:
 
   ajv@8.17.1:
     resolution: {integrity: sha512-B/gBuNg5SiMTrPkC+A2+cW0RszwxYmn6VYxB/inlBStS5nx6xHIt/ehKRhIMhqusl7a8LjQoZnjCs5vhwxOQ1g==}
+
+  ajv@8.20.0:
+    resolution: {integrity: sha512-Thbli+OlOj+iMPYFBVBfJ3OmCAnaSyNn4M1vz9T6Gka5Jt9ba/HIR56joy65tY6kx/FCF5VXNB819Y7/GUrBGA==}
 
   ansi-colors@4.1.3:
     resolution: {integrity: sha512-/6w/C21Pm1A7aZitlI5Ni/2J6FFQN8i1Cvz3kHABAAbw93v/NlvKdVOqz7CCWz/3iv/JplRSEEZ83XION15ovw==}
@@ -5284,8 +5287,8 @@ packages:
   oas-linter@3.2.2:
     resolution: {integrity: sha512-KEGjPDVoU5K6swgo9hJVA/qYGlwfbFx+Kg2QB/kd7rzV5N8N5Mg6PlsoCMohVnQmo+pzJap/F610qTodKzecGQ==}
 
-  oas-normalize@15.7.1:
-    resolution: {integrity: sha512-U2LuDL9/gtqGtF2qUyZBYx+xBadbZ5x1aqIla7NyCoWp6Ts+lL0K0sunybgnTOXMvfFpz9xfYq9pa3jCyHiCiQ==}
+  oas-normalize@16.1.1:
+    resolution: {integrity: sha512-B1FEi5dezuCjDsp7OiyBY7p+1gjCzMDEfFYiIZUdcf9FEo18CT3/sE9zBZupMwFLtjnTHXI+WGcmf09HqRrEBQ==}
     engines: {node: '>=20'}
 
   oas-resolver@2.5.6:
@@ -8430,29 +8433,31 @@ snapshots:
 
   '@publint/pack@0.1.2': {}
 
-  '@readme/better-ajv-errors@2.4.0(ajv@8.17.1)':
+  '@readme/better-ajv-errors@2.4.0(ajv@8.20.0)':
     dependencies:
       '@babel/code-frame': 7.29.7
       '@babel/runtime': 7.29.7
       '@humanwhocodes/momoa': 2.0.4
-      ajv: 8.17.1
+      ajv: 8.20.0
       jsonpointer: 5.0.1
       leven: 3.1.0
       picocolors: 1.1.1
 
   '@readme/http-status-codes@7.2.0': {}
 
-  '@readme/openapi-parser@5.5.0(openapi-types@12.1.3)':
+  '@readme/openapi-parser@6.2.1(openapi-types@12.1.3)':
     dependencies:
       '@apidevtools/json-schema-ref-parser': 14.2.1(@types/json-schema@7.0.15)
-      '@readme/better-ajv-errors': 2.4.0(ajv@8.17.1)
-      '@readme/openapi-schemas': 3.1.0
+      '@readme/better-ajv-errors': 2.4.0(ajv@8.20.0)
+      '@readme/openapi-schemas': 4.0.0
       '@types/json-schema': 7.0.15
-      ajv: 8.17.1
-      ajv-draft-04: 1.0.0(ajv@8.17.1)
+      ajv: 8.20.0
+      ajv-draft-04: 1.0.0(ajv@8.20.0)
       openapi-types: 12.1.3
 
-  '@readme/openapi-schemas@3.1.0': {}
+  '@readme/openapi-schemas@4.0.0':
+    dependencies:
+      '@types/json-schema': 7.0.15
 
   '@readme/postman-to-openapi@4.1.0':
     dependencies:
@@ -9277,9 +9282,9 @@ snapshots:
     optionalDependencies:
       ajv: 8.13.0
 
-  ajv-draft-04@1.0.0(ajv@8.17.1):
+  ajv-draft-04@1.0.0(ajv@8.20.0):
     optionalDependencies:
-      ajv: 8.17.1
+      ajv: 8.20.0
 
   ajv-formats@2.1.1(ajv@8.17.1):
     optionalDependencies:
@@ -9315,6 +9320,13 @@ snapshots:
       uri-js: 4.4.1
 
   ajv@8.17.1:
+    dependencies:
+      fast-deep-equal: 3.1.3
+      fast-uri: 3.1.0
+      json-schema-traverse: 1.0.0
+      require-from-string: 2.0.2
+
+  ajv@8.20.0:
     dependencies:
       fast-deep-equal: 3.1.3
       fast-uri: 3.1.0
@@ -11422,9 +11434,9 @@ snapshots:
       should: 13.2.3
       yaml: 1.10.3
 
-  oas-normalize@15.7.1:
+  oas-normalize@16.1.1:
     dependencies:
-      '@readme/openapi-parser': 5.5.0(openapi-types@12.1.3)
+      '@readme/openapi-parser': 6.2.1(openapi-types@12.1.3)
       '@readme/postman-to-openapi': 4.1.0
       js-yaml: 4.3.0
       openapi-types: 12.1.3
