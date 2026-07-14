@@ -53,7 +53,7 @@ function mergeAndValidateConfig<T extends Record<keyof T, string | boolean | und
 
   if (!isValid) {
     const betterErrors = betterAjvErrors({
-      schema: schema as Parameters<typeof betterAjvErrors>[0]['schema'],
+      schema,
       data: mergedConfig,
       errors: ajvInstance.errors,
     });
