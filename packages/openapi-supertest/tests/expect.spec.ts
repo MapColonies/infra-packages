@@ -85,9 +85,7 @@ describe('expectResponseStatusFactory', () => {
   describe('type tests', () => {
     it('should narrow response type based on status', function () {
       type TestResponse =
-        | { status: 200; body: { success: true } }
-        | { status: 404; body: { error: string } }
-        | { status: 500; body: { message: string } };
+        { status: 200; body: { success: true } } | { status: 404; body: { error: string } } | { status: 500; body: { message: string } };
 
       const mockExpect = vi.fn((actual: unknown) => ({
         toBe: vi.fn((expected: unknown) => {
