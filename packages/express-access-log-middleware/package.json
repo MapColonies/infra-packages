@@ -37,11 +37,11 @@
     "@types/supertest": "catalog:",
     "@types/node": "catalog:",
     "eslint": "catalog:",
-    "express": "4.22.1",
+    "express": "4.22.2",
     "rimraf": "catalog:",
     "supertest": "catalog:",
     "typescript": "catalog:",
-    "pino": "10.1.0",
+    "pino": "10.3.1",
     "vitest-config": "workspace:^",
     "vitest": "catalog:",
     "@microsoft/api-extractor": "catalog:"
