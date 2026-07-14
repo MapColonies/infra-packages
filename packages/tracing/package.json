@@ -46,7 +46,7 @@
     "@protobuf-ts/plugin": "2.11.1",
     "protoc": "35.1.0",
     "@protobuf-ts/runtime": "2.11.1",
-    "nock": "14.0.10",
+    "nock": "14.0.16",
     "@microsoft/api-extractor": "catalog:",
     "@opentelemetry/api": "catalog:"
   },
