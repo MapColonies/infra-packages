@@ -24,7 +24,7 @@
     "@vitest/ui": "catalog:",
     "commitlint": "21.2.1",
     "husky": "9.1.7",
-    "knip": "5.88.1",
+    "knip": "6.26.0",
     "prettier": "3.9.5",
     "pretty-quick": "4.2.2",
     "turbo": "2.10.4",
