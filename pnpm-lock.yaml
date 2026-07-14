@@ -339,7 +339,7 @@ importers:
         version: 24.10.9
       '@typescript-eslint/rule-tester':
         specifier: 8.63.0
-        version: 8.63.0(eslint@10.4.1(jiti@2.6.1))(typescript@5.9.3)
+        version: 8.63.0(eslint@10.4.1(jiti@2.6.1))(supports-color@10.2.2)(typescript@5.9.3)
       eslint:
         specifier: 'catalog:'
         version: 10.4.1(jiti@2.6.1)
@@ -504,7 +504,7 @@ importers:
         version: 10.4.1(jiti@2.6.1)
       express:
         specifier: 5.2.1
-        version: 5.2.1(supports-color@10.2.2)
+        version: 5.2.1
       publint:
         specifier: 'catalog:'
         version: 0.3.16
@@ -678,7 +678,7 @@ importers:
         version: 10.4.1(jiti@2.6.1)
       express:
         specifier: 5.2.1
-        version: 5.2.1(supports-color@10.2.2)
+        version: 5.2.1
       openapi-types:
         specifier: 12.1.3
         version: 12.1.3
@@ -714,7 +714,7 @@ importers:
         version: link:../read-pkg
       express:
         specifier: ^4.22.1
-        version: 4.22.1
+        version: 4.22.2
       express-prom-bundle:
         specifier: ^7.0.2
         version: 7.0.2(prom-client@15.1.3)
@@ -3455,12 +3455,8 @@ packages:
   bl@4.1.0:
     resolution: {integrity: sha512-1W07cM9gS6DcLperZfFSj+bWLtaPGSOHWhPiGzXmvVJbRLdG82sH/Kn8EtW1VqWVA54AKf2h5k5BbnIbwF3h6w==}
 
-  body-parser@1.20.4:
-    resolution: {integrity: sha512-ZTgYYLMOXY9qKU/57FAo8F+HA2dGX7bqGc71txDRC1rS4frdFI5R7NhluHxH6M0YItAP0sHB4uqAOcYKxO6uGA==}
-    engines: {node: '>= 0.8', npm: 1.2.8000 || >= 1.4.16}
-
-  body-parser@1.20.5:
-    resolution: {integrity: sha512-3grm+/2tUOvu2cjJkvsIxrv/wVpfXQW4PsQHYm7yk4vfpu7Ekl6nEsYBoJUL6qDwZUx8wUhQ8tR2qz+ad9c9OA==}
+  body-parser@1.20.6:
+    resolution: {integrity: sha512-p5tAzS57i5MV9fZFDj9LeIiTZEufbSe2eDozP+ElheSUq1m74CRq1jI4mYNDdVs9vQztXFLuk/Gd6BWTdwRJ5g==}
     engines: {node: '>= 0.8', npm: 1.2.8000 || >= 1.4.16}
 
   body-parser@2.3.0:
@@ -3658,8 +3654,8 @@ packages:
     resolution: {integrity: sha512-FveZTNuGw04cxlAiWbzi6zTAL/lhehaWbTtgluJh4/E95DqMwTmha3KZN1aAWA8cFIhHzMZUvLevkw5Rqk+tSQ==}
     engines: {node: '>= 0.6'}
 
-  content-disposition@1.0.1:
-    resolution: {integrity: sha512-oIXISMynqSqm241k6kcQ5UwttDILMK4BiurCfGEREw6+X9jkkpEe5T9FZaApyLGGOnFuyMWZpdolTXMtvEJ08Q==}
+  content-disposition@1.1.0:
+    resolution: {integrity: sha512-5jRCH9Z/+DRP7rkvY83B+yGIGX96OYdJmzngqnw2SBSxqCFPd0w2km3s5iawpGX8krnwSGmF0FW5Nhr0Hfai3g==}
     engines: {node: '>=18'}
 
   content-type@1.0.5:
@@ -5464,11 +5460,11 @@ packages:
     resolution: {integrity: sha512-3O/iVVsJAPsOnpwWIeD+d6z/7PmqApyQePUtCndjatj/9I5LylHvt5qluFaBT3I5h3r1ejfR056c+FCv+NnNXg==}
     engines: {node: 18 || 20 || >=22}
 
-  path-to-regexp@0.1.12:
-    resolution: {integrity: sha512-RA1GjUVMnvYFxuqovrEqZoxxW5NUZqbwKtYz/Tt7nXerk0LbLblQmrsgdeOxV5SFHf0UDggjS/bSeOZwt1pmEQ==}
+  path-to-regexp@0.1.13:
+    resolution: {integrity: sha512-A/AGNMFN3c8bOlvV9RreMdrv7jsmF9XIfDeCd87+I8RNg6s78BhJxMu69NEMHBSJFxKidViTEdruRwEk/WIKqA==}
 
-  path-to-regexp@8.3.0:
-    resolution: {integrity: sha512-7jdwVIRtsP8MYpdXSwOS0YdD0Du+qOoF/AEPIt88PcCFrZCzx41oxku1jD88hZBwbNUIEfpqvuhjFaMAqMTWnA==}
+  path-to-regexp@8.4.2:
+    resolution: {integrity: sha512-qRcuIdP69NPm4qbACK+aDogI5CBDMi1jKe0ry5rSQJz8JVLsC7jV8XpiJjGRLLol3N+R5ihGYcrPLTno6pAdBA==}
 
   pathe@2.0.3:
     resolution: {integrity: sha512-WUjGcAqP1gQacoQe+OBJsFA7Ld4DyXuUIjZ5cc75cLHvJ7dtNsTugphxIADwspS+AraAUePCKrSVtPLFj/F88w==}
@@ -6327,10 +6323,6 @@ packages:
 
   type-is@1.6.18:
     resolution: {integrity: sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==}
-    engines: {node: '>= 0.6'}
-
-  type-is@2.0.1:
-    resolution: {integrity: sha512-OZs6gsjF4vMp32qrCbiVSkrFmXtG/AZhY3t0iAMrMBiAZyV9oALtXO8hsrHbMXF9x6L3grlFuwW2oAz7cav+Gw==}
     engines: {node: '>= 0.6'}
 
   type-is@2.1.0:
@@ -8901,7 +8893,7 @@ snapshots:
   '@typescript-eslint/eslint-plugin@8.63.0(@typescript-eslint/parser@8.63.0(eslint@10.4.1(jiti@2.6.1))(typescript@5.9.3))(eslint@10.4.1(jiti@2.6.1))(typescript@5.9.3)':
     dependencies:
       '@eslint-community/regexpp': 4.12.2
-      '@typescript-eslint/parser': 8.63.0(eslint@10.4.1(jiti@2.6.1))(typescript@5.9.3)
+      '@typescript-eslint/parser': 8.63.0(eslint@10.4.1(jiti@2.6.1))(supports-color@10.2.2)(typescript@5.9.3)
       '@typescript-eslint/scope-manager': 8.63.0
       '@typescript-eslint/type-utils': 8.63.0(eslint@10.4.1(jiti@2.6.1))(typescript@5.9.3)
       '@typescript-eslint/utils': 8.63.0(eslint@10.4.1(jiti@2.6.1))(typescript@5.9.3)
@@ -8926,7 +8918,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/parser@8.63.0(eslint@10.4.1(jiti@2.6.1))(typescript@5.9.3)':
+  '@typescript-eslint/parser@8.63.0(eslint@10.4.1(jiti@2.6.1))(supports-color@10.2.2)(typescript@5.9.3)':
     dependencies:
       '@typescript-eslint/scope-manager': 8.63.0
       '@typescript-eslint/types': 8.63.0
@@ -8956,9 +8948,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/rule-tester@8.63.0(eslint@10.4.1(jiti@2.6.1))(typescript@5.9.3)':
+  '@typescript-eslint/rule-tester@8.63.0(eslint@10.4.1(jiti@2.6.1))(supports-color@10.2.2)(typescript@5.9.3)':
     dependencies:
-      '@typescript-eslint/parser': 8.63.0(eslint@10.4.1(jiti@2.6.1))(typescript@5.9.3)
+      '@typescript-eslint/parser': 8.63.0(eslint@10.4.1(jiti@2.6.1))(supports-color@10.2.2)(typescript@5.9.3)
       '@typescript-eslint/typescript-estree': 8.63.0(typescript@5.9.3)
       '@typescript-eslint/utils': 8.63.0(eslint@10.4.1(jiti@2.6.1))(typescript@5.9.3)
       ajv: 6.15.0
@@ -9542,24 +9534,7 @@ snapshots:
       inherits: 2.0.4
       readable-stream: 3.6.2
 
-  body-parser@1.20.4:
-    dependencies:
-      bytes: 3.1.2
-      content-type: 1.0.5
-      debug: 2.6.9
-      depd: 2.0.0
-      destroy: 1.2.0
-      http-errors: 2.0.1
-      iconv-lite: 0.4.24
-      on-finished: 2.4.1
-      qs: 6.14.1
-      raw-body: 2.5.3
-      type-is: 1.6.18
-      unpipe: 1.0.0
-    transitivePeerDependencies:
-      - supports-color
-
-  body-parser@1.20.5:
+  body-parser@1.20.6:
     dependencies:
       bytes: 3.1.2
       content-type: 1.0.5
@@ -9780,7 +9755,7 @@ snapshots:
     dependencies:
       safe-buffer: 5.2.1
 
-  content-disposition@1.0.1: {}
+  content-disposition@1.1.0: {}
 
   content-type@1.0.5: {}
 
@@ -10384,7 +10359,7 @@ snapshots:
     dependencies:
       accepts: 1.3.8
       array-flatten: 1.1.1
-      body-parser: 1.20.4
+      body-parser: 1.20.6
       content-disposition: 0.5.4
       content-type: 1.0.5
       cookie: 0.7.2
@@ -10401,7 +10376,7 @@ snapshots:
       methods: 1.1.2
       on-finished: 2.4.1
       parseurl: 1.3.3
-      path-to-regexp: 0.1.12
+      path-to-regexp: 0.1.13
       proxy-addr: 2.0.7
       qs: 6.14.1
       range-parser: 1.2.1
@@ -10420,7 +10395,7 @@ snapshots:
     dependencies:
       accepts: 1.3.8
       array-flatten: 1.1.1
-      body-parser: 1.20.5
+      body-parser: 1.20.6
       content-disposition: 0.5.4
       content-type: 1.0.5
       cookie: 0.7.2
@@ -10437,7 +10412,7 @@ snapshots:
       methods: 1.1.2
       on-finished: 2.4.1
       parseurl: 1.3.3
-      path-to-regexp: 0.1.12
+      path-to-regexp: 0.1.13
       proxy-addr: 2.0.7
       qs: 6.15.3
       range-parser: 1.2.1
@@ -10452,11 +10427,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  express@5.2.1(supports-color@10.2.2):
+  express@5.2.1:
     dependencies:
       accepts: 2.0.0
       body-parser: 2.3.0
-      content-disposition: 1.0.1
+      content-disposition: 1.1.0
       content-type: 1.0.5
       cookie: 0.7.2
       cookie-signature: 1.2.2
@@ -10465,7 +10440,7 @@ snapshots:
       encodeurl: 2.0.0
       escape-html: 1.0.3
       etag: 1.8.1
-      finalhandler: 2.1.1(supports-color@10.2.2)
+      finalhandler: 2.1.1
       fresh: 2.0.0
       http-errors: 2.0.1
       merge-descriptors: 2.0.0
@@ -10474,13 +10449,13 @@ snapshots:
       once: 1.4.0
       parseurl: 1.3.3
       proxy-addr: 2.0.7
-      qs: 6.14.1
+      qs: 6.15.3
       range-parser: 1.2.1
-      router: 2.2.0(supports-color@10.2.2)
-      send: 1.2.1(supports-color@10.2.2)
+      router: 2.2.0
+      send: 1.2.1
       serve-static: 2.2.1
       statuses: 2.0.2
-      type-is: 2.0.1
+      type-is: 2.1.0
       vary: 1.1.2
     transitivePeerDependencies:
       - supports-color
@@ -10552,7 +10527,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  finalhandler@2.1.1(supports-color@10.2.2):
+  finalhandler@2.1.1:
     dependencies:
       debug: 4.4.3(supports-color@10.2.2)
       encodeurl: 2.0.0
@@ -11750,9 +11725,9 @@ snapshots:
       lru-cache: 11.5.1
       minipass: 7.1.3
 
-  path-to-regexp@0.1.12: {}
+  path-to-regexp@0.1.13: {}
 
-  path-to-regexp@8.3.0: {}
+  path-to-regexp@8.4.2: {}
 
   pathe@2.0.3: {}
 
@@ -12027,7 +12002,7 @@ snapshots:
 
   qs@6.14.1:
     dependencies:
-      side-channel: 1.1.0
+      side-channel: 1.1.1
 
   qs@6.15.3:
     dependencies:
@@ -12210,13 +12185,13 @@ snapshots:
       '@rollup/rollup-win32-x64-msvc': 4.62.2
       fsevents: 2.3.3
 
-  router@2.2.0(supports-color@10.2.2):
+  router@2.2.0:
     dependencies:
       debug: 4.4.3(supports-color@10.2.2)
       depd: 2.0.0
       is-promise: 4.0.0
       parseurl: 1.3.3
-      path-to-regexp: 8.3.0
+      path-to-regexp: 8.4.2
     transitivePeerDependencies:
       - supports-color
 
@@ -12292,7 +12267,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  send@1.2.1(supports-color@10.2.2):
+  send@1.2.1:
     dependencies:
       debug: 4.4.3(supports-color@10.2.2)
       encodeurl: 2.0.0
@@ -12322,7 +12297,7 @@ snapshots:
       encodeurl: 2.0.0
       escape-html: 1.0.3
       parseurl: 1.3.3
-      send: 1.2.1(supports-color@10.2.2)
+      send: 1.2.1
     transitivePeerDependencies:
       - supports-color
 
@@ -12614,7 +12589,7 @@ snapshots:
       formidable: 3.5.4
       methods: 1.1.2
       mime: 2.6.0
-      qs: 6.14.1
+      qs: 6.15.3
     transitivePeerDependencies:
       - supports-color
 
@@ -12846,12 +12821,6 @@ snapshots:
       media-typer: 0.3.0
       mime-types: 2.1.35
 
-  type-is@2.0.1:
-    dependencies:
-      content-type: 1.0.5
-      media-typer: 1.1.0
-      mime-types: 3.0.2
-
   type-is@2.1.0:
     dependencies:
       content-type: 2.0.0
@@ -12921,7 +12890,7 @@ snapshots:
   typescript-eslint@8.63.0(eslint@10.4.1(jiti@2.6.1))(typescript@5.9.3):
     dependencies:
       '@typescript-eslint/eslint-plugin': 8.63.0(@typescript-eslint/parser@8.63.0(eslint@10.4.1(jiti@2.6.1))(typescript@5.9.3))(eslint@10.4.1(jiti@2.6.1))(typescript@5.9.3)
-      '@typescript-eslint/parser': 8.63.0(eslint@10.4.1(jiti@2.6.1))(typescript@5.9.3)
+      '@typescript-eslint/parser': 8.63.0(eslint@10.4.1(jiti@2.6.1))(supports-color@10.2.2)(typescript@5.9.3)
       '@typescript-eslint/typescript-estree': 8.63.0(typescript@5.9.3)
       '@typescript-eslint/utils': 8.63.0(eslint@10.4.1(jiti@2.6.1))(typescript@5.9.3)
       eslint: 10.4.1(jiti@2.6.1)
