@@ -15,7 +15,7 @@
     "docs": "typedoc"
   },
   "devDependencies": {
-    "@commitlint/cli": "20.3.1",
+    "@commitlint/cli": "20.5.3",
     "@commitlint/config-pnpm-scopes": "21.2.0",
     "@map-colonies/commitlint-config": "workspace:^",
     "@map-colonies/prettier-config": "workspace:^",
@@ -24,10 +24,10 @@
     "@vitest/ui": "catalog:",
     "commitlint": "21.2.1",
     "husky": "9.1.7",
-    "knip": "5.82.1",
-    "prettier": "3.8.1",
+    "knip": "5.88.1",
+    "prettier": "3.9.5",
     "pretty-quick": "4.2.2",
-    "turbo": "2.9.14",
+    "turbo": "2.10.4",
     "typescript": "catalog:",
     "vitest": "catalog:",
     "rimraf": "catalog:",

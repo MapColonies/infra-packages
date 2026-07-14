@@ -33,7 +33,7 @@ const config: KnipConfig = {
     'packages/eslint-config': {
       ...basePackageConfig,
       entry: ['src/configs/**'],
-      ignoreDependencies: ['eslint-plugin-react-hooks', 'eslint-plugin-jest', 'eslint-plugin-react', '@vitest/eslint-plugin'],
+      ignoreDependencies: ['eslint-plugin-react-hooks'],
     },
     'packages/typescript-config': {
       entry: [],
@@ -52,7 +52,6 @@ const config: KnipConfig = {
     },
     'packages/vitest-utils': {
       ...basePackageConfig,
-      ignoreDependencies: ['jest-extended', 'jest-openapi'],
     },
   },
   tags: ['-lintignore'],
