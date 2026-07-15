@@ -3,6 +3,7 @@ import {
   type LoggerOptions as PinoOptions,
   type Logger,
   type TransportSingleOptions,
+  type TransportMultiOptions,
   transport as pinoTransport,
   type DestinationStream,
 } from 'pino';
@@ -72,6 +73,8 @@ interface LoggerOptions {
   };
 }
 
+const DEFAULT_OTEL_URL = 'http://localhost:4317';
+
 const baseOptions: PinoOptions = {
   formatters: {
     level(label): Record<string, string> {
@@ -89,16 +92,22 @@ const baseOptions: PinoOptions = {
  * @public
  */
 export async function jsLogger(options?: LoggerOptions, destination: string | number = 1): Promise<Logger> {
-  let transport: TransportSingleOptions = { target: 'pino/file', options: { destination } };
+  // captured before the deletes below remove them from options
+  const prettyPrintEnabled = options?.prettyPrint === true;
+  const otelEnabled = options?.opentelemetryOptions?.enabled === true;
+  const otelUrl = options?.opentelemetryOptions?.url ?? DEFAULT_OTEL_URL;
 
   /* istanbul ignore next */
-  if (options?.prettyPrint === true) {
-    transport = { target: 'pino-pretty' };
-
+  if (prettyPrintEnabled) {
     delete options.prettyPrint;
   }
 
-  if (options?.opentelemetryOptions?.enabled === true) {
+  // where logs are written locally. when otel is enabled this becomes the second target alongside it.
+  const localTransport: TransportSingleOptions = prettyPrintEnabled ? { target: 'pino-pretty' } : { target: 'pino/file', options: { destination } };
+
+  let transportOptions: TransportSingleOptions | TransportMultiOptions = localTransport;
+
+  if (otelEnabled) {
     const pkg = readPackageJsonSync();
 
     const detectedResources = detectResources({ detectors: [containerDetector] });
@@ -112,33 +121,38 @@ export async function jsLogger(options?: LoggerOptions, destination: string | nu
         [ATTR_SERVICE_NAME]: pkg.name,
         [ATTR_SERVICE_VERSION]: pkg.version,
         [ATTR_K8S_POD_UID]: process.env.K8S_POD_UID,
-        ...options.opentelemetryOptions.resourceAttributes,
+        ...options.opentelemetryOptions?.resourceAttributes,
       },
       logRecordProcessorOptions: [
         {
-          recordProcessorType: 'simple',
-          exporterOptions: {
-            protocol: 'console',
-          },
-        },
-        {
           recordProcessorType: 'batch',
-          exporterOptions: { protocol: 'grpc', grpcExporterOptions: { url: options.opentelemetryOptions.url ?? 'http://localhost:4317' } },
+          exporterOptions: { protocol: 'grpc', grpcExporterOptions: { url: otelUrl } },
         },
       ],
     };
-    transport = { target: 'pino-opentelemetry-transport', options: otelOptions };
 
+    // routing between multiple targets happens by level in a worker, which requires the numeric levels left in place by
+    // dropping the formatter - so this must stay limited to the otel path.
     delete baseOptions.formatters;
+
+    transportOptions = { targets: [{ target: 'pino-opentelemetry-transport', options: otelOptions }, localTransport] };
   }
+
   const pinoOptions: PinoOptions = { ...baseOptions, ...options };
-  const logger = pino(pinoOptions, pinoTransport(transport) as DestinationStream);
+  const logger = pino(pinoOptions, pinoTransport(transportOptions) as DestinationStream);
 
-  if (options?.pinoCaller === true) {
-    return pinoCaller(logger);
-  }
+  const finalLogger = options?.pinoCaller === true ? pinoCaller(logger) : logger;
 
-  return logger;
+  finalLogger.debug({
+    msg: 'logger initialized',
+    level: pinoOptions.level ?? 'info',
+    prettyPrint: prettyPrintEnabled,
+    pinoCaller: options?.pinoCaller === true,
+    otelEnabled,
+    otelUrl: otelEnabled ? otelUrl : undefined,
+  });
+
+  return finalLogger;
 }
 
 export type { Logger } from 'pino';

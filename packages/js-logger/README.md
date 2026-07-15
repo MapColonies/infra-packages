@@ -51,12 +51,30 @@ For more detailed usage check the [pino documentation](https://github.com/pinojs
 | opentelemetryOptions.url                | string          | `http://localhost:4317` | OpenTelemetry gRPC collector URL, for example an Alloy OTLP endpoint.     |
 | opentelemetryOptions.resourceAttributes | object          | undefined               | Extra resource attributes merged into the emitted OpenTelemetry resource. |
 
-The second argument controls the output destination and defaults to standard output (`1`).
+The second argument controls the output destination - either a file path or a file descriptor number. It defaults to standard output (`1`).
+
+Once created, the logger emits a `logger initialized` message at `debug` level summarizing the settings it started with: level, `prettyPrint`, `pinoCaller`, and whether OpenTelemetry is enabled along with its URL.
 
 ## OpenTelemetry log support
 
-When `opentelemetryOptions.enabled` is `true`, `js-logger` switches to `pino-opentelemetry-transport` and populates resource attributes from:
+When `opentelemetryOptions.enabled` is `true`, `js-logger` adds `pino-opentelemetry-transport` alongside the regular destination, so logs are still written locally as well as exported. Resource attributes are populated from:
 
 - the current package name and version
 - detected container metadata
 - `process.env.K8S_POD_UID`
+- any `resourceAttributes` you pass, which override the detected values
+
+```typescript
+import { jsLogger } from '@map-colonies/js-logger';
+
+const logger = await jsLogger({
+  level: 'info',
+  opentelemetryOptions: {
+    enabled: true,
+    url: 'http://otel-collector:4317',
+    resourceAttributes: { 'deployment.environment': 'production' },
+  },
+});
+```
+
+Note that with OpenTelemetry enabled the `level` field is emitted as its numeric pino value (`30`) rather than the label (`"info"`), since both the OpenTelemetry transport and the routing between the two targets rely on numeric levels.
