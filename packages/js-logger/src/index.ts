@@ -145,7 +145,7 @@ export async function jsLogger(options?: LoggerOptions, destination: string | nu
 
   finalLogger.debug({
     msg: 'logger initialized',
-    level: pinoOptions.level ?? 'info',
+    loggerLevel: pinoOptions.level ?? 'info',
     prettyPrint: prettyPrintEnabled,
     pinoCaller: options?.pinoCaller === true,
     otelEnabled,
