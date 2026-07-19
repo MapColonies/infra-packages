@@ -9,9 +9,6 @@ catalogs:
     '@arethetypeswrong/cli':
       specifier: 0.18.5
       version: 0.18.5
-    '@microsoft/api-extractor':
-      specifier: ^7.55.2
-      version: 7.58.9
     '@opentelemetry/api':
       specifier: 1.9.1
       version: 1.9.1
@@ -189,7 +186,7 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.58.9(@types/node@24.13.3)
+        version: 7.58.10(@types/node@24.13.3)
       '@testcontainers/postgresql':
         specifier: 12.0.4
         version: 12.0.4(supports-color@10.2.2)
@@ -229,7 +226,7 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.58.9(@types/node@24.13.3)
+        version: 7.58.10(@types/node@24.13.3)
       '@types/express':
         specifier: 4.17.25
         version: 4.17.25
@@ -382,7 +379,7 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.58.9(@types/node@24.13.3)
+        version: 7.58.10(@types/node@24.13.3)
       '@types/express':
         specifier: 4.17.25
         version: 4.17.25
@@ -452,7 +449,7 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.58.9(@types/node@24.13.3)
+        version: 7.58.10(@types/node@24.13.3)
       '@types/node':
         specifier: 'catalog:'
         version: 24.13.3
@@ -495,7 +492,7 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.58.9(@types/node@24.13.3)
+        version: 7.58.10(@types/node@24.13.3)
       '@types/node':
         specifier: 'catalog:'
         version: 24.13.3
@@ -541,7 +538,7 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.58.9(@types/node@24.13.3)
+        version: 7.58.10(@types/node@24.13.3)
       '@types/express':
         specifier: 4.17.25
         version: 4.17.25
@@ -611,7 +608,7 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.58.9(@types/node@24.13.3)
+        version: 7.58.10(@types/node@24.13.3)
       '@types/node':
         specifier: 'catalog:'
         version: 24.13.3
@@ -660,7 +657,7 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.58.9(@types/node@24.13.3)
+        version: 7.58.10(@types/node@24.13.3)
       '@types/body-parser':
         specifier: 1.19.6
         version: 1.19.6
@@ -730,7 +727,7 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.58.9(@types/node@24.13.3)
+        version: 7.58.10(@types/node@24.13.3)
       '@types/express':
         specifier: 4.17.25
         version: 4.17.25
@@ -779,7 +776,7 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.58.9(@types/node@24.13.3)
+        version: 7.58.10(@types/node@24.13.3)
       '@types/node':
         specifier: 'catalog:'
         version: 24.13.3
@@ -809,7 +806,7 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.58.9(@types/node@24.13.3)
+        version: 7.58.10(@types/node@24.13.3)
       '@types/node':
         specifier: 'catalog:'
         version: 24.13.3
@@ -882,7 +879,7 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.58.9(@types/node@24.13.3)
+        version: 7.58.10(@types/node@24.13.3)
       '@opentelemetry/api':
         specifier: 'catalog:'
         version: 1.9.1
@@ -927,7 +924,7 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.58.9(@types/node@24.13.3)
+        version: 7.58.10(@types/node@24.13.3)
       '@opentelemetry/api':
         specifier: 'catalog:'
         version: 1.9.1
@@ -987,7 +984,7 @@ importers:
         version: link:../typescript-config
       '@microsoft/api-extractor':
         specifier: 'catalog:'
-        version: 7.58.9(@types/node@24.13.3)
+        version: 7.58.10(@types/node@24.13.3)
       '@types/node':
         specifier: 'catalog:'
         version: 24.13.3
@@ -1590,11 +1587,11 @@ packages:
   '@map-colonies/schemas@1.24.0':
     resolution: {integrity: sha512-W8FY4l5OK0iMmBsAQG5wmTjeseLmTrSlDxNt82m81MU5OFZPXJpKRUhAbs7v7zz1j9vSp5qiTA0pIOkML1wo0Q==}
 
-  '@microsoft/api-extractor-model@7.33.8':
-    resolution: {integrity: sha512-aIcoQggPyer3B6Ze3usz0YWC/oBwUHfRH5ETUsr+oT2BRA6SfTJl7IKPcPZkX4UR+PohowzW4uMxsvjrn8vm+w==}
+  '@microsoft/api-extractor-model@7.33.9':
+    resolution: {integrity: sha512-ddxNWRNxqJX+/fXnwRmPWWY0UnTB+f8hPTeAygoZ+AxosCYYu5rvDuNrUrq0BTlLeDV60RpkbygDjFepWNczTg==}
 
-  '@microsoft/api-extractor@7.58.9':
-    resolution: {integrity: sha512-S2UF4yza5GoxCmf7hJQNxJNZN9ltOVuOQv8Dy+Z21aol5ERoBNMdWcQHm4MJMPPItW4H/4rZD906iaf4mUojJA==}
+  '@microsoft/api-extractor@7.58.10':
+    resolution: {integrity: sha512-p8uSra1V3k0Pt/+017ZfHphZmkjXi+ZVYLen3msIURYwz3jrBrP/u7WV0ELUkOW88bx1EMIVvI0m80QK7Ij1Cw==}
     hasBin: true
 
   '@microsoft/tsdoc-config@0.18.1':
@@ -2711,8 +2708,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@rushstack/node-core-library@5.23.1':
-    resolution: {integrity: sha512-wlKmIKIYCKuCASbITvOxLZXepPbwXvrv7S6ig6XNWFchSyhL/E2txmVXspHY49Wu2dzf7nI27a2k/yV5BA3EiA==}
+  '@rushstack/node-core-library@5.23.2':
+    resolution: {integrity: sha512-dCdCdy+5/L+wss7bymRPWuAhhUMT3kEzN7g9xE0AgzrPFtJ8JS+gMsfgm9spvTSl1YkhSgM3TK4u8BruUQj4Kg==}
     peerDependencies:
       '@types/node': '*'
     peerDependenciesMeta:
@@ -2730,16 +2727,16 @@ packages:
   '@rushstack/rig-package@0.7.3':
     resolution: {integrity: sha512-aAA518n6wxxjCfnTAOjQnm7ngNE0FVHxHAw2pxKlIhxrMn0XQjGcXKF0oKWpjBgJOmsaJpVob/v+zr3zxgPWuA==}
 
-  '@rushstack/terminal@0.24.0':
-    resolution: {integrity: sha512-8ZQS4MMaGsv27EXCBiH7WMPkRZrffeDoIevs6z9TM5dzqiY6+Hn4evfK/G+gvgBTjfvfkHIZPQQmalmI2sM4TQ==}
+  '@rushstack/terminal@0.24.1':
+    resolution: {integrity: sha512-1NPimt0UnLP0mOxpQpcROPpkArwjr/rEThalQN49bh2rJLNL+PiryGp3iAoW/fLbXxuuazN6SvHqsQl0qnxy+Q==}
     peerDependencies:
       '@types/node': '*'
     peerDependenciesMeta:
       '@types/node':
         optional: true
 
-  '@rushstack/ts-command-line@5.3.10':
-    resolution: {integrity: sha512-fwI076HYknC0IrMXdY6UmjDv+PH7NHhNJX3/pY2UblSE5XrXgndXZPiOe/6ZtuFpn6DvVDVNhtkIzQ+Qu/MhVQ==}
+  '@rushstack/ts-command-line@5.3.11':
+    resolution: {integrity: sha512-b/eO2GGyiNqGZLHR3ayTrgrPtfBBEvPs4o+HjUmF7Ca6EAZEoA4yrN2RJMOZfrJhYaWBdLk5R7jwQ4w3xf90Aw==}
 
   '@scarf/scarf@1.4.0':
     resolution: {integrity: sha512-xxeapPiUXdZAE3che6f3xogoJPeZgig6omHEy1rIY5WVsB3H2BHNnZH+gHG6x91SCWyQCzWGsuL2Hh3ClO5/qQ==}
@@ -7178,23 +7175,23 @@ snapshots:
 
   '@map-colonies/schemas@1.24.0': {}
 
-  '@microsoft/api-extractor-model@7.33.8(@types/node@24.13.3)':
+  '@microsoft/api-extractor-model@7.33.9(@types/node@24.13.3)':
     dependencies:
       '@microsoft/tsdoc': 0.16.0
       '@microsoft/tsdoc-config': 0.18.1
-      '@rushstack/node-core-library': 5.23.1(@types/node@24.13.3)
+      '@rushstack/node-core-library': 5.23.2(@types/node@24.13.3)
     transitivePeerDependencies:
       - '@types/node'
 
-  '@microsoft/api-extractor@7.58.9(@types/node@24.13.3)':
+  '@microsoft/api-extractor@7.58.10(@types/node@24.13.3)':
     dependencies:
-      '@microsoft/api-extractor-model': 7.33.8(@types/node@24.13.3)
+      '@microsoft/api-extractor-model': 7.33.9(@types/node@24.13.3)
       '@microsoft/tsdoc': 0.16.0
       '@microsoft/tsdoc-config': 0.18.1
-      '@rushstack/node-core-library': 5.23.1(@types/node@24.13.3)
+      '@rushstack/node-core-library': 5.23.2(@types/node@24.13.3)
       '@rushstack/rig-package': 0.7.3
-      '@rushstack/terminal': 0.24.0(@types/node@24.13.3)
-      '@rushstack/ts-command-line': 5.3.10(@types/node@24.13.3)
+      '@rushstack/terminal': 0.24.1(@types/node@24.13.3)
+      '@rushstack/ts-command-line': 5.3.11(@types/node@24.13.3)
       diff: 8.0.4
       minimatch: 10.2.3
       resolve: 1.22.12
@@ -8509,11 +8506,11 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.62.2':
     optional: true
 
-  '@rushstack/node-core-library@5.23.1(@types/node@24.13.3)':
+  '@rushstack/node-core-library@5.23.2(@types/node@24.13.3)':
     dependencies:
-      ajv: 8.18.0
-      ajv-draft-04: 1.0.0(ajv@8.18.0)
-      ajv-formats: 3.0.1(ajv@8.18.0)
+      ajv: 8.20.0
+      ajv-draft-04: 1.0.0(ajv@8.20.0)
+      ajv-formats: 3.0.1(ajv@8.20.0)
       fs-extra: 11.3.6
       import-lazy: 4.0.0
       jju: 1.4.0
@@ -8531,17 +8528,17 @@ snapshots:
       jju: 1.4.0
       resolve: 1.22.12
 
-  '@rushstack/terminal@0.24.0(@types/node@24.13.3)':
+  '@rushstack/terminal@0.24.1(@types/node@24.13.3)':
     dependencies:
-      '@rushstack/node-core-library': 5.23.1(@types/node@24.13.3)
+      '@rushstack/node-core-library': 5.23.2(@types/node@24.13.3)
       '@rushstack/problem-matcher': 0.2.1(@types/node@24.13.3)
       supports-color: 8.1.1
     optionalDependencies:
       '@types/node': 24.13.3
 
-  '@rushstack/ts-command-line@5.3.10(@types/node@24.13.3)':
+  '@rushstack/ts-command-line@5.3.11(@types/node@24.13.3)':
     dependencies:
-      '@rushstack/terminal': 0.24.0(@types/node@24.13.3)
+      '@rushstack/terminal': 0.24.1(@types/node@24.13.3)
       '@types/argparse': 1.0.38
       argparse: 1.0.10
       string-argv: 0.3.2
@@ -9151,10 +9148,6 @@ snapshots:
 
   agent-base@7.1.4: {}
 
-  ajv-draft-04@1.0.0(ajv@8.18.0):
-    optionalDependencies:
-      ajv: 8.18.0
-
   ajv-draft-04@1.0.0(ajv@8.20.0):
     optionalDependencies:
       ajv: 8.20.0
@@ -9162,10 +9155,6 @@ snapshots:
   ajv-formats@2.1.1(ajv@8.20.0):
     optionalDependencies:
       ajv: 8.20.0
-
-  ajv-formats@3.0.1(ajv@8.18.0):
-    optionalDependencies:
-      ajv: 8.18.0
 
   ajv-formats@3.0.1(ajv@8.20.0):
     optionalDependencies:
