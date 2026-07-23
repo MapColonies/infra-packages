@@ -2,7 +2,7 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "target": "ES2022",
+    "target": "es2024",
     "resolveJsonModule": true,
     "moduleDetection": "force",
     "isolatedModules": true,
@@ -16,7 +16,7 @@
     "outDir": "${configDir}/dist",
     "sourceMap": true,
 
-    "lib": ["ES2022"],
+    "lib": ["es2024", "ESNext.Array", "ESNext.Collection", "ESNext.Error", "ESNext.Iterator", "ESNext.Promise"],
 
     "allowSyntheticDefaultImports": true
   }
