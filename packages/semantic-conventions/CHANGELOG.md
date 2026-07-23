@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/MapColonies/infra-packages/compare/semantic-conventions-v1.0.0...semantic-conventions-v1.0.1) (2026-07-23)
+
+
+### 🔗 Dependencies
+
+* **tracing:** update dependency ajv to v8.18.0 [security] ([#133](https://github.com/MapColonies/infra-packages/issues/133)) ([01c0030](https://github.com/MapColonies/infra-packages/commit/01c0030fd5d367ba6d5ae385cfa34a1e9a50adf4))
+
 ## [1.0.0](https://github.com/MapColonies/infra-packages/compare/semantic-conventions-v0.0.1...semantic-conventions-v1.0.0) (2026-01-19)
 
 
