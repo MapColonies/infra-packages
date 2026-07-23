@@ -57,4 +57,12 @@ describe('jsLogger', function () {
     expect(logger).toBeDefined();
     expect(() => logger.info('test otel')).not.toThrow();
   });
+
+  it('should still write to the local destination when opentelemetry is enabled', async function () {
+    const logger = await jsLogger({ opentelemetryOptions: { enabled: true } }, 'avi-otel.log');
+    logger.info('avi otel');
+    await waitForFileCreation('avi-otel.log');
+    const logLine = JSON.parse(readFileSync('avi-otel.log', { encoding: 'utf-8' })) as Record<string, unknown>;
+    expect(logLine).toHaveProperty('msg', 'avi otel');
+  });
 });
