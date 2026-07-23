@@ -1,5 +1,14 @@
 # Changelog
 
+## [9.0.1](https://github.com/MapColonies/infra-packages/compare/eslint-config-v9.0.0...eslint-config-v9.0.1) (2026-07-23)
+
+
+### 🔗 Dependencies
+
+* **eslint-config:** update dependency eslint-plugin-unicorn to v70 ([#245](https://github.com/MapColonies/infra-packages/issues/245)) ([be3f9c0](https://github.com/MapColonies/infra-packages/commit/be3f9c009c2fee1d229dc233e4820f88f266f7f9))
+* **eslint-config:** update dependency eslint-plugin-unicorn to v71 ([#254](https://github.com/MapColonies/infra-packages/issues/254)) ([f11679f](https://github.com/MapColonies/infra-packages/commit/f11679fefbce0460045e12df9cb236e8f57bf91c))
+* **eslint-config:** update dependency eslint-plugin-unicorn to v72 ([#268](https://github.com/MapColonies/infra-packages/issues/268)) ([dc27510](https://github.com/MapColonies/infra-packages/commit/dc27510d3b14b43d81549239a4985c5a9edef2ea))
+
 ## [9.0.0](https://github.com/MapColonies/infra-packages/compare/eslint-config-v8.1.0...eslint-config-v9.0.0) (2026-06-29)
 
 
