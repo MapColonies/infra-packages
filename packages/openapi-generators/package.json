@@ -34,7 +34,7 @@
   },
   "repository": "github:MapColonies/infra-packages",
   "dependencies": {
-    "@apidevtools/json-schema-ref-parser": "^15.0.0",
+    "@apidevtools/json-schema-ref-parser": "^16.0.0",
     "@commander-js/extra-typings": "^15.0.0",
     "@map-colonies/read-pkg": "workspace:^",
     "change-case": "^5.4.4",
