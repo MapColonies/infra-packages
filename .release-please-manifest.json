@@ -17,5 +17,6 @@
   "packages/drizzle-utils": "1.0.0",
   "packages/openapi-generators": "0.2.0",
   "packages/openapi-supertest": "0.2.0",
-  "packages/openapi-express-types": "0.2.0"
+  "packages/openapi-express-types": "0.2.0",
+  "packages/health-check": "0.0.1"
 }
