@@ -119,7 +119,7 @@ const typescriptEslintRules = defineConfig({
     '@typescript-eslint/no-dupe-class-members': 'error',
     '@typescript-eslint/no-unused-expressions': 'error',
     '@typescript-eslint/no-unused-vars': ['warn', { ignoreRestSiblings: true }],
-    '@typescript-eslint/return-await': 'error',
+    '@typescript-eslint/return-await': ['error','always'],
     '@typescript-eslint/consistent-type-imports': 'error',
   },
 });
