@@ -37,7 +37,7 @@
     "@types/supertest": "catalog:",
     "@types/node": "catalog:",
     "eslint": "catalog:",
-    "express": "4.22.2",
+    "express": "4.22.3",
     "rimraf": "catalog:",
     "supertest": "catalog:",
     "typescript": "catalog:",
