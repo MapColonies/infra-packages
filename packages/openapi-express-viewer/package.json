@@ -42,7 +42,7 @@
     "@types/node": "catalog:",
     "@types/swagger-ui-express": "4.1.8",
     "eslint": "catalog:",
-    "express": "4.22.2",
+    "express": "4.22.3",
     "rimraf": "catalog:",
     "supertest": "catalog:",
     "typescript": "catalog:",
