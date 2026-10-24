@@ -56,7 +56,7 @@
     "@opentelemetry/sdk-trace-base": "2.9.0",
     "@opentelemetry/auto-instrumentations-node": "^0.78.0",
     "@opentelemetry/instrumentation": "^0.220.0",
-    "@opentelemetry/resources": "^2.2.0",
+    "@opentelemetry/resources": "^3.0.0",
     "@opentelemetry/semantic-conventions": "^1.38.0",
     "ajv": "^8.17.1",
     "@apideck/better-ajv-errors": "^0.3.6",
