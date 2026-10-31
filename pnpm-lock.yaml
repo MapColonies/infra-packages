@@ -9,6 +9,9 @@ catalogs:
     '@arethetypeswrong/cli':
       specifier: 0.18.5
       version: 0.18.5
+    '@microsoft/api-extractor':
+      specifier: ^7.55.2
+      version: 7.58.12
     '@opentelemetry/api':
       specifier: 1.9.1
       version: 1.9.1
@@ -130,7 +133,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.1.10(@opentelemetry/api@1.9.0)(@types/node@25.0.0)(@vitest/coverage-v8@4.1.10)(@vitest/ui@4.1.10)(vite@7.3.1(@types/node@25.0.0)(jiti@2.7.0)(yaml@2.9.0))
+        version: 4.1.10(@opentelemetry/api@1.9.0)(@types/node@25.0.0)(@vitest/coverage-v8@4.1.10)(@vitest/ui@4.1.10)(vite@7.3.1(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.0))
 
   packages/commitlint-config:
     dependencies:
@@ -155,7 +158,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
-        version: 4.1.10(@opentelemetry/api@1.9.0)(@types/node@25.0.0)(@vitest/coverage-v8@4.1.10)(@vitest/ui@4.1.10)(vite@7.3.1(@types/node@25.0.0)(jiti@2.7.0)(yaml@2.9.0))
+        version: 4.1.10(@opentelemetry/api@1.9.0)(@types/node@25.0.0)(@vitest/coverage-v8@4.1.10)(@vitest/ui@4.1.10)(vite@7.3.1(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.0))
       vitest-config:
         specifier: workspace:^
         version: link:../../internal/vitest-config
@@ -167,10 +170,10 @@ importers:
     dependencies:
       '@map-colonies/schemas':
         specifier: ^1.20.0
-        version: 1.24.0
+        version: 1.28.0
       '@types/pg':
         specifier: ^8.20.0
-        version: 8.20.0
+        version: 8.23.1
       drizzle-orm:
         specifier: ^1.0.0-rc.2
         version: 1.0.0-rc.4-5d5b77c(@opentelemetry/api@1.9.0)(@sinclair/typebox@0.34.49)(@types/pg@8.20.0)(pg@8.21.0)(zod@4.3.2)
@@ -1588,8 +1591,8 @@ packages:
   '@loaderkit/resolve@1.0.4':
     resolution: {integrity: sha512-rJzYKVcV4dxJv+vW6jlvagF8zvGxHJ2+HTr1e2qOejfmGhAApgJHl8Aog4mMszxceTRiKTTbnpgmTO1bEZHV/A==}
 
-  '@map-colonies/schemas@1.24.0':
-    resolution: {integrity: sha512-W8FY4l5OK0iMmBsAQG5wmTjeseLmTrSlDxNt82m81MU5OFZPXJpKRUhAbs7v7zz1j9vSp5qiTA0pIOkML1wo0Q==}
+  '@map-colonies/schemas@1.28.0':
+    resolution: {integrity: sha512-CLiKyxR7eQvDbSFvCsuUjeVaLWLDYlhfRipB1N/DWmDbTeNh3xrK+yvzaLgjhbe74F+u5ZvCK9F0d6GI9BROtw==}
 
   '@microsoft/api-extractor-model@7.33.10':
     resolution: {integrity: sha512-uPUK17xGxeQ3av6TN7awp+dTTSTvx8fZC0XFL1gyt7hFapYuxND3XLXH8vkmI7UjfW92oogzFAFqHSifmJROaw==}
@@ -2019,6 +2022,7 @@ packages:
   '@opentelemetry/propagator-jaeger@2.9.0':
     resolution: {integrity: sha512-4mYGty27rYvSM0jtp1ZUOqd3LfVRCYg9H5G9OFzSx5HViYToU21MFhWfco7x1HwXr7ER8yGOiCIHZUwjPksc0Q==}
     engines: {node: ^18.19.0 || >=20.6.0}
+    deprecated: Package no longer supported. See https://github.com/open-telemetry/opentelemetry-js/pull/7077
     peerDependencies:
       '@opentelemetry/api': '>=1.0.0 <1.10.0'
 
@@ -2083,12 +2087,14 @@ packages:
   '@opentelemetry/sdk-trace-base@2.9.0':
     resolution: {integrity: sha512-cp9zmTl62R8PJrpvFcmc8N2JQU/xfa0S+61q511Nji+QxCfZ8Ifvg7H27G8cANe4crg4RTrWsVvanHiXjSp6ag==}
     engines: {node: ^18.19.0 || >=20.6.0}
+    deprecated: Use @opentelemetry/sdk-trace package
     peerDependencies:
       '@opentelemetry/api': '>=1.3.0 <1.10.0'
 
   '@opentelemetry/sdk-trace-node@2.9.0':
     resolution: {integrity: sha512-ec9a7ps37huy5itYk0MalaZdSLlM6AXWp/FhtEjgMpp5leEGojBDvAl/UWttQnkMZOvFHKzRESn8TD3yKTF5nQ==}
     engines: {node: ^18.19.0 || >=20.6.0}
+    deprecated: Use @opentelemetry/sdk-trace package
     peerDependencies:
       '@opentelemetry/api': '>=1.0.0 <1.10.0'
 
@@ -2831,6 +2837,9 @@ packages:
   '@types/node@25.0.0':
     resolution: {integrity: sha512-rl78HwuZlaDIUSeUKkmogkhebA+8K1Hy7tddZuJ3D0xV8pZSfsYGTsliGUol1JPzu9EKnTxPC4L1fiWouStRew==}
 
+  '@types/node@26.6.6':
+    resolution: {integrity: sha512-MzQj+8Kx3XI40OmUAE6Qoh58ZMNstNNMwn2nfd3qWsfe7nDNSqJNzes4njhz6AHwrSHOffSLwXU6yb474Q4aog==}
+
   '@types/oracledb@6.5.2':
     resolution: {integrity: sha512-kK1eBS/Adeyis+3OlBDMeQQuasIDLUYXsi2T15ccNJ0iyUpQ4xDF7svFu3+bGVrI0CMBUclPciz+lsQR3JX3TQ==}
 
@@ -2842,6 +2851,9 @@ packages:
 
   '@types/pg@8.20.0':
     resolution: {integrity: sha512-bEPFOaMAHTEP1EzpvHTbmwR8UsFyHSKsRisLIHVMXnpNefSbGA1bD6CVy+qKjGSqmZqNqBDV2azOBo8TgkcVow==}
+
+  '@types/pg@8.23.1':
+    resolution: {integrity: sha512-fKVHpikPdg4GKks3JuLEhvwSyvwzF23hnabPy6DD8ljVbC7+6J5dQzdv4arV6jqq57djnMgs1HKBxX4P8aBI3A==}
 
   '@types/qs@6.14.0':
     resolution: {integrity: sha512-eOunJqu0K1923aExK6y8p6fsihYEn/BYuQ4g0CxAAgFc4b/ZLN4CrsRZ55srTdqoiLzU2B2evC+apEIxprEzkQ==}
@@ -5364,11 +5376,11 @@ packages:
     peerDependencies:
       pg: '>=8.0'
 
-  pg-protocol@1.10.3:
-    resolution: {integrity: sha512-6DIBgBQaTKDJyxnXaLiLR8wBpQQcGWuAESkRBX/t6OwA8YsqP+iVSiond2EDy6Y/dsGk8rh/jtax3js5NeV7JQ==}
-
   pg-protocol@1.14.0:
     resolution: {integrity: sha512-n5taZ1kO3s9ngDTVxsEznOqCyToTgz0FLuPq0B33COy5pPpuWJpY3/2oRBVETuOgzdqRXfWpM9HIhp2LBBT1BA==}
+
+  pg-protocol@1.16.1:
+    resolution: {integrity: sha512-p9VOFMiHB/ZbJATetbg+99PxssTVSQRnyuPSQ67mN1+1KBOjZaZ83ZQzltnxPhJwSsC3nwVjJ10DVJlerbFzLg==}
 
   pg-types@2.2.0:
     resolution: {integrity: sha512-qTAAlrEsl8s4OiEQY69wDvcMIdQN6wdz5ojQiOy6YRMuynxenON0O5oCpJI6lshc6scgAY8qvJ2On/p+CXY0GA==}
@@ -5497,6 +5509,7 @@ packages:
   prom-client@15.1.3:
     resolution: {integrity: sha512-6ZiOBfCywsD4k1BN9IX0uZhF+tJkV8q8llP64G5Hajs4JOeVLPCwpPVcpXy3BwYiUGgyJzsJJQeOIv7+hDSq8g==}
     engines: {node: ^16 || ^18 || >=20}
+    deprecated: prom-client has been replaced by @prometheus-io/client
 
   prop-types@15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
@@ -6250,6 +6263,9 @@ packages:
 
   undici-types@7.18.2:
     resolution: {integrity: sha512-AsuCzffGHJybSaRrmr5eHr81mwJU3kjw6M+uprWvCXiNeN9SOGwQ3Jn8jb8m3Z6izVgknn1R0FTCEAP2QrLY/w==}
+
+  undici-types@8.9.0:
+    resolution: {integrity: sha512-KTDyRTYX8sWmKXAikPHHSyc63CRPETMctyjKFupcC6OBLXT3xsN0e9aF7m+mIXutFWpUXuedtowG7iLOzp0kQg==}
 
   undici@6.28.0:
     resolution: {integrity: sha512-LIY910g9TI13YS95lrMFrs8Rm/u/irgHeTWoKCoteeJ04CUJ92eEfj0rVn+7VKMPBpUPiUoBKfhNyLI23EE/KA==}
@@ -7125,7 +7141,7 @@ snapshots:
     dependencies:
       '@braidai/lang': 1.1.2
 
-  '@map-colonies/schemas@1.24.0': {}
+  '@map-colonies/schemas@1.28.0': {}
 
   '@microsoft/api-extractor-model@7.33.10(@types/node@24.13.3)':
     dependencies:
@@ -8563,6 +8579,10 @@ snapshots:
     dependencies:
       undici-types: 7.16.0
 
+  '@types/node@26.6.6':
+    dependencies:
+      undici-types: 8.9.0
+
   '@types/oracledb@6.5.2':
     dependencies:
       '@types/node': 25.0.0
@@ -8580,7 +8600,13 @@ snapshots:
   '@types/pg@8.20.0':
     dependencies:
       '@types/node': 25.0.0
-      pg-protocol: 1.10.3
+      pg-protocol: 1.14.0
+      pg-types: 2.2.0
+
+  '@types/pg@8.23.1':
+    dependencies:
+      '@types/node': 26.6.6
+      pg-protocol: 1.16.1
       pg-types: 2.2.0
 
   '@types/qs@6.14.0': {}
@@ -8934,13 +8960,13 @@ snapshots:
     optionalDependencies:
       vite: 7.3.1(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0)
 
-  '@vitest/mocker@4.1.10(vite@7.3.1(@types/node@25.0.0)(jiti@2.7.0)(yaml@2.9.0))':
+  '@vitest/mocker@4.1.10(vite@7.3.1(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.0))':
     dependencies:
       '@vitest/spy': 4.1.10
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 7.3.1(@types/node@25.0.0)(jiti@2.7.0)(yaml@2.9.0)
+      vite: 7.3.1(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.0)
 
   '@vitest/pretty-format@4.1.10':
     dependencies:
@@ -11298,9 +11324,9 @@ snapshots:
     dependencies:
       pg: 8.21.0
 
-  pg-protocol@1.10.3: {}
-
   pg-protocol@1.14.0: {}
+
+  pg-protocol@1.16.1: {}
 
   pg-types@2.2.0:
     dependencies:
@@ -12421,6 +12447,8 @@ snapshots:
 
   undici-types@7.18.2: {}
 
+  undici-types@8.9.0: {}
+
   undici@6.28.0: {}
 
   undici@8.10.0: {}
@@ -12494,7 +12522,7 @@ snapshots:
       jiti: 2.7.0
       yaml: 2.9.0
 
-  vite@7.3.1(@types/node@25.0.0)(jiti@2.7.0)(yaml@2.9.0):
+  vite@7.3.1(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.0):
     dependencies:
       esbuild: 0.27.7
       fdir: 6.5.0(picomatch@4.0.5)
@@ -12503,7 +12531,7 @@ snapshots:
       rollup: 4.62.2
       tinyglobby: 0.2.17
     optionalDependencies:
-      '@types/node': 25.0.0
+      '@types/node': 26.6.6
       fsevents: 2.3.3
       jiti: 2.7.0
       yaml: 2.9.0
@@ -12538,10 +12566,10 @@ snapshots:
     transitivePeerDependencies:
       - msw
 
-  vitest@4.1.10(@opentelemetry/api@1.9.0)(@types/node@25.0.0)(@vitest/coverage-v8@4.1.10)(@vitest/ui@4.1.10)(vite@7.3.1(@types/node@25.0.0)(jiti@2.7.0)(yaml@2.9.0)):
+  vitest@4.1.10(@opentelemetry/api@1.9.0)(@types/node@25.0.0)(@vitest/coverage-v8@4.1.10)(@vitest/ui@4.1.10)(vite@7.3.1(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.0)):
     dependencies:
       '@vitest/expect': 4.1.10
-      '@vitest/mocker': 4.1.10(vite@7.3.1(@types/node@25.0.0)(jiti@2.7.0)(yaml@2.9.0))
+      '@vitest/mocker': 4.1.10(vite@7.3.1(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.0))
       '@vitest/pretty-format': 4.1.10
       '@vitest/runner': 4.1.10
       '@vitest/snapshot': 4.1.10
@@ -12558,7 +12586,7 @@ snapshots:
       tinyexec: 1.2.4
       tinyglobby: 0.2.17
       tinyrainbow: 3.1.0
-      vite: 7.3.1(@types/node@25.0.0)(jiti@2.7.0)(yaml@2.9.0)
+      vite: 7.3.1(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.0)
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@opentelemetry/api': 1.9.0
