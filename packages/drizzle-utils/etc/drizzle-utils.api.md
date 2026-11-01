@@ -27,7 +27,12 @@ export const DEFAULT_PAGE_SIZE = 10;
 export function healthCheck(connection: Pool, dbConnectionTimeout?: number): () => Promise<void>;
 
 // @public
-export function initConnection(dbConfig: commonDbFullV1Type): Promise<Pool>;
+export function initConnection(dbConfig: commonDbFullV1Type, options?: InitConnectionOptions): Promise<Pool>;
+
+// @public
+export interface InitConnectionOptions {
+    onError?: (err: Error) => void;
+}
 
 // @public
 export function isDrizzleQueryError(err: unknown): err is DrizzleQueryError;

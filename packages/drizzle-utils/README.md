@@ -25,6 +25,12 @@ import { initConnection, createConnectionOptions } from '@map-colonies/drizzle-u
 // Create and verify a connected pg.Pool
 const pool = await initConnection(dbConfig);
 
+// Report connections the database drops (restart, failover, pg_terminate_backend).
+// Dropped connections never crash the process, with or without onError.
+const reportingPool = await initConnection(dbConfig, {
+  onError: (err) => logger.error({ msg: 'database connection error', err }),
+});
+
 // Or just build the PoolConfig without connecting
 const poolConfig = createConnectionOptions(dbConfig);
 ```
