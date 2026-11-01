@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/MapColonies/infra-packages/compare/drizzle-utils-v1.0.0...drizzle-utils-v1.1.0) (2026-11-01)
+
+
+### 🎉 Features
+
+* **drizzle-utils:** keep the process alive when the database drops a pooled connection ([#340](https://github.com/MapColonies/infra-packages/issues/340)) ([d86a8c7](https://github.com/MapColonies/infra-packages/commit/d86a8c7430e38cc33d112fbaa1e7f828018286b0))
+
 ## [1.0.0](https://github.com/MapColonies/infra-packages/compare/drizzle-utils-v0.2.0...drizzle-utils-v1.0.0) (2026-06-29)
 
 
