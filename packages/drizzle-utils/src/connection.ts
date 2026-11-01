@@ -59,10 +59,23 @@ export async function initConnection(dbConfig: commonDbFullV1Type, options: Init
   const pool = new Pool(createConnectionOptions(dbConfig));
 
   // Every connection error, idle or checked out, reaches the connection's own listener.
-  pool.on('connect', (client) => client.on('error', onError));
+  pool.on('connect', (client) =>
+    client.on('error', (err) => {
+      try {
+        onError(err);
+      } catch {
+        // onError is for reporting only; a throwing reporter must not crash the process
+      }
+    })
+  );
   // The pool re-emits errors of idle connections, which were already reported above.
   pool.on('error', () => undefined);
 
-  await pool.query('SELECT NOW()');
+  try {
+    await pool.query('SELECT NOW()');
+  } catch (err) {
+    await pool.end();
+    throw err;
+  }
   return pool;
 }

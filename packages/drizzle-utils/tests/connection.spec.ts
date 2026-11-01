@@ -1,5 +1,5 @@
-import { describe, it, expect, beforeAll, afterAll, inject, vi } from 'vitest';
-import { Client, type Pool, type PoolClient } from 'pg';
+import { describe, it, expect, beforeAll, afterAll, afterEach, inject, vi, type Mock } from 'vitest';
+import { Client, Pool, type PoolClient } from 'pg';
 import type { commonDbFullV1Type } from '@map-colonies/schemas';
 import { createConnectionOptions, initConnection } from '../src/connection';
 
@@ -48,6 +48,10 @@ describe('#initConnection', function () {
     createdPools = [];
   });
 
+  afterEach(function () {
+    vi.restoreAllMocks();
+  });
+
   afterAll(async function () {
     await Promise.all(createdPools.map(async (pool) => pool.end()));
   });
@@ -63,6 +67,14 @@ describe('#initConnection', function () {
     createdPools.push(pool);
     const result = await pool.query('SELECT 1 AS value');
     expect(result.rows[0]).toHaveProperty('value', 1);
+  });
+
+  it('should end the pool when the connection check fails', async function () {
+    const endSpy = vi.spyOn(Pool.prototype, 'end');
+
+    await expect(initConnection(buildDbOptions({ password: 'definitely-wrong-password' }))).rejects.toThrow();
+
+    expect(endSpy).toHaveBeenCalledOnce();
   });
 
   it('should reject when given incorrect credentials', async function () {
@@ -98,7 +110,7 @@ describe('#initConnection', function () {
       return result.rows[0]!.pid;
     }
 
-    async function terminateAndWaitForError(pid: number, onError: ReturnType<typeof vi.fn>): Promise<void> {
+    async function terminateAndWaitForError(pid: number, onError: Mock): Promise<void> {
       await admin.query('SELECT pg_terminate_backend($1)', [pid]);
       await vi.waitFor(() => expect(onError).toHaveBeenCalled());
     }
@@ -148,6 +160,21 @@ describe('#initConnection', function () {
 
       expect(onError).toHaveBeenCalledWith(expect.objectContaining({ message: expect.stringContaining('idle-in-transaction timeout') as unknown }));
       client.release(true);
+      await expectPoolToWork(pool);
+    });
+
+    it('should keep the pool working when onError throws', async function () {
+      const onError = vi.fn(() => {
+        throw new Error('broken reporter');
+      });
+      const pool = await initConnection(buildDbOptions(), { onError });
+      createdPools.push(pool);
+      const client = await pool.connect();
+      const pid = await getBackendPid(client);
+      client.release();
+
+      await terminateAndWaitForError(pid, onError);
+
       await expectPoolToWork(pool);
     });
 
