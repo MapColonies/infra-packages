@@ -39,7 +39,7 @@
     "@map-colonies/read-pkg": "workspace:^",
     "change-case": "^5.4.4",
     "commander": "^15.0.0",
-    "ora": "^9.0.0"
+    "ora": "^10.0.0"
   },
   "peerDependencies": {
     "openapi-typescript": "^7.4.1",
