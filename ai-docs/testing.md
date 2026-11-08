@@ -141,3 +141,6 @@ export default mergeConfig(
 1. **Use `function()` syntax**: Arrow functions NOT allowed in test callbacks
 2. **Test files must be `*.spec.ts`**: Never use `*.test.ts`
 3. **No magic numbers in tests**: ESLint rule disabled for test files
+4. **Budget for parallel runs**: Turbo runs every package's tests at once, so a test can take 2x its isolated time or more. If a test takes over ~1s alone (heavy imports, spawned processes), raise `testTimeout` in that package's config
+5. **Poll with a generous deadline**: When waiting on async side effects such as files, poll quickly but keep the deadline in seconds and below `testTimeout`. Never use a fixed sleep
+6. **Check flakiness without the cache**: Cached runs hide flaky tests. Use `pnpm exec turbo run test --force --continue`

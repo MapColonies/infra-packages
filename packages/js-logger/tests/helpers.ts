@@ -5,7 +5,7 @@ export async function waitForFileCreation(path: string): Promise<void> {
   const abortController = new AbortController();
   const interval = 100;
   let iterations = 0;
-  const maxIterations = 10;
+  const maxIterations = 40;
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   for await (const unusedValue of setInterval(interval, { signal: abortController.signal })) {
