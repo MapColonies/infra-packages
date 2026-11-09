@@ -39,6 +39,9 @@ catalogs:
     publint:
       specifier: 0.3.21
       version: 0.3.21
+    rimraf:
+      specifier: ^6.1.2
+      version: 6.1.4
     supertest:
       specifier: 7.2.2
       version: 7.2.2
@@ -814,8 +817,8 @@ importers:
         specifier: 8.20.0
         version: 8.20.0
       change-case-all:
-        specifier: 2.1.0
-        version: 2.1.0
+        specifier: 2.2.0
+        version: 2.2.0
       comment-json:
         specifier: 5.0.0
         version: 5.0.0
@@ -3548,8 +3551,8 @@ packages:
     resolution: {integrity: sha512-/Ce6KNm3vIbWdMlNna6RVIZ/ICQxnJxCicet5LBKK9ZffBkqzDw0xh9EiKSljdRtiIQ1S1z4YgcscUUGzNCWrA==}
     engines: {node: '>=22'}
 
-  change-case-all@2.1.0:
-    resolution: {integrity: sha512-v6b0WWWkZUMHVuYk82l+WROgkUm4qEN2w5hKRNWtEOYwWqUGoi8C6xH0l1RLF1EoWqDFK6MFclmN3od6ws3/uw==}
+  change-case-all@2.2.0:
+    resolution: {integrity: sha512-/BSm9RoX2fl1bcfZI5dHLOGPqsH0Yf5igEPs76SUGZs52EryPcNrSyJUCNcYNrH5VTThnHDmDs0vjPasNeBOLg==}
 
   change-case@5.4.4:
     resolution: {integrity: sha512-HRQyTk2/YPEkt9TnUPbOpr64Uw3KOicFWPVBb+xiHvd6eBx/qPr9xqfBFDT8P2vWsvvz4jbEkfDe71W3VyNu2w==}
@@ -9375,7 +9378,7 @@ snapshots:
 
   chalk@6.0.1: {}
 
-  change-case-all@2.1.0:
+  change-case-all@2.2.0:
     dependencies:
       change-case: 5.4.4
       sponge-case: 2.0.3
