@@ -136,6 +136,10 @@
     "packages/openapi-express-types": {
       "package-name": "@map-colonies/openapi-express-types",
       "release-type": "node"
+    },
+    "packages/health-check": {
+      "package-name": "@map-colonies/health-check",
+      "release-type": "node"
     }
   }
 }
