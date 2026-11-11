@@ -1,5 +1,23 @@
 # Changelog
 
+## [5.1.0](https://github.com/MapColonies/infra-packages/compare/js-logger-v5.0.0...js-logger-v5.1.0) (2026-11-11)
+
+
+### 🎉 Features
+
+* **js-logger:** enhance async logger initialization and kept log format when otel is enabled ([#261](https://github.com/MapColonies/infra-packages/issues/261)) ([dbcc44a](https://github.com/MapColonies/infra-packages/commit/dbcc44a80913c61f9800013f22552263539cc63f))
+
+
+### 🔗 Dependencies
+
+* **js-logger:** update dependency pino-opentelemetry-transport to v3 ([#145](https://github.com/MapColonies/infra-packages/issues/145)) ([89e5d14](https://github.com/MapColonies/infra-packages/commit/89e5d140a4be0b3acf0e8d08bc25625bbe4d5c19))
+* **js-logger:** update dependency pino-opentelemetry-transport to v4 ([#272](https://github.com/MapColonies/infra-packages/issues/272)) ([2b305b5](https://github.com/MapColonies/infra-packages/commit/2b305b53b6fcffbebd05cfe9f977516d6ab2fc96))
+
+
+### 📝 Documentation
+
+* **js-logger:** update README for async usage and alloy logs MAPCO-10939 ([#246](https://github.com/MapColonies/infra-packages/issues/246)) ([26c4b5c](https://github.com/MapColonies/infra-packages/commit/26c4b5c4feeadb3f913e04e4c22a7a6d8eb8aa16))
+
 ## [5.0.0](https://github.com/MapColonies/infra-packages/compare/js-logger-v4.1.0...js-logger-v5.0.0) (2026-03-08)
 
 
