@@ -170,10 +170,10 @@ importers:
     dependencies:
       '@map-colonies/schemas':
         specifier: ^1.20.0
-        version: 1.24.0
+        version: 1.29.0
       '@types/pg':
         specifier: ^8.20.0
-        version: 8.20.0
+        version: 8.23.1
       drizzle-orm:
         specifier: ^1.0.0-rc.2
         version: 1.0.0-rc.4-5d5b77c(@opentelemetry/api@1.9.0)(@sinclair/typebox@0.34.49)(@types/pg@8.20.0)(pg@8.21.0)(zod@4.3.2)
@@ -1594,8 +1594,8 @@ packages:
   '@loaderkit/resolve@1.0.4':
     resolution: {integrity: sha512-rJzYKVcV4dxJv+vW6jlvagF8zvGxHJ2+HTr1e2qOejfmGhAApgJHl8Aog4mMszxceTRiKTTbnpgmTO1bEZHV/A==}
 
-  '@map-colonies/schemas@1.24.0':
-    resolution: {integrity: sha512-W8FY4l5OK0iMmBsAQG5wmTjeseLmTrSlDxNt82m81MU5OFZPXJpKRUhAbs7v7zz1j9vSp5qiTA0pIOkML1wo0Q==}
+  '@map-colonies/schemas@1.29.0':
+    resolution: {integrity: sha512-5ecYFy7TOETOn4waiH08JbGeyh1FxS63uBuJrA6m087VG08VAkuoll790HR+e+o+cnbRpR25PUYc2zyqRNsDQQ==}
 
   '@microsoft/api-extractor-model@7.33.10':
     resolution: {integrity: sha512-uPUK17xGxeQ3av6TN7awp+dTTSTvx8fZC0XFL1gyt7hFapYuxND3XLXH8vkmI7UjfW92oogzFAFqHSifmJROaw==}
@@ -2852,6 +2852,9 @@ packages:
 
   '@types/pg@8.20.0':
     resolution: {integrity: sha512-bEPFOaMAHTEP1EzpvHTbmwR8UsFyHSKsRisLIHVMXnpNefSbGA1bD6CVy+qKjGSqmZqNqBDV2azOBo8TgkcVow==}
+
+  '@types/pg@8.23.1':
+    resolution: {integrity: sha512-fKVHpikPdg4GKks3JuLEhvwSyvwzF23hnabPy6DD8ljVbC7+6J5dQzdv4arV6jqq57djnMgs1HKBxX4P8aBI3A==}
 
   '@types/qs@6.14.0':
     resolution: {integrity: sha512-eOunJqu0K1923aExK6y8p6fsihYEn/BYuQ4g0CxAAgFc4b/ZLN4CrsRZ55srTdqoiLzU2B2evC+apEIxprEzkQ==}
@@ -5398,11 +5401,11 @@ packages:
     peerDependencies:
       pg: '>=8.0'
 
-  pg-protocol@1.10.3:
-    resolution: {integrity: sha512-6DIBgBQaTKDJyxnXaLiLR8wBpQQcGWuAESkRBX/t6OwA8YsqP+iVSiond2EDy6Y/dsGk8rh/jtax3js5NeV7JQ==}
-
   pg-protocol@1.14.0:
     resolution: {integrity: sha512-n5taZ1kO3s9ngDTVxsEznOqCyToTgz0FLuPq0B33COy5pPpuWJpY3/2oRBVETuOgzdqRXfWpM9HIhp2LBBT1BA==}
+
+  pg-protocol@1.16.1:
+    resolution: {integrity: sha512-p9VOFMiHB/ZbJATetbg+99PxssTVSQRnyuPSQ67mN1+1KBOjZaZ83ZQzltnxPhJwSsC3nwVjJ10DVJlerbFzLg==}
 
   pg-types@2.2.0:
     resolution: {integrity: sha512-qTAAlrEsl8s4OiEQY69wDvcMIdQN6wdz5ojQiOy6YRMuynxenON0O5oCpJI6lshc6scgAY8qvJ2On/p+CXY0GA==}
@@ -7159,7 +7162,7 @@ snapshots:
     dependencies:
       '@braidai/lang': 1.1.2
 
-  '@map-colonies/schemas@1.24.0': {}
+  '@map-colonies/schemas@1.29.0': {}
 
   '@microsoft/api-extractor-model@7.33.10(@types/node@26.6.6)':
     dependencies:
@@ -8612,7 +8615,13 @@ snapshots:
   '@types/pg@8.20.0':
     dependencies:
       '@types/node': 26.6.6
-      pg-protocol: 1.10.3
+      pg-protocol: 1.14.0
+      pg-types: 2.2.0
+
+  '@types/pg@8.23.1':
+    dependencies:
+      '@types/node': 26.6.6
+      pg-protocol: 1.16.1
       pg-types: 2.2.0
 
   '@types/qs@6.14.0': {}
@@ -11346,9 +11355,9 @@ snapshots:
     dependencies:
       pg: 8.21.0
 
-  pg-protocol@1.10.3: {}
-
   pg-protocol@1.14.0: {}
+
+  pg-protocol@1.16.1: {}
 
   pg-types@2.2.0:
     dependencies:
