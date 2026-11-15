@@ -33,7 +33,7 @@
   },
   "repository": "github:MapColonies/infra-packages",
   "dependencies": {
-    "oas-normalize": "^17.0.0",
+    "oas-normalize": "^18.0.0",
     "ts-essentials": "^10.1.1"
   },
   "peerDependencies": {
