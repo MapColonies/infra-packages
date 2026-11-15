@@ -3,7 +3,7 @@ import { TSESTree } from '@typescript-eslint/utils';
 
 const PINO_LOG_METHODS = new Set(['trace', 'debug', 'info', 'warn', 'error', 'fatal']);
 
-const createRule = ESLintUtils.RuleCreator((name) => `https://github.com/MapColonies/infra-packages/tree/main/packages/eslint-plugin#${name}`);
+const createRule = ESLintUtils.RuleCreator((name) => `https://github.com/MapColonies/infra-packages/tree/master/packages/eslint-plugin#${name}`);
 
 type MessageIds = 'useErrKey';
 type Options = [];
@@ -34,7 +34,7 @@ function checkObjectForErrorKey(
 }
 
 export const preferStandardErrorKey = createRule<Options, MessageIds>({
-  name: 'pino-safety/prefer-standard-error-key',
+  name: 'pino-safety-prefer-standard-error-key',
   meta: {
     type: 'suggestion',
     docs: {

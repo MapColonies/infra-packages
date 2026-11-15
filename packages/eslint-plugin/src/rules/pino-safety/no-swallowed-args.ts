@@ -4,13 +4,13 @@ import { TSESTree } from '@typescript-eslint/utils';
 const PINO_LOG_METHODS = new Set(['trace', 'debug', 'info', 'warn', 'error', 'fatal']);
 const PRINTF_PLACEHOLDER_REGEX = /%[sdifjoO]/g;
 
-const createRule = ESLintUtils.RuleCreator((name) => `https://github.com/MapColonies/infra-packages/tree/main/packages/eslint-plugin#${name}`);
+const createRule = ESLintUtils.RuleCreator((name) => `https://github.com/MapColonies/infra-packages/tree/master/packages/eslint-plugin#${name}`);
 
 type MessageIds = 'swallowedArgs';
 type Options = [];
 
 export const noSwallowedArgs = createRule<Options, MessageIds>({
-  name: 'pino-safety/no-swallowed-args',
+  name: 'pino-safety-no-swallowed-args',
   meta: {
     type: 'problem',
     docs: {
