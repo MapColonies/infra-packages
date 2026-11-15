@@ -3,15 +3,18 @@ import { dirname, join } from 'node:path';
 
 const majorVersionByDirectory = new Map<string, number | undefined>();
 
+// Accepts a version or simple range such as `5`, `5.2.1`, `v5`, `^5.0.0` or `~4.21.0`
+const VERSION_REGEX = /^\s*[v^~=]*\s*(\d+)/;
+
 function parseMajorVersion(version: unknown): number | undefined {
   if (typeof version === 'number') {
-    return Number.isInteger(version) ? version : undefined;
+    return Number.isFinite(version) ? Math.trunc(version) : undefined;
   }
   if (typeof version !== 'string') {
     return undefined;
   }
-  const major = Number.parseInt(version.replace(/^\D*/, ''), 10);
-  return Number.isNaN(major) ? undefined : major;
+  const match = VERSION_REGEX.exec(version);
+  return match?.[1] === undefined ? undefined : Number.parseInt(match[1], 10);
 }
 
 /**

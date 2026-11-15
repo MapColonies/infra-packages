@@ -1,7 +1,7 @@
 import { ASTUtils, ESLintUtils, TSESLint, TSESTree } from '@typescript-eslint/utils';
 import { getExpressMajorVersion } from './express-version.js';
 
-const createRule = ESLintUtils.RuleCreator((name) => `https://github.com/MapColonies/infra-packages/tree/main/packages/eslint-plugin#${name}`);
+const createRule = ESLintUtils.RuleCreator((name) => `https://github.com/MapColonies/infra-packages/tree/master/packages/eslint-plugin#${name}`);
 
 const NEXT_PARAM_INDEX = 2;
 const FIRST_ASYNC_SAFE_EXPRESS_MAJOR = 5;
@@ -52,7 +52,7 @@ function getExplicitExpressVersion(settings: Record<string, unknown>): unknown {
 }
 
 export const noRedundantTryCatch = createRule<Options, MessageIds>({
-  name: 'express/no-redundant-try-catch',
+  name: 'express-no-redundant-try-catch',
   meta: {
     type: 'suggestion',
     docs: {
@@ -83,16 +83,16 @@ export const noRedundantTryCatch = createRule<Options, MessageIds>({
       return sourceCode.getAncestors(node).findLast(isFunctionNode);
     }
 
-    function isNextParamOf(call: TSESTree.CallExpression, handler: FunctionNode): boolean {
+    function isNextParamOf(call: TSESTree.CallExpression, enclosingFunction: FunctionNode): boolean {
       if (call.callee.type !== TSESTree.AST_NODE_TYPES.Identifier || !nextNames.includes(call.callee.name)) {
         return false;
       }
-      const nextParam = handler.params[NEXT_PARAM_INDEX];
+      const nextParam = enclosingFunction.params[NEXT_PARAM_INDEX];
       if (nextParam?.type !== TSESTree.AST_NODE_TYPES.Identifier || nextParam.name !== call.callee.name) {
         return false;
       }
       const variable = ASTUtils.findVariable(sourceCode.getScope(call), call.callee);
-      return variable?.defs.some((def) => def.type === TSESLint.Scope.DefinitionType.Parameter && def.node === handler) ?? false;
+      return variable?.defs.some((def) => def.type === TSESLint.Scope.DefinitionType.Parameter && def.node === enclosingFunction) ?? false;
     }
 
     function isForwardingCaughtError(call: TSESTree.CallExpression, param: TSESTree.Identifier): boolean {
@@ -103,37 +103,63 @@ export const noRedundantTryCatch = createRule<Options, MessageIds>({
       return argument?.type === TSESTree.AST_NODE_TYPES.Identifier && argument.name === param.name;
     }
 
-    function isCaughtByExpress(handler: FunctionNode): boolean {
+    function isCaughtByExpress(enclosingFunction: FunctionNode): boolean {
       const major = getExpressMajorVersion(context.filename, getExplicitExpressVersion(context.settings));
       if (major === undefined) {
         return false;
       }
-      return major >= FIRST_ASYNC_SAFE_EXPRESS_MAJOR || !handler.async;
+      return major >= FIRST_ASYNC_SAFE_EXPRESS_MAJOR || !enclosingFunction.async;
+    }
+
+    function hasMultiLineTemplate(block: TSESTree.BlockStatement): boolean {
+      return sourceCode
+        .getTokens(block)
+        .some((token) => token.type === TSESTree.AST_TOKEN_TYPES.Template && token.loc.start.line !== token.loc.end.line);
     }
 
     /**
-     * Builds the replacement text for the try statement: the try block's contents, de-indented
-     * to the try statement's level. Kept inside braces when the try is not in a statement list.
+     * True when moving the try block's declarations into the surrounding scope would redeclare
+     * or shadow a name that is already visible there.
      */
-    function getUnwrappedText(node: TSESTree.TryStatement): string {
+    function wouldCollideWithOuterScope(block: TSESTree.BlockStatement): boolean {
+      const blockScope = sourceCode.getScope(block);
+      return blockScope.variables.some(({ name }) => {
+        for (let scope = blockScope.upper; scope !== null; scope = scope.upper) {
+          if (scope.set.has(name)) {
+            return true;
+          }
+        }
+        return false;
+      });
+    }
+
+    /**
+     * Builds the replacement text for the try statement. The try block's contents are inlined and
+     * de-indented when that is safe; otherwise the block itself (with its braces) is kept.
+     */
+    function getReplacementText(node: TSESTree.TryStatement): string {
       const { block } = node;
+      const isInStatementList = node.parent !== undefined && STATEMENT_LIST_PARENTS.has(node.parent.type);
+      if (!isInStatementList || hasMultiLineTemplate(block) || wouldCollideWithOuterScope(block)) {
+        return sourceCode.getText(block);
+      }
+
       const [blockStart, blockEnd] = block.range;
       const inner = sourceCode.text.slice(blockStart + 1, blockEnd - 1).trim();
       const firstStatement = block.body[0];
       const indentDelta = firstStatement === undefined ? 0 : firstStatement.loc.start.column - node.loc.start.column;
-      const dedented =
-        indentDelta > 0 && firstStatement?.loc.start.line !== block.loc.start.line
-          ? inner.replace(new RegExp(`\\n[ \\t]{0,${indentDelta}}`, 'g'), '\n')
-          : inner;
-
-      if (node.parent !== undefined && STATEMENT_LIST_PARENTS.has(node.parent.type)) {
-        return dedented;
+      if (indentDelta <= 0 || firstStatement?.loc.start.line === block.loc.start.line) {
+        return inner;
       }
-      return `{ ${dedented} }`;
+      return inner.replace(new RegExp(`\\n[ \\t]{0,${indentDelta}}`, 'g'), '\n');
     }
 
-    function removeTryCatch(node: TSESTree.TryStatement): TSESLint.ReportFixFunction {
-      return (fixer) => fixer.replaceText(node, getUnwrappedText(node));
+    function getSuggestions(node: TSESTree.TryStatement, catchClause: TSESTree.CatchClause): TSESLint.ReportSuggestionArray<MessageIds> {
+      // Removing the catch would silently drop its comments, so leave that to the developer
+      if (sourceCode.getCommentsInside(catchClause).length > 0) {
+        return [];
+      }
+      return [{ messageId: 'removeTryCatch', fix: (fixer) => fixer.replaceText(node, getReplacementText(node)) }];
     }
 
     return {
@@ -148,12 +174,12 @@ export const noRedundantTryCatch = createRule<Options, MessageIds>({
           return;
         }
 
-        const handler = getEnclosingFunction(node);
-        if (handler === undefined || !isNextParamOf(call, handler) || !isCaughtByExpress(handler)) {
+        const enclosingFunction = getEnclosingFunction(node);
+        if (enclosingFunction === undefined || !isNextParamOf(call, enclosingFunction) || !isCaughtByExpress(enclosingFunction)) {
           return;
         }
 
-        context.report({ node, messageId: 'redundantTryCatch', suggest: [{ messageId: 'removeTryCatch', fix: removeTryCatch(node) }] });
+        context.report({ node, messageId: 'redundantTryCatch', suggest: getSuggestions(node, catchClause) });
       },
     };
   },

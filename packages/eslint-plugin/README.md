@@ -149,15 +149,15 @@ The version is detected automatically (see [Settings](#settings)).
 '@map-colonies/express-no-redundant-try-catch': ['error', { nextNames: ['next', 'nextFn'] }]
 ```
 
-**Fix:** an editor suggestion removes the try/catch and keeps the contents of the try block. It is not applied by `--fix`.
+**Fix:** an editor suggestion removes the try/catch and keeps the contents of the try block. It is not applied by `--fix`. When inlining the contents would be unsafe (a declaration would clash with or shadow an outer name, or the block contains a multi-line template literal), the block is kept with its braces. No suggestion is offered when the catch contains comments, so they are not silently dropped.
 
 ## Settings
 
 Shared settings live under the `@map-colonies` key. All settings are optional.
 
-| Setting          | Description                                                                                                                                                                                                                                              |
-| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `expressVersion` | The Express version to assume (e.g. `'5'` or `'5.2.1'`). When omitted, the version is detected from the `express` package installed for each linted file. Set it only if detection fails, for example when Express is reached through a wrapper package. |
+| Setting          | Description                                                                                                                                                                                                                                                                                                                                                   |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `expressVersion` | The Express version to assume (e.g. `'5'` or `'5.2.1'`). When omitted, the version is detected from the `express` package installed for each linted file. A value that cannot be parsed is treated as unknown, which disables Express-version-dependent rules. Set it only if detection fails, for example when Express is reached through a wrapper package. |
 
 ```javascript
 // eslint.config.mjs
