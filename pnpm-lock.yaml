@@ -399,8 +399,8 @@ importers:
         specifier: 5.3.0
         version: 5.3.0(supports-color@10.2.2)
       pino:
-        specifier: 10.3.1
-        version: 10.3.1
+        specifier: 10.4.0
+        version: 10.4.0
       rimraf:
         specifier: 'catalog:'
         version: 6.1.4
@@ -5382,6 +5382,10 @@ packages:
 
   pino@10.3.1:
     resolution: {integrity: sha512-r34yH/GlQpKZbU1BvFFqOjhISRo1MNx1tWYsYvmj6KIRHSPMT2+yHOEb1SG6NMvRoHRF0a07kCOox/9yakl1vg==}
+    hasBin: true
+
+  pino@10.4.0:
+    resolution: {integrity: sha512-bk1ZMTwG/Vymx+zPoa28MhNzucFvXJWp3csrSuxuHPSMeUettaCoQ5Jvg07mtC4JGNpcfTwz41oVCnNgBK9+vA==}
     hasBin: true
 
   pkijs@3.4.0:
@@ -11193,7 +11197,7 @@ snapshots:
   pino-http@11.0.0:
     dependencies:
       get-caller-file: 2.0.5
-      pino: 10.3.1
+      pino: 10.4.0
       pino-std-serializers: 7.0.0
       process-warning: 5.0.0
 
@@ -11239,6 +11243,20 @@ snapshots:
       process-warning: 5.0.0
       quick-format-unescaped: 4.0.4
       real-require: 0.2.0
+      safe-stable-stringify: 2.5.0
+      sonic-boom: 4.2.0
+      thread-stream: 4.2.0
+
+  pino@10.4.0:
+    dependencies:
+      '@pinojs/redact': 0.4.0
+      atomic-sleep: 1.0.0
+      on-exit-leak-free: 2.1.2
+      pino-abstract-transport: 3.0.0
+      pino-std-serializers: 7.0.0
+      process-warning: 5.0.0
+      quick-format-unescaped: 4.0.4
+      real-require: 1.0.0
       safe-stable-stringify: 2.5.0
       sonic-boom: 4.2.0
       thread-stream: 4.2.0
