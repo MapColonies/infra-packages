@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/MapColonies/infra-packages/compare/tracing-utils-v2.0.0...tracing-utils-v3.0.0) (2026-11-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* **global:** upgrade to express 5 ([#350](https://github.com/MapColonies/infra-packages/issues/350))
+
+### 🎉 Features
+
+* **global:** upgrade to express 5 ([#350](https://github.com/MapColonies/infra-packages/issues/350)) ([b9f074c](https://github.com/MapColonies/infra-packages/commit/b9f074cc56245473ff96bb4cc8b892bf962d9351))
+
 ## [2.0.0](https://github.com/MapColonies/infra-packages/compare/tracing-utils-v1.0.0...tracing-utils-v2.0.0) (2026-07-14)
 
 
