@@ -1,5 +1,23 @@
 # Changelog
 
+## [6.0.0](https://github.com/MapColonies/infra-packages/compare/openapi-express-viewer-v5.0.0...openapi-express-viewer-v6.0.0) (2026-11-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* **global:** upgrade to express 5 ([#350](https://github.com/MapColonies/infra-packages/issues/350))
+* **eslint-config:** added unicorn rules ([#130](https://github.com/MapColonies/infra-packages/issues/130))
+
+### 🎉 Features
+
+* **eslint-config:** added unicorn rules ([#130](https://github.com/MapColonies/infra-packages/issues/130)) ([b474787](https://github.com/MapColonies/infra-packages/commit/b474787ebefaddc521c56d2d775632d6c15d275c))
+* **global:** upgrade to express 5 ([#350](https://github.com/MapColonies/infra-packages/issues/350)) ([b9f074c](https://github.com/MapColonies/infra-packages/commit/b9f074cc56245473ff96bb4cc8b892bf962d9351))
+
+
+### 🔗 Dependencies
+
+* **openapi-express-viewer:** update dependency js-yaml to v5 ([#232](https://github.com/MapColonies/infra-packages/issues/232)) ([1e342da](https://github.com/MapColonies/infra-packages/commit/1e342da5ddb575cd8be4bd41e0d28a53925cdf6a))
+
 ## [5.0.0](https://github.com/MapColonies/infra-packages/compare/openapi-express-viewer-v4.1.0...openapi-express-viewer-v5.0.0) (2026-11-15)
 
 
