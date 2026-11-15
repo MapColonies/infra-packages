@@ -1,5 +1,16 @@
 # Changelog
 
+## [6.0.0](https://github.com/MapColonies/infra-packages/compare/express-access-log-middleware-v5.0.0...express-access-log-middleware-v6.0.0) (2026-11-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* **global:** upgrade to express 5 ([#350](https://github.com/MapColonies/infra-packages/issues/350))
+
+### 🎉 Features
+
+* **global:** upgrade to express 5 ([#350](https://github.com/MapColonies/infra-packages/issues/350)) ([b9f074c](https://github.com/MapColonies/infra-packages/commit/b9f074cc56245473ff96bb4cc8b892bf962d9351))
+
 ## [5.0.0](https://github.com/MapColonies/infra-packages/compare/express-access-log-middleware-v4.1.0...express-access-log-middleware-v5.0.0) (2026-07-14)
 
 
