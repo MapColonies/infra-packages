@@ -67,106 +67,119 @@ function removeSuggestion(output: string): [{ messageId: 'removeTryCatch'; outpu
   return [{ messageId: 'removeTryCatch', output }];
 }
 
-ruleTester.run('express-no-redundant-try-catch', noRedundantTryCatch, {
+ruleTester.run('no-redundant-try-catch', noRedundantTryCatch, {
   valid: [
     {
-      name: 'catch wraps the error before forwarding it',
+      name: 'should allow a catch that wraps the error before forwarding it',
       filename: express5File,
       code: `const handler = async (req, res, next) => { try { await work(); } catch (error) { next(new InternalError(error)); } };`,
     },
     {
-      name: 'catch logs before forwarding',
+      name: 'should allow a catch that logs before forwarding',
       filename: express5File,
       code: `const handler = async (req, res, next) => { try { await work(); } catch (error) { logger.error({ err: error }); next(error); } };`,
     },
     {
-      name: 'catch mutates the error before forwarding',
+      name: 'should allow a catch that mutates the error before forwarding',
       filename: express5File,
       code: `const handler = async (req, res, next) => { try { await work(); } catch (error) { if (error instanceof NotFoundError) { error.status = 404; } next(error); } };`,
     },
     {
-      name: 'catch calls next without the error',
+      name: 'should allow a catch that calls next without the error',
       filename: express5File,
       code: `const handler = async (req, res, next) => { try { await work(); } catch (error) { next(); } };`,
     },
     {
-      name: 'catch forwards a different variable',
+      name: 'should allow a catch that forwards a different variable',
       filename: express5File,
       code: `const handler = async (req, res, next) => { const other = new Error(); try { await work(); } catch (error) { next(other); } };`,
     },
     {
-      name: 'catch without a binding',
+      name: 'should allow a catch without a binding',
       filename: express5File,
       code: `const handler = async (req, res, next) => { try { await work(); } catch { next(); } };`,
     },
     {
-      name: 'try has a finally block',
+      name: 'should allow a try with a finally block',
       filename: express5File,
       code: `const handler = async (req, res, next) => { try { await work(); } catch (error) { next(error); } finally { release(); } };`,
     },
     {
-      name: 'try is inside a nested callback that Express cannot catch',
+      name: 'should allow a try inside a nested callback that Express cannot catch',
       filename: express5File,
       code: `const handler = (req, res, next) => { setTimeout(() => { try { work(); } catch (error) { next(error); } }); };`,
     },
     {
-      name: 'node-style callback is not a handler',
+      name: 'should allow a node-style callback function',
       filename: express5File,
       code: `function readConfig(path, opts, cb) { try { cb(null, parse(path)); } catch (e) { cb(e); } }`,
     },
     {
-      name: 'third parameter has a different name',
+      name: 'should allow a handler whose third parameter has a different name',
       filename: express5File,
       code: `const handler = async (req, res, done) => { try { await work(); } catch (error) { done(error); } };`,
     },
     {
-      name: 'next is not the third parameter',
+      name: 'should allow a function where next is not the third parameter',
       filename: express5File,
       code: `const handler = async (req, next) => { try { await work(); } catch (error) { next(error); } };`,
     },
     {
-      name: 'error middleware is not handled',
+      name: 'should not check error middleware',
       filename: express5File,
       code: `const handler = async (err, req, res, next) => { try { await work(); } catch (error) { next(error); } };`,
     },
     {
-      name: 'async handler on express 4 needs the try/catch',
+      name: 'should allow an async handler on express 4',
       filename: express4File,
       code: redundantAsyncHandler,
     },
     {
-      name: 'express cannot be found',
+      name: 'should report nothing when express cannot be found',
       filename: noExpressFile,
       code: redundantSyncHandler,
     },
     {
-      name: 'explicit express 4 setting wins over detected express 5',
+      name: 'should prefer an explicit express 4 setting over detected express 5',
       filename: express5File,
       settings: { '@map-colonies': { expressVersion: '4' } },
       code: redundantAsyncHandler,
     },
+    {
+      name: 'should treat an unparsable express version setting as unknown',
+      filename: express5File,
+      settings: { '@map-colonies': { expressVersion: 'abc5' } },
+      code: redundantSyncHandler,
+    },
   ],
   invalid: [
     {
-      name: 'async handler that only forwards the caught error to next (express 5)',
+      name: 'should report an async handler that only forwards the caught error to next on express 5',
       filename: express5File,
       code: redundantAsyncHandler,
       errors: [{ messageId: 'redundantTryCatch', suggestions: removeSuggestion(unwrappedAsyncHandler) }],
     },
     {
-      name: 'sync handler with return next(err) (express 5)',
+      name: 'should report a sync handler with return next(err) on express 5',
       filename: express5File,
       code: redundantSyncHandler,
       errors: [{ messageId: 'redundantTryCatch', suggestions: removeSuggestion(unwrappedSyncHandler) }],
     },
     {
-      name: 'sync handler on express 4',
+      name: 'should accept a semver range as the express version setting',
+      filename: noExpressFile,
+      settings: { '@map-colonies': { expressVersion: '^5.0.0' } },
+      code: redundantAsyncHandler,
+      errors: [{ messageId: 'redundantTryCatch', suggestions: removeSuggestion(unwrappedAsyncHandler) }],
+    },
+    {
+      name: 'should report a sync handler on express 4',
       filename: express4File,
       code: redundantSyncHandler,
       errors: [{ messageId: 'redundantTryCatch', suggestions: removeSuggestion(unwrappedSyncHandler) }],
     },
     {
-      name: 'class property handler with typed parameters',
+      name: 'should report a class property handler with typed parameters',
       filename: express5File,
       code: `
 class Controller {
@@ -191,21 +204,113 @@ class Controller {
       ],
     },
     {
-      name: 'custom next name via the nextNames option',
+      name: 'should report a custom next name from the nextNames option',
       filename: express5File,
       options: [{ nextNames: ['nextFn'] }],
       code: `const handler = async (req, res, nextFn) => { try { await work(); } catch (error) { nextFn(error); } };`,
       errors: [{ messageId: 'redundantTryCatch', suggestions: removeSuggestion(`const handler = async (req, res, nextFn) => { await work(); };`) }],
     },
     {
-      name: 'explicit express 5 setting when express cannot be found',
+      name: 'should use an explicit express 5 setting when express cannot be found',
       filename: noExpressFile,
       settings: { '@map-colonies': { expressVersion: '5' } },
       code: redundantAsyncHandler,
       errors: [{ messageId: 'redundantTryCatch', suggestions: removeSuggestion(unwrappedAsyncHandler) }],
     },
     {
-      name: 'try that is the body of an if statement keeps a block when unwrapped',
+      name: 'should not change multi-line template literals when unwrapping',
+      filename: express5File,
+      code: `
+function handler(req, res, next) {
+  try {
+    res.send(\`a
+    b\`);
+  } catch (e) {
+    next(e);
+  }
+}`,
+      errors: [
+        {
+          messageId: 'redundantTryCatch',
+          suggestions: removeSuggestion(`
+function handler(req, res, next) {
+  {
+    res.send(\`a
+    b\`);
+  }
+}`),
+        },
+      ],
+    },
+    {
+      name: 'should keep the block when unwrapping would redeclare a variable',
+      filename: express5File,
+      code: `
+function handler(req, res, next) {
+  const data = 1;
+  try {
+    const data = 2;
+    res.json(data);
+  } catch (e) {
+    next(e);
+  }
+}`,
+      errors: [
+        {
+          messageId: 'redundantTryCatch',
+          suggestions: removeSuggestion(`
+function handler(req, res, next) {
+  const data = 1;
+  {
+    const data = 2;
+    res.json(data);
+  }
+}`),
+        },
+      ],
+    },
+    {
+      name: 'should keep the block when unwrapping would shadow a handler parameter',
+      filename: express5File,
+      code: `function handler(req, res, next) { try { const req = 1; work(req); } catch (e) { next(e); } }`,
+      errors: [
+        { messageId: 'redundantTryCatch', suggestions: removeSuggestion(`function handler(req, res, next) { { const req = 1; work(req); } }`) },
+      ],
+    },
+    {
+      name: 'should not offer a suggestion when the catch contains comments',
+      filename: express5File,
+      code: `function handler(req, res, next) { try { work(); } catch (e) { // forwarded on purpose
+next(e); } }`,
+      errors: [{ messageId: 'redundantTryCatch', suggestions: [] }],
+    },
+    {
+      name: 'should keep the original block when the try is the body of an if statement',
+      filename: express5File,
+      code: `
+function handler(req, res, next) {
+  if (req.body) try {
+    a();
+    b();
+  } catch (e) {
+    next(e);
+  }
+}`,
+      errors: [
+        {
+          messageId: 'redundantTryCatch',
+          suggestions: removeSuggestion(`
+function handler(req, res, next) {
+  if (req.body) {
+    a();
+    b();
+  }
+}`),
+        },
+      ],
+    },
+    {
+      name: 'should keep a block when unwrapping a try that is the body of an if statement',
       filename: express5File,
       code: `function handler(req, res, next) { if (req.body) try { work(); save(); } catch (e) { next(e); } }`,
       errors: [
