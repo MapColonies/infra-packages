@@ -46,6 +46,6 @@
     "@microsoft/api-extractor": "catalog:"
   },
   "dependencies": {
-    "type-fest": "^5.0.0"
+    "type-fest": "^6.0.0"
   }
 }
