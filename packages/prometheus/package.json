@@ -56,7 +56,7 @@
   },
   "dependencies": {
     "@map-colonies/read-pkg": "workspace:^",
-    "express-prom-bundle": "^8.0.0",
+    "express-prom-bundle": "^9.0.0",
     "lodash": "^4.17.21"
   }
 }
