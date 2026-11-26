@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/MapColonies/infra-packages/compare/eslint-plugin-v1.0.0...eslint-plugin-v2.0.0) (2026-11-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* **eslint-plugin:** the `recommended` config now enables `@map-colonies/express-no-redundant-try-catch` as an error.
+
+### 🎉 Features
+
+* **eslint-plugin:** add express-no-redundant-try-catch rule ([#352](https://github.com/MapColonies/infra-packages/issues/352)) ([b69e14e](https://github.com/MapColonies/infra-packages/commit/b69e14e5c217013b00be96e8b94600385ec29f73))
+
 ## [1.0.0](https://github.com/MapColonies/infra-packages/compare/eslint-plugin-v0.1.0...eslint-plugin-v1.0.0) (2026-06-30)
 
 
