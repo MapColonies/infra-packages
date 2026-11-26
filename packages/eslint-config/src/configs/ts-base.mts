@@ -227,6 +227,7 @@ const combinedConfig = defineConfig(
   { name: 'import-x/typescript', ...importFlatConfigs.typescript },
   importRulesAndConfig,
   mapColoniesPlugin.configs['pino-safety'],
+  mapColoniesPlugin.configs.express,
   globalIgnoreConfig,
   parserOptions,
   { name: 'eslint-prettier/disabled-rules', ...eslintConfigPrettier }
@@ -242,6 +243,7 @@ const combinedConfig = defineConfig(
  * - React component naming conventions
  * - Import organization rules
  * - Pino logger safety rules (@map-colonies/eslint-plugin)
+ * - Express rules (@map-colonies/eslint-plugin)
  * - Global ignores for build artifacts and dependencies
  * - Parser configuration
  * - Prettier integration
