@@ -35,7 +35,7 @@
   "devDependencies": {
     "vitest": "catalog:",
     "vitest-config": "workspace:^",
-    "@commitlint/types": "21.2.0",
+    "@commitlint/types": "21.2.3",
     "zx": "8.8.5",
     "typescript": "catalog:",
     "@map-colonies/tsconfig": "workspace:^",
