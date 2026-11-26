@@ -52,7 +52,7 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "vitest": "^4.1.4",
+    "vitest": "^4.1.4 || ^5.0.0",
     "jest-extended": "^7.0.0",
     "jest-openapi": "^0.14.2"
   },
