@@ -1,5 +1,23 @@
 # Changelog
 
+## [10.0.0](https://github.com/MapColonies/infra-packages/compare/eslint-config-v9.0.0...eslint-config-v10.0.0) (2026-11-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* **eslint-config:** ts-base now reports a try/catch in an Express handler whose catch only forwards the caught error to `next`, as an error.
+
+### 🎉 Features
+
+* **eslint-config:** enable express-no-redundant-try-catch in ts-base ([#373](https://github.com/MapColonies/infra-packages/issues/373)) ([e0ba113](https://github.com/MapColonies/infra-packages/commit/e0ba113ced9a5e2657704b9edbebbb369ee1d417))
+
+
+### 🔗 Dependencies
+
+* **eslint-config:** update dependency eslint-plugin-unicorn to v70 ([#245](https://github.com/MapColonies/infra-packages/issues/245)) ([be3f9c0](https://github.com/MapColonies/infra-packages/commit/be3f9c009c2fee1d229dc233e4820f88f266f7f9))
+* **eslint-config:** update dependency eslint-plugin-unicorn to v71 ([#254](https://github.com/MapColonies/infra-packages/issues/254)) ([f11679f](https://github.com/MapColonies/infra-packages/commit/f11679fefbce0460045e12df9cb236e8f57bf91c))
+* **eslint-config:** update dependency eslint-plugin-unicorn to v72 ([#268](https://github.com/MapColonies/infra-packages/issues/268)) ([dc27510](https://github.com/MapColonies/infra-packages/commit/dc27510d3b14b43d81549239a4985c5a9edef2ea))
+
 ## [9.0.0](https://github.com/MapColonies/infra-packages/compare/eslint-config-v8.1.0...eslint-config-v9.0.0) (2026-06-29)
 
 
