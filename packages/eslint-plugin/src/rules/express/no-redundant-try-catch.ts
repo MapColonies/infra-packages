@@ -68,7 +68,7 @@ export const noRedundantTryCatch = createRule<Options, MessageIds>({
       {
         type: 'object',
         properties: {
-          nextNames: { type: 'array', items: { type: 'string' }, uniqueItems: true },
+          nextNames: { type: 'array', items: { type: 'string' }, uniqueItems: true, minItems: 1 },
         },
         additionalProperties: false,
       },
@@ -111,10 +111,26 @@ export const noRedundantTryCatch = createRule<Options, MessageIds>({
       return major >= FIRST_ASYNC_SAFE_EXPRESS_MAJOR || !enclosingFunction.async;
     }
 
-    function hasMultiLineTemplate(block: TSESTree.BlockStatement): boolean {
-      return sourceCode
-        .getTokens(block)
-        .some((token) => token.type === TSESTree.AST_TOKEN_TYPES.Template && token.loc.start.line !== token.loc.end.line);
+    /**
+     * True when nothing else in the handler runs after the catch forwards the error, so throwing
+     * instead (which is what removing the try/catch amounts to) behaves the same.
+     */
+    function endsHandlerOnError(node: TSESTree.TryStatement, catchClause: TSESTree.CatchClause, enclosingFunction: FunctionNode): boolean {
+      const { body } = enclosingFunction;
+      if (body.type === TSESTree.AST_NODE_TYPES.BlockStatement && node.parent === body && body.body.at(-1) === node) {
+        return true;
+      }
+      if (catchClause.body.body[0]?.type !== TSESTree.AST_NODE_TYPES.ReturnStatement) {
+        return false;
+      }
+      // An outer try would catch the thrown error instead of letting it reach Express
+      const ancestors = sourceCode.getAncestors(node);
+      return !ancestors.slice(ancestors.indexOf(enclosingFunction) + 1).some((ancestor) => ancestor.type === TSESTree.AST_NODE_TYPES.TryStatement);
+    }
+
+    // De-indenting a token that spans lines (a template literal, or a string continued with a backslash) would change its value
+    function hasMultiLineToken(block: TSESTree.BlockStatement): boolean {
+      return sourceCode.getTokens(block).some((token) => token.loc.start.line !== token.loc.end.line);
     }
 
     /**
@@ -140,7 +156,7 @@ export const noRedundantTryCatch = createRule<Options, MessageIds>({
     function getReplacementText(node: TSESTree.TryStatement): string {
       const { block } = node;
       const isInStatementList = node.parent !== undefined && STATEMENT_LIST_PARENTS.has(node.parent.type);
-      if (!isInStatementList || hasMultiLineTemplate(block) || wouldCollideWithOuterScope(block)) {
+      if (!isInStatementList || hasMultiLineToken(block) || wouldCollideWithOuterScope(block)) {
         return sourceCode.getText(block);
       }
 
@@ -154,9 +170,10 @@ export const noRedundantTryCatch = createRule<Options, MessageIds>({
       return inner.replace(new RegExp(`\\n[ \\t]{0,${indentDelta}}`, 'g'), '\n');
     }
 
-    function getSuggestions(node: TSESTree.TryStatement, catchClause: TSESTree.CatchClause): TSESLint.ReportSuggestionArray<MessageIds> {
-      // Removing the catch would silently drop its comments, so leave that to the developer
-      if (sourceCode.getCommentsInside(catchClause).length > 0) {
+    function getSuggestions(node: TSESTree.TryStatement): TSESLint.ReportSuggestionArray<MessageIds> {
+      // Comments outside the try block (in the catch, or between `try`/`}` and `catch`) would be silently dropped, so leave that to the developer
+      const [blockStart, blockEnd] = node.block.range;
+      if (sourceCode.getCommentsInside(node).some(({ range: [start, end] }) => start < blockStart || end > blockEnd)) {
         return [];
       }
       return [{ messageId: 'removeTryCatch', fix: (fixer) => fixer.replaceText(node, getReplacementText(node)) }];
@@ -175,11 +192,16 @@ export const noRedundantTryCatch = createRule<Options, MessageIds>({
         }
 
         const enclosingFunction = getEnclosingFunction(node);
-        if (enclosingFunction === undefined || !isNextParamOf(call, enclosingFunction) || !isCaughtByExpress(enclosingFunction)) {
+        if (
+          enclosingFunction === undefined ||
+          !isNextParamOf(call, enclosingFunction) ||
+          !isCaughtByExpress(enclosingFunction) ||
+          !endsHandlerOnError(node, catchClause, enclosingFunction)
+        ) {
           return;
         }
 
-        context.report({ node, messageId: 'redundantTryCatch', suggest: getSuggestions(node, catchClause) });
+        context.report({ node, messageId: 'redundantTryCatch', suggest: getSuggestions(node) });
       },
     };
   },

@@ -151,6 +151,26 @@ ruleTester.run('no-redundant-try-catch', noRedundantTryCatch, {
       settings: { '@map-colonies': { expressVersion: 'abc5' } },
       code: redundantSyncHandler,
     },
+    {
+      name: 'should allow a catch that forwards with next when code runs after the try',
+      filename: express5File,
+      code: `const handler = async (req, res, next) => { try { await work(); } catch (error) { next(error); } res.send('ok'); };`,
+    },
+    {
+      name: 'should allow a catch that forwards with next inside a loop',
+      filename: express5File,
+      code: `const handler = async (req, res, next) => { for (const item of req.body) { try { await save(item); } catch (error) { next(error); } } };`,
+    },
+    {
+      name: 'should allow a catch that forwards with next inside an if block',
+      filename: express5File,
+      code: `const handler = async (req, res, next) => { if (req.body) { try { await work(); } catch (error) { next(error); } } };`,
+    },
+    {
+      name: 'should allow return next(err) when an outer try would catch the error instead',
+      filename: express5File,
+      code: `const handler = async (req, res, next) => { try { try { await work(); } catch (error) { return next(error); } await more(); } catch (outer) { res.status(500).end(); } };`,
+    },
   ],
   invalid: [
     {
@@ -293,7 +313,7 @@ function handler(req, res, next) {
     a();
     b();
   } catch (e) {
-    next(e);
+    return next(e);
   }
 }`,
       errors: [
@@ -312,10 +332,69 @@ function handler(req, res, next) {
     {
       name: 'should keep a block when unwrapping a try that is the body of an if statement',
       filename: express5File,
-      code: `function handler(req, res, next) { if (req.body) try { work(); save(); } catch (e) { next(e); } }`,
+      code: `function handler(req, res, next) { if (req.body) try { work(); save(); } catch (e) { return next(e); } }`,
       errors: [
         { messageId: 'redundantTryCatch', suggestions: removeSuggestion(`function handler(req, res, next) { if (req.body) { work(); save(); } }`) },
       ],
+    },
+    {
+      name: 'should report return next(err) when code runs after the try',
+      filename: express5File,
+      code: `const handler = async (req, res, next) => { try { await work(); } catch (error) { return next(error); } res.send('ok'); };`,
+      errors: [
+        {
+          messageId: 'redundantTryCatch',
+          suggestions: removeSuggestion(`const handler = async (req, res, next) => { await work(); res.send('ok'); };`),
+        },
+      ],
+    },
+    {
+      name: 'should report return next(err) inside a loop',
+      filename: express5File,
+      code: `const handler = async (req, res, next) => { for (const item of req.body) { try { await save(item); } catch (error) { return next(error); } } };`,
+      errors: [
+        {
+          messageId: 'redundantTryCatch',
+          suggestions: removeSuggestion(`const handler = async (req, res, next) => { for (const item of req.body) { await save(item); } };`),
+        },
+      ],
+    },
+    {
+      name: 'should not change strings continued with a backslash when unwrapping',
+      filename: express5File,
+      code: `
+function handler(req, res, next) {
+  try {
+    res.send('a\\
+    b');
+  } catch (e) {
+    next(e);
+  }
+}`,
+      errors: [
+        {
+          messageId: 'redundantTryCatch',
+          suggestions: removeSuggestion(`
+function handler(req, res, next) {
+  {
+    res.send('a\\
+    b');
+  }
+}`),
+        },
+      ],
+    },
+    {
+      name: 'should not offer a suggestion when a comment sits between the try block and catch',
+      filename: express5File,
+      code: `function handler(req, res, next) { try { work(); } /* forwarded on purpose */ catch (e) { next(e); } }`,
+      errors: [{ messageId: 'redundantTryCatch', suggestions: [] }],
+    },
+    {
+      name: 'should not offer a suggestion when a comment sits between try and its block',
+      filename: express5File,
+      code: `function handler(req, res, next) { try /* forwarded on purpose */ { work(); } catch (e) { next(e); } }`,
+      errors: [{ messageId: 'redundantTryCatch', suggestions: [] }],
     },
   ],
 });

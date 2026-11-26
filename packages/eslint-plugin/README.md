@@ -24,6 +24,8 @@ export default [
 ];
 ```
 
+> **Using `@map-colonies/eslint-config`?** Its `ts-base` config already registers this plugin, so don't add `configs.recommended` on top of it. If the two copies of the plugin are different versions, ESLint fails with `Cannot redefine plugin "@map-colonies"`. To turn on a rule that `ts-base` doesn't enable yet, add it by name under `rules`. This only works if the plugin version bundled with your `@map-colonies/eslint-config` includes that rule.
+
 ### Manual Configuration
 
 Or configure rules individually:
@@ -131,7 +133,11 @@ public getItem: Handler = async (req, res, next) => {
 };
 ```
 
-**What is reported:** the catch body is exactly `next(err)` or `return next(err)` with the catch's own parameter, the try has no `finally`, and the nearest enclosing function has `next` as its third parameter. A try inside a nested callback (e.g. `setTimeout`) is never reported, since Express cannot catch errors thrown there. Error middleware (`(err, req, res, next)`) is not checked.
+**What is reported:** the catch body is exactly `next(err)` or `return next(err)` with the catch's own parameter, the try has no `finally`, and the nearest enclosing function has `next` as its third parameter. Removing the try/catch must also leave the handler's behaviour unchanged, so nothing may run after the catch forwards the error:
+
+- `next(err)` is reported only when the try is the last statement of the handler body. Otherwise, code after the try (or the next iteration of a loop) still runs after `next(err)`, but would not run once the error is thrown.
+- `return next(err)` is reported anywhere in the handler, unless the try is nested inside another try that would catch the thrown error instead.
+  A try inside a nested callback (e.g. `setTimeout`) is never reported, since Express cannot catch errors thrown there. Error middleware (`(err, req, res, next)`) is not checked.
 
 **Express version:**
 
@@ -149,7 +155,7 @@ The version is detected automatically (see [Settings](#settings)).
 '@map-colonies/express-no-redundant-try-catch': ['error', { nextNames: ['next', 'nextFn'] }]
 ```
 
-**Fix:** an editor suggestion removes the try/catch and keeps the contents of the try block. It is not applied by `--fix`. When inlining the contents would be unsafe (a declaration would clash with or shadow an outer name, or the block contains a multi-line template literal), the block is kept with its braces. No suggestion is offered when the catch contains comments, so they are not silently dropped.
+**Fix:** an editor suggestion removes the try/catch and keeps the contents of the try block. It is not applied by `--fix`. When inlining the contents would be unsafe (a declaration would clash with or shadow an outer name, or the block contains a token that spans lines, such as a multi-line template literal), the block is kept with its braces. No suggestion is offered when there are comments outside the try block (in the catch, or between the try block and `catch`), so they are not silently dropped. After applying the suggestion, `next` may be unused; remove it yourself if your config reports unused parameters.
 
 ## Settings
 
